@@ -17,7 +17,16 @@
 		24428E4426B3436A00B21130 /* HomeListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24428E4326B3436A00B21130 /* HomeListView.swift */; };
 		24A19E2C26B34F9500DA5E20 /* GestureListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A19E2B26B34F9500DA5E20 /* GestureListView.swift */; };
 		24C11E4926B4307100E018B5 /* SharedTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C11E4826B4307100E018B5 /* SharedTypes.swift */; };
-		24C11E4C26B4319C00E018B5 /* Action+init.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C11E4B26B4319C00E018B5 /* Action+init.swift */; };
+		24C11E5426B4366B00E018B5 /* SafariWebExtensionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C11E5326B4366B00E018B5 /* SafariWebExtensionHandler.swift */; };
+		24C11E5726B4366B00E018B5 /* _locales in Resources */ = {isa = PBXBuildFile; fileRef = 24C11E5626B4366B00E018B5 /* _locales */; };
+		24C11E5926B4366B00E018B5 /* images in Resources */ = {isa = PBXBuildFile; fileRef = 24C11E5826B4366B00E018B5 /* images */; };
+		24C11E5B26B4366B00E018B5 /* manifest.json in Resources */ = {isa = PBXBuildFile; fileRef = 24C11E5A26B4366B00E018B5 /* manifest.json */; };
+		24C11E5D26B4366B00E018B5 /* background.js in Resources */ = {isa = PBXBuildFile; fileRef = 24C11E5C26B4366B00E018B5 /* background.js */; };
+		24C11E5F26B4366B00E018B5 /* content.js in Resources */ = {isa = PBXBuildFile; fileRef = 24C11E5E26B4366B00E018B5 /* content.js */; };
+		24C11E6126B4366B00E018B5 /* popup.html in Resources */ = {isa = PBXBuildFile; fileRef = 24C11E6026B4366B00E018B5 /* popup.html */; };
+		24C11E6326B4366B00E018B5 /* popup.css in Resources */ = {isa = PBXBuildFile; fileRef = 24C11E6226B4366B00E018B5 /* popup.css */; };
+		24C11E6526B4366B00E018B5 /* popup.js in Resources */ = {isa = PBXBuildFile; fileRef = 24C11E6426B4366B00E018B5 /* popup.js */; };
+		24C11E6926B4366B00E018B5 /* SvadilfariExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 24C11E5126B4366B00E018B5 /* SvadilfariExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,7 +44,28 @@
 			remoteGlobalIDString = 24428E1226B33E7600B21130;
 			remoteInfo = Svadilfari;
 		};
+		24C11E6726B4366B00E018B5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 24428E0B26B33E7600B21130 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 24C11E5026B4366B00E018B5;
+			remoteInfo = SvadilfariExtension;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		24C11E6D26B4366B00E018B5 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				24C11E6926B4366B00E018B5 /* SvadilfariExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		24428E1326B33E7600B21130 /* Svadilfari.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Svadilfari.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -51,7 +81,17 @@
 		24428E4326B3436A00B21130 /* HomeListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeListView.swift; sourceTree = "<group>"; };
 		24A19E2B26B34F9500DA5E20 /* GestureListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GestureListView.swift; sourceTree = "<group>"; };
 		24C11E4826B4307100E018B5 /* SharedTypes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SharedTypes.swift; sourceTree = "<group>"; };
-		24C11E4B26B4319C00E018B5 /* Action+init.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Action+init.swift"; sourceTree = "<group>"; };
+		24C11E5126B4366B00E018B5 /* SvadilfariExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = SvadilfariExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		24C11E5326B4366B00E018B5 /* SafariWebExtensionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariWebExtensionHandler.swift; sourceTree = "<group>"; };
+		24C11E5626B4366B00E018B5 /* _locales */ = {isa = PBXFileReference; lastKnownFileType = folder; path = _locales; sourceTree = "<group>"; };
+		24C11E5826B4366B00E018B5 /* images */ = {isa = PBXFileReference; lastKnownFileType = folder; path = images; sourceTree = "<group>"; };
+		24C11E5A26B4366B00E018B5 /* manifest.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = manifest.json; sourceTree = "<group>"; };
+		24C11E5C26B4366B00E018B5 /* background.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = background.js; sourceTree = "<group>"; };
+		24C11E5E26B4366B00E018B5 /* content.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = content.js; sourceTree = "<group>"; };
+		24C11E6026B4366B00E018B5 /* popup.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = popup.html; sourceTree = "<group>"; };
+		24C11E6226B4366B00E018B5 /* popup.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = popup.css; sourceTree = "<group>"; };
+		24C11E6426B4366B00E018B5 /* popup.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = popup.js; sourceTree = "<group>"; };
+		24C11E6626B4366B00E018B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +116,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		24C11E4E26B4366B00E018B5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -85,6 +132,7 @@
 				24428E1526B33E7600B21130 /* Svadilfari */,
 				24428E2626B33E7700B21130 /* SvadilfariTests */,
 				24428E3026B33E7700B21130 /* SvadilfariUITests */,
+				24C11E5226B4366B00E018B5 /* SvadilfariExtension */,
 				24428E1426B33E7600B21130 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -95,6 +143,7 @@
 				24428E1326B33E7600B21130 /* Svadilfari.app */,
 				24428E2326B33E7700B21130 /* SvadilfariTests.xctest */,
 				24428E2D26B33E7700B21130 /* SvadilfariUITests.xctest */,
+				24C11E5126B4366B00E018B5 /* SvadilfariExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -102,7 +151,6 @@
 		24428E1526B33E7600B21130 /* Svadilfari */ = {
 			isa = PBXGroup;
 			children = (
-				24C11E4A26B430CC00E018B5 /* Extensions */,
 				24428E3E26B33F2A00B21130 /* UI */,
 				24C11E4826B4307100E018B5 /* SharedTypes.swift */,
 				24428E1626B33E7600B21130 /* SvadilfariApp.swift */,
@@ -163,12 +211,29 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		24C11E4A26B430CC00E018B5 /* Extensions */ = {
+		24C11E5226B4366B00E018B5 /* SvadilfariExtension */ = {
 			isa = PBXGroup;
 			children = (
-				24C11E4B26B4319C00E018B5 /* Action+init.swift */,
+				24C11E5326B4366B00E018B5 /* SafariWebExtensionHandler.swift */,
+				24C11E6626B4366B00E018B5 /* Info.plist */,
+				24C11E5526B4366B00E018B5 /* Resources */,
 			);
-			path = Extensions;
+			path = SvadilfariExtension;
+			sourceTree = "<group>";
+		};
+		24C11E5526B4366B00E018B5 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				24C11E5626B4366B00E018B5 /* _locales */,
+				24C11E5826B4366B00E018B5 /* images */,
+				24C11E5A26B4366B00E018B5 /* manifest.json */,
+				24C11E5C26B4366B00E018B5 /* background.js */,
+				24C11E5E26B4366B00E018B5 /* content.js */,
+				24C11E6026B4366B00E018B5 /* popup.html */,
+				24C11E6226B4366B00E018B5 /* popup.css */,
+				24C11E6426B4366B00E018B5 /* popup.js */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -181,10 +246,12 @@
 				24428E0F26B33E7600B21130 /* Sources */,
 				24428E1026B33E7600B21130 /* Frameworks */,
 				24428E1126B33E7600B21130 /* Resources */,
+				24C11E6D26B4366B00E018B5 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				24C11E6826B4366B00E018B5 /* PBXTargetDependency */,
 			);
 			name = Svadilfari;
 			productName = Svadilfari;
@@ -227,6 +294,23 @@
 			productReference = 24428E2D26B33E7700B21130 /* SvadilfariUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		24C11E5026B4366B00E018B5 /* SvadilfariExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 24C11E6A26B4366B00E018B5 /* Build configuration list for PBXNativeTarget "SvadilfariExtension" */;
+			buildPhases = (
+				24C11E4D26B4366B00E018B5 /* Sources */,
+				24C11E4E26B4366B00E018B5 /* Frameworks */,
+				24C11E4F26B4366B00E018B5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SvadilfariExtension;
+			productName = SvadilfariExtension;
+			productReference = 24C11E5126B4366B00E018B5 /* SvadilfariExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -248,6 +332,9 @@
 						CreatedOnToolsVersion = 13.0;
 						TestTargetID = 24428E1226B33E7600B21130;
 					};
+					24C11E5026B4366B00E018B5 = {
+						CreatedOnToolsVersion = 13.0;
+					};
 				};
 			};
 			buildConfigurationList = 24428E0E26B33E7600B21130 /* Build configuration list for PBXProject "Svadilfari" */;
@@ -266,6 +353,7 @@
 				24428E1226B33E7600B21130 /* Svadilfari */,
 				24428E2226B33E7700B21130 /* SvadilfariTests */,
 				24428E2C26B33E7700B21130 /* SvadilfariUITests */,
+				24C11E5026B4366B00E018B5 /* SvadilfariExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -294,6 +382,21 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		24C11E4F26B4366B00E018B5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				24C11E5D26B4366B00E018B5 /* background.js in Resources */,
+				24C11E6326B4366B00E018B5 /* popup.css in Resources */,
+				24C11E6126B4366B00E018B5 /* popup.html in Resources */,
+				24C11E5926B4366B00E018B5 /* images in Resources */,
+				24C11E5B26B4366B00E018B5 /* manifest.json in Resources */,
+				24C11E5726B4366B00E018B5 /* _locales in Resources */,
+				24C11E5F26B4366B00E018B5 /* content.js in Resources */,
+				24C11E6526B4366B00E018B5 /* popup.js in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -304,7 +407,6 @@
 				24C11E4926B4307100E018B5 /* SharedTypes.swift in Sources */,
 				24428E1926B33E7600B21130 /* ContentView.swift in Sources */,
 				24428E4426B3436A00B21130 /* HomeListView.swift in Sources */,
-				24C11E4C26B4319C00E018B5 /* Action+init.swift in Sources */,
 				24428E1726B33E7600B21130 /* SvadilfariApp.swift in Sources */,
 				24428E4126B33F5400B21130 /* HomeListItem.swift in Sources */,
 				24A19E2C26B34F9500DA5E20 /* GestureListView.swift in Sources */,
@@ -327,6 +429,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		24C11E4D26B4366B00E018B5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				24C11E5426B4366B00E018B5 /* SafariWebExtensionHandler.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -339,6 +449,11 @@
 			isa = PBXTargetDependency;
 			target = 24428E1226B33E7600B21130 /* Svadilfari */;
 			targetProxy = 24428E2E26B33E7700B21130 /* PBXContainerItemProxy */;
+		};
+		24C11E6826B4366B00E018B5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 24C11E5026B4366B00E018B5 /* SvadilfariExtension */;
+			targetProxy = 24C11E6726B4366B00E018B5 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -462,6 +577,7 @@
 		24428E3626B33E7700B21130 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -492,6 +608,7 @@
 		24428E3726B33E7700B21130 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -615,6 +732,58 @@
 			};
 			name = Release;
 		};
+		24C11E6B26B4366B00E018B5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = TKVMG44U5W;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SvadilfariExtension/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = SvadilfariExtension;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "dev.shun-k.Svadilfari.SvadilfariExtension";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		24C11E6C26B4366B00E018B5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = TKVMG44U5W;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SvadilfariExtension/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = SvadilfariExtension;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "dev.shun-k.Svadilfari.SvadilfariExtension";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -650,6 +819,15 @@
 			buildConfigurations = (
 				24428E3C26B33E7700B21130 /* Debug */,
 				24428E3D26B33E7700B21130 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		24C11E6A26B4366B00E018B5 /* Build configuration list for PBXNativeTarget "SvadilfariExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				24C11E6B26B4366B00E018B5 /* Debug */,
+				24C11E6C26B4366B00E018B5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
