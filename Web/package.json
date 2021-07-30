@@ -1,0 +1,13 @@
+{
+  "name": "svadilfari",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Shun Kashiwa <shunthedev@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "esbuild": "^0.12.17",
+    "typescript": "^4.3.5",
+    "webextension-polyfill-ts": "^0.26.0"
+  },
+  "dependencies": {}
+}
