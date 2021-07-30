@@ -6,4 +6,4 @@ swift:
 	quicktype -o Svadilfari/SharedTypes.swift --src-lang schema Schema/*.yml
 .PHONY: typescript
 typescript:
-	quicktype -o SharedTypes.ts --nice-property-names --src-lang schema Schema/*.yml
+	quicktype -o Web/src/SharedTypes.ts --nice-property-names --src-lang schema Schema/*.yml

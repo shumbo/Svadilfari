@@ -1,0 +1,9 @@
+title: Pattern
+type: object
+properties:
+  data:
+    type: array
+    items:
+      $ref: ./Vector.yml
+required:
+  - data
