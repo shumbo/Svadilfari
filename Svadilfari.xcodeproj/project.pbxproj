@@ -16,6 +16,8 @@
 		24428E4126B33F5400B21130 /* HomeListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24428E4026B33F5400B21130 /* HomeListItem.swift */; };
 		24428E4426B3436A00B21130 /* HomeListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24428E4326B3436A00B21130 /* HomeListView.swift */; };
 		24A19E2C26B34F9500DA5E20 /* GestureListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A19E2B26B34F9500DA5E20 /* GestureListView.swift */; };
+		24C11E4926B4307100E018B5 /* SharedTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C11E4826B4307100E018B5 /* SharedTypes.swift */; };
+		24C11E4C26B4319C00E018B5 /* Action+init.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C11E4B26B4319C00E018B5 /* Action+init.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +50,8 @@
 		24428E4026B33F5400B21130 /* HomeListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeListItem.swift; sourceTree = "<group>"; };
 		24428E4326B3436A00B21130 /* HomeListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeListView.swift; sourceTree = "<group>"; };
 		24A19E2B26B34F9500DA5E20 /* GestureListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GestureListView.swift; sourceTree = "<group>"; };
+		24C11E4826B4307100E018B5 /* SharedTypes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SharedTypes.swift; sourceTree = "<group>"; };
+		24C11E4B26B4319C00E018B5 /* Action+init.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Action+init.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,7 +102,9 @@
 		24428E1526B33E7600B21130 /* Svadilfari */ = {
 			isa = PBXGroup;
 			children = (
+				24C11E4A26B430CC00E018B5 /* Extensions */,
 				24428E3E26B33F2A00B21130 /* UI */,
+				24C11E4826B4307100E018B5 /* SharedTypes.swift */,
 				24428E1626B33E7600B21130 /* SvadilfariApp.swift */,
 				24428E1A26B33E7700B21130 /* Assets.xcassets */,
 				24428E1C26B33E7700B21130 /* Preview Content */,
@@ -155,6 +161,14 @@
 				24A19E2B26B34F9500DA5E20 /* GestureListView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		24C11E4A26B430CC00E018B5 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				24C11E4B26B4319C00E018B5 /* Action+init.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -287,8 +301,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				24C11E4926B4307100E018B5 /* SharedTypes.swift in Sources */,
 				24428E1926B33E7600B21130 /* ContentView.swift in Sources */,
 				24428E4426B3436A00B21130 /* HomeListView.swift in Sources */,
+				24C11E4C26B4319C00E018B5 /* Action+init.swift in Sources */,
 				24428E1726B33E7600B21130 /* SvadilfariApp.swift in Sources */,
 				24428E4126B33F5400B21130 /* HomeListItem.swift in Sources */,
 				24A19E2C26B34F9500DA5E20 /* GestureListView.swift in Sources */,
