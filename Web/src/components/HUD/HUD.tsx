@@ -8,9 +8,22 @@ export type HUDProps = {
    * Control visibility of the HUD
    */
   visible: boolean;
+  /**
+   * Change the leave animation
+   */
   cancel: boolean;
+  /**
+   * Icon
+   * Load svg via svgr and pass the component
+   */
   icon?: VFC<React.SVGProps<SVGSVGElement>>;
+  /**
+   * Title
+   */
   title: string;
+  /**
+   * Message
+   */
   message?: string;
 };
 
@@ -21,8 +34,6 @@ export const HUD: VFC<HUDProps> = ({
   message,
   cancel,
 }) => {
-  console.log(Icon);
-
   const transitions = useTransition(visible, {
     from: { opacity: 0, scale: 0.8 },
     enter: { opacity: 1, scale: 1 },
