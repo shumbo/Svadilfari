@@ -12,11 +12,14 @@
     "@storybook/react": "^6.3.6",
     "@svgr/webpack": "^5.5.0",
     "@types/jest": "^26.0.24",
+    "@types/react": "^17.0.15",
+    "@types/react-dom": "^17.0.9",
     "babel-loader": "^8.2.2",
     "esbuild": "^0.12.17",
     "jest": "^27.0.6",
     "ts-jest": "^27.0.4",
     "typescript": "^4.3.5",
+    "vite": "^2.4.4",
     "webextension-polyfill-ts": "^0.26.0"
   },
   "dependencies": {
@@ -26,6 +29,7 @@
     "modern-css-reset": "^1.4.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-shadow": "^19.0.2",
     "react-spring": "^9.2.4"
   },
   "scripts": {

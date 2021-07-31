@@ -1,5 +1,5 @@
 (() => {
-  // src/content.ts
+  // src/content/content.ts
   console.log("hello from content 333");
   browser.runtime.sendMessage({ greeting: "hello" }).then((response) => {
     console.log("Received response: ", response);

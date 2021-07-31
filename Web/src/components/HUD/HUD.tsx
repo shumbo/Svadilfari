@@ -46,7 +46,20 @@ export const HUD: VFC<HUDProps> = ({
   return transitions(
     ({ opacity, scale }, item) =>
       item && (
-        <animated.div style={{ opacity, scale }}>
+        <animated.div
+          style={{
+            opacity,
+            scale,
+            position: "fixed",
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
           <Wrapper>
             {Icon && (
               <IconWrapper>

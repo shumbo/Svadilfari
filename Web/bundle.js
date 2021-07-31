@@ -1,7 +1,7 @@
 const esbuild = require("esbuild");
 
 esbuild.build({
-  entryPoints: ["src/content.ts"],
+  entryPoints: ["src/content/content.ts"],
   bundle: true,
   outfile: "../SvadilfariExtension/Resources/content.js",
   watch: !!process.env["watch"],
