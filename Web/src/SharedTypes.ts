@@ -1,13 +1,56 @@
 // To parse this data:
 //
-//   import { Convert, Pattern, Point, Vector } from "./file";
+//   import { Convert, Action, Gesture, Pattern, Point, Vector } from "./file";
 //
+//   const action = Convert.toAction(json);
+//   const gesture = Convert.toGesture(json);
 //   const pattern = Convert.toPattern(json);
 //   const point = Convert.toPoint(json);
 //   const vector = Convert.toVector(json);
 //
 // These functions will throw an error if the JSON doesn't
 // match the expected interface, even if the JSON is valid.
+
+export interface Gesture {
+    action:  Action;
+    enabled: boolean;
+    /**
+     * Number of fingers to perform the gesture
+     */
+    fingers: number;
+    id:      string;
+    pattern: Pattern;
+}
+
+export interface Action {
+    reload?:        ReloadAction;
+    runJavascript?: RunJavaScriptAction;
+    tabClose?:      TabCloseAction;
+    tabNext?:       TabNextAction;
+    tabPrevious?:   TabPreviousAction;
+}
+
+export interface ReloadAction {
+    action: boolean;
+}
+
+export interface RunJavaScriptAction {
+    action:       boolean;
+    code:         string;
+    description?: string;
+}
+
+export interface TabCloseAction {
+    action: boolean;
+}
+
+export interface TabNextAction {
+    action: boolean;
+}
+
+export interface TabPreviousAction {
+    action: boolean;
+}
 
 export interface Pattern {
     data: Vector[];
@@ -26,6 +69,22 @@ export interface Point {
 // Converts JSON strings to/from your types
 // and asserts the results of JSON.parse at runtime
 export class Convert {
+    public static toAction(json: string): Action {
+        return cast(JSON.parse(json), r("Action"));
+    }
+
+    public static actionToJson(value: Action): string {
+        return JSON.stringify(uncast(value, r("Action")), null, 2);
+    }
+
+    public static toGesture(json: string): Gesture {
+        return cast(JSON.parse(json), r("Gesture"));
+    }
+
+    public static gestureToJson(value: Gesture): string {
+        return JSON.stringify(uncast(value, r("Gesture")), null, 2);
+    }
+
     public static toPattern(json: string): Pattern {
         return cast(JSON.parse(json), r("Pattern"));
     }
@@ -184,6 +243,37 @@ function r(name: string) {
 }
 
 const typeMap: any = {
+    "Gesture": o([
+        { json: "action", js: "action", typ: r("Action") },
+        { json: "enabled", js: "enabled", typ: true },
+        { json: "fingers", js: "fingers", typ: 0 },
+        { json: "id", js: "id", typ: "" },
+        { json: "pattern", js: "pattern", typ: r("Pattern") },
+    ], "any"),
+    "Action": o([
+        { json: "reload", js: "reload", typ: u(undefined, r("ReloadAction")) },
+        { json: "run_javascript", js: "runJavascript", typ: u(undefined, r("RunJavaScriptAction")) },
+        { json: "tab_close", js: "tabClose", typ: u(undefined, r("TabCloseAction")) },
+        { json: "tab_next", js: "tabNext", typ: u(undefined, r("TabNextAction")) },
+        { json: "tab_previous", js: "tabPrevious", typ: u(undefined, r("TabPreviousAction")) },
+    ], "any"),
+    "ReloadAction": o([
+        { json: "action", js: "action", typ: true },
+    ], "any"),
+    "RunJavaScriptAction": o([
+        { json: "action", js: "action", typ: true },
+        { json: "code", js: "code", typ: "" },
+        { json: "description", js: "description", typ: u(undefined, "") },
+    ], "any"),
+    "TabCloseAction": o([
+        { json: "action", js: "action", typ: true },
+    ], "any"),
+    "TabNextAction": o([
+        { json: "action", js: "action", typ: true },
+    ], "any"),
+    "TabPreviousAction": o([
+        { json: "action", js: "action", typ: true },
+    ], "any"),
     "Pattern": o([
         { json: "data", js: "data", typ: a(r("Vector")) },
     ], "any"),

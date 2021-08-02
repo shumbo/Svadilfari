@@ -1,0 +1,15 @@
+type: object
+title: Action
+minProperties: 1
+maxProperties: 1
+properties:
+  reload:
+    $ref: ./Action/ReloadAction.yml
+  tab_close:
+    $ref: ./Action/TabCloseAction.yml
+  tab_next:
+    $ref: ./Action/TabNextAction.yml
+  tab_previous:
+    $ref: ./Action/TabPreviousAction.yml
+  run_javascript:
+    $ref: ./Action/RunJavaScriptAction.yml

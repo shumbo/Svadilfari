@@ -16,6 +16,11 @@
 		24428E4126B33F5400B21130 /* HomeListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24428E4026B33F5400B21130 /* HomeListItem.swift */; };
 		24428E4426B3436A00B21130 /* HomeListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24428E4326B3436A00B21130 /* HomeListView.swift */; };
 		24A19E2C26B34F9500DA5E20 /* GestureListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A19E2B26B34F9500DA5E20 /* GestureListView.swift */; };
+		24B224A026B5E445009EAB48 /* GestureListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B2249F26B5E445009EAB48 /* GestureListItem.swift */; };
+		24B224A226B5E6B4009EAB48 /* Gesture+Title.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B224A126B5E6B3009EAB48 /* Gesture+Title.swift */; };
+		24B224A526B5EB9A009EAB48 /* LineSmoother.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B224A426B5EB9A009EAB48 /* LineSmoother.swift */; };
+		24B224A726B5EDE0009EAB48 /* PatternPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B224A626B5EDE0009EAB48 /* PatternPreview.swift */; };
+		24B224AA26B5EEFC009EAB48 /* Vector+point.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B224A926B5EEFB009EAB48 /* Vector+point.swift */; };
 		24C11E4926B4307100E018B5 /* SharedTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C11E4826B4307100E018B5 /* SharedTypes.swift */; };
 		24C11E5426B4366B00E018B5 /* SafariWebExtensionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C11E5326B4366B00E018B5 /* SafariWebExtensionHandler.swift */; };
 		24C11E5726B4366B00E018B5 /* _locales in Resources */ = {isa = PBXBuildFile; fileRef = 24C11E5626B4366B00E018B5 /* _locales */; };
@@ -27,6 +32,9 @@
 		24C11E6326B4366B00E018B5 /* popup.css in Resources */ = {isa = PBXBuildFile; fileRef = 24C11E6226B4366B00E018B5 /* popup.css */; };
 		24C11E6526B4366B00E018B5 /* popup.js in Resources */ = {isa = PBXBuildFile; fileRef = 24C11E6426B4366B00E018B5 /* popup.js */; };
 		24C11E6926B4366B00E018B5 /* SvadilfariExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 24C11E5126B4366B00E018B5 /* SvadilfariExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		24E29CFE26B5F576003AF136 /* Pattern+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24E29CFD26B5F576003AF136 /* Pattern+.swift */; };
+		24E29D0026B5F8A3003AF136 /* UIBezierPath+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24E29CFF26B5F8A3003AF136 /* UIBezierPath+.swift */; };
+		24FAA2B426B8AF360083FFAB /* NavigationLink+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24FAA2B326B8AF360083FFAB /* NavigationLink+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +88,11 @@
 		24428E4026B33F5400B21130 /* HomeListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeListItem.swift; sourceTree = "<group>"; };
 		24428E4326B3436A00B21130 /* HomeListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeListView.swift; sourceTree = "<group>"; };
 		24A19E2B26B34F9500DA5E20 /* GestureListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GestureListView.swift; sourceTree = "<group>"; };
+		24B2249F26B5E445009EAB48 /* GestureListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GestureListItem.swift; sourceTree = "<group>"; };
+		24B224A126B5E6B3009EAB48 /* Gesture+Title.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Gesture+Title.swift"; sourceTree = "<group>"; };
+		24B224A426B5EB9A009EAB48 /* LineSmoother.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineSmoother.swift; sourceTree = "<group>"; };
+		24B224A626B5EDE0009EAB48 /* PatternPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatternPreview.swift; sourceTree = "<group>"; };
+		24B224A926B5EEFB009EAB48 /* Vector+point.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Vector+point.swift"; sourceTree = "<group>"; };
 		24C11E4826B4307100E018B5 /* SharedTypes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SharedTypes.swift; sourceTree = "<group>"; };
 		24C11E5126B4366B00E018B5 /* SvadilfariExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = SvadilfariExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		24C11E5326B4366B00E018B5 /* SafariWebExtensionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariWebExtensionHandler.swift; sourceTree = "<group>"; };
@@ -92,6 +105,9 @@
 		24C11E6226B4366B00E018B5 /* popup.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = popup.css; sourceTree = "<group>"; };
 		24C11E6426B4366B00E018B5 /* popup.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = popup.js; sourceTree = "<group>"; };
 		24C11E6626B4366B00E018B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		24E29CFD26B5F576003AF136 /* Pattern+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Pattern+.swift"; sourceTree = "<group>"; };
+		24E29CFF26B5F8A3003AF136 /* UIBezierPath+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIBezierPath+.swift"; sourceTree = "<group>"; };
+		24FAA2B326B8AF360083FFAB /* NavigationLink+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NavigationLink+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,6 +167,8 @@
 		24428E1526B33E7600B21130 /* Svadilfari */ = {
 			isa = PBXGroup;
 			children = (
+				24B224A826B5EEEE009EAB48 /* Extensions */,
+				24B224A326B5EB71009EAB48 /* Misc */,
 				24428E3E26B33F2A00B21130 /* UI */,
 				24C11E4826B4307100E018B5 /* SharedTypes.swift */,
 				24428E1626B33E7600B21130 /* SvadilfariApp.swift */,
@@ -198,6 +216,8 @@
 			isa = PBXGroup;
 			children = (
 				24428E4026B33F5400B21130 /* HomeListItem.swift */,
+				24B2249F26B5E445009EAB48 /* GestureListItem.swift */,
+				24B224A626B5EDE0009EAB48 /* PatternPreview.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -209,6 +229,26 @@
 				24A19E2B26B34F9500DA5E20 /* GestureListView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		24B224A326B5EB71009EAB48 /* Misc */ = {
+			isa = PBXGroup;
+			children = (
+				24B224A426B5EB9A009EAB48 /* LineSmoother.swift */,
+			);
+			path = Misc;
+			sourceTree = "<group>";
+		};
+		24B224A826B5EEEE009EAB48 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				24B224A126B5E6B3009EAB48 /* Gesture+Title.swift */,
+				24B224A926B5EEFB009EAB48 /* Vector+point.swift */,
+				24E29CFD26B5F576003AF136 /* Pattern+.swift */,
+				24E29CFF26B5F8A3003AF136 /* UIBezierPath+.swift */,
+				24FAA2B326B8AF360083FFAB /* NavigationLink+.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		24C11E5226B4366B00E018B5 /* SvadilfariExtension */ = {
@@ -406,10 +446,18 @@
 			files = (
 				24C11E4926B4307100E018B5 /* SharedTypes.swift in Sources */,
 				24428E1926B33E7600B21130 /* ContentView.swift in Sources */,
+				24E29CFE26B5F576003AF136 /* Pattern+.swift in Sources */,
+				24B224A526B5EB9A009EAB48 /* LineSmoother.swift in Sources */,
+				24B224A226B5E6B4009EAB48 /* Gesture+Title.swift in Sources */,
+				24FAA2B426B8AF360083FFAB /* NavigationLink+.swift in Sources */,
+				24B224AA26B5EEFC009EAB48 /* Vector+point.swift in Sources */,
 				24428E4426B3436A00B21130 /* HomeListView.swift in Sources */,
+				24B224A726B5EDE0009EAB48 /* PatternPreview.swift in Sources */,
 				24428E1726B33E7600B21130 /* SvadilfariApp.swift in Sources */,
+				24B224A026B5E445009EAB48 /* GestureListItem.swift in Sources */,
 				24428E4126B33F5400B21130 /* HomeListItem.swift in Sources */,
 				24A19E2C26B34F9500DA5E20 /* GestureListView.swift in Sources */,
+				24E29D0026B5F8A3003AF136 /* UIBezierPath+.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -591,7 +639,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -622,7 +670,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

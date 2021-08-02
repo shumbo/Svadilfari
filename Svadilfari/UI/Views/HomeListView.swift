@@ -12,7 +12,9 @@ struct HomeListView: View {
         NavigationView {
             List {
                 Section {
-                    HomeListItem(title: "Start Tutorial", description: "Learn how to use gestures", image: Image(systemName: "checkmark.circle.fill"))
+                    NavigationLink(destination: EmptyView()) {
+                        HomeListItem(title: "Start Tutorial", description: "Learn how to use gestures", image: Image(systemName: "checkmark.circle.fill"))
+                    }.contentShape(Rectangle())
                 }
                 Section {
                     NavigationLink(destination: GestureListView()) {

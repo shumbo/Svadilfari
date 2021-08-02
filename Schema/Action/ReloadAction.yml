@@ -1,0 +1,8 @@
+title: ReloadAction
+type: object
+properties:
+  action:
+    type: boolean
+    default: true
+required:
+  - action

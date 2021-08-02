@@ -1,0 +1,8 @@
+title: TabNextAction
+type: object
+properties:
+  action:
+    type: boolean
+    default: true
+required:
+  - action
