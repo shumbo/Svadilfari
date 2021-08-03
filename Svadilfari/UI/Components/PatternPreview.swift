@@ -11,7 +11,7 @@ import UIKit
 struct PatternPreview: UIViewRepresentable {
     let frame: CGRect
     var pattern: Pattern
-    
+
     func makeUIView(context: Context) -> UIView {
         let view = UIView()
         view.setContentHuggingPriority(.required, for: .horizontal) // << here !!
@@ -31,12 +31,12 @@ struct PatternPreview: UIViewRepresentable {
                 bezierPath.addCurve(to: point, controlPoint1: segment.0, controlPoint2: segment.1)
             }
         }
-        
+
         let duration = 3.0
         _ = bezierPath.fit(into: self.frame.insetBy(dx: 8, dy: 8)).moveCenter(to: self.frame.center)
-        
+
         uiView.layer.sublayers = nil
-        
+
         let dashedLayer = CAShapeLayer()
         dashedLayer.path = bezierPath.cgPath
         dashedLayer.strokeColor = UIColor.systemBlue.cgColor
@@ -44,7 +44,7 @@ struct PatternPreview: UIViewRepresentable {
         dashedLayer.lineWidth = 1
         dashedLayer.lineDashPattern = [2]
         uiView.layer.addSublayer(dashedLayer)
-        
+
         let shapeLayer = CAShapeLayer()
         shapeLayer.path = bezierPath.cgPath
         shapeLayer.lineWidth = 2
@@ -64,7 +64,7 @@ struct PatternPreview: UIViewRepresentable {
         endAnimation.duration = duration
         endAnimation.repeatCount = .infinity
         shapeLayer.add(endAnimation, forKey: "drawKeyAnimation2")
-        
+
         // arrow head
         let arrowHeadPath = UIBezierPath()
         arrowHeadPath.move(to: CGPoint(x: -5, y: 5))
@@ -76,26 +76,30 @@ struct PatternPreview: UIViewRepresentable {
         arrowHeadLayer.fillColor = UIColor.systemBlue.cgColor
         arrowHeadLayer.lineWidth = 2
         uiView.layer.addSublayer(arrowHeadLayer)
-        
+
         let arrowPositionAnimation = CAKeyframeAnimation(keyPath: "position")
         arrowPositionAnimation.path = shapeLayer.path
         arrowPositionAnimation.duration = 0.4 * duration
         arrowPositionAnimation.calculationMode = .paced
         arrowPositionAnimation.isRemovedOnCompletion = false
         arrowPositionAnimation.fillMode = .forwards
-        
+
         let arrowAnimationGroup = CAAnimationGroup()
         arrowAnimationGroup.duration = duration
         arrowAnimationGroup.animations = [arrowPositionAnimation]
         arrowAnimationGroup.repeatCount = .infinity
         arrowHeadLayer.add(arrowAnimationGroup, forKey: nil)
     }
-    
+
 }
 
 struct PatternPreview_Previews: PreviewProvider {
     static var previews: some View {
-        PatternPreview(frame: CGRect(x: 0, y: 0, width: 100, height: 100), pattern: Pattern(data: [Vector(x: 100.0, y: 0.0),Vector(x: 0.0, y: 100.0)]))
-            
+        PatternPreview(
+            frame: CGRect(x: 0, y: 0, width: 100, height: 100),
+            pattern: Pattern(
+                data: [Vector(x: 100.0, y: 0.0), Vector(x: 0.0, y: 100.0)]
+            )
+        )
     }
 }

@@ -9,8 +9,6 @@ import CoreGraphics
 
 extension Vector {
     var point: CGPoint {
-        get {
-            return CGPoint(x: self.x, y: self.y)
-        }
+        return CGPoint(x: self.x, y: self.y)
     }
 }

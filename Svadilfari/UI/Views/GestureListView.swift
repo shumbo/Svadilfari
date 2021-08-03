@@ -9,9 +9,12 @@ import SwiftUI
 
 struct GestureListView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/).navigationBarHidden(false).navigationBarTitle("Gesture").navigationBarItems(trailing: Button("+") {
-            
-        })
+        Text("Hello World")
+            .navigationBarHidden(false)
+            .navigationBarTitle("Gesture")
+            .navigationBarItems(trailing: Button("+") {
+                print("add")
+            })
     }
 }
 

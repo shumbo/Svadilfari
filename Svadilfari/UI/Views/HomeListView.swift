@@ -13,14 +13,26 @@ struct HomeListView: View {
             List {
                 Section {
                     NavigationLink(destination: EmptyView()) {
-                        HomeListItem(title: "Start Tutorial", description: "Learn how to use gestures", image: Image(systemName: "checkmark.circle.fill"))
+                        HomeListItem(
+                            title: "Start Tutorial",
+                            description: "Learn how to use gestures",
+                            image: Image(systemName: "checkmark.circle.fill")
+                        )
                     }.contentShape(Rectangle())
                 }
                 Section {
                     NavigationLink(destination: GestureListView()) {
-                        HomeListItem(title: "Gestures", description: "Manage gestures and actions", image: Image(systemName: "hand.draw.fill"))
+                        HomeListItem(
+                            title: "Gestures",
+                            description: "Manage gestures and actions",
+                            image: Image(systemName: "hand.draw.fill")
+                        )
                     }.listRowInsets(HomeListItem.listRowInsets)
-                    HomeListItem(title: "Exclusion List", description: "Specify websites you don't wish to use gestures", image: Image(systemName: "nosign"))
+                    HomeListItem(
+                        title: "Exclusion List",
+                        description: "Specify websites you don't wish to use gestures",
+                        image: Image(systemName: "nosign")
+                    )
                 }
             }.navigationBarHidden(true)
         }

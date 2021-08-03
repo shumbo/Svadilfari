@@ -1,0 +1,4 @@
+excluded:
+  - Svadilfari/SharedTypes.swift
+identifier_name:
+  min_length: 0
