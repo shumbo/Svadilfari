@@ -19,6 +19,10 @@ struct HomeListView: View {
                             image: Image(systemName: "checkmark.circle.fill")
                         )
                     }.contentShape(Rectangle())
+                        .onTapGesture {
+                        // TODO
+                        print("TODO")
+                    }
                 }
                 Section {
                     NavigationLink(destination: GestureListView()) {

@@ -6,15 +6,29 @@
 //
 
 import SwiftUI
+import CoreData
 
 struct GestureListView: View {
+    @State private var showingNewGestureView = false
+
+    /*
+    @FetchRequest(entity: GestureEntity.entity(), sortDescriptors: [], predicate: nil, animation: .default)
+    private var gestures: FetchedResults<GestureEntity>
+     */
+
     var body: some View {
         Text("Hello World")
             .navigationBarHidden(false)
             .navigationBarTitle("Gesture")
-            .navigationBarItems(trailing: Button("+") {
-                print("add")
-            })
+            .navigationBarItems(trailing: Button(action: {
+                self.showingNewGestureView = true
+            }) {
+                Image(systemName: "plus")
+            }).sheet(isPresented: $showingNewGestureView) {
+                NavigationView {
+                    NewGestureView()
+                }
+            }
     }
 }
 

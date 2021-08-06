@@ -8,7 +8,7 @@
 import SwiftUI
 import UIKit
 
-struct PatternPreview: UIViewRepresentable {
+private struct PatternPreviewContent: UIViewRepresentable {
     let frame: CGRect
     var pattern: Pattern
 
@@ -90,7 +90,29 @@ struct PatternPreview: UIViewRepresentable {
         arrowAnimationGroup.repeatCount = .infinity
         arrowHeadLayer.add(arrowAnimationGroup, forKey: nil)
     }
+}
 
+struct PatternPreview: View {
+    /**
+            When the view disappear and re-appears (e.g. go to another screen and come back),
+            the animations stop and never restarts.
+            To workaround, we increment the ID of the view on `onAppear`.
+            For this reason, updates on `frame` and `pattern` will not take effect.
+     */
+    @State private var id = 0
+
+    let frame: CGRect
+    var pattern: Pattern
+
+    var body: some View {
+        PatternPreviewContent(
+            frame: self.frame,
+            pattern: self.pattern
+        ).id(self.id)
+            .onAppear {
+                self.id += 1
+            }
+    }
 }
 
 struct PatternPreview_Previews: PreviewProvider {
