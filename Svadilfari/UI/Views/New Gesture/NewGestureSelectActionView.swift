@@ -8,20 +8,23 @@
 import SwiftUI
 
 struct NewGestureSelectActionView: View {
+    @EnvironmentObject private var sheetState: SheetState
+
     // receive a selected pattern
     let pattern: Pattern
     let fingers: Int
 
     var body: some View {
         SelectActionView(onSelect: { action in
-            print("save gesture")
+            let id = UUID()
             let g = Gesture(
                 action: action,
                 enabled: true,
                 fingers: self.fingers,
-                id: UUID().uuidString,
+                id: id.uuidString,
                 pattern: self.pattern
             )
+            self.sheetState.presented = false
         })
     }
 }

@@ -9,25 +9,26 @@ import SwiftUI
 import CoreData
 
 struct GestureListView: View {
-    @State private var showingNewGestureView = false
+    @StateObject private var newGestureState = SheetState()
 
-    /*
     @FetchRequest(entity: GestureEntity.entity(), sortDescriptors: [], predicate: nil, animation: .default)
     private var gestures: FetchedResults<GestureEntity>
-     */
 
     var body: some View {
         Text("Hello World")
             .navigationBarHidden(false)
             .navigationBarTitle("Gesture")
             .navigationBarItems(trailing: Button(action: {
-                self.showingNewGestureView = true
+                self.newGestureState.presented = true
             }) {
                 Image(systemName: "plus")
-            }).sheet(isPresented: $showingNewGestureView) {
+            }).sheet(isPresented: Binding(
+                get: { self.newGestureState.presented },
+                set: { self.newGestureState.presented = $0 }
+            )) {
                 NavigationView {
                     NewGestureView()
-                }
+                }.environmentObject(self.newGestureState)
             }
     }
 }

@@ -24,6 +24,7 @@
 		245A016826B9A29200EEE8CD /* GestureTemplateButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245A016726B9A29200EEE8CD /* GestureTemplateButton.swift */; };
 		245A016B26B9ACD900EEE8CD /* NewGesturePresetsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245A016A26B9ACD900EEE8CD /* NewGesturePresetsView.swift */; };
 		245A016D26B9CCCA00EEE8CD /* NewGesturePatternConfirmView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245A016C26B9CCCA00EEE8CD /* NewGesturePatternConfirmView.swift */; };
+		2485834C26BCC2DE00A8836E /* SheetState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2485834B26BCC2DE00A8836E /* SheetState.swift */; };
 		24A19E2C26B34F9500DA5E20 /* GestureListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A19E2B26B34F9500DA5E20 /* GestureListView.swift */; };
 		24B224A026B5E445009EAB48 /* GestureListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B2249F26B5E445009EAB48 /* GestureListItem.swift */; };
 		24B224A226B5E6B4009EAB48 /* Gesture+Title.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B224A126B5E6B3009EAB48 /* Gesture+Title.swift */; };
@@ -109,6 +110,7 @@
 		245A016726B9A29200EEE8CD /* GestureTemplateButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GestureTemplateButton.swift; sourceTree = "<group>"; };
 		245A016A26B9ACD900EEE8CD /* NewGesturePresetsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewGesturePresetsView.swift; sourceTree = "<group>"; };
 		245A016C26B9CCCA00EEE8CD /* NewGesturePatternConfirmView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewGesturePatternConfirmView.swift; sourceTree = "<group>"; };
+		2485834B26BCC2DE00A8836E /* SheetState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetState.swift; sourceTree = "<group>"; };
 		24A19E2B26B34F9500DA5E20 /* GestureListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GestureListView.swift; sourceTree = "<group>"; };
 		24B2249F26B5E445009EAB48 /* GestureListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GestureListItem.swift; sourceTree = "<group>"; };
 		24B224A126B5E6B3009EAB48 /* Gesture+Title.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Gesture+Title.swift"; sourceTree = "<group>"; };
@@ -297,6 +299,7 @@
 			isa = PBXGroup;
 			children = (
 				24B224A426B5EB9A009EAB48 /* LineSmoother.swift */,
+				2485834B26BCC2DE00A8836E /* SheetState.swift */,
 			);
 			path = Misc;
 			sourceTree = "<group>";
@@ -558,6 +561,7 @@
 				241D8FC026BC7BDC00CBB381 /* SelectActionView.swift in Sources */,
 				241D8FB926BC1F2200CBB381 /* Action+.swift in Sources */,
 				24B224AA26B5EEFC009EAB48 /* Vector+point.swift in Sources */,
+				2485834C26BCC2DE00A8836E /* SheetState.swift in Sources */,
 				241D8FC226BC7E1600CBB381 /* RunJavascriptActionConfigView.swift in Sources */,
 				245A016826B9A29200EEE8CD /* GestureTemplateButton.swift in Sources */,
 				245A016626B9A24600EEE8CD /* NewGestureView.swift in Sources */,
