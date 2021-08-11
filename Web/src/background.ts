@@ -15,11 +15,10 @@ browser.runtime.onMessage.addListener((request, sender, sendResponse) => {
       if (!sender?.tab?.id) {
         break;
       }
-      browser.tabs
-        .sendMessage(sender.tab.id, req.payload, { frameId: 0 })
-        .then((response) => {
-          sendResponse(response);
-        });
+      // FIXME: only send messages to the top frame
+      browser.tabs.sendMessage(sender.tab.id, req.payload).then((response) => {
+        sendResponse(response);
+      });
       break;
     }
     case "EXECUTE_ACTION": {

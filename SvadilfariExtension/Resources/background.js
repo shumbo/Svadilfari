@@ -14,7 +14,7 @@
         if (!sender?.tab?.id) {
           break;
         }
-        browser.tabs.sendMessage(sender.tab.id, req.payload, { frameId: 0 }).then((response) => {
+        browser.tabs.sendMessage(sender.tab.id, req.payload).then((response) => {
           sendResponse(response);
         });
         break;
@@ -36,7 +36,7 @@
             sendResponse(true);
           });
         }
-        if (!!action.tabClose) {
+        if (action.tabClose) {
           browser.tabs.remove(tabId).then(() => {
             sendResponse(true);
           });

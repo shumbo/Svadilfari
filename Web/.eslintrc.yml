@@ -19,6 +19,10 @@ plugins:
 rules:
   react/prop-types: off
   react/self-closing-comp: error
+  "@typescript-eslint/no-unused-vars":
+    - 1
+    - argsIgnorePattern: "^_"
+
 settings:
   react:
     version: detect

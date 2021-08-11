@@ -399,27 +399,27 @@
           {
             didWarnAboutStringRefs = {};
           }
-          function hasValidRef(config3) {
+          function hasValidRef(config2) {
             {
-              if (hasOwnProperty2.call(config3, "ref")) {
-                var getter = Object.getOwnPropertyDescriptor(config3, "ref").get;
+              if (hasOwnProperty2.call(config2, "ref")) {
+                var getter = Object.getOwnPropertyDescriptor(config2, "ref").get;
                 if (getter && getter.isReactWarning) {
                   return false;
                 }
               }
             }
-            return config3.ref !== void 0;
+            return config2.ref !== void 0;
           }
-          function hasValidKey(config3) {
+          function hasValidKey(config2) {
             {
-              if (hasOwnProperty2.call(config3, "key")) {
-                var getter = Object.getOwnPropertyDescriptor(config3, "key").get;
+              if (hasOwnProperty2.call(config2, "key")) {
+                var getter = Object.getOwnPropertyDescriptor(config2, "key").get;
                 if (getter && getter.isReactWarning) {
                   return false;
                 }
               }
             }
-            return config3.key !== void 0;
+            return config2.key !== void 0;
           }
           function defineKeyPropWarningGetter(props, displayName) {
             var warnAboutAccessingKey = function() {
@@ -451,12 +451,12 @@
               configurable: true
             });
           }
-          function warnIfStringRefCannotBeAutoConverted(config3) {
+          function warnIfStringRefCannotBeAutoConverted(config2) {
             {
-              if (typeof config3.ref === "string" && ReactCurrentOwner.current && config3.__self && ReactCurrentOwner.current.stateNode !== config3.__self) {
+              if (typeof config2.ref === "string" && ReactCurrentOwner.current && config2.__self && ReactCurrentOwner.current.stateNode !== config2.__self) {
                 var componentName = getComponentName(ReactCurrentOwner.current.type);
                 if (!didWarnAboutStringRefs[componentName]) {
-                  error('Component "%s" contains the string ref "%s". Support for string refs will be removed in a future major release. This case cannot be automatically converted to an arrow function. We ask you to manually fix this case by using useRef() or createRef() instead. Learn more about using refs safely here: https://reactjs.org/link/strict-mode-string-ref', componentName, config3.ref);
+                  error('Component "%s" contains the string ref "%s". Support for string refs will be removed in a future major release. This case cannot be automatically converted to an arrow function. We ask you to manually fix this case by using useRef() or createRef() instead. Learn more about using refs safely here: https://reactjs.org/link/strict-mode-string-ref', componentName, config2.ref);
                   didWarnAboutStringRefs[componentName] = true;
                 }
               }
@@ -498,28 +498,28 @@
             }
             return element;
           };
-          function createElement8(type, config3, children) {
+          function createElement8(type, config2, children) {
             var propName;
             var props = {};
             var key = null;
             var ref = null;
             var self2 = null;
             var source = null;
-            if (config3 != null) {
-              if (hasValidRef(config3)) {
-                ref = config3.ref;
+            if (config2 != null) {
+              if (hasValidRef(config2)) {
+                ref = config2.ref;
                 {
-                  warnIfStringRefCannotBeAutoConverted(config3);
+                  warnIfStringRefCannotBeAutoConverted(config2);
                 }
               }
-              if (hasValidKey(config3)) {
-                key = "" + config3.key;
+              if (hasValidKey(config2)) {
+                key = "" + config2.key;
               }
-              self2 = config3.__self === void 0 ? null : config3.__self;
-              source = config3.__source === void 0 ? null : config3.__source;
-              for (propName in config3) {
-                if (hasOwnProperty2.call(config3, propName) && !RESERVED_PROPS2.hasOwnProperty(propName)) {
-                  props[propName] = config3[propName];
+              self2 = config2.__self === void 0 ? null : config2.__self;
+              source = config2.__source === void 0 ? null : config2.__source;
+              for (propName in config2) {
+                if (hasOwnProperty2.call(config2, propName) && !RESERVED_PROPS2.hasOwnProperty(propName)) {
+                  props[propName] = config2[propName];
                 }
               }
             }
@@ -563,7 +563,7 @@
             var newElement = ReactElement(oldElement.type, newKey, oldElement.ref, oldElement._self, oldElement._source, oldElement._owner, oldElement.props);
             return newElement;
           }
-          function cloneElement(element, config3, children) {
+          function cloneElement(element, config2, children) {
             if (!!(element === null || element === void 0)) {
               {
                 throw Error("React.cloneElement(...): The argument must be a React element, but you passed " + element + ".");
@@ -576,24 +576,24 @@
             var self2 = element._self;
             var source = element._source;
             var owner = element._owner;
-            if (config3 != null) {
-              if (hasValidRef(config3)) {
-                ref = config3.ref;
+            if (config2 != null) {
+              if (hasValidRef(config2)) {
+                ref = config2.ref;
                 owner = ReactCurrentOwner.current;
               }
-              if (hasValidKey(config3)) {
-                key = "" + config3.key;
+              if (hasValidKey(config2)) {
+                key = "" + config2.key;
               }
               var defaultProps;
               if (element.type && element.type.defaultProps) {
                 defaultProps = element.type.defaultProps;
               }
-              for (propName in config3) {
-                if (hasOwnProperty2.call(config3, propName) && !RESERVED_PROPS2.hasOwnProperty(propName)) {
-                  if (config3[propName] === void 0 && defaultProps !== void 0) {
+              for (propName in config2) {
+                if (hasOwnProperty2.call(config2, propName) && !RESERVED_PROPS2.hasOwnProperty(propName)) {
+                  if (config2[propName] === void 0 && defaultProps !== void 0) {
                     props[propName] = defaultProps[propName];
                   } else {
-                    props[propName] = config3[propName];
+                    props[propName] = config2[propName];
                   }
                 }
               }
@@ -1064,7 +1064,7 @@
             var dispatcher = resolveDispatcher();
             return dispatcher.useLayoutEffect(create, deps);
           }
-          function useCallback5(callback, deps) {
+          function useCallback6(callback, deps) {
             var dispatcher = resolveDispatcher();
             return dispatcher.useCallback(callback, deps);
           }
@@ -1623,7 +1623,7 @@
           exports.isValidElement = isValidElement;
           exports.lazy = lazy;
           exports.memo = memo;
-          exports.useCallback = useCallback5;
+          exports.useCallback = useCallback6;
           exports.useContext = useContext5;
           exports.useDebugValue = useDebugValue;
           exports.useEffect = useEffect8;
@@ -2488,7 +2488,7 @@
           var HostPortal = 4;
           var HostComponent = 5;
           var HostText = 6;
-          var Fragment2 = 7;
+          var Fragment3 = 7;
           var Mode = 8;
           var ContextConsumer = 9;
           var ContextProvider = 10;
@@ -8392,10 +8392,10 @@
           function getOwnerDocumentFromRootContainer(rootContainerElement) {
             return rootContainerElement.nodeType === DOCUMENT_NODE ? rootContainerElement : rootContainerElement.ownerDocument;
           }
-          function noop2() {
+          function noop3() {
           }
           function trapClickOnNonInteractiveElement(node2) {
-            node2.onclick = noop2;
+            node2.onclick = noop3;
           }
           function setInitialDOMProperties(tag, domElement, rootContainerElement, nextProps, isCustomComponentTag) {
             for (var propKey in nextProps) {
@@ -11672,7 +11672,7 @@
               }
             }
             function updateFragment2(returnFiber, current2, fragment, lanes, key) {
-              if (current2 === null || current2.tag !== Fragment2) {
+              if (current2 === null || current2.tag !== Fragment3) {
                 var created = createFiberFromFragment(fragment, returnFiber.mode, lanes, key);
                 created.return = returnFiber;
                 return created;
@@ -12040,7 +12040,7 @@
               while (child !== null) {
                 if (child.key === key) {
                   switch (child.tag) {
-                    case Fragment2: {
+                    case Fragment3: {
                       if (element.type === REACT_FRAGMENT_TYPE) {
                         deleteRemainingChildren(returnFiber, child.sibling);
                         var existing = useFiber(child, element.props.children);
@@ -15644,7 +15644,7 @@
                 var _resolvedProps2 = workInProgress2.elementType === type ? _unresolvedProps2 : resolveDefaultProps(type, _unresolvedProps2);
                 return updateForwardRef(current2, workInProgress2, type, _resolvedProps2, renderLanes2);
               }
-              case Fragment2:
+              case Fragment3:
                 return updateFragment(current2, workInProgress2, renderLanes2);
               case Mode:
                 return updateMode(current2, workInProgress2, renderLanes2);
@@ -15811,7 +15811,7 @@
               case SimpleMemoComponent:
               case FunctionComponent:
               case ForwardRef:
-              case Fragment2:
+              case Fragment3:
               case Mode:
               case Profiler:
               case ContextConsumer:
@@ -19515,7 +19515,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
             return fiber;
           }
           function createFiberFromFragment(elements, mode, lanes, key) {
-            var fiber = createFiber(Fragment2, elements, key, mode);
+            var fiber = createFiber(Fragment3, elements, key, mode);
             fiber.lanes = lanes;
             return fiber;
           }
@@ -20916,7 +20916,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
           var ContextProvider = REACT_PROVIDER_TYPE;
           var Element = REACT_ELEMENT_TYPE;
           var ForwardRef = REACT_FORWARD_REF_TYPE;
-          var Fragment2 = REACT_FRAGMENT_TYPE;
+          var Fragment3 = REACT_FRAGMENT_TYPE;
           var Lazy = REACT_LAZY_TYPE;
           var Memo = REACT_MEMO_TYPE;
           var Portal = REACT_PORTAL_TYPE;
@@ -20975,7 +20975,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
           exports.ContextProvider = ContextProvider;
           exports.Element = Element;
           exports.ForwardRef = ForwardRef;
-          exports.Fragment = Fragment2;
+          exports.Fragment = Fragment3;
           exports.Lazy = Lazy;
           exports.Memo = Memo;
           exports.Portal = Portal;
@@ -21344,6 +21344,19 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
     ], "any")
   };
 
+  // src/content/utils/isEmbedFrame.ts
+  function isEmbededFrame() {
+    try {
+      return window.self !== window.top;
+    } catch (e) {
+      return true;
+    }
+  }
+
+  // src/utils/noop.ts
+  function noop() {
+  }
+
   // src/messenger/ContentMessanger.ts
   var ContentMessangerImpl = class {
     async getGesture() {
@@ -21362,6 +21375,61 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
         action
       };
       await browser.runtime.sendMessage(msg);
+    }
+    async forwardGestureChange(gesture) {
+      const forwardMsg = {
+        type: "GESTURE_CHANGE",
+        gesture
+      };
+      const msg = {
+        type: "TOP_FRAME_PROXY",
+        payload: forwardMsg
+      };
+      await browser.runtime.sendMessage(msg);
+    }
+    async forwardGestureRelease(gesture) {
+      const forwardMsg = {
+        type: "GESTURE_RELEASE",
+        gesture
+      };
+      const msg = {
+        type: "TOP_FRAME_PROXY",
+        payload: forwardMsg
+      };
+      await browser.runtime.sendMessage(msg);
+    }
+    onGestureChange(handler) {
+      if (isEmbededFrame()) {
+        return noop;
+      }
+      const listener = (message) => {
+        console.log("onGestureChange", message);
+        const payload = message;
+        if (payload.type !== "GESTURE_CHANGE") {
+          return;
+        }
+        handler(payload.gesture);
+      };
+      browser.runtime.onMessage.addListener(listener);
+      return () => {
+        browser.runtime.onMessage.removeListener(listener);
+      };
+    }
+    onGestureRelease(handler) {
+      if (isEmbededFrame()) {
+        return noop;
+      }
+      const listener = (message) => {
+        const payload = message;
+        if (payload.type !== "GESTURE_RELEASE") {
+          return;
+        }
+        handler(payload.gesture);
+      };
+      browser.runtime.onMessage.addListener(listener);
+      return () => {
+        browser.runtime.onMessage.removeListener(listener);
+      };
     }
   };
 
@@ -21635,7 +21703,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
         try {
           sheet.insertRule(rule, sheet.cssRules.length);
         } catch (e) {
-          if (!/:(-moz-placeholder|-ms-input-placeholder|-moz-read-write|-moz-read-only){/.test(rule)) {
+          if (!/:(-moz-placeholder|-moz-focus-inner|-moz-focusring|-ms-input-placeholder|-moz-read-write|-moz-read-only|-ms-clear){/.test(rule)) {
             console.error('There was a problem inserting the following rule: "' + rule + '"', e);
           }
         }
@@ -22343,7 +22411,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
   };
   var emotion_cache_browser_esm_default = createCache;
 
-  // node_modules/@emotion/react/dist/emotion-element-a8309070.browser.esm.js
+  // node_modules/@emotion/react/dist/emotion-element-99289b21.browser.esm.js
   var import_react5 = __toModule(require_react());
 
   // node_modules/@emotion/react/node_modules/@emotion/utils/dist/emotion-utils.browser.esm.js
@@ -22699,11 +22767,14 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_liter
     };
   };
 
-  // node_modules/@emotion/react/dist/emotion-element-a8309070.browser.esm.js
+  // node_modules/@emotion/react/dist/emotion-element-99289b21.browser.esm.js
   var hasOwnProperty = Object.prototype.hasOwnProperty;
   var EmotionCacheContext = /* @__PURE__ */ (0, import_react5.createContext)(typeof HTMLElement !== "undefined" ? /* @__PURE__ */ emotion_cache_browser_esm_default({
     key: "css"
   }) : null);
+  if (true) {
+    EmotionCacheContext.displayName = "EmotionCacheContext";
+  }
   var CacheProvider = EmotionCacheContext.Provider;
   var withEmotionCache = function withEmotionCache2(func) {
     return /* @__PURE__ */ (0, import_react5.forwardRef)(function(props, ref) {
@@ -22712,6 +22783,9 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_liter
     });
   };
   var ThemeContext = /* @__PURE__ */ (0, import_react5.createContext)({});
+  if (true) {
+    ThemeContext.displayName = "EmotionThemeContext";
+  }
   var typePropName = "__EMOTION_TYPE_PLEASE_DO_NOT_USE__";
   var labelPropName = "__EMOTION_LABEL_PLEASE_DO_NOT_USE__";
   var Emotion = /* @__PURE__ */ withEmotionCache(function(props, cache, ref) {
@@ -22727,7 +22801,7 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_liter
     } else if (props.className != null) {
       className = props.className + " ";
     }
-    var serialized = serializeStyles(registeredStyles, void 0, typeof cssProp === "function" || Array.isArray(cssProp) ? (0, import_react5.useContext)(ThemeContext) : void 0);
+    var serialized = serializeStyles(registeredStyles, void 0, (0, import_react5.useContext)(ThemeContext));
     if (serialized.name.indexOf("-") === -1) {
       var labelFromStack = props[labelPropName];
       if (labelFromStack) {
@@ -22818,7 +22892,7 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_liter
         try {
           sheet.insertRule(rule, sheet.cssRules.length);
         } catch (e) {
-          if (!/:(-moz-placeholder|-ms-input-placeholder|-moz-read-write|-moz-read-only){/.test(rule)) {
+          if (!/:(-moz-placeholder|-moz-focus-inner|-moz-focusring|-ms-input-placeholder|-moz-read-write|-moz-read-only|-ms-clear){/.test(rule)) {
             console.error('There was a problem inserting the following rule: "' + rule + '"', e);
           }
         }
@@ -22843,7 +22917,7 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_liter
   // node_modules/@emotion/react/dist/emotion-react.browser.esm.js
   var pkg = {
     name: "@emotion/react",
-    version: "11.4.0",
+    version: "11.4.1",
     main: "dist/emotion-react.cjs.js",
     module: "dist/emotion-react.esm.js",
     browser: {
@@ -22872,7 +22946,7 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_liter
       "@babel/runtime": "^7.13.10",
       "@emotion/cache": "^11.4.0",
       "@emotion/serialize": "^1.0.2",
-      "@emotion/sheet": "^1.0.1",
+      "@emotion/sheet": "^1.0.2",
       "@emotion/utils": "^1.0.0",
       "@emotion/weak-memoize": "^0.2.5",
       "hoist-non-react-statics": "^3.3.1"
@@ -22923,7 +22997,7 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_liter
       warnedAboutCssPropForGlobal = true;
     }
     var styles = props.styles;
-    var serialized = serializeStyles([styles], void 0, typeof styles === "function" || Array.isArray(styles) ? (0, import_react6.useContext)(ThemeContext) : void 0);
+    var serialized = serializeStyles([styles], void 0, (0, import_react6.useContext)(ThemeContext));
     var sheetRef = (0, import_react6.useRef)();
     (0, import_react6.useLayoutEffect)(function() {
       var key = cache.key + "-global";
@@ -23782,7 +23856,7 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_liter
   // node_modules/@react-spring/shared/dist/react-spring-shared.esm.js
   var React = __toModule(require_react());
   var import_react10 = __toModule(require_react());
-  function noop() {
+  function noop2() {
   }
   var defineHidden = (obj, key, value) => Object.defineProperty(obj, key, {
     value,
@@ -23830,7 +23904,7 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_liter
   var to;
   var colors$1 = null;
   var skipAnimation = false;
-  var willAdvance = noop;
+  var willAdvance = noop2;
   var assign = (globals2) => {
     if (globals2.to)
       to = globals2.to;
@@ -24210,15 +24284,15 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_liter
     if (is.str(range.output[0])) {
       return createStringInterpolator$1(range);
     }
-    const config3 = range;
-    const outputRange = config3.output;
-    const inputRange = config3.range || [0, 1];
-    const extrapolateLeft = config3.extrapolateLeft || config3.extrapolate || "extend";
-    const extrapolateRight = config3.extrapolateRight || config3.extrapolate || "extend";
-    const easing = config3.easing || ((t) => t);
+    const config2 = range;
+    const outputRange = config2.output;
+    const inputRange = config2.range || [0, 1];
+    const extrapolateLeft = config2.extrapolateLeft || config2.extrapolate || "extend";
+    const extrapolateRight = config2.extrapolateRight || config2.extrapolate || "extend";
+    const easing = config2.easing || ((t) => t);
     return (input) => {
       const range2 = findRange(input, inputRange);
-      return interpolate(input, inputRange[range2], inputRange[range2 + 1], outputRange[range2], outputRange[range2 + 1], easing, extrapolateLeft, extrapolateRight, config3.map);
+      return interpolate(input, inputRange[range2], inputRange[range2 + 1], outputRange[range2], outputRange[range2 + 1], easing, extrapolateLeft, extrapolateRight, config2.map);
     };
   };
   function interpolate(input, inputMin, inputMax, outputMin, outputMax, easing, extrapolateLeft, extrapolateRight, map) {
@@ -24344,10 +24418,10 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_liter
   var namedColorRegex;
   var rgbaRegex = /rgba\(([0-9\.-]+), ([0-9\.-]+), ([0-9\.-]+), ([0-9\.-]+)\)/gi;
   var rgbaRound = (_, p1, p2, p3, p4) => `rgba(${Math.round(p1)}, ${Math.round(p2)}, ${Math.round(p3)}, ${p4})`;
-  var createStringInterpolator = (config3) => {
+  var createStringInterpolator = (config2) => {
     if (!namedColorRegex)
       namedColorRegex = colors$1 ? new RegExp(`(${Object.keys(colors$1).join("|")})(?!\\w)`, "g") : /^\b$/;
-    const output = config3.output.map((value) => getFluidValue(value).replace(colorRegex, colorToRgba).replace(namedColorRegex, colorToRgba));
+    const output = config2.output.map((value) => getFluidValue(value).replace(colorRegex, colorToRgba).replace(namedColorRegex, colorToRgba));
     const keyframes = output.map((value) => value.match(numberRegex).map(Number));
     const outputRanges = keyframes[0].map((_, i) => keyframes.map((values) => {
       if (!(i in values)) {
@@ -24355,7 +24429,7 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_liter
       }
       return values[i];
     }));
-    const interpolators = outputRanges.map((output2) => createInterpolator(_extends2({}, config3, {
+    const interpolators = outputRanges.map((output2) => createInterpolator(_extends2({}, config2, {
       output: output2
     })));
     return (input) => {
@@ -24942,45 +25016,45 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_liter
       Object.assign(this, defaults);
     }
   };
-  function mergeConfig(config3, newConfig, defaultConfig) {
+  function mergeConfig(config2, newConfig, defaultConfig) {
     if (defaultConfig) {
       defaultConfig = _extends4({}, defaultConfig);
       sanitizeConfig(defaultConfig, newConfig);
       newConfig = _extends4({}, defaultConfig, newConfig);
     }
-    sanitizeConfig(config3, newConfig);
-    Object.assign(config3, newConfig);
+    sanitizeConfig(config2, newConfig);
+    Object.assign(config2, newConfig);
     for (const key in defaults) {
-      if (config3[key] == null) {
-        config3[key] = defaults[key];
+      if (config2[key] == null) {
+        config2[key] = defaults[key];
       }
     }
     let {
       mass,
       frequency,
       damping
-    } = config3;
+    } = config2;
     if (!is.und(frequency)) {
       if (frequency < 0.01)
         frequency = 0.01;
       if (damping < 0)
         damping = 0;
-      config3.tension = Math.pow(2 * Math.PI / frequency, 2) * mass;
-      config3.friction = 4 * Math.PI * damping * mass / frequency;
+      config2.tension = Math.pow(2 * Math.PI / frequency, 2) * mass;
+      config2.friction = 4 * Math.PI * damping * mass / frequency;
     }
-    return config3;
+    return config2;
   }
-  function sanitizeConfig(config3, props) {
+  function sanitizeConfig(config2, props) {
     if (!is.und(props.decay)) {
-      config3.duration = void 0;
+      config2.duration = void 0;
     } else {
       const isTensionConfig = !is.und(props.tension) || !is.und(props.friction);
       if (isTensionConfig || !is.und(props.frequency) || !is.und(props.damping) || !is.und(props.mass)) {
-        config3.duration = void 0;
-        config3.decay = void 0;
+        config2.duration = void 0;
+        config2.decay = void 0;
       }
       if (isTensionConfig) {
-        config3.frequency = void 0;
+        config2.frequency = void 0;
       }
     }
   }
@@ -25319,7 +25393,7 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_liter
       let changed = false;
       const anim = this.animation;
       let {
-        config: config3,
+        config: config2,
         toValues
       } = anim;
       const payload = getPayload(anim.to);
@@ -25334,42 +25408,42 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_liter
         let position2 = to2;
         if (!finished) {
           position2 = node3.lastPosition;
-          if (config3.tension <= 0) {
+          if (config2.tension <= 0) {
             node3.done = true;
             return;
           }
           let elapsed = node3.elapsedTime += dt;
           const from2 = anim.fromValues[i];
-          const v0 = node3.v0 != null ? node3.v0 : node3.v0 = is.arr(config3.velocity) ? config3.velocity[i] : config3.velocity;
+          const v0 = node3.v0 != null ? node3.v0 : node3.v0 = is.arr(config2.velocity) ? config2.velocity[i] : config2.velocity;
           let velocity;
-          if (!is.und(config3.duration)) {
+          if (!is.und(config2.duration)) {
             let p = 1;
-            if (config3.duration > 0) {
-              if (this._memoizedDuration !== config3.duration) {
-                this._memoizedDuration = config3.duration;
+            if (config2.duration > 0) {
+              if (this._memoizedDuration !== config2.duration) {
+                this._memoizedDuration = config2.duration;
                 if (node3.durationProgress > 0) {
-                  node3.elapsedTime = config3.duration * node3.durationProgress;
+                  node3.elapsedTime = config2.duration * node3.durationProgress;
                   elapsed = node3.elapsedTime += dt;
                 }
               }
-              p = (config3.progress || 0) + elapsed / this._memoizedDuration;
+              p = (config2.progress || 0) + elapsed / this._memoizedDuration;
               p = p > 1 ? 1 : p < 0 ? 0 : p;
               node3.durationProgress = p;
             }
-            position2 = from2 + config3.easing(p) * (to2 - from2);
+            position2 = from2 + config2.easing(p) * (to2 - from2);
             velocity = (position2 - node3.lastPosition) / dt;
             finished = p == 1;
-          } else if (config3.decay) {
-            const decay = config3.decay === true ? 0.998 : config3.decay;
+          } else if (config2.decay) {
+            const decay = config2.decay === true ? 0.998 : config2.decay;
             const e = Math.exp(-(1 - decay) * elapsed);
             position2 = from2 + v0 / (1 - decay) * (1 - e);
             finished = Math.abs(node3.lastPosition - position2) < 0.1;
             velocity = v0 * e;
           } else {
             velocity = node3.lastVelocity == null ? v0 : node3.lastVelocity;
-            const precision = config3.precision || (from2 == to2 ? 5e-3 : Math.min(1, Math.abs(to2 - from2) * 1e-3));
-            const restVelocity = config3.restVelocity || precision / 10;
-            const bounceFactor = config3.clamp ? 0 : config3.bounce;
+            const precision = config2.precision || (from2 == to2 ? 5e-3 : Math.min(1, Math.abs(to2 - from2) * 1e-3));
+            const restVelocity = config2.restVelocity || precision / 10;
+            const bounceFactor = config2.clamp ? 0 : config2.bounce;
             const canBounce = !is.und(bounceFactor);
             const isGrowing = from2 == to2 ? node3.v0 > 0 : from2 < to2;
             let isMoving;
@@ -25391,9 +25465,9 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_liter
                   position2 = to2;
                 }
               }
-              const springForce = -config3.tension * 1e-6 * (position2 - to2);
-              const dampingForce = -config3.friction * 1e-3 * velocity;
-              const acceleration = (springForce + dampingForce) / config3.mass;
+              const springForce = -config2.tension * 1e-6 * (position2 - to2);
+              const dampingForce = -config2.friction * 1e-3 * velocity;
+              const acceleration = (springForce + dampingForce) / config2.mass;
               velocity = velocity + acceleration * step;
               position2 = position2 + velocity * step;
             }
@@ -25412,7 +25486,7 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_liter
         } else {
           idle = false;
         }
-        if (node3.setValue(position2, config3.round)) {
+        if (node3.setValue(position2, config2.round)) {
           changed = true;
         }
       });
@@ -25420,10 +25494,10 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_liter
       const currVal = node2.getValue();
       if (idle) {
         const finalVal = getFluidValue(anim.to);
-        if ((currVal !== finalVal || changed) && !config3.decay) {
+        if ((currVal !== finalVal || changed) && !config2.decay) {
           node2.setValue(finalVal);
           this._onChange(finalVal);
-        } else if (changed && config3.decay) {
+        } else if (changed && config2.decay) {
           this._onChange(currVal);
         }
         this._stop();
@@ -25453,11 +25527,11 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_liter
       if (isAnimating(this)) {
         const {
           to: to2,
-          config: config3
+          config: config2
         } = this.animation;
         raf.batchedUpdates(() => {
           this._onStart();
-          if (!config3.decay) {
+          if (!config2.decay) {
             this._set(to2, false);
           }
           this._stop();
@@ -25626,17 +25700,17 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_liter
       }
       const hasAsyncTo = isAsyncTo(props.to);
       const {
-        config: config3
+        config: config2
       } = anim;
       const {
         decay,
         velocity
-      } = config3;
+      } = config2;
       if (hasToProp || hasFromProp) {
-        config3.velocity = 0;
+        config2.velocity = 0;
       }
       if (props.config && !hasAsyncTo) {
-        mergeConfig(config3, callProp(props.config, key), props.config !== defaultProps.config ? callProp(defaultProps.config, key) : void 0);
+        mergeConfig(config2, callProp(props.config, key), props.config !== defaultProps.config ? callProp(defaultProps.config, key) : void 0);
       }
       let node2 = getAnimated(this);
       if (!node2 || is.und(to2)) {
@@ -25665,7 +25739,7 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_liter
           finished = isEqual(computeGoal(value), goal);
           started = !finished;
         }
-        if (!isEqual(anim.immediate, immediate) && !immediate || !isEqual(config3.decay, decay) || !isEqual(config3.velocity, velocity)) {
+        if (!isEqual(anim.immediate, immediate) && !immediate || !isEqual(config2.decay, decay) || !isEqual(config2.velocity, velocity)) {
           started = true;
         }
       }
@@ -26108,8 +26182,8 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_liter
         props,
         state,
         actions: {
-          pause: noop,
-          resume: noop,
+          pause: noop2,
+          resume: noop2,
           start(props2, resolve) {
             if (cancel) {
               stopAsync(state, ctrl["_lastAsyncId"]);
@@ -26420,8 +26494,8 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_liter
         to: to2
       };
       if (!to2.config) {
-        const config3 = propsConfig || defaultProps.config;
-        to2.config = callProp(config3, t.item, i, phase);
+        const config2 = propsConfig || defaultProps.config;
+        to2.config = callProp(config2, t.item, i, phase);
       }
       delay += trail;
       const payload = _extends4({}, defaultProps, {
@@ -27168,7 +27242,7 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_liter
       return { title: "Reload", icon: arrow_clockwise_20_regular_default };
     }
     if (action.runJavascript) {
-      let c = { title: "Run JavaScript", icon: code_20_filled_default };
+      const c = { title: "Run JavaScript", icon: code_20_filled_default };
       if (action.runJavascript.description) {
         c.message = action.runJavascript.description;
       }
@@ -27183,21 +27257,45 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_liter
     const { value: gestureResponse } = useAsync(contentMessenger.getGesture, [
       contentMessenger
     ]);
-    useGestureRecognizer(gestureResponse?.gestures ?? [], (g) => {
+    const applyOnChangeToHUD = (0, import_react16.useCallback)((g) => {
       if (g) {
         open(getActionHUDContent(g.action));
       } else {
         cancel();
       }
-    }, (g) => {
+    }, [cancel, open]);
+    const onChangeHandler = (0, import_react16.useCallback)((g) => {
+      if (isEmbededFrame()) {
+        contentMessenger.forwardGestureChange(g);
+      } else {
+        applyOnChangeToHUD(g);
+      }
+    }, [applyOnChangeToHUD, contentMessenger]);
+    const applyOnReleaseToHUD = (0, import_react16.useCallback)((g) => {
       if (g) {
         resolve();
         contentMessenger.executeAction(g.action);
       } else {
         cancel();
       }
-    });
-    return /* @__PURE__ */ import_react16.default.createElement("div", null, hud);
+    }, [cancel, contentMessenger, resolve]);
+    const onReleaseHandler = (0, import_react16.useCallback)((g) => {
+      if (isEmbededFrame()) {
+        contentMessenger.forwardGestureRelease(g);
+        return;
+      }
+      applyOnReleaseToHUD(g);
+    }, [applyOnReleaseToHUD, contentMessenger]);
+    (0, import_react16.useEffect)(() => {
+      const s = contentMessenger.onGestureChange(applyOnChangeToHUD);
+      const t = contentMessenger.onGestureRelease(applyOnReleaseToHUD);
+      return () => {
+        s();
+        t();
+      };
+    }, [applyOnChangeToHUD, applyOnReleaseToHUD, contentMessenger]);
+    useGestureRecognizer(gestureResponse?.gestures ?? [], onChangeHandler, onReleaseHandler);
+    return /* @__PURE__ */ import_react16.default.createElement(import_react16.Fragment, null, hud);
   };
 
   // src/content/setup.tsx
