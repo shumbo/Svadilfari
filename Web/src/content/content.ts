@@ -1,13 +1,6 @@
-import { ContentMessangerImpl } from "./messenger/ContentMessanger";
+import { ContentMessangerImpl } from "../messenger/ContentMessanger";
+import { setupContentApp } from "./setup";
 
 console.log("hello from content");
 
-const messanger = new ContentMessangerImpl();
-messanger
-  .getGesture()
-  .then((x) => {
-    console.log("loaded", x);
-  })
-  .catch((e) => {
-    console.warn(e);
-  });
+setupContentApp({ contentMessenger: new ContentMessangerImpl() });

@@ -1,0 +1,51 @@
+import { TouchEventHandler, useCallback, useEffect, useRef } from "react";
+import { useEvent } from "react-use";
+import { getClosestGestureByPattern } from "../../core/Matching";
+import { PatternConstructor } from "../../core/PatternConstructor";
+import { Gesture } from "../../SharedTypes";
+
+/**
+ * Recognize gestures and send events
+ * @param gestures array of gestures to recognize
+ * @param onChange called when gesture is recognized
+ * @param onRelease called when fingers are released
+ */
+export function useGestureRecognizer(
+  gestures: Gesture[],
+  onChange: (gesture: Gesture | null) => void,
+  onRelease: (gesture: Gesture | null) => void
+) {
+  const patternConstructor = useRef(new PatternConstructor(0.12, 10));
+
+  const getClosestGesture = useCallback(
+    () =>
+      getClosestGestureByPattern(
+        patternConstructor.current.getPattern(),
+        new Set(gestures),
+        0.15
+      ),
+    [gestures]
+  );
+
+  const touchMoveHandler: TouchEventHandler = useCallback(
+    (ev) => {
+      const r = patternConstructor.current.addPoint({
+        x: ev.touches[0].clientX,
+        y: ev.touches[0].clientY,
+      });
+      if (r >= 2) {
+        onChange(getClosestGesture());
+      }
+    },
+    [onChange, getClosestGesture]
+  );
+
+  const touchEndHandler: TouchEventHandler = useCallback(() => {
+    const g = getClosestGesture();
+    onRelease(g);
+    patternConstructor.current.clear();
+  }, [onRelease, getClosestGesture]);
+
+  useEvent("touchmove", touchMoveHandler, window, { capture: true });
+  useEvent("touchend", touchEndHandler, window, { capture: true });
+}

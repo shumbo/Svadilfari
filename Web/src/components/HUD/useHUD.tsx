@@ -1,8 +1,5 @@
 import React, { useState } from "react";
-import ReactDOM from "react-dom";
-import { HUD, HUDProps } from "./HUD";
-
-type HUDContent = Pick<HUDProps, "icon" | "title" | "message">;
+import { HUD, HUDContent, HUDProps } from "./HUD";
 
 export function useHUD() {
   const [props, setProps] = useState<HUDProps>({
@@ -16,13 +13,28 @@ export function useHUD() {
   return {
     hud,
     open(content: HUDContent) {
-      setProps((props) => ({ ...props, visible: true, ...content }));
+      setProps((props) => ({
+        ...props,
+        visible: true,
+        // reset icon and message as content might not have these keys
+        message: undefined,
+        icon: undefined,
+        ...content,
+      }));
     },
     cancel() {
-      setProps((props) => ({ ...props, cancel: true, visible: false }));
+      // FIXME: do this in one function call
+      setProps((props) => ({ ...props, cancel: true }));
+      setTimeout(() => {
+        setProps((props) => ({ ...props, visible: false }));
+      }, 0);
     },
     resolve() {
-      setProps((props) => ({ ...props, cancel: false, visible: false }));
+      // FIXME: do this in one function call
+      setProps((props) => ({ ...props, cancel: false }));
+      setTimeout(() => {
+        setProps((props) => ({ ...props, visible: false }));
+      }, 0);
     },
   };
 }

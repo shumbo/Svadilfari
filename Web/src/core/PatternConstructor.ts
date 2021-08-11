@@ -1,4 +1,4 @@
-import { Point, Vector } from "../SharedTypes";
+import { Pattern, Point, Vector } from "../SharedTypes";
 import { computeVectorMagnitude } from "./utils/computeVectorMagnitude";
 import { makeVectorFromPoints } from "./utils/makeVectorFromPoints";
 import { vectorDirectionDifference } from "./utils/vectorDirectionDifference";
@@ -66,14 +66,14 @@ export class PatternConstructor {
     this.lastPoint = point;
     return changeIndicator as 0 | 1 | 2;
   }
-  public getPattern() {
+  public getPattern(): Pattern {
     if (!this.lastPoint || !this.lastExtractedPoint) {
-      return [];
+      return { data: [] };
     }
     const lastVector = makeVectorFromPoints(
       this.lastExtractedPoint,
       this.lastPoint
     );
-    return [...this.extractedVectors, lastVector];
+    return { data: [...this.extractedVectors, lastVector] };
   }
 }
