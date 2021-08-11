@@ -1,4 +1,4 @@
-import React, { Fragment, useCallback, useEffect, VFC } from "react";
+import React, { Fragment, useCallback, useEffect, useMemo, VFC } from "react";
 import { useAsync } from "react-use";
 import { useHUD } from "../components/HUD/useHUD";
 import { ContentMessanger } from "../messenger/ContentMessanger";
@@ -16,6 +16,9 @@ export const ContentApp: VFC<ContentAppProps> = ({ contentMessenger }) => {
   const { value: gestureResponse } = useAsync(contentMessenger.getGesture, [
     contentMessenger,
   ]);
+  const enabledGestures = useMemo(() => {
+    return gestureResponse?.gestures?.filter((g) => g.enabled) ?? [];
+  }, [gestureResponse?.gestures]);
 
   const applyOnChangeToHUD = useCallback(
     (g: Gesture | null) => {
@@ -72,7 +75,7 @@ export const ContentApp: VFC<ContentAppProps> = ({ contentMessenger }) => {
   }, [applyOnChangeToHUD, applyOnReleaseToHUD, contentMessenger]);
 
   useGestureRecognizer(
-    gestureResponse?.gestures ?? [],
+    enabledGestures ?? [],
     // onChange
     onChangeHandler,
     // onRelease

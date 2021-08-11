@@ -1068,7 +1068,7 @@
             var dispatcher = resolveDispatcher();
             return dispatcher.useCallback(callback, deps);
           }
-          function useMemo2(create, deps) {
+          function useMemo3(create, deps) {
             var dispatcher = resolveDispatcher();
             return dispatcher.useMemo(create, deps);
           }
@@ -1629,7 +1629,7 @@
           exports.useEffect = useEffect8;
           exports.useImperativeHandle = useImperativeHandle;
           exports.useLayoutEffect = useLayoutEffect4;
-          exports.useMemo = useMemo2;
+          exports.useMemo = useMemo3;
           exports.useReducer = useReducer;
           exports.useRef = useRef8;
           exports.useState = useState5;
@@ -27257,6 +27257,9 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_liter
     const { value: gestureResponse } = useAsync(contentMessenger.getGesture, [
       contentMessenger
     ]);
+    const enabledGestures = (0, import_react16.useMemo)(() => {
+      return gestureResponse?.gestures?.filter((g) => g.enabled) ?? [];
+    }, [gestureResponse?.gestures]);
     const applyOnChangeToHUD = (0, import_react16.useCallback)((g) => {
       if (g) {
         open(getActionHUDContent(g.action));
@@ -27294,7 +27297,7 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_liter
         t();
       };
     }, [applyOnChangeToHUD, applyOnReleaseToHUD, contentMessenger]);
-    useGestureRecognizer(gestureResponse?.gestures ?? [], onChangeHandler, onReleaseHandler);
+    useGestureRecognizer(enabledGestures ?? [], onChangeHandler, onReleaseHandler);
     return /* @__PURE__ */ import_react16.default.createElement(import_react16.Fragment, null, hud);
   };
 
