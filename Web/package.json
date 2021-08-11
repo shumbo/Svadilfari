@@ -6,7 +6,7 @@
   "license": "MIT",
   "devDependencies": {
     "@babel/core": "^7.14.8",
-    "@storybook/addon-actions": "^6.3.6",
+    "@storybook/addon-actions": "^6.3.7",
     "@storybook/addon-essentials": "^6.3.6",
     "@storybook/addon-links": "^6.3.6",
     "@storybook/react": "^6.3.6",
@@ -14,28 +14,37 @@
     "@types/jest": "^26.0.24",
     "@types/react": "^17.0.15",
     "@types/react-dom": "^17.0.9",
+    "@typescript-eslint/eslint-plugin": "^4.29.1",
+    "@typescript-eslint/parser": "^4.29.1",
     "babel-loader": "^8.2.2",
     "esbuild": "^0.12.17",
     "esbuild-plugin-svgr": "^0.0.3",
+    "eslint": "^7.32.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-react": "^7.24.0",
     "jest": "^27.0.6",
+    "prettier": "^2.3.2",
     "ts-jest": "^27.0.4",
     "typescript": "^4.3.5",
-    "vite": "^2.4.4",
-    "webextension-polyfill-ts": "^0.26.0"
+    "webpack": "^5.50.0"
   },
   "dependencies": {
     "@emotion/react": "^11.4.0",
     "@emotion/styled": "^11.3.0",
     "@fluentui/svg-icons": "^1.1.136",
+    "@react-spring/web": "^9.2.4",
     "modern-css-reset": "^1.4.0",
+    "prop-types": "^15.7.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-shadow": "^19.0.2",
-    "react-spring": "^9.2.4",
     "react-use": "^17.2.4"
   },
   "scripts": {
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
+  },
+  "volta": {
+    "node": "14.17.4"
   }
 }

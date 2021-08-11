@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
-import React, { ReactNode, VFC } from "react";
-import { animated, useTransition, config } from "react-spring";
+import React, { VFC } from "react";
+import { animated, useTransition } from "@react-spring/web";
 
 export type HUDContent = {
   /**

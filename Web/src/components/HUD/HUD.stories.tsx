@@ -1,5 +1,5 @@
 import React from "react";
-import { ComponentMeta, Meta, Story } from "@storybook/react";
+import { ComponentMeta, Story } from "@storybook/react";
 import { HUD, HUDProps } from "./HUD";
 import AddIcon from "@fluentui/svg-icons/icons/tab_add_20_regular.svg";
 

@@ -1,4 +1,4 @@
-import { TouchEventHandler, useCallback, useEffect, useRef } from "react";
+import { TouchEventHandler, useCallback, useRef } from "react";
 import { useEvent } from "react-use";
 import { getClosestGestureByPattern } from "../../core/Matching";
 import { PatternConstructor } from "../../core/PatternConstructor";
@@ -14,7 +14,7 @@ export function useGestureRecognizer(
   gestures: Gesture[],
   onChange: (gesture: Gesture | null) => void,
   onRelease: (gesture: Gesture | null) => void
-) {
+): void {
   const patternConstructor = useRef(new PatternConstructor(0.12, 10));
 
   const getClosestGesture = useCallback(

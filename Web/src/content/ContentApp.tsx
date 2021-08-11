@@ -1,4 +1,4 @@
-import React, { useEffect, VFC } from "react";
+import React, { VFC } from "react";
 import { useAsync } from "react-use";
 import { useHUD } from "../components/HUD/useHUD";
 import { ContentMessanger } from "../messenger/ContentMessanger";

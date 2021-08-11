@@ -3,6 +3,7 @@
  * Based on https://github.com/kelseasy/web-ext-types/blob/master/global/index.d.ts with some modifications for Safari
  */
 
+// eslint-disable-next-line @typescript-eslint/ban-types
 interface EventListener<T extends Function> {
   addListener: (callback: T) => void;
   removeListener: (listener: T) => void;
@@ -10,8 +11,10 @@ interface EventListener<T extends Function> {
 }
 
 declare namespace browser.runtime {
-  function sendMessage<T = unknown, U = unknown>(message: T): Promise<U>;
-  function sendNativeMessage<T = unknown, U = unknown>(message: T): Promise<U>;
+  export function sendMessage<T = unknown, U = unknown>(message: T): Promise<U>;
+  export function sendNativeMessage<T = unknown, U = unknown>(
+    message: T
+  ): Promise<U>;
   type MessageSender = {
     tab?: browser.tabs.Tab;
     frameId?: number;
@@ -24,7 +27,7 @@ declare namespace browser.runtime {
     sender: MessageSender,
     sendResponse: (response: unknown) => void
   ) => boolean | void;
-  const onMessage: EventListener<onMessageEvent>;
+  export const onMessage: EventListener<onMessageEvent>;
 }
 
 declare namespace browser.tabs {
@@ -55,30 +58,25 @@ declare namespace browser.tabs {
     width?: number;
     windowId: number;
   };
-  function sendMessage<T = unknown, U = unknown>(
+  export function sendMessage<T = unknown, U = unknown>(
     tabId: number,
     message: T,
     options?: { frameId?: number }
   ): Promise<U>;
-  function reload(
+  export function reload(
     tabId?: number,
     reloadProperties?: { bypassCache?: boolean }
   ): Promise<void>;
-  function remove(tabIds: number | number[]): Promise<void>;
-  function executeScript(
+  export function remove(tabIds: number | number[]): Promise<void>;
+  export function executeScript(
     tabId: number | undefined,
     details: browser.extensionTypes.InjectDetails
-  ): Promise<object[]>;
-  function getCurrent(): Promise<Tab>;
+  ): Promise<unknown[]>;
+  export function getCurrent(): Promise<Tab>;
 }
 declare namespace browser.extensionTypes {
-  type ImageFormat = "jpeg" | "png";
-  type ImageDetails = {
-    format: ImageFormat;
-    quality: number;
-  };
   type RunAt = "document_start" | "document_end" | "document_idle";
-  type InjectDetails = {
+  export type InjectDetails = {
     allFrames?: boolean;
     code?: string;
     file?: string;
@@ -86,5 +84,4 @@ declare namespace browser.extensionTypes {
     matchAboutBlank?: boolean;
     runAt?: RunAt;
   };
-  type InjectDetailsCSS = InjectDetails & { cssOrigin?: "user" | "author" };
 }

@@ -6,7 +6,7 @@ export function getClosestGestureByPattern(
   pattern: Pattern,
   gestures: Set<Gesture>,
   maxDeviation = 1
-) {
+): Gesture | null {
   let bestMatchingGesture: Gesture | null = null;
   let lowestMismatchRatio = Infinity;
   for (const gesture of gestures) {
@@ -38,7 +38,7 @@ export function getClosestGestureByPattern(
 export function patternSimilarityByProportion(
   patternA: Pattern,
   patternB: Pattern
-) {
+): number {
   const totalAMagnitude = patternMagnitude(patternA);
   const totalBMagnitude = patternMagnitude(patternB);
 
@@ -116,7 +116,10 @@ export function patternSimilarityByProportion(
  * 0 = perfect match / identical
  * 1 maximum mismatch
  **/
-export function patternSimilarityByDTW(patternA: Pattern, patternB: Pattern) {
+export function patternSimilarityByDTW(
+  patternA: Pattern,
+  patternB: Pattern
+): number {
   const rows = patternA.data.length;
   const columns = patternB.data.length;
 

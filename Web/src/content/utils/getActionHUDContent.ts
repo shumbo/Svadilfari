@@ -8,7 +8,7 @@ export function getActionHUDContent(action: Action): HUDContent {
     return { title: "Reload", icon: ArrowClockwise };
   }
   if (action.runJavascript) {
-    let c: HUDContent = { title: "Run JavaScript", icon: Code };
+    const c: HUDContent = { title: "Run JavaScript", icon: Code };
     if (action.runJavascript.description) {
       c.message = action.runJavascript.description;
     }

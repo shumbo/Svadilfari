@@ -1056,7 +1056,7 @@
             var dispatcher = resolveDispatcher();
             return dispatcher.useRef(initialValue);
           }
-          function useEffect9(create, deps) {
+          function useEffect8(create, deps) {
             var dispatcher = resolveDispatcher();
             return dispatcher.useEffect(create, deps);
           }
@@ -1626,7 +1626,7 @@
           exports.useCallback = useCallback5;
           exports.useContext = useContext5;
           exports.useDebugValue = useDebugValue;
-          exports.useEffect = useEffect9;
+          exports.useEffect = useEffect8;
           exports.useImperativeHandle = useImperativeHandle;
           exports.useLayoutEffect = useLayoutEffect4;
           exports.useMemo = useMemo2;

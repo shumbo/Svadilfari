@@ -41,7 +41,7 @@ browser.runtime.onMessage.addListener((request, sender, sendResponse) => {
           sendResponse(true);
         });
       }
-      if (!!action.tabClose) {
+      if (action.tabClose) {
         browser.tabs.remove(tabId).then(() => {
           sendResponse(true);
         });

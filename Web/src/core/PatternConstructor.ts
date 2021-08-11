@@ -15,7 +15,7 @@ export class PatternConstructor {
     this.differenceThreshold = differenceThreshold;
     this.distanceThreshold = distanceThreshold;
   }
-  public clear() {
+  public clear(): void {
     this.lastExtractedPoint = null;
     this.previousPoint = null;
     this.lastPoint = null;
@@ -50,6 +50,7 @@ export class PatternConstructor {
           if (Math.abs(diff) > this.differenceThreshold) {
             // store new extraced
             this.extractedVectors.push(
+              // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
               makeVectorFromPoints(this.lastExtractedPoint!, this.previousPoint)
             );
             this.previousVector = vector;

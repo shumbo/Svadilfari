@@ -1,7 +1,12 @@
-import React, { useState } from "react";
+import React, { ReactNode, useState } from "react";
 import { HUD, HUDContent, HUDProps } from "./HUD";
 
-export function useHUD() {
+export function useHUD(): {
+  hud: ReactNode;
+  open(content: HUDContent): void;
+  cancel(): void;
+  resolve(): void;
+} {
   const [props, setProps] = useState<HUDProps>({
     title: "",
     visible: false,
