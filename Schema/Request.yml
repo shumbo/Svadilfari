@@ -1,0 +1,6 @@
+title: MessageRequest
+type: object
+description: Request from Web Extension to App
+properties:
+  get_gestures:
+    type: boolean

@@ -1,0 +1,10 @@
+title: GetGestureResponse
+type: object
+description: ''
+properties:
+  gestures:
+    type: array
+    items:
+      $ref: ../Gesture.yml
+  error:
+    type: string

@@ -1,9 +1,13 @@
-console.log("hello from content 333");
+import { ContentMessangerImpl } from "./messenger/ContentMessanger";
 
-browser.runtime.sendMessage({ greeting: "hello" }).then((response) => {
-  console.log("Received response: ", response);
-});
+console.log("hello from content");
 
-browser.runtime.onMessage.addListener((request) => {
-  console.log("Received request: ", request);
-});
+const messanger = new ContentMessangerImpl();
+messanger
+  .getGesture()
+  .then((x) => {
+    console.log("loaded", x);
+  })
+  .catch((e) => {
+    console.warn(e);
+  });

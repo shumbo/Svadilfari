@@ -1,13 +1,63 @@
 // This file was generated from JSON Schema using quicktype, do not modify it directly.
 // To parse the JSON, add this file to your project and do:
 //
-//   let action = try Action(json)
 //   let gesture = try Gesture(json)
+//   let getGestureResponse = try GetGestureResponse(json)
+//   let messageRequest = try MessageRequest(json)
+//   let tabCloseAction = try TabCloseAction(json)
+//   let reloadAction = try ReloadAction(json)
+//   let tabNextAction = try TabNextAction(json)
+//   let tabPreviousAction = try TabPreviousAction(json)
+//   let runJavaScriptAction = try RunJavaScriptAction(json)
+//   let vector = try Vector(json)
 //   let pattern = try Pattern(json)
 //   let point = try Point(json)
-//   let vector = try Vector(json)
+//   let action = try Action(json)
 
 import Foundation
+
+// MARK: - GetGestureResponse
+struct GetGestureResponse: Codable {
+    let error: String?
+    let gestures: [Gesture]?
+}
+
+// MARK: GetGestureResponse convenience initializers and mutators
+
+extension GetGestureResponse {
+    init(data: Data) throws {
+        self = try newJSONDecoder().decode(GetGestureResponse.self, from: data)
+    }
+
+    init(_ json: String, using encoding: String.Encoding = .utf8) throws {
+        guard let data = json.data(using: encoding) else {
+            throw NSError(domain: "JSONDecoding", code: 0, userInfo: nil)
+        }
+        try self.init(data: data)
+    }
+
+    init(fromURL url: URL) throws {
+        try self.init(data: try Data(contentsOf: url))
+    }
+
+    func with(
+        error: String?? = nil,
+        gestures: [Gesture]?? = nil
+    ) -> GetGestureResponse {
+        return GetGestureResponse(
+            error: error ?? self.error,
+            gestures: gestures ?? self.gestures
+        )
+    }
+
+    func jsonData() throws -> Data {
+        return try newJSONEncoder().encode(self)
+    }
+
+    func jsonString(encoding: String.Encoding = .utf8) throws -> String? {
+        return String(data: try self.jsonData(), encoding: encoding)
+    }
+}
 
 // MARK: - Gesture
 struct Gesture: Codable {
@@ -403,6 +453,51 @@ extension Vector {
         return Vector(
             x: x ?? self.x,
             y: y ?? self.y
+        )
+    }
+
+    func jsonData() throws -> Data {
+        return try newJSONEncoder().encode(self)
+    }
+
+    func jsonString(encoding: String.Encoding = .utf8) throws -> String? {
+        return String(data: try self.jsonData(), encoding: encoding)
+    }
+}
+
+/// Request from Web Extension to App
+// MARK: - MessageRequest
+struct MessageRequest: Codable {
+    let getGestures: Bool?
+
+    enum CodingKeys: String, CodingKey {
+        case getGestures = "get_gestures"
+    }
+}
+
+// MARK: MessageRequest convenience initializers and mutators
+
+extension MessageRequest {
+    init(data: Data) throws {
+        self = try newJSONDecoder().decode(MessageRequest.self, from: data)
+    }
+
+    init(_ json: String, using encoding: String.Encoding = .utf8) throws {
+        guard let data = json.data(using: encoding) else {
+            throw NSError(domain: "JSONDecoding", code: 0, userInfo: nil)
+        }
+        try self.init(data: data)
+    }
+
+    init(fromURL url: URL) throws {
+        try self.init(data: try Data(contentsOf: url))
+    }
+
+    func with(
+        getGestures: Bool?? = nil
+    ) -> MessageRequest {
+        return MessageRequest(
+            getGestures: getGestures ?? self.getGestures
         )
     }
 

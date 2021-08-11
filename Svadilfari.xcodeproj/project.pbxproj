@@ -47,6 +47,12 @@
 		24D759CF26BCB3C20017498A /* NewGestureSelectActionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D759CE26BCB3C20017498A /* NewGestureSelectActionView.swift */; };
 		24E29CFE26B5F576003AF136 /* Pattern+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24E29CFD26B5F576003AF136 /* Pattern+.swift */; };
 		24E29D0026B5F8A3003AF136 /* UIBezierPath+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24E29CFF26B5F8A3003AF136 /* UIBezierPath+.swift */; };
+		24F3686926C35AD10092F583 /* CoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 24FAA2B626B93CAC0083FFAB /* CoreData.xcdatamodeld */; };
+		24F3686A26C35B1D0092F583 /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D00D2126C2BF0B00F8F1FA /* PersistenceController.swift */; };
+		24F3686B26C35EA90092F583 /* SharedTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C11E4826B4307100E018B5 /* SharedTypes.swift */; };
+		24F3686C26C362A80092F583 /* GestureEntity+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24FAA2BA26B942540083FFAB /* GestureEntity+.swift */; };
+		24F3686E26C365650092F583 /* URL+storeURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F3686D26C365650092F583 /* URL+storeURL.swift */; };
+		24F3686F26C365C40092F583 /* URL+storeURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F3686D26C365650092F583 /* URL+storeURL.swift */; };
 		24FAA2B826B93CAC0083FFAB /* CoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 24FAA2B626B93CAC0083FFAB /* CoreData.xcdatamodeld */; };
 		24FAA2BB26B942540083FFAB /* GestureEntity+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24FAA2BA26B942540083FFAB /* GestureEntity+.swift */; };
 		24FAA2BD26B943330083FFAB /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24FAA2BC26B943330083FFAB /* Error.swift */; };
@@ -131,10 +137,13 @@
 		24C11E6426B4366B00E018B5 /* popup.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = popup.js; sourceTree = "<group>"; };
 		24C11E6626B4366B00E018B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		24D00D2126C2BF0B00F8F1FA /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
+		24D00D2326C3580700F8F1FA /* Svadilfari.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Svadilfari.entitlements; sourceTree = "<group>"; };
 		24D759CC26BC80960017498A /* NavigationLinkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationLinkView.swift; sourceTree = "<group>"; };
 		24D759CE26BCB3C20017498A /* NewGestureSelectActionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewGestureSelectActionView.swift; sourceTree = "<group>"; };
 		24E29CFD26B5F576003AF136 /* Pattern+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Pattern+.swift"; sourceTree = "<group>"; };
 		24E29CFF26B5F8A3003AF136 /* UIBezierPath+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIBezierPath+.swift"; sourceTree = "<group>"; };
+		24F3686826C359F00092F583 /* SvadilfariExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SvadilfariExtension.entitlements; sourceTree = "<group>"; };
+		24F3686D26C365650092F583 /* URL+storeURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+storeURL.swift"; sourceTree = "<group>"; };
 		24FAA2B726B93CAC0083FFAB /* Gesture.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Gesture.xcdatamodel; sourceTree = "<group>"; };
 		24FAA2BA26B942540083FFAB /* GestureEntity+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GestureEntity+.swift"; sourceTree = "<group>"; };
 		24FAA2BC26B943330083FFAB /* Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
@@ -206,6 +215,7 @@
 		24428E1526B33E7600B21130 /* Svadilfari */ = {
 			isa = PBXGroup;
 			children = (
+				24D00D2326C3580700F8F1FA /* Svadilfari.entitlements */,
 				24B224A826B5EEEE009EAB48 /* Extensions */,
 				24B224A326B5EB71009EAB48 /* Misc */,
 				24428E3E26B33F2A00B21130 /* UI */,
@@ -309,6 +319,7 @@
 				24E29CFD26B5F576003AF136 /* Pattern+.swift */,
 				24E29CFF26B5F8A3003AF136 /* UIBezierPath+.swift */,
 				241D8FB826BC1F2200CBB381 /* Action+.swift */,
+				24F3686D26C365650092F583 /* URL+storeURL.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -316,6 +327,7 @@
 		24C11E5226B4366B00E018B5 /* SvadilfariExtension */ = {
 			isa = PBXGroup;
 			children = (
+				24F3686826C359F00092F583 /* SvadilfariExtension.entitlements */,
 				24C11E5326B4366B00E018B5 /* SafariWebExtensionHandler.swift */,
 				24C11E6626B4366B00E018B5 /* Info.plist */,
 				24C11E5526B4366B00E018B5 /* Resources */,
@@ -546,6 +558,7 @@
 				24C11E4926B4307100E018B5 /* SharedTypes.swift in Sources */,
 				24428E1926B33E7600B21130 /* ContentView.swift in Sources */,
 				24E29CFE26B5F576003AF136 /* Pattern+.swift in Sources */,
+				24F3686E26C365650092F583 /* URL+storeURL.swift in Sources */,
 				245A016B26B9ACD900EEE8CD /* NewGesturePresetsView.swift in Sources */,
 				24D759CF26BCB3C20017498A /* NewGestureSelectActionView.swift in Sources */,
 				24B224A526B5EB9A009EAB48 /* LineSmoother.swift in Sources */,
@@ -595,6 +608,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				24F3686B26C35EA90092F583 /* SharedTypes.swift in Sources */,
+				24F3686A26C35B1D0092F583 /* PersistenceController.swift in Sources */,
+				24F3686C26C362A80092F583 /* GestureEntity+.swift in Sources */,
+				24F3686F26C365C40092F583 /* URL+storeURL.swift in Sources */,
+				24F3686926C35AD10092F583 /* CoreData.xcdatamodeld in Sources */,
 				24C11E5426B4366B00E018B5 /* SafariWebExtensionHandler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -742,6 +760,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Svadilfari/Svadilfari.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Svadilfari/Preview Content\"";
@@ -773,6 +792,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Svadilfari/Svadilfari.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Svadilfari/Preview Content\"";
@@ -895,6 +915,7 @@
 		24C11E6B26B4366B00E018B5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = SvadilfariExtension/SvadilfariExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = TKVMG44U5W;
@@ -921,6 +942,7 @@
 		24C11E6C26B4366B00E018B5 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = SvadilfariExtension/SvadilfariExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = TKVMG44U5W;

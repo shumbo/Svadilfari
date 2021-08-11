@@ -28,6 +28,12 @@ struct PersistenceController {
 
     init(inMemory: Bool = false) {
         container = NSPersistentContainer(name: "CoreData")
+
+        // store the data in App Group
+        let storeURL = URL.storeURL(for: "group.dev.shun-k.svadilfari", databaseName: "Svadilfari")
+        let storeDescription = NSPersistentStoreDescription(url: storeURL)
+        container.persistentStoreDescriptions = [storeDescription]
+
         if inMemory {
             container.persistentStoreDescriptions.first!.url = URL(fileURLWithPath: "/dev/null")
         }

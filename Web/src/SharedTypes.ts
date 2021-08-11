@@ -1,15 +1,27 @@
 // To parse this data:
 //
-//   import { Convert, Action, Gesture, Pattern, Point, Vector } from "./file";
+//   import { Convert, Gesture, GetGestureResponse, MessageRequest, TabCloseAction, ReloadAction, TabNextAction, TabPreviousAction, RunJavaScriptAction, Vector, Pattern, Point, Action } from "./file";
 //
-//   const action = Convert.toAction(json);
 //   const gesture = Convert.toGesture(json);
+//   const getGestureResponse = Convert.toGetGestureResponse(json);
+//   const messageRequest = Convert.toMessageRequest(json);
+//   const tabCloseAction = Convert.toTabCloseAction(json);
+//   const reloadAction = Convert.toReloadAction(json);
+//   const tabNextAction = Convert.toTabNextAction(json);
+//   const tabPreviousAction = Convert.toTabPreviousAction(json);
+//   const runJavaScriptAction = Convert.toRunJavaScriptAction(json);
+//   const vector = Convert.toVector(json);
 //   const pattern = Convert.toPattern(json);
 //   const point = Convert.toPoint(json);
-//   const vector = Convert.toVector(json);
+//   const action = Convert.toAction(json);
 //
 // These functions will throw an error if the JSON doesn't
 // match the expected interface, even if the JSON is valid.
+
+export interface GetGestureResponse {
+    error?:    string;
+    gestures?: Gesture[];
+}
 
 export interface Gesture {
     action:  Action;
@@ -61,6 +73,13 @@ export interface Vector {
     y: number;
 }
 
+/**
+ * Request from Web Extension to App
+ */
+export interface MessageRequest {
+    getGestures?: boolean;
+}
+
 export interface Point {
     x: number;
     y: number;
@@ -69,20 +88,76 @@ export interface Point {
 // Converts JSON strings to/from your types
 // and asserts the results of JSON.parse at runtime
 export class Convert {
-    public static toAction(json: string): Action {
-        return cast(JSON.parse(json), r("Action"));
-    }
-
-    public static actionToJson(value: Action): string {
-        return JSON.stringify(uncast(value, r("Action")), null, 2);
-    }
-
     public static toGesture(json: string): Gesture {
         return cast(JSON.parse(json), r("Gesture"));
     }
 
     public static gestureToJson(value: Gesture): string {
         return JSON.stringify(uncast(value, r("Gesture")), null, 2);
+    }
+
+    public static toGetGestureResponse(json: string): GetGestureResponse {
+        return cast(JSON.parse(json), r("GetGestureResponse"));
+    }
+
+    public static getGestureResponseToJson(value: GetGestureResponse): string {
+        return JSON.stringify(uncast(value, r("GetGestureResponse")), null, 2);
+    }
+
+    public static toMessageRequest(json: string): MessageRequest {
+        return cast(JSON.parse(json), r("MessageRequest"));
+    }
+
+    public static messageRequestToJson(value: MessageRequest): string {
+        return JSON.stringify(uncast(value, r("MessageRequest")), null, 2);
+    }
+
+    public static toTabCloseAction(json: string): TabCloseAction {
+        return cast(JSON.parse(json), r("TabCloseAction"));
+    }
+
+    public static tabCloseActionToJson(value: TabCloseAction): string {
+        return JSON.stringify(uncast(value, r("TabCloseAction")), null, 2);
+    }
+
+    public static toReloadAction(json: string): ReloadAction {
+        return cast(JSON.parse(json), r("ReloadAction"));
+    }
+
+    public static reloadActionToJson(value: ReloadAction): string {
+        return JSON.stringify(uncast(value, r("ReloadAction")), null, 2);
+    }
+
+    public static toTabNextAction(json: string): TabNextAction {
+        return cast(JSON.parse(json), r("TabNextAction"));
+    }
+
+    public static tabNextActionToJson(value: TabNextAction): string {
+        return JSON.stringify(uncast(value, r("TabNextAction")), null, 2);
+    }
+
+    public static toTabPreviousAction(json: string): TabPreviousAction {
+        return cast(JSON.parse(json), r("TabPreviousAction"));
+    }
+
+    public static tabPreviousActionToJson(value: TabPreviousAction): string {
+        return JSON.stringify(uncast(value, r("TabPreviousAction")), null, 2);
+    }
+
+    public static toRunJavaScriptAction(json: string): RunJavaScriptAction {
+        return cast(JSON.parse(json), r("RunJavaScriptAction"));
+    }
+
+    public static runJavaScriptActionToJson(value: RunJavaScriptAction): string {
+        return JSON.stringify(uncast(value, r("RunJavaScriptAction")), null, 2);
+    }
+
+    public static toVector(json: string): Vector {
+        return cast(JSON.parse(json), r("Vector"));
+    }
+
+    public static vectorToJson(value: Vector): string {
+        return JSON.stringify(uncast(value, r("Vector")), null, 2);
     }
 
     public static toPattern(json: string): Pattern {
@@ -101,12 +176,12 @@ export class Convert {
         return JSON.stringify(uncast(value, r("Point")), null, 2);
     }
 
-    public static toVector(json: string): Vector {
-        return cast(JSON.parse(json), r("Vector"));
+    public static toAction(json: string): Action {
+        return cast(JSON.parse(json), r("Action"));
     }
 
-    public static vectorToJson(value: Vector): string {
-        return JSON.stringify(uncast(value, r("Vector")), null, 2);
+    public static actionToJson(value: Action): string {
+        return JSON.stringify(uncast(value, r("Action")), null, 2);
     }
 }
 
@@ -243,6 +318,10 @@ function r(name: string) {
 }
 
 const typeMap: any = {
+    "GetGestureResponse": o([
+        { json: "error", js: "error", typ: u(undefined, "") },
+        { json: "gestures", js: "gestures", typ: u(undefined, a(r("Gesture"))) },
+    ], "any"),
     "Gesture": o([
         { json: "action", js: "action", typ: r("Action") },
         { json: "enabled", js: "enabled", typ: true },
@@ -280,6 +359,9 @@ const typeMap: any = {
     "Vector": o([
         { json: "x", js: "x", typ: 3.14 },
         { json: "y", js: "y", typ: 3.14 },
+    ], "any"),
+    "MessageRequest": o([
+        { json: "get_gestures", js: "getGestures", typ: u(undefined, true) },
     ], "any"),
     "Point": o([
         { json: "x", js: "x", typ: 3.14 },
