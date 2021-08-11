@@ -6,17 +6,16 @@ interface ContentMessanger {
 }
 
 export class ContentMessangerImpl implements ContentMessanger {
-  getGesture(): Promise<GetGestureResponse> {
+  async getGesture(): Promise<GetGestureResponse> {
     const req: MessageRequest = { getGestures: true };
     const msg: NativeProxyMessage = {
       type: "NATIVE_PROXY",
       payload: Convert.messageRequestToJson(req),
     };
-    return browser.runtime.sendMessage(msg).then((responseStr) => {
-      const res: GetGestureResponse = Convert.toGetGestureResponse(
-        responseStr as string
-      );
-      return res;
-    });
+    const responseStr = await browser.runtime.sendMessage(msg);
+    const res: GetGestureResponse = Convert.toGetGestureResponse(
+      responseStr as string
+    );
+    return res;
   }
 }

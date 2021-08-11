@@ -243,16 +243,15 @@
 
   // src/content/messenger/ContentMessanger.ts
   var ContentMessangerImpl = class {
-    getGesture() {
+    async getGesture() {
       const req = { getGestures: true };
       const msg = {
         type: "NATIVE_PROXY",
         payload: Convert.messageRequestToJson(req)
       };
-      return browser.runtime.sendMessage(msg).then((responseStr) => {
-        const res = Convert.toGetGestureResponse(responseStr);
-        return res;
-      });
+      const responseStr = await browser.runtime.sendMessage(msg);
+      const res = Convert.toGetGestureResponse(responseStr);
+      return res;
     }
   };
 
