@@ -10,6 +10,8 @@ import SwiftUI
 struct NewGestureSelectActionView: View {
     @EnvironmentObject private var sheetState: SheetState
 
+    @Environment(\.managedObjectContext) private var viewContext
+
     // receive a selected pattern
     let pattern: Pattern
     let fingers: Int
@@ -24,6 +26,12 @@ struct NewGestureSelectActionView: View {
                 id: id.uuidString,
                 pattern: self.pattern
             )
+            let e = GestureEntity(context: self.viewContext)
+            e.json = try? g.jsonString()
+            e.createdAt = Date()
+            e.updatedAt = Date()
+            e.id = id
+            try? self.viewContext.save()
             self.sheetState.presented = false
         })
     }

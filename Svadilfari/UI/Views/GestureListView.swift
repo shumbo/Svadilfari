@@ -11,11 +11,22 @@ import CoreData
 struct GestureListView: View {
     @StateObject private var newGestureState = SheetState()
 
+    @Environment(\.managedObjectContext) private var viewContext
     @FetchRequest(entity: GestureEntity.entity(), sortDescriptors: [], predicate: nil, animation: .default)
     private var gestures: FetchedResults<GestureEntity>
 
     var body: some View {
-        Text("Hello World")
+        List {
+            ForEach(gestures) { (g: GestureEntity) in
+                if let gesture = g.gesture {
+                    GestureListItem(gesture: gesture, onChangeEnabled: {_ in
+                        toggleGestureEnabled(g: g)
+                    })
+                } else {
+                    Text("Error")
+                }
+            }.onDelete(perform: self.removeGesture)
+        }
             .navigationBarHidden(false)
             .navigationBarTitle("Gesture")
             .navigationBarItems(trailing: Button(action: {
@@ -30,6 +41,29 @@ struct GestureListView: View {
                     NewGestureView()
                 }.environmentObject(self.newGestureState)
             }
+    }
+
+    func toggleGestureEnabled(g: GestureEntity) {
+        guard let gesture = g.gesture else {
+            return
+        }
+        let newGesture = Gesture(
+            action: gesture.action,
+            enabled: !gesture.enabled,
+            fingers: gesture.fingers,
+            id: gesture.id,
+            pattern: gesture.pattern
+        )
+        self.viewContext.performAndWait {
+            g.gesture = newGesture
+            try? self.viewContext.save()
+        }
+    }
+    func removeGesture(offsets: IndexSet) {
+        withAnimation {
+            offsets.map { self.gestures[$0] }.forEach(self.viewContext.delete)
+            try? self.viewContext.save()
+        }
     }
 }
 

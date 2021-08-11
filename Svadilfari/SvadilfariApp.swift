@@ -10,19 +10,11 @@ import CoreData
 
 @main
 struct SvadilfariApp: App {
-    let persistentContainer: NSPersistentContainer = {
-        let container = NSPersistentContainer(name: "MyApplication")
-            container.loadPersistentStores(completionHandler: { (_, error) in
-                if let error = error as NSError? {
-                    fatalError("Unresolved error \(error), \(error.userInfo)")
-                }
-            })
-        return container
-    }()
+    let persistenceController = PersistenceController.shared
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView().environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }
 }

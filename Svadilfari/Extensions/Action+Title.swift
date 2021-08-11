@@ -22,7 +22,7 @@ extension Action {
             return "Reload Tab"
         }
         if let a = self.runJavascript {
-            if let d = a.runJavaScriptActionDescription {
+            if let d = a.runJavaScriptActionDescription, d != "" {
                 return "Run JavaScript (\(d))"
             }
             return "Run JavaScript"

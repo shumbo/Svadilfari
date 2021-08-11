@@ -27,7 +27,7 @@
 		2485834C26BCC2DE00A8836E /* SheetState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2485834B26BCC2DE00A8836E /* SheetState.swift */; };
 		24A19E2C26B34F9500DA5E20 /* GestureListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A19E2B26B34F9500DA5E20 /* GestureListView.swift */; };
 		24B224A026B5E445009EAB48 /* GestureListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B2249F26B5E445009EAB48 /* GestureListItem.swift */; };
-		24B224A226B5E6B4009EAB48 /* Gesture+Title.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B224A126B5E6B3009EAB48 /* Gesture+Title.swift */; };
+		24B224A226B5E6B4009EAB48 /* Action+Title.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B224A126B5E6B3009EAB48 /* Action+Title.swift */; };
 		24B224A526B5EB9A009EAB48 /* LineSmoother.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B224A426B5EB9A009EAB48 /* LineSmoother.swift */; };
 		24B224A726B5EDE0009EAB48 /* PatternPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B224A626B5EDE0009EAB48 /* PatternPreview.swift */; };
 		24B224AA26B5EEFC009EAB48 /* Vector+point.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B224A926B5EEFB009EAB48 /* Vector+point.swift */; };
@@ -42,6 +42,7 @@
 		24C11E6326B4366B00E018B5 /* popup.css in Resources */ = {isa = PBXBuildFile; fileRef = 24C11E6226B4366B00E018B5 /* popup.css */; };
 		24C11E6526B4366B00E018B5 /* popup.js in Resources */ = {isa = PBXBuildFile; fileRef = 24C11E6426B4366B00E018B5 /* popup.js */; };
 		24C11E6926B4366B00E018B5 /* SvadilfariExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 24C11E5126B4366B00E018B5 /* SvadilfariExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		24D00D2226C2BF0B00F8F1FA /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D00D2126C2BF0B00F8F1FA /* PersistenceController.swift */; };
 		24D759CD26BC80960017498A /* NavigationLinkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D759CC26BC80960017498A /* NavigationLinkView.swift */; };
 		24D759CF26BCB3C20017498A /* NewGestureSelectActionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D759CE26BCB3C20017498A /* NewGestureSelectActionView.swift */; };
 		24E29CFE26B5F576003AF136 /* Pattern+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24E29CFD26B5F576003AF136 /* Pattern+.swift */; };
@@ -113,7 +114,7 @@
 		2485834B26BCC2DE00A8836E /* SheetState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetState.swift; sourceTree = "<group>"; };
 		24A19E2B26B34F9500DA5E20 /* GestureListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GestureListView.swift; sourceTree = "<group>"; };
 		24B2249F26B5E445009EAB48 /* GestureListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GestureListItem.swift; sourceTree = "<group>"; };
-		24B224A126B5E6B3009EAB48 /* Gesture+Title.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Gesture+Title.swift"; sourceTree = "<group>"; };
+		24B224A126B5E6B3009EAB48 /* Action+Title.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Action+Title.swift"; sourceTree = "<group>"; };
 		24B224A426B5EB9A009EAB48 /* LineSmoother.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineSmoother.swift; sourceTree = "<group>"; };
 		24B224A626B5EDE0009EAB48 /* PatternPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatternPreview.swift; sourceTree = "<group>"; };
 		24B224A926B5EEFB009EAB48 /* Vector+point.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Vector+point.swift"; sourceTree = "<group>"; };
@@ -129,6 +130,7 @@
 		24C11E6226B4366B00E018B5 /* popup.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = popup.css; sourceTree = "<group>"; };
 		24C11E6426B4366B00E018B5 /* popup.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = popup.js; sourceTree = "<group>"; };
 		24C11E6626B4366B00E018B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		24D00D2126C2BF0B00F8F1FA /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
 		24D759CC26BC80960017498A /* NavigationLinkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationLinkView.swift; sourceTree = "<group>"; };
 		24D759CE26BCB3C20017498A /* NewGestureSelectActionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewGestureSelectActionView.swift; sourceTree = "<group>"; };
 		24E29CFD26B5F576003AF136 /* Pattern+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Pattern+.swift"; sourceTree = "<group>"; };
@@ -204,7 +206,6 @@
 		24428E1526B33E7600B21130 /* Svadilfari */ = {
 			isa = PBXGroup;
 			children = (
-				245A015D26B99F1900EEE8CD /* Managers */,
 				24B224A826B5EEEE009EAB48 /* Extensions */,
 				24B224A326B5EB71009EAB48 /* Misc */,
 				24428E3E26B33F2A00B21130 /* UI */,
@@ -215,6 +216,7 @@
 				24FAA2B626B93CAC0083FFAB /* CoreData.xcdatamodeld */,
 				24FAA2BC26B943330083FFAB /* Error.swift */,
 				245A016026B9A07700EEE8CD /* UserDefaults.swift */,
+				24D00D2126C2BF0B00F8F1FA /* PersistenceController.swift */,
 			);
 			path = Svadilfari;
 			sourceTree = "<group>";
@@ -277,13 +279,6 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		245A015D26B99F1900EEE8CD /* Managers */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Managers;
-			sourceTree = "<group>";
-		};
 		245A016926B9ACBE00EEE8CD /* New Gesture */ = {
 			isa = PBXGroup;
 			children = (
@@ -309,7 +304,7 @@
 			children = (
 				24D759D026BCB7E40017498A /* UI */,
 				24FAA2B926B942420083FFAB /* Core Data */,
-				24B224A126B5E6B3009EAB48 /* Gesture+Title.swift */,
+				24B224A126B5E6B3009EAB48 /* Action+Title.swift */,
 				24B224A926B5EEFB009EAB48 /* Vector+point.swift */,
 				24E29CFD26B5F576003AF136 /* Pattern+.swift */,
 				24E29CFF26B5F8A3003AF136 /* UIBezierPath+.swift */,
@@ -554,9 +549,10 @@
 				245A016B26B9ACD900EEE8CD /* NewGesturePresetsView.swift in Sources */,
 				24D759CF26BCB3C20017498A /* NewGestureSelectActionView.swift in Sources */,
 				24B224A526B5EB9A009EAB48 /* LineSmoother.swift in Sources */,
+				24D00D2226C2BF0B00F8F1FA /* PersistenceController.swift in Sources */,
 				241D8FB726BC1EDE00CBB381 /* ActionList.swift in Sources */,
 				24FAA2B826B93CAC0083FFAB /* CoreData.xcdatamodeld in Sources */,
-				24B224A226B5E6B4009EAB48 /* Gesture+Title.swift in Sources */,
+				24B224A226B5E6B4009EAB48 /* Action+Title.swift in Sources */,
 				24FAA2BB26B942540083FFAB /* GestureEntity+.swift in Sources */,
 				241D8FC026BC7BDC00CBB381 /* SelectActionView.swift in Sources */,
 				241D8FB926BC1F2200CBB381 /* Action+.swift in Sources */,

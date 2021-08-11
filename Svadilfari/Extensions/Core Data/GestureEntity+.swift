@@ -8,13 +8,18 @@
 import CoreData
 
 extension GestureEntity {
-    var gesture: Gesture {
-        // swiftlint:disable implicit_getter
-        get throws {
-            guard let json = self.json else {
-                throw EntityError.invalidJson
+    var gesture: Gesture? {
+        get {
+            guard let json = self.json, let g = try? Gesture(json) else {
+                return nil
             }
-            return try Gesture(json)
+            return g
+        }
+        set(g) {
+            guard let json = try? g?.jsonString() else {
+                return
+            }
+            self.json = json
         }
     }
     func setGesture(gesture: Gesture) throws {

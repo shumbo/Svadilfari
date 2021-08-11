@@ -8,6 +8,8 @@
 import Foundation
 
 enum EntityError: Error {
-    // Core Dataに保存されているJSONが違法
+    // Invalid JSON in CoreData
     case invalidJson
+    // Invalid data structure
+    case invalidData
 }

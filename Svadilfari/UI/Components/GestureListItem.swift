@@ -17,7 +17,7 @@ struct GestureListItem: View {
             }.frame(width: 44, height: 44).fixedSize()
             Text(self.gesture.action.title)
             Spacer()
-            Toggle("", isOn: .constant(true)).labelsHidden()
+            Toggle("", isOn: Binding(get: { self.gesture.enabled }, set: { self.onChangeEnabled($0) })).labelsHidden()
         }
     }
 }
