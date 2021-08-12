@@ -959,7 +959,7 @@
 				DEVELOPMENT_TEAM = TKVMG44U5W;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SvadilfariExtension/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = SvadilfariExtension;
+				INFOPLIST_KEY_CFBundleDisplayName = Svadilfari;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -986,7 +986,7 @@
 				DEVELOPMENT_TEAM = TKVMG44U5W;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SvadilfariExtension/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = SvadilfariExtension;
+				INFOPLIST_KEY_CFBundleDisplayName = Svadilfari;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
