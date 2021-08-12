@@ -26948,7 +26948,8 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_liter
         bottom: 0,
         display: "flex",
         alignItems: "center",
-        justifyContent: "center"
+        justifyContent: "center",
+        zIndex: 2147483647
       }
     }, /* @__PURE__ */ import_react13.default.createElement(Wrapper, null, Icon && /* @__PURE__ */ import_react13.default.createElement(IconWrapper, null, /* @__PURE__ */ import_react13.default.createElement(Icon, {
       style: { width: 100, height: 100 }

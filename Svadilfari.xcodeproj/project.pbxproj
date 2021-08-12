@@ -428,6 +428,8 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 24C11E6A26B4366B00E018B5 /* Build configuration list for PBXNativeTarget "SvadilfariExtension" */;
 			buildPhases = (
+				24BCD07726C502F60008EE94 /* Swiftlint */,
+				24BCD07926C5060F0008EE94 /* Build Web Extension */,
 				24C11E4D26B4366B00E018B5 /* Sources */,
 				24C11E4E26B4366B00E018B5 /* Frameworks */,
 				24C11E4F26B4366B00E018B5 /* Resources */,
@@ -530,6 +532,42 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		24BCD07726C502F60008EE94 /* Swiftlint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = Swiftlint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif test -d \"/opt/homebrew/bin/\"; then\n  PATH=\"/opt/homebrew/bin/:${PATH}\"\nfi\nexport PATH\nif which swiftlint >/dev/null; then\n  swiftlint --fix\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+		24BCD07926C5060F0008EE94 /* Build Web Extension */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Build Web Extension";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = "/bin/bash -l";
+			shellScript = "cd ${PROJECT_DIR}\nmake extension\n";
+		};
 		24FAA2B526B934810083FFAB /* SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;

@@ -7,3 +7,6 @@ swift:
 .PHONY: typescript
 typescript:
 	quicktype -o Web/src/SharedTypes.ts --nice-property-names --src-lang schema $(shell find Schema -type f)
+.PHONY: extension
+extension:
+	cd Web && yarn build

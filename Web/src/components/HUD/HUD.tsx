@@ -61,6 +61,7 @@ export const HUD: VFC<HUDProps> = ({
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
+            zIndex: 2147483647,
           }}
         >
           <Wrapper>
