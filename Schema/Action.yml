@@ -2,14 +2,36 @@ type: object
 title: Action
 minProperties: 1
 maxProperties: 1
+description: ""
 properties:
-  reload:
-    $ref: ./Action/ReloadAction.yml
   tab_close:
-    $ref: ./Action/TabCloseAction.yml
+    type: boolean
+  tab_close_all:
+    type: boolean
+  tab_open:
+    type: boolean
+  tab_duplicate:
+    type: boolean
   tab_next:
-    $ref: ./Action/TabNextAction.yml
+    type: boolean
   tab_previous:
-    $ref: ./Action/TabPreviousAction.yml
-  run_javascript:
-    $ref: ./Action/RunJavaScriptAction.yml
+    type: boolean
+  reload:
+    type: boolean
+  javascript_run:
+    type: object
+    properties:
+      description:
+        type: string
+      code:
+        type: string
+    required:
+      - code
+  url_copy:
+    type: boolean
+  share:
+    type: boolean
+  scroll_top:
+    type: boolean
+  scroll_bottom:
+    type: boolean

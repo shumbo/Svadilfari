@@ -21,8 +21,8 @@ extension Action {
         if self.reload != nil {
             return "Reload Tab"
         }
-        if let a = self.runJavascript {
-            if let d = a.runJavaScriptActionDescription, d != "" {
+        if let a = self.javascriptRun {
+            if let d = a.javascriptRunDescription, d != "" {
                 return "Run JavaScript (\(d))"
             }
             return "Run JavaScript"

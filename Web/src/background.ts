@@ -28,9 +28,9 @@ browser.runtime.onMessage.addListener((request, sender, sendResponse) => {
         break;
       }
       const tabId = sender.tab.id;
-      if (action.runJavascript) {
+      if (action.javascriptRun) {
         browser.tabs
-          .executeScript(tabId, { code: action.runJavascript.code })
+          .executeScript(tabId, { code: action.javascriptRun.code })
           .then(() => {
             sendResponse(true);
           });

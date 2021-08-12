@@ -25,11 +25,7 @@ struct SelectActionView: View {
                 .onTapGesture {
                     self.onSelect(
                         Action(
-                            reload: nil,
-                            runJavascript: nil,
-                            tabClose: TabCloseAction(action: true),
-                            tabNext: nil,
-                            tabPrevious: nil
+                            tabClose: true
                         )
                     )
                 }

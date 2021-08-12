@@ -7,10 +7,10 @@ export function getActionHUDContent(action: Action): HUDContent {
   if (action.reload) {
     return { title: "Reload", icon: ArrowClockwise };
   }
-  if (action.runJavascript) {
+  if (action.javascriptRun) {
     const c: HUDContent = { title: "Run JavaScript", icon: Code };
-    if (action.runJavascript.description) {
-      c.message = action.runJavascript.description;
+    if (action.javascriptRun.description) {
+      c.message = action.javascriptRun.description;
     }
     return c;
   }

@@ -1,15 +1,10 @@
 // To parse this data:
 //
-//   import { Convert, Gesture, GetGestureResponse, MessageRequest, TabCloseAction, ReloadAction, TabNextAction, TabPreviousAction, RunJavaScriptAction, Vector, Pattern, Point, Action } from "./file";
+//   import { Convert, Gesture, GetGestureResponse, MessageRequest, Vector, Pattern, Point, Action } from "./file";
 //
 //   const gesture = Convert.toGesture(json);
 //   const getGestureResponse = Convert.toGetGestureResponse(json);
 //   const messageRequest = Convert.toMessageRequest(json);
-//   const tabCloseAction = Convert.toTabCloseAction(json);
-//   const reloadAction = Convert.toReloadAction(json);
-//   const tabNextAction = Convert.toTabNextAction(json);
-//   const tabPreviousAction = Convert.toTabPreviousAction(json);
-//   const runJavaScriptAction = Convert.toRunJavaScriptAction(json);
 //   const vector = Convert.toVector(json);
 //   const pattern = Convert.toPattern(json);
 //   const point = Convert.toPoint(json);
@@ -35,33 +30,23 @@ export interface Gesture {
 }
 
 export interface Action {
-    reload?:        ReloadAction;
-    runJavascript?: RunJavaScriptAction;
-    tabClose?:      TabCloseAction;
-    tabNext?:       TabNextAction;
-    tabPrevious?:   TabPreviousAction;
+    javascriptRun?: JavascriptRun;
+    reload?:        boolean;
+    scrollBottom?:  boolean;
+    scrollTop?:     boolean;
+    share?:         boolean;
+    tabClose?:      boolean;
+    tabCloseAll?:   boolean;
+    tabDuplicate?:  boolean;
+    tabNext?:       boolean;
+    tabOpen?:       boolean;
+    tabPrevious?:   boolean;
+    urlCopy?:       boolean;
 }
 
-export interface ReloadAction {
-    action: boolean;
-}
-
-export interface RunJavaScriptAction {
-    action:       boolean;
+export interface JavascriptRun {
     code:         string;
     description?: string;
-}
-
-export interface TabCloseAction {
-    action: boolean;
-}
-
-export interface TabNextAction {
-    action: boolean;
-}
-
-export interface TabPreviousAction {
-    action: boolean;
 }
 
 export interface Pattern {
@@ -110,46 +95,6 @@ export class Convert {
 
     public static messageRequestToJson(value: MessageRequest): string {
         return JSON.stringify(uncast(value, r("MessageRequest")), null, 2);
-    }
-
-    public static toTabCloseAction(json: string): TabCloseAction {
-        return cast(JSON.parse(json), r("TabCloseAction"));
-    }
-
-    public static tabCloseActionToJson(value: TabCloseAction): string {
-        return JSON.stringify(uncast(value, r("TabCloseAction")), null, 2);
-    }
-
-    public static toReloadAction(json: string): ReloadAction {
-        return cast(JSON.parse(json), r("ReloadAction"));
-    }
-
-    public static reloadActionToJson(value: ReloadAction): string {
-        return JSON.stringify(uncast(value, r("ReloadAction")), null, 2);
-    }
-
-    public static toTabNextAction(json: string): TabNextAction {
-        return cast(JSON.parse(json), r("TabNextAction"));
-    }
-
-    public static tabNextActionToJson(value: TabNextAction): string {
-        return JSON.stringify(uncast(value, r("TabNextAction")), null, 2);
-    }
-
-    public static toTabPreviousAction(json: string): TabPreviousAction {
-        return cast(JSON.parse(json), r("TabPreviousAction"));
-    }
-
-    public static tabPreviousActionToJson(value: TabPreviousAction): string {
-        return JSON.stringify(uncast(value, r("TabPreviousAction")), null, 2);
-    }
-
-    public static toRunJavaScriptAction(json: string): RunJavaScriptAction {
-        return cast(JSON.parse(json), r("RunJavaScriptAction"));
-    }
-
-    public static runJavaScriptActionToJson(value: RunJavaScriptAction): string {
-        return JSON.stringify(uncast(value, r("RunJavaScriptAction")), null, 2);
     }
 
     public static toVector(json: string): Vector {
@@ -330,28 +275,22 @@ const typeMap: any = {
         { json: "pattern", js: "pattern", typ: r("Pattern") },
     ], "any"),
     "Action": o([
-        { json: "reload", js: "reload", typ: u(undefined, r("ReloadAction")) },
-        { json: "run_javascript", js: "runJavascript", typ: u(undefined, r("RunJavaScriptAction")) },
-        { json: "tab_close", js: "tabClose", typ: u(undefined, r("TabCloseAction")) },
-        { json: "tab_next", js: "tabNext", typ: u(undefined, r("TabNextAction")) },
-        { json: "tab_previous", js: "tabPrevious", typ: u(undefined, r("TabPreviousAction")) },
+        { json: "javascript_run", js: "javascriptRun", typ: u(undefined, r("JavascriptRun")) },
+        { json: "reload", js: "reload", typ: u(undefined, true) },
+        { json: "scroll_bottom", js: "scrollBottom", typ: u(undefined, true) },
+        { json: "scroll_top", js: "scrollTop", typ: u(undefined, true) },
+        { json: "share", js: "share", typ: u(undefined, true) },
+        { json: "tab_close", js: "tabClose", typ: u(undefined, true) },
+        { json: "tab_close_all", js: "tabCloseAll", typ: u(undefined, true) },
+        { json: "tab_duplicate", js: "tabDuplicate", typ: u(undefined, true) },
+        { json: "tab_next", js: "tabNext", typ: u(undefined, true) },
+        { json: "tab_open", js: "tabOpen", typ: u(undefined, true) },
+        { json: "tab_previous", js: "tabPrevious", typ: u(undefined, true) },
+        { json: "url_copy", js: "urlCopy", typ: u(undefined, true) },
     ], "any"),
-    "ReloadAction": o([
-        { json: "action", js: "action", typ: true },
-    ], "any"),
-    "RunJavaScriptAction": o([
-        { json: "action", js: "action", typ: true },
+    "JavascriptRun": o([
         { json: "code", js: "code", typ: "" },
         { json: "description", js: "description", typ: u(undefined, "") },
-    ], "any"),
-    "TabCloseAction": o([
-        { json: "action", js: "action", typ: true },
-    ], "any"),
-    "TabNextAction": o([
-        { json: "action", js: "action", typ: true },
-    ], "any"),
-    "TabPreviousAction": o([
-        { json: "action", js: "action", typ: true },
     ], "any"),
     "Pattern": o([
         { json: "data", js: "data", typ: a(r("Vector")) },

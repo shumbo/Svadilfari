@@ -21,7 +21,7 @@ extension Action {
         if self.tabPrevious != nil {
             return "Previous Tab"
         }
-        if self.runJavascript != nil {
+        if self.javascriptRun != nil {
             return "Run JavaScript"
         }
         return "Unknown Action"

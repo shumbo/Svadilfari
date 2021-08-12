@@ -30,12 +30,9 @@ struct RunJavascriptActionConfigView: View {
             }
             Button(
                 action: {
-                    let jsa = RunJavaScriptAction(
-                        action: true,
-                        code: self.code,
-                        runJavaScriptActionDescription: self.description
-                    )
-                    onSelect(Action(reload: nil, runJavascript: jsa, tabClose: nil, tabNext: nil, tabPrevious: nil))
+                    let runJS = JavascriptRun(code: self.code, javascriptRunDescription: self.description)
+                    let action = Action(javascriptRun: runJS)
+                    onSelect(action)
                 },
                 label: {
                     Text("Continue").bold().frame(maxWidth: .infinity)

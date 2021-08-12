@@ -144,7 +144,7 @@ export class DebugContentMessenger implements ContentMessanger {
     return {
       gestures: [
         {
-          action: { tabClose: { action: true } },
+          action: { tabClose: true },
           enabled: true,
           fingers: 1,
           id: "close",
@@ -156,7 +156,7 @@ export class DebugContentMessenger implements ContentMessanger {
           },
         },
         {
-          action: { tabClose: { action: true } },
+          action: { tabOpen: true },
           enabled: true,
           fingers: 1,
           id: "close all",
@@ -169,7 +169,7 @@ export class DebugContentMessenger implements ContentMessanger {
           },
         },
         {
-          action: { reload: { action: true } },
+          action: { reload: true },
           enabled: true,
           fingers: 1,
           id: "reload",
