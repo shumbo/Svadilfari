@@ -1,4 +1,5 @@
-import { ExecuteActionMessage, InternalMessage } from "./messenger/message";
+import { ExecuteActionMessage, InternalMessage } from "../messenger/message";
+import { executeAction } from "./executeAction";
 
 browser.runtime.onMessage.addListener((request, sender, sendResponse) => {
   console.log("Received request: ", request);
@@ -24,27 +25,13 @@ browser.runtime.onMessage.addListener((request, sender, sendResponse) => {
     case "EXECUTE_ACTION": {
       const msg = request as ExecuteActionMessage;
       const action = msg.action;
-      if (!sender?.tab?.id) {
-        break;
-      }
-      const tabId = sender.tab.id;
-      if (action.javascriptRun) {
-        browser.tabs
-          .executeScript(tabId, { code: action.javascriptRun.code })
-          .then(() => {
-            sendResponse(true);
-          });
-      }
-      if (action.reload) {
-        browser.tabs.reload(tabId).then(() => {
+      executeAction(action, sender)
+        .then(() => {
           sendResponse(true);
+        })
+        .catch(() => {
+          sendResponse(false);
         });
-      }
-      if (action.tabClose) {
-        browser.tabs.remove(tabId).then(() => {
-          sendResponse(true);
-        });
-      }
       break;
     }
   }

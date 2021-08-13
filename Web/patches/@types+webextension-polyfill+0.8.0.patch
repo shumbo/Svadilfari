@@ -1,0 +1,50 @@
+diff --git a/node_modules/@types/webextension-polyfill/index.d.ts b/node_modules/@types/webextension-polyfill/index.d.ts
+index 6912b18..9bac438 100755
+--- a/node_modules/@types/webextension-polyfill/index.d.ts
++++ b/node_modules/@types/webextension-polyfill/index.d.ts
+@@ -62,6 +62,9 @@ import { WebRequest as ImportedWebRequest } from "./namespaces/webRequest";
+ import { Windows as ImportedWindows } from "./namespaces/windows";
+ import { Scripting as ImportedScripting } from "./namespaces/scripting";
+ 
++declare global {
++// eslint-disable-next-line no-var
++var browser: Browser.Browser
+ declare namespace Browser {
+     const activityLog: ActivityLog.Static;
+     const alarms: Alarms.Static;
+@@ -235,7 +238,4 @@ declare namespace Browser {
+     export import Scripting = ImportedScripting;
+     /* tslint:enable:strict-export-declare-modifiers */
+ }
+-
+-// tslint:disable-next-line:export-just-namespace
+-export = Browser;
+-export as namespace browser;
++}
+diff --git a/node_modules/@types/webextension-polyfill/namespaces/runtime.d.ts b/node_modules/@types/webextension-polyfill/namespaces/runtime.d.ts
+index e7f58b9..ee3d9fd 100755
+--- a/node_modules/@types/webextension-polyfill/namespaces/runtime.d.ts
++++ b/node_modules/@types/webextension-polyfill/namespaces/runtime.d.ts
+@@ -341,6 +341,7 @@ export namespace Runtime {
+          * @param message The message that will be passed to the native messaging host.
+          */
+         sendNativeMessage(application: string, message: any): Promise<any>;
++        sendNativeMessage(message: any): Promise<any>;
+ 
+         /**
+          * Returns information about the current browser.
+@@ -403,7 +404,13 @@ export namespace Runtime {
+          * @param message Optional. The message sent by the calling script.
+          * @param sender
+          */
+-        onMessage: Events.Event<(message: any, sender: MessageSender) => Promise<any> | void>;
++        onMessage: Events.Event<
++        | ((message: any, sender: MessageSender) => Promise<any> | void) 
++        | ((
++            message: any,
++            sender: MessageSender,
++            sendResponse: (...response: any[]) => void
++          ) => void)>
+ 
+         /**
+          * Fired when a message is sent from another extension/app. Cannot be used in a content script.

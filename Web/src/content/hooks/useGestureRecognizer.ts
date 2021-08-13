@@ -27,8 +27,9 @@ export function useGestureRecognizer(
     [gestures]
   );
 
-  const touchMoveHandler: TouchEventHandler = useCallback(
-    (ev) => {
+  const touchMoveHandler = useCallback(
+    (_ev: Event) => {
+      const ev = _ev as TouchEvent;
       const r = patternConstructor.current.addPoint({
         x: ev.touches[0].clientX,
         y: ev.touches[0].clientY,
@@ -40,7 +41,7 @@ export function useGestureRecognizer(
     [onChange, getClosestGesture]
   );
 
-  const touchEndHandler: TouchEventHandler = useCallback(() => {
+  const touchEndHandler = useCallback(() => {
     const g = getClosestGesture();
     onRelease(g);
     patternConstructor.current.clear();

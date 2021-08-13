@@ -10,7 +10,7 @@ esbuild.build({
 });
 
 esbuild.build({
-  entryPoints: ["src/background.ts"],
+  entryPoints: ["src/background/background.ts"],
   bundle: true,
   outfile: "../SvadilfariExtension/Resources/background.js",
   watch: !!process.env["watch"],

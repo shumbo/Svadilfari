@@ -108,7 +108,7 @@ export class ContentMessangerImpl implements ContentMessanger {
     if (isEmbededFrame()) {
       return noop;
     }
-    const listener: browser.runtime.onMessageEvent = (message) => {
+    const listener = (message: unknown) => {
       console.log("onGestureChange", message);
       const payload = message as ForwardMessage;
       if (payload.type !== "GESTURE_CHANGE") {
@@ -125,7 +125,7 @@ export class ContentMessangerImpl implements ContentMessanger {
     if (isEmbededFrame()) {
       return noop;
     }
-    const listener: browser.runtime.onMessageEvent = (message) => {
+    const listener = (message: unknown) => {
       const payload = message as ForwardMessage;
       if (payload.type !== "GESTURE_RELEASE") {
         return;

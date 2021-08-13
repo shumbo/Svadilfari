@@ -1,17 +1,9 @@
-import { HUDContent } from "../../components/HUD/HUD";
-import { Action } from "../../SharedTypes";
 import ArrowClockwise from "@fluentui/svg-icons/icons/arrow_clockwise_20_regular.svg";
 import Code from "@fluentui/svg-icons/icons/code_20_filled.svg";
+import { HUDContent } from "../../components/HUD/HUD";
+import { Action } from "../../SharedTypes";
 import { assertUnreachable } from "../../utils/assertUnreachable";
-
-type ActionKey = keyof Action;
-
-export function getActionCode(action: Action): ActionKey | null {
-  const key = Object.entries(action).flatMap(([key, value]) =>
-    value ? key : []
-  )[0] as ActionKey;
-  return key ?? null;
-}
+import { getActionCode } from "../../utils/getActionCode";
 
 export function getActionHUDContent(action: Action): HUDContent {
   const key = getActionCode(action);
