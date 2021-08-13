@@ -19,6 +19,9 @@
 		24428E3226B33E7700B21130 /* SvadilfariUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24428E3126B33E7700B21130 /* SvadilfariUITests.swift */; };
 		24428E4126B33F5400B21130 /* HomeListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24428E4026B33F5400B21130 /* HomeListItem.swift */; };
 		24428E4426B3436A00B21130 /* HomeListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24428E4326B3436A00B21130 /* HomeListView.swift */; };
+		24500EED26C6D81300F7BB7E /* NewGestureDrawerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24500EEC26C6D81300F7BB7E /* NewGestureDrawerView.swift */; };
+		24500EEF26C6D95800F7BB7E /* GridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24500EEE26C6D95800F7BB7E /* GridView.swift */; };
+		24500EF226C6E03500F7BB7E /* NativeHelper.js in Resources */ = {isa = PBXBuildFile; fileRef = 24500EF126C6E03500F7BB7E /* NativeHelper.js */; };
 		245A016126B9A07700EEE8CD /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245A016026B9A07700EEE8CD /* UserDefaults.swift */; };
 		245A016626B9A24600EEE8CD /* NewGestureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245A016526B9A24600EEE8CD /* NewGestureView.swift */; };
 		245A016826B9A29200EEE8CD /* GestureTemplateButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245A016726B9A29200EEE8CD /* GestureTemplateButton.swift */; };
@@ -112,6 +115,9 @@
 		24428E3126B33E7700B21130 /* SvadilfariUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SvadilfariUITests.swift; sourceTree = "<group>"; };
 		24428E4026B33F5400B21130 /* HomeListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeListItem.swift; sourceTree = "<group>"; };
 		24428E4326B3436A00B21130 /* HomeListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeListView.swift; sourceTree = "<group>"; };
+		24500EEC26C6D81300F7BB7E /* NewGestureDrawerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewGestureDrawerView.swift; sourceTree = "<group>"; };
+		24500EEE26C6D95800F7BB7E /* GridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridView.swift; sourceTree = "<group>"; };
+		24500EF126C6E03500F7BB7E /* NativeHelper.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = NativeHelper.js; sourceTree = "<group>"; };
 		245A016026B9A07700EEE8CD /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
 		245A016526B9A24600EEE8CD /* NewGestureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewGestureView.swift; sourceTree = "<group>"; };
 		245A016726B9A29200EEE8CD /* GestureTemplateButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GestureTemplateButton.swift; sourceTree = "<group>"; };
@@ -215,6 +221,7 @@
 		24428E1526B33E7600B21130 /* Svadilfari */ = {
 			isa = PBXGroup;
 			children = (
+				24500EF026C6DC7500F7BB7E /* Resources */,
 				24D00D2326C3580700F8F1FA /* Svadilfari.entitlements */,
 				24B224A826B5EEEE009EAB48 /* Extensions */,
 				24B224A326B5EB71009EAB48 /* Misc */,
@@ -274,6 +281,7 @@
 				245A016726B9A29200EEE8CD /* GestureTemplateButton.swift */,
 				241D8FB626BC1EDE00CBB381 /* ActionList.swift */,
 				24D759CC26BC80960017498A /* NavigationLinkView.swift */,
+				24500EEE26C6D95800F7BB7E /* GridView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -289,11 +297,20 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		24500EF026C6DC7500F7BB7E /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				24500EF126C6E03500F7BB7E /* NativeHelper.js */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		245A016926B9ACBE00EEE8CD /* New Gesture */ = {
 			isa = PBXGroup;
 			children = (
 				245A016526B9A24600EEE8CD /* NewGestureView.swift */,
 				245A016A26B9ACD900EEE8CD /* NewGesturePresetsView.swift */,
+				24500EEC26C6D81300F7BB7E /* NewGestureDrawerView.swift */,
 				245A016C26B9CCCA00EEE8CD /* NewGesturePatternConfirmView.swift */,
 				24D759CE26BCB3C20017498A /* NewGestureSelectActionView.swift */,
 			);
@@ -497,6 +514,7 @@
 			files = (
 				24428E1E26B33E7700B21130 /* Preview Assets.xcassets in Resources */,
 				24428E1B26B33E7700B21130 /* Assets.xcassets in Resources */,
+				24500EF226C6E03500F7BB7E /* NativeHelper.js in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -534,7 +552,7 @@
 /* Begin PBXShellScriptBuildPhase section */
 		24BCD07726C502F60008EE94 /* Swiftlint */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 8;
 			files = (
 			);
 			inputFileListPaths = (
@@ -546,13 +564,13 @@
 			);
 			outputPaths = (
 			);
-			runOnlyForDeploymentPostprocessing = 0;
+			runOnlyForDeploymentPostprocessing = 1;
 			shellPath = /bin/sh;
 			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif test -d \"/opt/homebrew/bin/\"; then\n  PATH=\"/opt/homebrew/bin/:${PATH}\"\nfi\nexport PATH\nif which swiftlint >/dev/null; then\n  swiftlint --fix\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
 		24BCD07926C5060F0008EE94 /* Build Web Extension */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 8;
 			files = (
 			);
 			inputFileListPaths = (
@@ -564,7 +582,7 @@
 			);
 			outputPaths = (
 			);
-			runOnlyForDeploymentPostprocessing = 0;
+			runOnlyForDeploymentPostprocessing = 1;
 			shellPath = "/bin/bash -l";
 			shellScript = "cd ${PROJECT_DIR}\nmake extension\n";
 		};
@@ -603,6 +621,7 @@
 				24D00D2226C2BF0B00F8F1FA /* PersistenceController.swift in Sources */,
 				241D8FB726BC1EDE00CBB381 /* ActionList.swift in Sources */,
 				24FAA2B826B93CAC0083FFAB /* CoreData.xcdatamodeld in Sources */,
+				24500EEF26C6D95800F7BB7E /* GridView.swift in Sources */,
 				24B224A226B5E6B4009EAB48 /* Action+Title.swift in Sources */,
 				24FAA2BB26B942540083FFAB /* GestureEntity+.swift in Sources */,
 				241D8FC026BC7BDC00CBB381 /* SelectActionView.swift in Sources */,
@@ -616,6 +635,7 @@
 				24428E4426B3436A00B21130 /* HomeListView.swift in Sources */,
 				24B224A726B5EDE0009EAB48 /* PatternPreview.swift in Sources */,
 				24428E1726B33E7600B21130 /* SvadilfariApp.swift in Sources */,
+				24500EED26C6D81300F7BB7E /* NewGestureDrawerView.swift in Sources */,
 				245A016126B9A07700EEE8CD /* UserDefaults.swift in Sources */,
 				24B224A026B5E445009EAB48 /* GestureListItem.swift in Sources */,
 				245A016D26B9CCCA00EEE8CD /* NewGesturePatternConfirmView.swift in Sources */,

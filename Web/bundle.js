@@ -15,3 +15,11 @@ esbuild.build({
   outfile: "../SvadilfariExtension/Resources/background.js",
   watch: !!process.env["watch"],
 });
+
+esbuild.build({
+  entryPoints: ["src/NativeHelper/NativeHelper.ts"],
+  bundle: true,
+  globalName: "S",
+  outfile: "../Svadilfari/Resources/NativeHelper.js",
+  watch: !!process.env["watch"],
+});

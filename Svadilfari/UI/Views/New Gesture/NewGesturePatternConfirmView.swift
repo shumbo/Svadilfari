@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct NewGesturePatternConfirmView: View {
-    let pattern: Pattern
+    var pattern: Pattern
     @State private var fingerCount = 1
     @State private var showingNextView = false
 
@@ -57,7 +57,7 @@ struct NewGesturePatternConfirmView: View {
             // Navigation
             NavigationLink(
                 isActive: self.$showingNextView,
-                destination: { NewGestureSelectActionView(pattern: self.pattern, fingers: self.fingerCount) },
+                destination: { NewGestureSelectActionView(pattern: pattern, fingers: self.fingerCount) },
                 label: { EmptyView() }
             )
         }.navigationTitle("Pattern")

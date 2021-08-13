@@ -6,6 +6,7 @@
 //   const getGestureResponse = Convert.toGetGestureResponse(json);
 //   const messageRequest = Convert.toMessageRequest(json);
 //   const vector = Convert.toVector(json);
+//   const pointList = Convert.toPointList(json);
 //   const pattern = Convert.toPattern(json);
 //   const point = Convert.toPoint(json);
 //   const action = Convert.toAction(json);
@@ -102,6 +103,14 @@ export class Convert {
 
     public static vectorToJson(value: Vector): string {
         return JSON.stringify(uncast(value, r("Vector")), null, 2);
+    }
+
+    public static toPointList(json: string): Point[] {
+        return cast(JSON.parse(json), a(r("Point")));
+    }
+
+    public static pointListToJson(value: Point[]): string {
+        return JSON.stringify(uncast(value, a(r("Point"))), null, 2);
     }
 
     public static toPattern(json: string): Pattern {

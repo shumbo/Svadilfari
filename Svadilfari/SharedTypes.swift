@@ -5,6 +5,7 @@
 //   let getGestureResponse = try GetGestureResponse(json)
 //   let messageRequest = try MessageRequest(json)
 //   let vector = try Vector(json)
+//   let pointList = try PointList(json)
 //   let pattern = try Pattern(json)
 //   let point = try Point(json)
 //   let action = try Action(json)
@@ -390,6 +391,33 @@ extension Point {
             x: x ?? self.x,
             y: y ?? self.y
         )
+    }
+
+    func jsonData() throws -> Data {
+        return try newJSONEncoder().encode(self)
+    }
+
+    func jsonString(encoding: String.Encoding = .utf8) throws -> String? {
+        return String(data: try self.jsonData(), encoding: encoding)
+    }
+}
+
+typealias PointList = [Point]
+
+extension Array where Element == PointList.Element {
+    init(data: Data) throws {
+        self = try newJSONDecoder().decode(PointList.self, from: data)
+    }
+
+    init(_ json: String, using encoding: String.Encoding = .utf8) throws {
+        guard let data = json.data(using: encoding) else {
+            throw NSError(domain: "JSONDecoding", code: 0, userInfo: nil)
+        }
+        try self.init(data: data)
+    }
+
+    init(fromURL url: URL) throws {
+        try self.init(data: try Data(contentsOf: url))
     }
 
     func jsonData() throws -> Data {

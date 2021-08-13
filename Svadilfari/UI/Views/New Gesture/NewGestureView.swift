@@ -11,11 +11,12 @@ struct NewGestureView: View {
     @Environment(\.dismiss) var dismiss
 
     @State private var showingNewGesturePresets = false
-    @State private var updater: Bool = false
+    @State private var showingNewGestureDraw = false
 
     var body: some View {
         VStack {
             NavigationLink(destination: NewGesturePresetsView(), isActive: $showingNewGesturePresets) { EmptyView() }
+            NavigationLink(destination: NewGestureDrawerView(), isActive: $showingNewGestureDraw) { EmptyView() }
             List {
                 Section {
                     GestureTemplateButton(
@@ -35,7 +36,7 @@ struct NewGestureView: View {
                         color: .green,
                         buttonTitle: "Draw Pattern",
                         onPress: {
-                            // TODO
+                            showingNewGestureDraw = true
                         }
                     )
                 }
