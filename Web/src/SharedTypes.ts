@@ -34,7 +34,6 @@ export interface Action {
     reload?:        boolean;
     scrollBottom?:  boolean;
     scrollTop?:     boolean;
-    share?:         boolean;
     tabClose?:      boolean;
     tabCloseAll?:   boolean;
     tabDuplicate?:  boolean;
@@ -279,7 +278,6 @@ const typeMap: any = {
         { json: "reload", js: "reload", typ: u(undefined, true) },
         { json: "scroll_bottom", js: "scrollBottom", typ: u(undefined, true) },
         { json: "scroll_top", js: "scrollTop", typ: u(undefined, true) },
-        { json: "share", js: "share", typ: u(undefined, true) },
         { json: "tab_close", js: "tabClose", typ: u(undefined, true) },
         { json: "tab_close_all", js: "tabCloseAll", typ: u(undefined, true) },
         { json: "tab_duplicate", js: "tabDuplicate", typ: u(undefined, true) },

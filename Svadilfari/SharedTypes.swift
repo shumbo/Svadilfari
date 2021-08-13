@@ -110,16 +110,15 @@ extension Gesture {
 // MARK: - Action
 struct Action: Codable {
     var javascriptRun: JavascriptRun?
-    var reload, scrollBottom, scrollTop, share: Bool?
-    var tabClose, tabCloseAll, tabDuplicate, tabNext: Bool?
-    var tabOpen, tabPrevious, urlCopy: Bool?
+    var reload, scrollBottom, scrollTop, tabClose: Bool?
+    var tabCloseAll, tabDuplicate, tabNext, tabOpen: Bool?
+    var tabPrevious, urlCopy: Bool?
 
     enum CodingKeys: String, CodingKey {
         case javascriptRun = "javascript_run"
         case reload
         case scrollBottom = "scroll_bottom"
         case scrollTop = "scroll_top"
-        case share
         case tabClose = "tab_close"
         case tabCloseAll = "tab_close_all"
         case tabDuplicate = "tab_duplicate"
@@ -153,7 +152,6 @@ extension Action {
         reload: Bool?? = nil,
         scrollBottom: Bool?? = nil,
         scrollTop: Bool?? = nil,
-        share: Bool?? = nil,
         tabClose: Bool?? = nil,
         tabCloseAll: Bool?? = nil,
         tabDuplicate: Bool?? = nil,
@@ -167,7 +165,6 @@ extension Action {
             reload: reload ?? self.reload,
             scrollBottom: scrollBottom ?? self.scrollBottom,
             scrollTop: scrollTop ?? self.scrollTop,
-            share: share ?? self.share,
             tabClose: tabClose ?? self.tabClose,
             tabCloseAll: tabCloseAll ?? self.tabCloseAll,
             tabDuplicate: tabDuplicate ?? self.tabDuplicate,

@@ -41,7 +41,6 @@
     "permissions": [
         "<all_urls>",
         "tabs",
-        "clipboardWrite",
         "nativeMessaging"
     ]
 }

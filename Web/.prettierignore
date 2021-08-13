@@ -1,5 +1,6 @@
 node_modules
 coverage
+package.json
 
 # src
 src/SharedTypes.ts

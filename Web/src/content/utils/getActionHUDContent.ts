@@ -31,8 +31,6 @@ export function getActionHUDContent(action: Action): HUDContent {
     }
     case "urlCopy":
       return { title: "Copy URL" };
-    case "share":
-      return { title: "Share" };
     case "scrollTop":
       return { title: "Scroll to Top" };
     case "scrollBottom":

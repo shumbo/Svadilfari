@@ -29,8 +29,6 @@ properties:
       - code
   url_copy:
     type: boolean
-  share:
-    type: boolean
   scroll_top:
     type: boolean
   scroll_bottom:
