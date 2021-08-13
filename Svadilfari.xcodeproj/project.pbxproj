@@ -30,7 +30,7 @@
 		24B224A226B5E6B4009EAB48 /* Action+Title.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B224A126B5E6B3009EAB48 /* Action+Title.swift */; };
 		24B224A526B5EB9A009EAB48 /* LineSmoother.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B224A426B5EB9A009EAB48 /* LineSmoother.swift */; };
 		24B224A726B5EDE0009EAB48 /* PatternPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B224A626B5EDE0009EAB48 /* PatternPreview.swift */; };
-		24B224AA26B5EEFC009EAB48 /* Vector+point.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B224A926B5EEFB009EAB48 /* Vector+point.swift */; };
+		24B224AA26B5EEFC009EAB48 /* Vector+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B224A926B5EEFB009EAB48 /* Vector+.swift */; };
 		24C11E4926B4307100E018B5 /* SharedTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C11E4826B4307100E018B5 /* SharedTypes.swift */; };
 		24C11E5426B4366B00E018B5 /* SafariWebExtensionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C11E5326B4366B00E018B5 /* SafariWebExtensionHandler.swift */; };
 		24C11E5726B4366B00E018B5 /* _locales in Resources */ = {isa = PBXBuildFile; fileRef = 24C11E5626B4366B00E018B5 /* _locales */; };
@@ -123,7 +123,7 @@
 		24B224A126B5E6B3009EAB48 /* Action+Title.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Action+Title.swift"; sourceTree = "<group>"; };
 		24B224A426B5EB9A009EAB48 /* LineSmoother.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineSmoother.swift; sourceTree = "<group>"; };
 		24B224A626B5EDE0009EAB48 /* PatternPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatternPreview.swift; sourceTree = "<group>"; };
-		24B224A926B5EEFB009EAB48 /* Vector+point.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Vector+point.swift"; sourceTree = "<group>"; };
+		24B224A926B5EEFB009EAB48 /* Vector+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Vector+.swift"; sourceTree = "<group>"; };
 		24C11E4826B4307100E018B5 /* SharedTypes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SharedTypes.swift; sourceTree = "<group>"; };
 		24C11E5126B4366B00E018B5 /* SvadilfariExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = SvadilfariExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		24C11E5326B4366B00E018B5 /* SafariWebExtensionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariWebExtensionHandler.swift; sourceTree = "<group>"; };
@@ -315,7 +315,7 @@
 				24D759D026BCB7E40017498A /* UI */,
 				24FAA2B926B942420083FFAB /* Core Data */,
 				24B224A126B5E6B3009EAB48 /* Action+Title.swift */,
-				24B224A926B5EEFB009EAB48 /* Vector+point.swift */,
+				24B224A926B5EEFB009EAB48 /* Vector+.swift */,
 				24E29CFD26B5F576003AF136 /* Pattern+.swift */,
 				24E29CFF26B5F8A3003AF136 /* UIBezierPath+.swift */,
 				241D8FB826BC1F2200CBB381 /* Action+.swift */,
@@ -607,7 +607,7 @@
 				24FAA2BB26B942540083FFAB /* GestureEntity+.swift in Sources */,
 				241D8FC026BC7BDC00CBB381 /* SelectActionView.swift in Sources */,
 				241D8FB926BC1F2200CBB381 /* Action+.swift in Sources */,
-				24B224AA26B5EEFC009EAB48 /* Vector+point.swift in Sources */,
+				24B224AA26B5EEFC009EAB48 /* Vector+.swift in Sources */,
 				2485834C26BCC2DE00A8836E /* SheetState.swift in Sources */,
 				241D8FC226BC7E1600CBB381 /* RunJavascriptActionConfigView.swift in Sources */,
 				245A016826B9A29200EEE8CD /* GestureTemplateButton.swift in Sources */,
