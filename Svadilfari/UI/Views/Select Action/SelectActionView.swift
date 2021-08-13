@@ -17,17 +17,63 @@ struct SelectActionView: View {
                 NavigationLinkView {
                     ActionListItem(title: "New Tab")
                 }.onTapGesture {
-                    // TODO
+                    self.onSelect(Action(tabOpen: true))
                 }
                 NavigationLinkView {
                     ActionListItem(title: "Close Tab")
                 }
                 .onTapGesture {
-                    self.onSelect(
-                        Action(
-                            tabClose: true
-                        )
-                    )
+                    self.onSelect(Action(tabClose: true))
+                }
+                NavigationLinkView {
+                    ActionListItem(title: "Close All Tabs")
+                }
+                .onTapGesture {
+                    self.onSelect(Action(tabCloseAll: true))
+                }
+                NavigationLinkView {
+                    ActionListItem(title: "Duplicate Tab")
+                }
+                .onTapGesture {
+                    self.onSelect(Action(tabDuplicate: true))
+                }
+                NavigationLinkView {
+                    ActionListItem(title: "Next Tab")
+                }
+                .onTapGesture {
+                    self.onSelect(Action(tabDuplicate: true))
+                }
+                NavigationLinkView {
+                    ActionListItem(title: "Previous Tab")
+                }
+                .onTapGesture {
+                    self.onSelect(Action(tabDuplicate: true))
+                }
+            }
+            Section("Current Page") {
+                NavigationLinkView {
+                    ActionListItem(title: "Reload")
+                }
+                .onTapGesture {
+                    self.onSelect(Action(reload: true))
+                }
+                NavigationLinkView {
+                    ActionListItem(title: "Copy URL")
+                }
+                .onTapGesture {
+                    self.onSelect(Action(urlCopy: true))
+                }
+                NavigationLinkView {
+                    ActionListItem(title: "Scroll to Top")
+                }
+                .onTapGesture {
+                    self.onSelect(Action(scrollTop: true))
+                }
+                NavigationLinkView {
+                    ActionListItem(title: "Scroll to Bottom")
+                }
+                .onTapGesture {
+                    self.onSelect(Action(scrollBottom: true))
                 }
             }
             Section("Advanced") {

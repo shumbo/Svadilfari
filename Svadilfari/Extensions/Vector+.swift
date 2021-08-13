@@ -11,7 +11,7 @@ extension Vector {
     var point: CGPoint {
         return CGPoint(x: self.x, y: self.y)
     }
-    
+
     static var Top: Self {
         return Self.init(x: 0, y: -100)
     }
