@@ -17,6 +17,13 @@ esbuild.build({
 });
 
 esbuild.build({
+  entryPoints: ["src/popup/popup.tsx"],
+  bundle: true,
+  outfile: "../SvadilfariExtension/Resources/popup.js",
+  watch: !!process.env["watch"],
+});
+
+esbuild.build({
   entryPoints: ["src/NativeHelper/NativeHelper.ts"],
   bundle: true,
   globalName: "S",
