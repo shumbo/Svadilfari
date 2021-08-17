@@ -1,9 +1,10 @@
 // To parse this data:
 //
-//   import { Convert, Gesture, GetGestureResponse, MessageRequest, Vector, Pattern, Point, Action } from "./file";
+//   import { Convert, Gesture, GetGestureResponse, LoadSettingsResponse, MessageRequest, Vector, Pattern, Point, Action } from "./file";
 //
 //   const gesture = Convert.toGesture(json);
 //   const getGestureResponse = Convert.toGetGestureResponse(json);
+//   const loadSettingsResponse = Convert.toLoadSettingsResponse(json);
 //   const messageRequest = Convert.toMessageRequest(json);
 //   const vector = Convert.toVector(json);
 //   const pointList = Convert.toPointList(json);
@@ -58,11 +59,22 @@ export interface Vector {
     y: number;
 }
 
+export interface LoadSettingsResponse {
+    exclusionList: string[];
+    gestures:      Gesture[];
+}
+
 /**
  * Request from Web Extension to App
  */
 export interface MessageRequest {
-    getGestures?: boolean;
+    getGestures?:         boolean;
+    loadSettings?:        boolean;
+    updateExclusionList?: UpdateExclusionList;
+}
+
+export interface UpdateExclusionList {
+    exclusionList?: string[];
 }
 
 export interface Point {
@@ -87,6 +99,14 @@ export class Convert {
 
     public static getGestureResponseToJson(value: GetGestureResponse): string {
         return JSON.stringify(uncast(value, r("GetGestureResponse")), null, 2);
+    }
+
+    public static toLoadSettingsResponse(json: string): LoadSettingsResponse {
+        return cast(JSON.parse(json), r("LoadSettingsResponse"));
+    }
+
+    public static loadSettingsResponseToJson(value: LoadSettingsResponse): string {
+        return JSON.stringify(uncast(value, r("LoadSettingsResponse")), null, 2);
     }
 
     public static toMessageRequest(json: string): MessageRequest {
@@ -306,8 +326,17 @@ const typeMap: any = {
         { json: "x", js: "x", typ: 3.14 },
         { json: "y", js: "y", typ: 3.14 },
     ], "any"),
+    "LoadSettingsResponse": o([
+        { json: "exclusion_list", js: "exclusionList", typ: a("") },
+        { json: "gestures", js: "gestures", typ: a(r("Gesture")) },
+    ], "any"),
     "MessageRequest": o([
         { json: "get_gestures", js: "getGestures", typ: u(undefined, true) },
+        { json: "load_settings", js: "loadSettings", typ: u(undefined, true) },
+        { json: "update_exclusion_list", js: "updateExclusionList", typ: u(undefined, r("UpdateExclusionList")) },
+    ], "any"),
+    "UpdateExclusionList": o([
+        { json: "exclusion_list", js: "exclusionList", typ: u(undefined, a("")) },
     ], "any"),
     "Point": o([
         { json: "x", js: "x", typ: 3.14 },

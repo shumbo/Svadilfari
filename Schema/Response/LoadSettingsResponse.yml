@@ -1,0 +1,15 @@
+title: LoadSettingsResponse
+type: object
+description: ''
+properties:
+  gestures:
+    type: array
+    items:
+      $ref: ../Gesture.yml
+  exclusion_list:
+    type: array
+    items:
+      type: string
+required:
+  - gestures
+  - exclusion_list

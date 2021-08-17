@@ -3,6 +3,7 @@
 //
 //   let gesture = try Gesture(json)
 //   let getGestureResponse = try GetGestureResponse(json)
+//   let loadSettingsResponse = try LoadSettingsResponse(json)
 //   let messageRequest = try MessageRequest(json)
 //   let vector = try Vector(json)
 //   let pointList = try PointList(json)
@@ -315,13 +316,64 @@ extension Vector {
     }
 }
 
+// MARK: - LoadSettingsResponse
+struct LoadSettingsResponse: Codable {
+    var exclusionList: [String]
+    var gestures: [Gesture]
+
+    enum CodingKeys: String, CodingKey {
+        case exclusionList = "exclusion_list"
+        case gestures
+    }
+}
+
+// MARK: LoadSettingsResponse convenience initializers and mutators
+
+extension LoadSettingsResponse {
+    init(data: Data) throws {
+        self = try newJSONDecoder().decode(LoadSettingsResponse.self, from: data)
+    }
+
+    init(_ json: String, using encoding: String.Encoding = .utf8) throws {
+        guard let data = json.data(using: encoding) else {
+            throw NSError(domain: "JSONDecoding", code: 0, userInfo: nil)
+        }
+        try self.init(data: data)
+    }
+
+    init(fromURL url: URL) throws {
+        try self.init(data: try Data(contentsOf: url))
+    }
+
+    func with(
+        exclusionList: [String]? = nil,
+        gestures: [Gesture]? = nil
+    ) -> LoadSettingsResponse {
+        return LoadSettingsResponse(
+            exclusionList: exclusionList ?? self.exclusionList,
+            gestures: gestures ?? self.gestures
+        )
+    }
+
+    func jsonData() throws -> Data {
+        return try newJSONEncoder().encode(self)
+    }
+
+    func jsonString(encoding: String.Encoding = .utf8) throws -> String? {
+        return String(data: try self.jsonData(), encoding: encoding)
+    }
+}
+
 /// Request from Web Extension to App
 // MARK: - MessageRequest
 struct MessageRequest: Codable {
-    var getGestures: Bool?
+    var getGestures, loadSettings: Bool?
+    var updateExclusionList: UpdateExclusionList?
 
     enum CodingKeys: String, CodingKey {
         case getGestures = "get_gestures"
+        case loadSettings = "load_settings"
+        case updateExclusionList = "update_exclusion_list"
     }
 }
 
@@ -344,10 +396,58 @@ extension MessageRequest {
     }
 
     func with(
-        getGestures: Bool?? = nil
+        getGestures: Bool?? = nil,
+        loadSettings: Bool?? = nil,
+        updateExclusionList: UpdateExclusionList?? = nil
     ) -> MessageRequest {
         return MessageRequest(
-            getGestures: getGestures ?? self.getGestures
+            getGestures: getGestures ?? self.getGestures,
+            loadSettings: loadSettings ?? self.loadSettings,
+            updateExclusionList: updateExclusionList ?? self.updateExclusionList
+        )
+    }
+
+    func jsonData() throws -> Data {
+        return try newJSONEncoder().encode(self)
+    }
+
+    func jsonString(encoding: String.Encoding = .utf8) throws -> String? {
+        return String(data: try self.jsonData(), encoding: encoding)
+    }
+}
+
+// MARK: - UpdateExclusionList
+struct UpdateExclusionList: Codable {
+    var exclusionList: [String]?
+
+    enum CodingKeys: String, CodingKey {
+        case exclusionList = "exclusion_list"
+    }
+}
+
+// MARK: UpdateExclusionList convenience initializers and mutators
+
+extension UpdateExclusionList {
+    init(data: Data) throws {
+        self = try newJSONDecoder().decode(UpdateExclusionList.self, from: data)
+    }
+
+    init(_ json: String, using encoding: String.Encoding = .utf8) throws {
+        guard let data = json.data(using: encoding) else {
+            throw NSError(domain: "JSONDecoding", code: 0, userInfo: nil)
+        }
+        try self.init(data: data)
+    }
+
+    init(fromURL url: URL) throws {
+        try self.init(data: try Data(contentsOf: url))
+    }
+
+    func with(
+        exclusionList: [String]?? = nil
+    ) -> UpdateExclusionList {
+        return UpdateExclusionList(
+            exclusionList: exclusionList ?? self.exclusionList
         )
     }
 

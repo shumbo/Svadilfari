@@ -4,3 +4,12 @@ description: Request from Web Extension to App
 properties:
   get_gestures:
     type: boolean
+  load_settings:
+    type: boolean
+  update_exclusion_list:
+    type: object
+    properties:
+      exclusion_list:
+        type: array
+        items:
+          type: string
