@@ -10,4 +10,7 @@ describe("getActionCode", () => {
   test("empty action", () => {
     expect(getActionCode({})).toBeNull();
   });
+  test("key only", () => {
+    expect(getActionCode({ reload: false })).toBeNull();
+  });
 });
