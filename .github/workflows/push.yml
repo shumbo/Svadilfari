@@ -1,0 +1,23 @@
+name: Check
+on: [push]
+jobs:
+  Check-Web:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: Web
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: "14"
+      - name: Install Dependencies
+        run: yarn install --frozen-lockfile
+      - name: Check Format
+        run: yarn format
+      - name: Lint
+        run: yarn lint
+      - name: Type Check
+        run: yarn typecheck
+      - name: Test
+        run: yarn test
