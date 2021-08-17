@@ -12,6 +12,9 @@ const meta: ComponentMeta<typeof PopupApp> = {
     messenger: new DebugPopupMessanger(),
     tabManager: new DebugPopupTabManager(),
   },
+  parameters: {
+    layout: "fullscreen",
+  },
 };
 
 export default meta;

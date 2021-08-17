@@ -1,3 +1,4 @@
+import { Box } from "@chakra-ui/react";
 import React, { Fragment, useEffect, useMemo, VFC } from "react";
 import { useAsyncFn } from "react-use";
 import {
@@ -42,7 +43,7 @@ export const PopupApp: VFC<PopupAppProps> = ({ messenger, tabManager }) => {
   );
 
   return (
-    <Fragment>
+    <Box padding={2}>
       {currentTabExclusionEntry && settingsState.value?.exclusionList && (
         <Fragment>
           <StatusAlert
@@ -113,6 +114,6 @@ export const PopupApp: VFC<PopupAppProps> = ({ messenger, tabManager }) => {
         </Fragment>
       )}
       <PopupGlobalStyle />
-    </Fragment>
+    </Box>
   );
 };

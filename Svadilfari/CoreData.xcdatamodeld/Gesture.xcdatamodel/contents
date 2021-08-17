@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="19186" systemVersion="20G71" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="19197" systemVersion="20G95" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="ExclusionListEntry" representedClassName="ExclusionListEntryEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="json" optional="YES" attributeType="String"/>
+    </entity>
     <entity name="Gesture" representedClassName="GestureEntity" syncable="YES" codeGenerationType="class">
         <attribute name="createdAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
@@ -8,5 +11,6 @@
     </entity>
     <elements>
         <element name="Gesture" positionX="-63" positionY="-18" width="128" height="89"/>
+        <element name="ExclusionListEntry" positionX="-63" positionY="9" width="128" height="44"/>
     </elements>
 </model>

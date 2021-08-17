@@ -4,6 +4,7 @@ import React, { VFC } from "react";
 const styles = css`
   body {
     width: min(${window.screen.width}px, 400px);
+    margin: 0 auto;
   }
 `;
 

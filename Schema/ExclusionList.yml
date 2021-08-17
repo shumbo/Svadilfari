@@ -1,0 +1,4 @@
+title: ExclusionList
+type: array
+items:
+  type: string

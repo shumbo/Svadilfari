@@ -9,6 +9,7 @@
 //   const vector = Convert.toVector(json);
 //   const pointList = Convert.toPointList(json);
 //   const pattern = Convert.toPattern(json);
+//   const exclusionList = Convert.toExclusionList(json);
 //   const point = Convert.toPoint(json);
 //   const action = Convert.toAction(json);
 //
@@ -74,7 +75,7 @@ export interface MessageRequest {
 }
 
 export interface UpdateExclusionList {
-    exclusionList?: string[];
+    exclusionList: string[];
 }
 
 export interface Point {
@@ -139,6 +140,14 @@ export class Convert {
 
     public static patternToJson(value: Pattern): string {
         return JSON.stringify(uncast(value, r("Pattern")), null, 2);
+    }
+
+    public static toExclusionList(json: string): string[] {
+        return cast(JSON.parse(json), a(""));
+    }
+
+    public static exclusionListToJson(value: string[]): string {
+        return JSON.stringify(uncast(value, a("")), null, 2);
     }
 
     public static toPoint(json: string): Point {
@@ -336,7 +345,7 @@ const typeMap: any = {
         { json: "update_exclusion_list", js: "updateExclusionList", typ: u(undefined, r("UpdateExclusionList")) },
     ], "any"),
     "UpdateExclusionList": o([
-        { json: "exclusion_list", js: "exclusionList", typ: u(undefined, a("")) },
+        { json: "exclusion_list", js: "exclusionList", typ: a("") },
     ], "any"),
     "Point": o([
         { json: "x", js: "x", typ: 3.14 },

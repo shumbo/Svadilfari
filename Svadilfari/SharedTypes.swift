@@ -8,6 +8,7 @@
 //   let vector = try Vector(json)
 //   let pointList = try PointList(json)
 //   let pattern = try Pattern(json)
+//   let exclusionList = try ExclusionList(json)
 //   let point = try Point(json)
 //   let action = try Action(json)
 
@@ -418,7 +419,7 @@ extension MessageRequest {
 
 // MARK: - UpdateExclusionList
 struct UpdateExclusionList: Codable {
-    var exclusionList: [String]?
+    var exclusionList: [String]
 
     enum CodingKeys: String, CodingKey {
         case exclusionList = "exclusion_list"
@@ -444,7 +445,7 @@ extension UpdateExclusionList {
     }
 
     func with(
-        exclusionList: [String]?? = nil
+        exclusionList: [String]? = nil
     ) -> UpdateExclusionList {
         return UpdateExclusionList(
             exclusionList: exclusionList ?? self.exclusionList
@@ -503,10 +504,36 @@ extension Point {
 }
 
 typealias PointList = [Point]
+typealias ExclusionList = [String]
 
 extension Array where Element == PointList.Element {
     init(data: Data) throws {
         self = try newJSONDecoder().decode(PointList.self, from: data)
+    }
+
+    init(_ json: String, using encoding: String.Encoding = .utf8) throws {
+        guard let data = json.data(using: encoding) else {
+            throw NSError(domain: "JSONDecoding", code: 0, userInfo: nil)
+        }
+        try self.init(data: data)
+    }
+
+    init(fromURL url: URL) throws {
+        try self.init(data: try Data(contentsOf: url))
+    }
+
+    func jsonData() throws -> Data {
+        return try newJSONEncoder().encode(self)
+    }
+
+    func jsonString(encoding: String.Encoding = .utf8) throws -> String? {
+        return String(data: try self.jsonData(), encoding: encoding)
+    }
+}
+
+extension Array where Element == ExclusionList.Element {
+    init(data: Data) throws {
+        self = try newJSONDecoder().decode(ExclusionList.self, from: data)
     }
 
     init(_ json: String, using encoding: String.Encoding = .utf8) throws {
