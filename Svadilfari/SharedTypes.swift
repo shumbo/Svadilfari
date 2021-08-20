@@ -3,12 +3,11 @@
 //
 //   let gesture = try Gesture(json)
 //   let getGestureResponse = try GetGestureResponse(json)
-//   let loadSettingsResponse = try LoadSettingsResponse(json)
+//   let getExclusionEntryResponse = try GetExclusionEntryResponse(json)
 //   let messageRequest = try MessageRequest(json)
 //   let vector = try Vector(json)
 //   let pointList = try PointList(json)
 //   let pattern = try Pattern(json)
-//   let exclusionList = try ExclusionList(json)
 //   let point = try Point(json)
 //   let action = try Action(json)
 
@@ -317,22 +316,20 @@ extension Vector {
     }
 }
 
-// MARK: - LoadSettingsResponse
-struct LoadSettingsResponse: Codable {
-    var exclusionList: [String]
-    var gestures: [Gesture]
+// MARK: - GetExclusionEntryResponse
+struct GetExclusionEntryResponse: Codable {
+    var exclusionEntry: GetExclusionEntryResponseExclusionEntry?
 
     enum CodingKeys: String, CodingKey {
-        case exclusionList = "exclusion_list"
-        case gestures
+        case exclusionEntry = "exclusion_entry"
     }
 }
 
-// MARK: LoadSettingsResponse convenience initializers and mutators
+// MARK: GetExclusionEntryResponse convenience initializers and mutators
 
-extension LoadSettingsResponse {
+extension GetExclusionEntryResponse {
     init(data: Data) throws {
-        self = try newJSONDecoder().decode(LoadSettingsResponse.self, from: data)
+        self = try newJSONDecoder().decode(GetExclusionEntryResponse.self, from: data)
     }
 
     init(_ json: String, using encoding: String.Encoding = .utf8) throws {
@@ -347,12 +344,55 @@ extension LoadSettingsResponse {
     }
 
     func with(
-        exclusionList: [String]? = nil,
-        gestures: [Gesture]? = nil
-    ) -> LoadSettingsResponse {
-        return LoadSettingsResponse(
-            exclusionList: exclusionList ?? self.exclusionList,
-            gestures: gestures ?? self.gestures
+        exclusionEntry: GetExclusionEntryResponseExclusionEntry?? = nil
+    ) -> GetExclusionEntryResponse {
+        return GetExclusionEntryResponse(
+            exclusionEntry: exclusionEntry ?? self.exclusionEntry
+        )
+    }
+
+    func jsonData() throws -> Data {
+        return try newJSONEncoder().encode(self)
+    }
+
+    func jsonString(encoding: String.Encoding = .utf8) throws -> String? {
+        return String(data: try self.jsonData(), encoding: encoding)
+    }
+}
+
+// MARK: - GetExclusionEntryResponseExclusionEntry
+struct GetExclusionEntryResponseExclusionEntry: Codable {
+    var domain, id: String
+    var path: String?
+}
+
+// MARK: GetExclusionEntryResponseExclusionEntry convenience initializers and mutators
+
+extension GetExclusionEntryResponseExclusionEntry {
+    init(data: Data) throws {
+        self = try newJSONDecoder().decode(GetExclusionEntryResponseExclusionEntry.self, from: data)
+    }
+
+    init(_ json: String, using encoding: String.Encoding = .utf8) throws {
+        guard let data = json.data(using: encoding) else {
+            throw NSError(domain: "JSONDecoding", code: 0, userInfo: nil)
+        }
+        try self.init(data: data)
+    }
+
+    init(fromURL url: URL) throws {
+        try self.init(data: try Data(contentsOf: url))
+    }
+
+    func with(
+        domain: String? = nil,
+        id: String? = nil,
+        path: String?? = nil
+    ) -> GetExclusionEntryResponseExclusionEntry {
+        return GetExclusionEntryResponseExclusionEntry(
+            domain: domain ?? self.domain,
+            id: id ?? self.id,
+            path: path ?? self.path
         )
     }
 
@@ -368,13 +408,21 @@ extension LoadSettingsResponse {
 /// Request from Web Extension to App
 // MARK: - MessageRequest
 struct MessageRequest: Codable {
-    var getGestures, loadSettings: Bool?
-    var updateExclusionList: UpdateExclusionList?
+    var addExclusionEntry: AddExclusionEntryRequest?
+    /// Request the relevant exclusion list entry
+    ///
+    /// If the domain is excluded, return domain exclusion entry
+    /// If the page is excluded, return the page exclusion entry
+    /// If the extension is active on the given page, return null
+    var getExclusionEntry: GetExclusionEntryRequest?
+    var getGestures: Bool?
+    var removeExclusionEntry: String?
 
     enum CodingKeys: String, CodingKey {
+        case addExclusionEntry = "add_exclusion_entry"
+        case getExclusionEntry = "get_exclusion_entry"
         case getGestures = "get_gestures"
-        case loadSettings = "load_settings"
-        case updateExclusionList = "update_exclusion_list"
+        case removeExclusionEntry = "remove_exclusion_entry"
     }
 }
 
@@ -397,14 +445,16 @@ extension MessageRequest {
     }
 
     func with(
+        addExclusionEntry: AddExclusionEntryRequest?? = nil,
+        getExclusionEntry: GetExclusionEntryRequest?? = nil,
         getGestures: Bool?? = nil,
-        loadSettings: Bool?? = nil,
-        updateExclusionList: UpdateExclusionList?? = nil
+        removeExclusionEntry: String?? = nil
     ) -> MessageRequest {
         return MessageRequest(
+            addExclusionEntry: addExclusionEntry ?? self.addExclusionEntry,
+            getExclusionEntry: getExclusionEntry ?? self.getExclusionEntry,
             getGestures: getGestures ?? self.getGestures,
-            loadSettings: loadSettings ?? self.loadSettings,
-            updateExclusionList: updateExclusionList ?? self.updateExclusionList
+            removeExclusionEntry: removeExclusionEntry ?? self.removeExclusionEntry
         )
     }
 
@@ -417,20 +467,17 @@ extension MessageRequest {
     }
 }
 
-// MARK: - UpdateExclusionList
-struct UpdateExclusionList: Codable {
-    var exclusionList: [String]
-
-    enum CodingKeys: String, CodingKey {
-        case exclusionList = "exclusion_list"
-    }
+// MARK: - AddExclusionEntryRequest
+struct AddExclusionEntryRequest: Codable {
+    var domain: String
+    var path: String?
 }
 
-// MARK: UpdateExclusionList convenience initializers and mutators
+// MARK: AddExclusionEntryRequest convenience initializers and mutators
 
-extension UpdateExclusionList {
+extension AddExclusionEntryRequest {
     init(data: Data) throws {
-        self = try newJSONDecoder().decode(UpdateExclusionList.self, from: data)
+        self = try newJSONDecoder().decode(AddExclusionEntryRequest.self, from: data)
     }
 
     init(_ json: String, using encoding: String.Encoding = .utf8) throws {
@@ -445,10 +492,59 @@ extension UpdateExclusionList {
     }
 
     func with(
-        exclusionList: [String]? = nil
-    ) -> UpdateExclusionList {
-        return UpdateExclusionList(
-            exclusionList: exclusionList ?? self.exclusionList
+        domain: String? = nil,
+        path: String?? = nil
+    ) -> AddExclusionEntryRequest {
+        return AddExclusionEntryRequest(
+            domain: domain ?? self.domain,
+            path: path ?? self.path
+        )
+    }
+
+    func jsonData() throws -> Data {
+        return try newJSONEncoder().encode(self)
+    }
+
+    func jsonString(encoding: String.Encoding = .utf8) throws -> String? {
+        return String(data: try self.jsonData(), encoding: encoding)
+    }
+}
+
+/// Request the relevant exclusion list entry
+///
+/// If the domain is excluded, return domain exclusion entry
+/// If the page is excluded, return the page exclusion entry
+/// If the extension is active on the given page, return null
+// MARK: - GetExclusionEntryRequest
+struct GetExclusionEntryRequest: Codable {
+    var domain, path: String
+}
+
+// MARK: GetExclusionEntryRequest convenience initializers and mutators
+
+extension GetExclusionEntryRequest {
+    init(data: Data) throws {
+        self = try newJSONDecoder().decode(GetExclusionEntryRequest.self, from: data)
+    }
+
+    init(_ json: String, using encoding: String.Encoding = .utf8) throws {
+        guard let data = json.data(using: encoding) else {
+            throw NSError(domain: "JSONDecoding", code: 0, userInfo: nil)
+        }
+        try self.init(data: data)
+    }
+
+    init(fromURL url: URL) throws {
+        try self.init(data: try Data(contentsOf: url))
+    }
+
+    func with(
+        domain: String? = nil,
+        path: String? = nil
+    ) -> GetExclusionEntryRequest {
+        return GetExclusionEntryRequest(
+            domain: domain ?? self.domain,
+            path: path ?? self.path
         )
     }
 
@@ -504,36 +600,10 @@ extension Point {
 }
 
 typealias PointList = [Point]
-typealias ExclusionList = [String]
 
 extension Array where Element == PointList.Element {
     init(data: Data) throws {
         self = try newJSONDecoder().decode(PointList.self, from: data)
-    }
-
-    init(_ json: String, using encoding: String.Encoding = .utf8) throws {
-        guard let data = json.data(using: encoding) else {
-            throw NSError(domain: "JSONDecoding", code: 0, userInfo: nil)
-        }
-        try self.init(data: data)
-    }
-
-    init(fromURL url: URL) throws {
-        try self.init(data: try Data(contentsOf: url))
-    }
-
-    func jsonData() throws -> Data {
-        return try newJSONEncoder().encode(self)
-    }
-
-    func jsonString(encoding: String.Encoding = .utf8) throws -> String? {
-        return String(data: try self.jsonData(), encoding: encoding)
-    }
-}
-
-extension Array where Element == ExclusionList.Element {
-    init(data: Data) throws {
-        self = try newJSONDecoder().decode(ExclusionList.self, from: data)
     }
 
     init(_ json: String, using encoding: String.Encoding = .utf8) throws {

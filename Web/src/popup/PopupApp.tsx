@@ -1,12 +1,8 @@
 import { Box } from "@chakra-ui/react";
-import React, { Fragment, useEffect, useMemo, VFC } from "react";
+import React, { Fragment, useEffect, VFC } from "react";
 import { useAsyncFn } from "react-use";
-import {
-  addToExclusionList,
-  isExcluded,
-  removeFromExclusionList,
-  urlToExclusionListEntry,
-} from "../core/ExclusionList";
+import { urlToExclusionListEntry } from "../core/ExclusionList";
+import { GetExclusionEntryResponse } from "../SharedTypes";
 import { ExceptionToggleGroup } from "./components/ExceptionToggleGroup";
 import { StatusAlert } from "./components/StatusAlert";
 import { PopupGlobalStyle } from "./PopupGlobalStyle";
@@ -18,97 +14,119 @@ export type PopupAppProps = {
   tabManager: PopupTabManager;
 };
 
+function isDomainExcluded(
+  entry: GetExclusionEntryResponse["exclusionEntry"] | undefined
+): boolean {
+  // if exclusion entry exists but it has no path, then the domain is excluded
+  return !!entry && !entry.path;
+}
+
+function isPageExcluded(
+  entry: GetExclusionEntryResponse["exclusionEntry"] | undefined
+): boolean {
+  // if exclusion entry exists and has a path, then the page is excluded
+  return !!entry && !!entry.path;
+}
+
 export const PopupApp: VFC<PopupAppProps> = ({ messenger, tabManager }) => {
-  const [tabState, loadTabState] = useAsyncFn(() => tabManager.getCurrentTab());
-  const [settingsState, loadSettingsState] = useAsyncFn(() =>
-    messenger.loadSettings()
-  );
-
-  // load state on mount
-  useEffect(() => {
-    loadTabState();
-    loadSettingsState();
-  }, [loadSettingsState, loadTabState]);
-
-  const currentTabExclusionEntry = useMemo(() => {
-    if (!tabState.value?.url) {
+  const [tabState, updateTabState] = useAsyncFn(async () => {
+    const tab = await tabManager.getCurrentTab();
+    if (!tab.url) {
       return null;
     }
-    return urlToExclusionListEntry(tabState.value.url);
-  }, [tabState.value]);
-
-  const [, updateExclusionList] = useAsyncFn(
-    (exclusionList: string[]) => messenger.updateExclusionList(exclusionList),
-    []
-  );
+    const entry = urlToExclusionListEntry(tab.url);
+    const exclusionEntry = await messenger.getExclusionEntry(
+      entry.domain,
+      entry.path
+    );
+    return {
+      tab: {
+        domain: entry.domain,
+        path: entry.path,
+      },
+      exclusionEntry: exclusionEntry.exclusionEntry,
+    };
+  }, []);
+  useEffect(() => {
+    updateTabState();
+  }, [updateTabState]);
 
   return (
     <Box padding={2}>
-      {currentTabExclusionEntry && settingsState.value?.exclusionList && (
+      {tabState.value && (
         <Fragment>
           <StatusAlert
-            status={
-              isExcluded(
-                settingsState.value.exclusionList,
-                currentTabExclusionEntry.page
-              )
-                ? "INACTIVE"
-                : "ACTIVE"
-            }
+            status={tabState.value.exclusionEntry ? "INACTIVE" : "ACTIVE"}
           />
           <ExceptionToggleGroup
-            domain={currentTabExclusionEntry.domain}
-            path={currentTabExclusionEntry.path}
+            domain={tabState.value.tab.domain}
+            path={tabState.value.tab.path}
             value={{
-              disabledDomain: isExcluded(
-                settingsState.value.exclusionList,
-                currentTabExclusionEntry.domain
-              ),
-              disabledPage: isExcluded(
-                settingsState.value.exclusionList,
-                currentTabExclusionEntry.page
-              ),
+              disabledDomain: isDomainExcluded(tabState.value.exclusionEntry),
+              disabledPage: !!tabState.value.exclusionEntry,
             }}
             onChange={(status) => {
-              const currentExclusionList = settingsState.value?.exclusionList;
-              if (!currentExclusionList) {
-                return;
-              }
-              let newExclusionList: string[] | null = null;
-              if (typeof status.disabledDomain === "boolean") {
-                // only process if key is present
-                if (status.disabledDomain) {
-                  // add domain entry (and remove page entries with the same domain)
-                  newExclusionList = addToExclusionList(
-                    currentExclusionList,
-                    currentTabExclusionEntry.domain
+              (async () => {
+                if (typeof status.disabledDomain === "boolean") {
+                  // only process if key is present
+                  const currentlyDomainExcluded = isDomainExcluded(
+                    tabState.value?.exclusionEntry
                   );
-                } else {
-                  // remove domain entry
-                  newExclusionList = removeFromExclusionList(
-                    currentExclusionList,
-                    currentTabExclusionEntry.domain
-                  );
+                  // currently disabled on this domain and want to enable by removing the domain exclusion entry
+                  if (
+                    currentlyDomainExcluded &&
+                    !status.disabledDomain &&
+                    tabState.value?.exclusionEntry?.id
+                  ) {
+                    await messenger.removeExclusionEntry(
+                      tabState.value.exclusionEntry.id
+                    );
+                  }
+                  // currently enabled on this domain and want to disable by adding a new domain exclusion entry
+                  if (
+                    !currentlyDomainExcluded &&
+                    status.disabledDomain &&
+                    tabState.value?.tab
+                  ) {
+                    await messenger.addExclusionEntry(
+                      tabState.value.tab.domain,
+                      undefined
+                    );
+                  }
                 }
-              }
-              if (typeof status.disabledPage === "boolean") {
-                if (status.disabledPage) {
-                  newExclusionList = addToExclusionList(
-                    currentExclusionList,
-                    currentTabExclusionEntry.page
+                if (typeof status.disabledPage === "boolean") {
+                  // only process if key is present
+                  // only process if key is present
+                  const currentlyPageExcluded = isPageExcluded(
+                    tabState.value?.exclusionEntry
                   );
-                } else {
-                  newExclusionList = removeFromExclusionList(
-                    currentExclusionList,
-                    currentTabExclusionEntry.page
-                  );
+                  // currently disabled on this page and want to enable by removing the page exclusion entry
+                  if (
+                    currentlyPageExcluded &&
+                    !status.disabledPage &&
+                    tabState.value?.exclusionEntry?.id
+                  ) {
+                    await messenger.removeExclusionEntry(
+                      tabState.value.exclusionEntry.id
+                    );
+                  }
+                  // currently enabled on this page and want to disable by adding a new page exclusion entry
+                  if (
+                    !currentlyPageExcluded &&
+                    status.disabledPage &&
+                    tabState.value?.tab
+                  ) {
+                    await messenger.addExclusionEntry(
+                      tabState.value.tab.domain,
+                      tabState.value.tab.path
+                    );
+                  }
                 }
-              }
-              if (newExclusionList) {
-                updateExclusionList(newExclusionList).then(() => {
-                  loadSettingsState();
-                });
-              }
+                await updateTabState();
+              })().catch((error) => {
+                // TODO: Error handling
+                console.error(error);
+              });
             }}
           />
         </Fragment>

@@ -1,0 +1,17 @@
+title: GetExclusionEntryResponse
+type: object
+description: ""
+properties:
+  exclusion_entry:
+    title: GetExclusionEntryResponseExclusionEntry
+    required:
+      - id
+      - domain
+    type: object
+    properties:
+      id:
+        type: string
+      domain:
+        type: string
+      path:
+        type: string

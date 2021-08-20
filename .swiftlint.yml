@@ -1,6 +1,7 @@
 disabled_rules:
   # to support reasonable expressions in SwiftUI
   - multiple_closures_with_trailing_closure
+  - todo
 excluded:
   - Svadilfari/SharedTypes.swift
 identifier_name:

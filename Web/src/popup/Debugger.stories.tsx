@@ -25,10 +25,10 @@ export const Enabled = Template.bind({});
 
 export const DisabledDomain = Template.bind({});
 DisabledDomain.args = {
-  messenger: new DebugPopupMessanger(["example.com"]),
+  messenger: new DebugPopupMessanger(),
 };
 
 export const DisabledPage = Template.bind({});
 DisabledPage.args = {
-  messenger: new DebugPopupMessanger(["example.com/foo"]),
+  messenger: new DebugPopupMessanger(),
 };

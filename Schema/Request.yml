@@ -4,12 +4,33 @@ description: Request from Web Extension to App
 properties:
   get_gestures:
     type: boolean
-  load_settings:
-    type: boolean
-  update_exclusion_list:
+  add_exclusion_entry:
+    title: AddExclusionEntryRequest
     type: object
     properties:
-      exclusion_list:
-        $ref: ./ExclusionList.yml
+      domain:
+        type: string
+      path:
+        type: string
     required:
-      - exclusion_list
+      - domain
+  remove_exclusion_entry:
+    type: string
+    format: uuid
+  get_exclusion_entry:
+    type: object
+    title: GetExclusionEntryRequest
+    description: |-
+      Request the relevant exclusion list entry
+
+      If the domain is excluded, return domain exclusion entry
+      If the page is excluded, return the page exclusion entry
+      If the extension is active on the given page, return null
+    properties:
+      domain:
+        type: string
+      path:
+        type: string
+    required:
+      - domain
+      - path

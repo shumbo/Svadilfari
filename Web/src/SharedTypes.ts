@@ -1,15 +1,14 @@
 // To parse this data:
 //
-//   import { Convert, Gesture, GetGestureResponse, LoadSettingsResponse, MessageRequest, Vector, Pattern, Point, Action } from "./file";
+//   import { Convert, Gesture, GetGestureResponse, GetExclusionEntryResponse, MessageRequest, Vector, Pattern, Point, Action } from "./file";
 //
 //   const gesture = Convert.toGesture(json);
 //   const getGestureResponse = Convert.toGetGestureResponse(json);
-//   const loadSettingsResponse = Convert.toLoadSettingsResponse(json);
+//   const getExclusionEntryResponse = Convert.toGetExclusionEntryResponse(json);
 //   const messageRequest = Convert.toMessageRequest(json);
 //   const vector = Convert.toVector(json);
 //   const pointList = Convert.toPointList(json);
 //   const pattern = Convert.toPattern(json);
-//   const exclusionList = Convert.toExclusionList(json);
 //   const point = Convert.toPoint(json);
 //   const action = Convert.toAction(json);
 //
@@ -60,22 +59,48 @@ export interface Vector {
     y: number;
 }
 
-export interface LoadSettingsResponse {
-    exclusionList: string[];
-    gestures:      Gesture[];
+export interface GetExclusionEntryResponse {
+    exclusionEntry?: GetExclusionEntryResponseExclusionEntry;
+}
+
+export interface GetExclusionEntryResponseExclusionEntry {
+    domain: string;
+    id:     string;
+    path?:  string;
 }
 
 /**
  * Request from Web Extension to App
  */
 export interface MessageRequest {
-    getGestures?:         boolean;
-    loadSettings?:        boolean;
-    updateExclusionList?: UpdateExclusionList;
+    addExclusionEntry?: AddExclusionEntryRequest;
+    /**
+     * Request the relevant exclusion list entry
+     *
+     * If the domain is excluded, return domain exclusion entry
+     * If the page is excluded, return the page exclusion entry
+     * If the extension is active on the given page, return null
+     */
+    getExclusionEntry?:    GetExclusionEntryRequest;
+    getGestures?:          boolean;
+    removeExclusionEntry?: string;
 }
 
-export interface UpdateExclusionList {
-    exclusionList: string[];
+export interface AddExclusionEntryRequest {
+    domain: string;
+    path?:  string;
+}
+
+/**
+ * Request the relevant exclusion list entry
+ *
+ * If the domain is excluded, return domain exclusion entry
+ * If the page is excluded, return the page exclusion entry
+ * If the extension is active on the given page, return null
+ */
+export interface GetExclusionEntryRequest {
+    domain: string;
+    path:   string;
 }
 
 export interface Point {
@@ -102,12 +127,12 @@ export class Convert {
         return JSON.stringify(uncast(value, r("GetGestureResponse")), null, 2);
     }
 
-    public static toLoadSettingsResponse(json: string): LoadSettingsResponse {
-        return cast(JSON.parse(json), r("LoadSettingsResponse"));
+    public static toGetExclusionEntryResponse(json: string): GetExclusionEntryResponse {
+        return cast(JSON.parse(json), r("GetExclusionEntryResponse"));
     }
 
-    public static loadSettingsResponseToJson(value: LoadSettingsResponse): string {
-        return JSON.stringify(uncast(value, r("LoadSettingsResponse")), null, 2);
+    public static getExclusionEntryResponseToJson(value: GetExclusionEntryResponse): string {
+        return JSON.stringify(uncast(value, r("GetExclusionEntryResponse")), null, 2);
     }
 
     public static toMessageRequest(json: string): MessageRequest {
@@ -140,14 +165,6 @@ export class Convert {
 
     public static patternToJson(value: Pattern): string {
         return JSON.stringify(uncast(value, r("Pattern")), null, 2);
-    }
-
-    public static toExclusionList(json: string): string[] {
-        return cast(JSON.parse(json), a(""));
-    }
-
-    public static exclusionListToJson(value: string[]): string {
-        return JSON.stringify(uncast(value, a("")), null, 2);
     }
 
     public static toPoint(json: string): Point {
@@ -335,17 +352,27 @@ const typeMap: any = {
         { json: "x", js: "x", typ: 3.14 },
         { json: "y", js: "y", typ: 3.14 },
     ], "any"),
-    "LoadSettingsResponse": o([
-        { json: "exclusion_list", js: "exclusionList", typ: a("") },
-        { json: "gestures", js: "gestures", typ: a(r("Gesture")) },
+    "GetExclusionEntryResponse": o([
+        { json: "exclusion_entry", js: "exclusionEntry", typ: u(undefined, r("GetExclusionEntryResponseExclusionEntry")) },
+    ], "any"),
+    "GetExclusionEntryResponseExclusionEntry": o([
+        { json: "domain", js: "domain", typ: "" },
+        { json: "id", js: "id", typ: "" },
+        { json: "path", js: "path", typ: u(undefined, "") },
     ], "any"),
     "MessageRequest": o([
+        { json: "add_exclusion_entry", js: "addExclusionEntry", typ: u(undefined, r("AddExclusionEntryRequest")) },
+        { json: "get_exclusion_entry", js: "getExclusionEntry", typ: u(undefined, r("GetExclusionEntryRequest")) },
         { json: "get_gestures", js: "getGestures", typ: u(undefined, true) },
-        { json: "load_settings", js: "loadSettings", typ: u(undefined, true) },
-        { json: "update_exclusion_list", js: "updateExclusionList", typ: u(undefined, r("UpdateExclusionList")) },
+        { json: "remove_exclusion_entry", js: "removeExclusionEntry", typ: u(undefined, "") },
     ], "any"),
-    "UpdateExclusionList": o([
-        { json: "exclusion_list", js: "exclusionList", typ: a("") },
+    "AddExclusionEntryRequest": o([
+        { json: "domain", js: "domain", typ: "" },
+        { json: "path", js: "path", typ: u(undefined, "") },
+    ], "any"),
+    "GetExclusionEntryRequest": o([
+        { json: "domain", js: "domain", typ: "" },
+        { json: "path", js: "path", typ: "" },
     ], "any"),
     "Point": o([
         { json: "x", js: "x", typ: 3.14 },

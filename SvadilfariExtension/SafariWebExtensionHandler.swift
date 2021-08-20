@@ -22,6 +22,10 @@ class SafariWebExtensionHandler: NSObject, NSExtensionRequestHandling {
         return context
     }()
 
+    lazy var els: ExclusionListService = {
+        return ExclusionListService(moc: self.moc)
+    }()
+
     // swiftlint:disable:next function_body_length cyclomatic_complexity
     func beginRequest(with context: NSExtensionContext) {
         // swiftlint:disable all
@@ -32,10 +36,9 @@ class SafariWebExtensionHandler: NSObject, NSExtensionRequestHandling {
         
         // swiftlint:disable:next all
         os_log(.default, "Received message from browser.runtime.sendNativeMessage: %@", message as! CVarArg)
-        
+
         // helper that returns json
         func respond(json: String) {
-            print("respond", json)
             let response = NSExtensionItem()
             response.userInfo = [ SFExtensionMessageKey: json ]
             context.completeRequest(returningItems: [response], completionHandler: nil)
@@ -43,12 +46,23 @@ class SafariWebExtensionHandler: NSObject, NSExtensionRequestHandling {
         func respondError(msg: String) {
             respond(json: "{\"error\": \"\(msg)\"}")
         }
-        
+        func respond<T: Encodable>(_ response: T) {
+            do {
+                let data = try newJSONEncoder().encode(response)
+                respond(json: String(data: data, encoding: .utf8) ?? "{}")
+            } catch {
+                respondError(msg: "Failed to encode data")
+            }
+        }
+        func respond() {
+            respond(json: "{}")
+        }
+
         guard let str = message as? String, let req = try? MessageRequest(str) else {
             respondError(msg: "Failed to decode the message")
             return
         }
-        
+
         if req.getGestures != nil {
             var gestures: [Gesture] = []
             let request = GestureEntity.fetchRequest()
@@ -60,63 +74,55 @@ class SafariWebExtensionHandler: NSObject, NSExtensionRequestHandling {
                 return
             }
             let response = GetGestureResponse(error: nil, gestures: gestures)
-            guard let json = try? response.jsonString() else {
-                respondError(msg: "Failed to encode gestures")
-                return
-            }
-            respond(json: json)
+            respond(response)
             return
         }
-        if req.loadSettings != nil {
-            var gestures: [Gesture] = []
-            let gestureRequest = GestureEntity.fetchRequest()
+
+        if let getExclusionEntryRequest = req.getExclusionEntry {
+            var entry: ExclusionEntryEntity?
             do {
-                let result = try self.moc.fetch(gestureRequest)
-                gestures = result.compactMap { $0.gesture }
+                entry = try self.els.fetchRelevantEntry(domain: getExclusionEntryRequest.domain, path: getExclusionEntryRequest.path)
             } catch {
-                respondError(msg: "Failed to fetch gestures")
+                respondError(msg: "Failed to get an exclusion entry")
                 return
             }
-            var exclusionList: [String] = []
-            let exclusionListRequest = ExclusionListEntryEntity.fetchRequest()
-            exclusionListRequest.fetchLimit = 1
-            do {
-                let result = try self.moc.fetch(exclusionListRequest)
-                if
-                    let entity = result.first,
-                    let json = entity.json,
-                    let arr = try? ExclusionList.init(json) {
-                    exclusionList = arr
+
+            var response: GetExclusionEntryResponse
+            if let entry = entry {
+                guard let domain = entry.domain, let uuid = entry.id?.uuidString else {
+                    respondError(msg: "Found an invalid entry")
+                    return
                 }
-            } catch {
-                respondError(msg: "Failed to fetch exclusion list")
+                response = GetExclusionEntryResponse(exclusionEntry: GetExclusionEntryResponseExclusionEntry(domain: domain, id: uuid, path: entry.path))
+            } else {
+                response = GetExclusionEntryResponse(exclusionEntry: nil)
             }
-            let response = LoadSettingsResponse(exclusionList: exclusionList, gestures: gestures)
-            guard let json = try? response.jsonString() else {
-                respondError(msg: "Failed to encode settings")
-                return
-            }
-            respond(json: json)
+            respond(response)
             return
         }
-        if let requestDetails = req.updateExclusionList {
-            guard let json = try? requestDetails.exclusionList.jsonString() else {
-                respondError(msg: "Failed to encode given data structure")
-                return
-            }
-            let exclusionListRequest = ExclusionListEntryEntity.fetchRequest()
-            exclusionListRequest.fetchLimit = 1
+
+        if let addExclusionEntryRequest = req.addExclusionEntry {
             do {
-                let result = try self.moc.fetch(exclusionListRequest)
-                let entity = result.first ?? ExclusionListEntryEntity(context: self.moc)
-                entity.json = json
-                try self.moc.save()
+                try self.els.add(domain: addExclusionEntryRequest.domain, path: addExclusionEntryRequest.path)
             } catch {
-                respondError(msg: "Failed to fetch exclusion list")
+                respondError(msg: "Failed to add an exclusion entry")
+                return
             }
-            respond(json: "{}")
+            respond()
             return
         }
+
+        if let removeExclusionEntryRequest = req.removeExclusionEntry {
+            do {
+                try self.els.remove(uuid: removeExclusionEntryRequest)
+            } catch {
+                respondError(msg: "Failed to remove exclusion entry")
+                return
+            }
+            respond()
+            return
+        }
+
         respond(json: "Failed to find a request handler")
     }
 }
