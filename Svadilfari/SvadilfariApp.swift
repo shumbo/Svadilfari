@@ -10,11 +10,26 @@ import CoreData
 
 @main
 struct SvadilfariApp: App {
-    let persistenceController = PersistenceController.shared
+    var persistentContainer: NSPersistentContainer {
+        print("compute")
+
+        let container = PersistenceController.shared.container
+        container.viewContext.name = "view_context"
+        container.viewContext.transactionAuthor = "main_app"
+
+        let persistentHistoryObserver = PersistentHistoryObserver(
+            target: .app,
+            persistentContainer: container,
+            userDefaults: UserDefaults.shared
+        )
+        persistentHistoryObserver.startObserving()
+
+        return container
+    }
 
     var body: some Scene {
         WindowGroup {
-            ContentView().environment(\.managedObjectContext, persistenceController.container.viewContext)
+            ContentView().environment(\.managedObjectContext, persistentContainer.viewContext)
         }
     }
 }

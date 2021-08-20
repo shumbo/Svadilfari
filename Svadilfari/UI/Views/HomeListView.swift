@@ -20,7 +20,7 @@ struct HomeListView: View {
                         )
                     }.contentShape(Rectangle())
                         .onTapGesture {
-                        // TODO
+                            NotificationCenter.default.post(name: .NSPersistentStoreRemoteChange, object: nil)
                         print("TODO")
                     }
                 }
@@ -32,11 +32,13 @@ struct HomeListView: View {
                             image: Image(systemName: "hand.draw.fill")
                         )
                     }.listRowInsets(HomeListItem.listRowInsets)
-                    HomeListItem(
-                        title: "Exclusion List",
-                        description: "Specify websites you don't wish to use gestures",
-                        image: Image(systemName: "nosign")
-                    )
+                    NavigationLink(destination: ExclusionListView()) {
+                        HomeListItem(
+                            title: "Exclusion List",
+                            description: "Specify websites you don't wish to use gestures",
+                            image: Image(systemName: "nosign")
+                        )
+                    }
                 }
             }.navigationBarHidden(true)
         }

@@ -57,6 +57,7 @@ struct GestureListView: View {
         self.viewContext.performAndWait {
             g.gesture = newGesture
             try? self.viewContext.save()
+
         }
     }
     func removeGesture(offsets: IndexSet) {

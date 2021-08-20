@@ -11,6 +11,9 @@
 		241D8FB926BC1F2200CBB381 /* Action+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241D8FB826BC1F2200CBB381 /* Action+.swift */; };
 		241D8FC026BC7BDC00CBB381 /* SelectActionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241D8FBF26BC7BDC00CBB381 /* SelectActionView.swift */; };
 		241D8FC226BC7E1600CBB381 /* RunJavascriptActionConfigView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241D8FC126BC7E1600CBB381 /* RunJavascriptActionConfigView.swift */; };
+		242CD6E926CFB147009DDDB0 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242CD6E826CFB147009DDDB0 /* Constants.swift */; };
+		242CD6EA26CFB228009DDDB0 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245A016026B9A07700EEE8CD /* UserDefaults.swift */; };
+		242CD6EB26CFB246009DDDB0 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242CD6E826CFB147009DDDB0 /* Constants.swift */; };
 		24428E1726B33E7600B21130 /* SvadilfariApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24428E1626B33E7600B21130 /* SvadilfariApp.swift */; };
 		24428E1926B33E7600B21130 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24428E1826B33E7600B21130 /* ContentView.swift */; };
 		24428E1B26B33E7700B21130 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 24428E1A26B33E7700B21130 /* Assets.xcassets */; };
@@ -28,6 +31,19 @@
 		245A016B26B9ACD900EEE8CD /* NewGesturePresetsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245A016A26B9ACD900EEE8CD /* NewGesturePresetsView.swift */; };
 		245A016D26B9CCCA00EEE8CD /* NewGesturePatternConfirmView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245A016C26B9CCCA00EEE8CD /* NewGesturePatternConfirmView.swift */; };
 		2485834C26BCC2DE00A8836E /* SheetState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2485834B26BCC2DE00A8836E /* SheetState.swift */; };
+		249477BC26CCF6D800E6FCC5 /* ExclusionListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249477BB26CCF6D800E6FCC5 /* ExclusionListView.swift */; };
+		249477BE26CEB38700E6FCC5 /* PersistentHistoryTracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249477BD26CEB38700E6FCC5 /* PersistentHistoryTracking.swift */; };
+		249477C026CEB71B00E6FCC5 /* UserDefaults+transactionTimestamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249477BF26CEB71B00E6FCC5 /* UserDefaults+transactionTimestamp.swift */; };
+		249477C326CEB75200E6FCC5 /* PersistentHistoryMerger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249477C226CEB75200E6FCC5 /* PersistentHistoryMerger.swift */; };
+		249477C626CEB96E00E6FCC5 /* Logger+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249477C526CEB96E00E6FCC5 /* Logger+.swift */; };
+		249477C826CEBA0D00E6FCC5 /* PersistentHistoryFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249477C726CEBA0D00E6FCC5 /* PersistentHistoryFetcher.swift */; };
+		249477CA26CEBC4500E6FCC5 /* PersistentHistoryCleaner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249477C926CEBC4500E6FCC5 /* PersistentHistoryCleaner.swift */; };
+		249477CB26CEBE9500E6FCC5 /* Logger+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249477C526CEB96E00E6FCC5 /* Logger+.swift */; };
+		249477CC26CEBE9E00E6FCC5 /* PersistentHistoryTracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249477BD26CEB38700E6FCC5 /* PersistentHistoryTracking.swift */; };
+		249477CD26CEBEA300E6FCC5 /* PersistentHistoryMerger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249477C226CEB75200E6FCC5 /* PersistentHistoryMerger.swift */; };
+		249477CE26CEBEA600E6FCC5 /* PersistentHistoryFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249477C726CEBA0D00E6FCC5 /* PersistentHistoryFetcher.swift */; };
+		249477CF26CEBEA900E6FCC5 /* PersistentHistoryCleaner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249477C926CEBC4500E6FCC5 /* PersistentHistoryCleaner.swift */; };
+		249477D026CEBEBF00E6FCC5 /* UserDefaults+transactionTimestamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249477BF26CEB71B00E6FCC5 /* UserDefaults+transactionTimestamp.swift */; };
 		24A19E2C26B34F9500DA5E20 /* GestureListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A19E2B26B34F9500DA5E20 /* GestureListView.swift */; };
 		24B224A026B5E445009EAB48 /* GestureListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B2249F26B5E445009EAB48 /* GestureListItem.swift */; };
 		24B224A226B5E6B4009EAB48 /* Action+Title.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B224A126B5E6B3009EAB48 /* Action+Title.swift */; };
@@ -104,6 +120,7 @@
 		241D8FB826BC1F2200CBB381 /* Action+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Action+.swift"; sourceTree = "<group>"; };
 		241D8FBF26BC7BDC00CBB381 /* SelectActionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectActionView.swift; sourceTree = "<group>"; };
 		241D8FC126BC7E1600CBB381 /* RunJavascriptActionConfigView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunJavascriptActionConfigView.swift; sourceTree = "<group>"; };
+		242CD6E826CFB147009DDDB0 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		24428E1326B33E7600B21130 /* Svadilfari.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Svadilfari.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		24428E1626B33E7600B21130 /* SvadilfariApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SvadilfariApp.swift; sourceTree = "<group>"; };
 		24428E1826B33E7600B21130 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -124,6 +141,13 @@
 		245A016A26B9ACD900EEE8CD /* NewGesturePresetsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewGesturePresetsView.swift; sourceTree = "<group>"; };
 		245A016C26B9CCCA00EEE8CD /* NewGesturePatternConfirmView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewGesturePatternConfirmView.swift; sourceTree = "<group>"; };
 		2485834B26BCC2DE00A8836E /* SheetState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetState.swift; sourceTree = "<group>"; };
+		249477BB26CCF6D800E6FCC5 /* ExclusionListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExclusionListView.swift; sourceTree = "<group>"; };
+		249477BD26CEB38700E6FCC5 /* PersistentHistoryTracking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistentHistoryTracking.swift; sourceTree = "<group>"; };
+		249477BF26CEB71B00E6FCC5 /* UserDefaults+transactionTimestamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+transactionTimestamp.swift"; sourceTree = "<group>"; };
+		249477C226CEB75200E6FCC5 /* PersistentHistoryMerger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistentHistoryMerger.swift; sourceTree = "<group>"; };
+		249477C526CEB96E00E6FCC5 /* Logger+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Logger+.swift"; sourceTree = "<group>"; };
+		249477C726CEBA0D00E6FCC5 /* PersistentHistoryFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistentHistoryFetcher.swift; sourceTree = "<group>"; };
+		249477C926CEBC4500E6FCC5 /* PersistentHistoryCleaner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistentHistoryCleaner.swift; sourceTree = "<group>"; };
 		24A19E2B26B34F9500DA5E20 /* GestureListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GestureListView.swift; sourceTree = "<group>"; };
 		24B2249F26B5E445009EAB48 /* GestureListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GestureListItem.swift; sourceTree = "<group>"; };
 		24B224A126B5E6B3009EAB48 /* Action+Title.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Action+Title.swift"; sourceTree = "<group>"; };
@@ -226,6 +250,7 @@
 				24B224A826B5EEEE009EAB48 /* Extensions */,
 				24B224A326B5EB71009EAB48 /* Misc */,
 				24428E3E26B33F2A00B21130 /* UI */,
+				249477C126CEB73500E6FCC5 /* Core Data */,
 				24C11E4826B4307100E018B5 /* SharedTypes.swift */,
 				24428E1626B33E7600B21130 /* SvadilfariApp.swift */,
 				24428E1A26B33E7700B21130 /* Assets.xcassets */,
@@ -233,7 +258,7 @@
 				24FAA2B626B93CAC0083FFAB /* CoreData.xcdatamodeld */,
 				24FAA2BC26B943330083FFAB /* Error.swift */,
 				245A016026B9A07700EEE8CD /* UserDefaults.swift */,
-				24D00D2126C2BF0B00F8F1FA /* PersistenceController.swift */,
+				242CD6E826CFB147009DDDB0 /* Constants.swift */,
 			);
 			path = Svadilfari;
 			sourceTree = "<group>";
@@ -293,6 +318,7 @@
 				245A016926B9ACBE00EEE8CD /* New Gesture */,
 				24428E4326B3436A00B21130 /* HomeListView.swift */,
 				24A19E2B26B34F9500DA5E20 /* GestureListView.swift */,
+				249477BB26CCF6D800E6FCC5 /* ExclusionListView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -317,6 +343,27 @@
 			path = "New Gesture";
 			sourceTree = "<group>";
 		};
+		249477C126CEB73500E6FCC5 /* Core Data */ = {
+			isa = PBXGroup;
+			children = (
+				24D00D2126C2BF0B00F8F1FA /* PersistenceController.swift */,
+				249477BD26CEB38700E6FCC5 /* PersistentHistoryTracking.swift */,
+				249477C226CEB75200E6FCC5 /* PersistentHistoryMerger.swift */,
+				249477C726CEBA0D00E6FCC5 /* PersistentHistoryFetcher.swift */,
+				249477C926CEBC4500E6FCC5 /* PersistentHistoryCleaner.swift */,
+				249477BF26CEB71B00E6FCC5 /* UserDefaults+transactionTimestamp.swift */,
+			);
+			path = "Core Data";
+			sourceTree = "<group>";
+		};
+		249477C426CEB95B00E6FCC5 /* System */ = {
+			isa = PBXGroup;
+			children = (
+				249477C526CEB96E00E6FCC5 /* Logger+.swift */,
+			);
+			path = System;
+			sourceTree = "<group>";
+		};
 		24B224A326B5EB71009EAB48 /* Misc */ = {
 			isa = PBXGroup;
 			children = (
@@ -329,6 +376,7 @@
 		24B224A826B5EEEE009EAB48 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				249477C426CEB95B00E6FCC5 /* System */,
 				24D759D026BCB7E40017498A /* UI */,
 				24FAA2B926B942420083FFAB /* Core Data */,
 				24B224A126B5E6B3009EAB48 /* Action+Title.swift */,
@@ -619,13 +667,18 @@
 				24D759CF26BCB3C20017498A /* NewGestureSelectActionView.swift in Sources */,
 				24B224A526B5EB9A009EAB48 /* LineSmoother.swift in Sources */,
 				24D00D2226C2BF0B00F8F1FA /* PersistenceController.swift in Sources */,
+				249477C026CEB71B00E6FCC5 /* UserDefaults+transactionTimestamp.swift in Sources */,
 				241D8FB726BC1EDE00CBB381 /* ActionList.swift in Sources */,
 				24FAA2B826B93CAC0083FFAB /* CoreData.xcdatamodeld in Sources */,
+				249477BC26CCF6D800E6FCC5 /* ExclusionListView.swift in Sources */,
 				24500EEF26C6D95800F7BB7E /* GridView.swift in Sources */,
 				24B224A226B5E6B4009EAB48 /* Action+Title.swift in Sources */,
+				249477C626CEB96E00E6FCC5 /* Logger+.swift in Sources */,
+				242CD6E926CFB147009DDDB0 /* Constants.swift in Sources */,
 				24FAA2BB26B942540083FFAB /* GestureEntity+.swift in Sources */,
 				241D8FC026BC7BDC00CBB381 /* SelectActionView.swift in Sources */,
 				241D8FB926BC1F2200CBB381 /* Action+.swift in Sources */,
+				249477C326CEB75200E6FCC5 /* PersistentHistoryMerger.swift in Sources */,
 				24B224AA26B5EEFC009EAB48 /* Vector+.swift in Sources */,
 				2485834C26BCC2DE00A8836E /* SheetState.swift in Sources */,
 				241D8FC226BC7E1600CBB381 /* RunJavascriptActionConfigView.swift in Sources */,
@@ -633,7 +686,10 @@
 				245A016626B9A24600EEE8CD /* NewGestureView.swift in Sources */,
 				24FAA2BD26B943330083FFAB /* Error.swift in Sources */,
 				24428E4426B3436A00B21130 /* HomeListView.swift in Sources */,
+				249477CA26CEBC4500E6FCC5 /* PersistentHistoryCleaner.swift in Sources */,
 				24B224A726B5EDE0009EAB48 /* PatternPreview.swift in Sources */,
+				249477C826CEBA0D00E6FCC5 /* PersistentHistoryFetcher.swift in Sources */,
+				249477BE26CEB38700E6FCC5 /* PersistentHistoryTracking.swift in Sources */,
 				24428E1726B33E7600B21130 /* SvadilfariApp.swift in Sources */,
 				24500EED26C6D81300F7BB7E /* NewGestureDrawerView.swift in Sources */,
 				245A016126B9A07700EEE8CD /* UserDefaults.swift in Sources */,
@@ -666,12 +722,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				249477CF26CEBEA900E6FCC5 /* PersistentHistoryCleaner.swift in Sources */,
+				249477CC26CEBE9E00E6FCC5 /* PersistentHistoryTracking.swift in Sources */,
 				24F3686B26C35EA90092F583 /* SharedTypes.swift in Sources */,
 				24F3686A26C35B1D0092F583 /* PersistenceController.swift in Sources */,
+				242CD6EA26CFB228009DDDB0 /* UserDefaults.swift in Sources */,
+				249477CB26CEBE9500E6FCC5 /* Logger+.swift in Sources */,
 				24F3686C26C362A80092F583 /* GestureEntity+.swift in Sources */,
 				24F3686F26C365C40092F583 /* URL+storeURL.swift in Sources */,
 				24F3686926C35AD10092F583 /* CoreData.xcdatamodeld in Sources */,
 				24C11E5426B4366B00E018B5 /* SafariWebExtensionHandler.swift in Sources */,
+				249477CD26CEBEA300E6FCC5 /* PersistentHistoryMerger.swift in Sources */,
+				242CD6EB26CFB246009DDDB0 /* Constants.swift in Sources */,
+				249477D026CEBEBF00E6FCC5 /* UserDefaults+transactionTimestamp.swift in Sources */,
+				249477CE26CEBEA600E6FCC5 /* PersistentHistoryFetcher.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -6,8 +6,11 @@
 //
 
 import CoreData
+import Combine
 
 struct PersistenceController {
+    private var subscriptions: Set<AnyCancellable> = []
+
     static let shared = PersistenceController()
 
     static var preview: PersistenceController = {
@@ -32,13 +35,19 @@ struct PersistenceController {
 
         // store the data in App Group
         let storeURL = URL.storeURL(for: "group.dev.shun-k.svadilfari", databaseName: "Svadilfari")
-        let storeDescription = NSPersistentStoreDescription(url: storeURL)
-        container.persistentStoreDescriptions = [storeDescription]
+
+        let description = NSPersistentStoreDescription(url: storeURL)
+
+        description.setOption(true as NSNumber, forKey: NSPersistentHistoryTrackingKey)
+        description.setOption(true as NSNumber, forKey: NSPersistentStoreRemoteChangeNotificationPostOptionKey)
+
+        container.persistentStoreDescriptions = [description]
 
         if inMemory {
             container.persistentStoreDescriptions.first!.url = URL(fileURLWithPath: "/dev/null")
         }
-        container.loadPersistentStores(completionHandler: { (_, error) in
+        container.loadPersistentStores(completionHandler: { (description, error) in
+            print(description.options)
             if let error = error as NSError? {
                 // Replace this implementation with code to handle the error appropriately.
                 // fatalError() causes the application to generate a crash log and terminate.

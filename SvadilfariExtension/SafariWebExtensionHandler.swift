@@ -10,10 +10,19 @@ import CoreData
 import os.log
 
 class SafariWebExtensionHandler: NSObject, NSExtensionRequestHandling {
+    lazy var moc: NSManagedObjectContext = {
+        let context = PersistenceController.shared.container.viewContext
+        context.name = "view_context"
+        context.transactionAuthor = "safari_extension"
 
-    let moc = PersistenceController.shared.container.viewContext
+        let persistentHistoryObserver = PersistentHistoryObserver(
+            target: .safariExtension,
+            persistentContainer: PersistenceController.shared.container, userDefaults: UserDefaults.shared)
+        persistentHistoryObserver.startObserving()
+        return context
+    }()
 
-    // swiftlint:disable function_body_length
+    // swiftlint:disable:next function_body_length cyclomatic_complexity
     func beginRequest(with context: NSExtensionContext) {
         // swiftlint:disable all
         let item = context.inputItems[0] as! NSExtensionItem
@@ -21,7 +30,7 @@ class SafariWebExtensionHandler: NSObject, NSExtensionRequestHandling {
         
         // TODO
         
-        // swiftlint:disable all
+        // swiftlint:disable:next all
         os_log(.default, "Received message from browser.runtime.sendNativeMessage: %@", message as! CVarArg)
         
         // helper that returns json
@@ -106,6 +115,7 @@ class SafariWebExtensionHandler: NSObject, NSExtensionRequestHandling {
                 respondError(msg: "Failed to fetch exclusion list")
             }
             respond(json: "{}")
+            return
         }
         respond(json: "Failed to find a request handler")
     }

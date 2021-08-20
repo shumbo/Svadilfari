@@ -8,6 +8,11 @@
 import Foundation
 
 extension UserDefaults {
+    /// shared instance that can be accessed from all targets
+    static var shared: Self {
+        return Self(suiteName: APP_GROUP_ID)!
+    }
+
     private enum Keys {
         static let previouslyLaunched = "previouslyLaunched"
     }
