@@ -22,8 +22,6 @@ struct ExclusionListView: View {
     )
     private var entries: FetchedResults<ExclusionEntryEntity>
 
-    @State private var presentNewExclusionEntry = false
-
     var body: some View {
         List {
             Section(footer: Text("Svadilfari will not detect gestures in the above domains or pages")) {
@@ -43,34 +41,9 @@ struct ExclusionListView: View {
                 Link("Read More", destination: URL(string: "https://docs.svadilfari.app/guide/exclusion-list")!)
                 Spacer()
             }
-        }.navigationTitle("Exclusion List").toolbar {
-            ToolbarItem(placement: .navigationBarTrailing) {
-                Button(action: {
-                    self.presentNewExclusionEntry = true
-                }) {
-                    Image(systemName: "plus")
-                }
-            }
-        }.sheet(isPresented: $presentNewExclusionEntry, onDismiss: {
-            self.presentNewExclusionEntry = false
-        }) {
-            NavigationView {
-                NewExclusionEntryView(onCancel: {
-                    self.presentNewExclusionEntry = false
-                }, onCreate: { (domain, path) in
-                    self.addListEntry(domain: domain, path: path)
-                    self.presentNewExclusionEntry = false
-                })
-            }
-        }
+        }.navigationTitle("Exclusion List")
     }
 
-    func addListEntry(domain: String, path: String?) {
-        withAnimation {
-            let els = ExclusionListService(moc: self.viewContext)
-            _ = try? els.add(domain: domain, path: path)
-        }
-    }
     func removeListEntry(offsets: IndexSet) {
         withAnimation {
             offsets.map { self.entries[$0] }.forEach(self.viewContext.delete)
