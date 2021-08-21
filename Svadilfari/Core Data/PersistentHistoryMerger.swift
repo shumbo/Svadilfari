@@ -30,7 +30,9 @@ struct PersistentHistoryMerger {
             Logger.coreData.info("History: \(h)")
         }
 
-        Logger.coreData.info("Merging \(history.count) persistent history transactions for target \(currentTarget, privacy: .public)")
+        Logger.coreData.info(
+            "Merging \(history.count) persistent history transactions for target \(currentTarget, privacy: .public)"
+        )
 
         history.merge(into: backgroundContext)
 

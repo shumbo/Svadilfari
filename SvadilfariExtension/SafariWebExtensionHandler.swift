@@ -81,7 +81,10 @@ class SafariWebExtensionHandler: NSObject, NSExtensionRequestHandling {
         if let getExclusionEntryRequest = req.getExclusionEntry {
             var entry: ExclusionEntryEntity?
             do {
-                entry = try self.els.fetchRelevantEntry(domain: getExclusionEntryRequest.domain, path: getExclusionEntryRequest.path)
+                entry = try self.els.fetchRelevantEntry(
+                    domain: getExclusionEntryRequest.domain,
+                    path: getExclusionEntryRequest.path
+                )
             } catch {
                 respondError(msg: "Failed to get an exclusion entry")
                 return
@@ -93,7 +96,13 @@ class SafariWebExtensionHandler: NSObject, NSExtensionRequestHandling {
                     respondError(msg: "Found an invalid entry")
                     return
                 }
-                response = GetExclusionEntryResponse(exclusionEntry: GetExclusionEntryResponseExclusionEntry(domain: domain, id: uuid, path: entry.path))
+                response = GetExclusionEntryResponse(
+                    exclusionEntry: GetExclusionEntryResponseExclusionEntry(
+                        domain: domain,
+                        id: uuid,
+                        path: entry.path
+                    )
+                )
             } else {
                 response = GetExclusionEntryResponse(exclusionEntry: nil)
             }

@@ -11,7 +11,7 @@ import CoreGraphics
 class LineSmoother {
     typealias BezierSegmentControlPoints = (CGPoint, CGPoint)
 
-    // swiftlint:disable function_body_length
+    // swiftlint:disable:next function_body_length
     static func getControlPoints(data: [CGPoint]) -> [BezierSegmentControlPoints] {
         let segments = data.count - 1
         if segments == 1 {
@@ -64,7 +64,7 @@ class LineSmoother {
         return []
     }
 
-    // swiftlint:disable function_parameter_count function_body_length
+    // swiftlint:disable:next function_parameter_count function_body_length
     static private func thomasAlgorithm(
         bd: [CGFloat],
         d: [CGFloat],

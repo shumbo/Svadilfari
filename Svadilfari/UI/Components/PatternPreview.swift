@@ -18,6 +18,8 @@ private struct PatternPreviewContent: UIViewRepresentable {
         view.setContentHuggingPriority(.required, for: .vertical)
         return view
     }
+
+    // swiftlint:disable:next function_body_length
     func updateUIView(_ uiView: UIView, context: Context) {
         let bezierPath = UIBezierPath()
         let data = self.pattern.points
