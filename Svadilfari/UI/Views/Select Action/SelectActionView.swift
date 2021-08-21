@@ -41,13 +41,13 @@ struct SelectActionView: View {
                     ActionListItem(title: "Next Tab")
                 }
                 .onTapGesture {
-                    self.onSelect(Action(tabDuplicate: true))
+                    self.onSelect(Action(tabNext: true))
                 }
                 NavigationLinkView {
                     ActionListItem(title: "Previous Tab")
                 }
                 .onTapGesture {
-                    self.onSelect(Action(tabDuplicate: true))
+                    self.onSelect(Action(tabPrevious: true))
                 }
             }
             Section("Current Page") {
