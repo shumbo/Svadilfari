@@ -184,7 +184,6 @@ export class DebugContentMessenger implements ContentMessanger {
         {
           action: { tabClose: true },
           enabled: true,
-          fingers: 1,
           id: "close",
           pattern: {
             data: [
@@ -196,7 +195,6 @@ export class DebugContentMessenger implements ContentMessanger {
         {
           action: { tabOpen: true },
           enabled: true,
-          fingers: 1,
           id: "close all",
           pattern: {
             data: [
@@ -209,7 +207,6 @@ export class DebugContentMessenger implements ContentMessanger {
         {
           action: { reload: true },
           enabled: true,
-          fingers: 1,
           id: "reload",
           pattern: {
             data: [

@@ -20,7 +20,7 @@ struct NewGestureDrawerView: View {
                     // draw a line
                     var path = Path()
                     path.addLines(self.line)
-                    context.stroke(path, with: .color(.red), lineWidth: 2)
+                    context.stroke(path, with: .color(.accentColor), lineWidth: 2)
                 }.gesture(DragGesture(minimumDistance: 0, coordinateSpace: .local).onChanged { value in
                     let p = value.location
                     if value.translation.width == 0 && value.translation.height == 0 {
@@ -50,7 +50,7 @@ struct NewGestureDrawerView: View {
                     self.pattern = pattern
                     self.nextPageVisible = true
                 }).frame(minHeight: 300)
-            }, header: { Text("Draw Gesture") }, footer: { Text("Draw the gesture you want to use") }).onAppear {
+            }, header: { Text("Draw Pattern") }, footer: { Text("Draw the pattern you want to use") }).onAppear {
                 self.line = []
             }
         }.background(NavigationLink(isActive: $nextPageVisible, destination: {
@@ -60,7 +60,7 @@ struct NewGestureDrawerView: View {
             } else {
                 EmptyView()
             }
-        }, label: { EmptyView() }))
+        }, label: { EmptyView() })).navigationTitle("Draw Pattern")
     }
 }
 

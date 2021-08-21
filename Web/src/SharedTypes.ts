@@ -23,10 +23,6 @@ export interface GetGestureResponse {
 export interface Gesture {
     action:  Action;
     enabled: boolean;
-    /**
-     * Number of fingers to perform the gesture
-     */
-    fingers: number;
     id:      string;
     pattern: Pattern;
 }
@@ -324,7 +320,6 @@ const typeMap: any = {
     "Gesture": o([
         { json: "action", js: "action", typ: r("Action") },
         { json: "enabled", js: "enabled", typ: true },
-        { json: "fingers", js: "fingers", typ: 0 },
         { json: "id", js: "id", typ: "" },
         { json: "pattern", js: "pattern", typ: r("Pattern") },
     ], "any"),

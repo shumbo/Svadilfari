@@ -9,13 +9,12 @@ import SwiftUI
 
 struct NewGesturePatternConfirmView: View {
     var pattern: Pattern
-    @State private var fingerCount = 1
     @State private var showingNextView = false
 
     var body: some View {
         ZStack {
             Form {
-                Section("Pattern") {
+                Section("Selected Pattern") {
                     HStack {
                         Spacer()
                         GeometryReader { proxy in
@@ -25,20 +24,6 @@ struct NewGesturePatternConfirmView: View {
                         .fixedSize()
                         .background(Color(uiColor: .secondarySystemGroupedBackground))
                         .clipped()
-                        Spacer()
-                    }
-                }
-                Section(
-                    header: Text("Additional Settings"),
-                    footer: Text("Specify how many fingers you want to draw the gesture with")
-                ) {
-                    HStack {
-                        Stepper(value: $fingerCount, in: 1...3) {
-                            HStack {
-                                Text("Fingers")
-                                Text("\(fingerCount)").foregroundColor(.secondary)
-                            }
-                        }
                         Spacer()
                     }
                 }
@@ -57,10 +42,10 @@ struct NewGesturePatternConfirmView: View {
             // Navigation
             NavigationLink(
                 isActive: self.$showingNextView,
-                destination: { NewGestureSelectActionView(pattern: pattern, fingers: self.fingerCount) },
+                destination: { NewGestureSelectActionView(pattern: pattern) },
                 label: { EmptyView() }
             )
-        }.navigationTitle("Pattern")
+        }.navigationTitle("Preview Pattern")
     }
 }
 

@@ -20,7 +20,7 @@ struct NewGesturePresetsView: View {
                     }
                 }
             }
-        }
+        }.navigationTitle("Select Pattern")
     }
 }
 

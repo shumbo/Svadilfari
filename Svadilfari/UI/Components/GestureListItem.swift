@@ -28,10 +28,10 @@ struct GestureListItem_Previews: PreviewProvider {
             javascriptRun: JavascriptRun(code: "alert(\"hello world\")", javascriptRunDescription: "Say Hello")
         )
         let pattern1 = Pattern(data: [Vector(x: 0.0, y: 100.0), Vector(x: 100.0, y: 0.0)])
-        let gesture1 = Gesture(action: action1, enabled: true, fingers: 1, id: "gesture1", pattern: pattern1)
+        let gesture1 = Gesture(action: action1, enabled: true, id: "gesture1", pattern: pattern1)
         let action2 = Action(tabNext: true)
         let pattern2 = Pattern(data: [Vector(x: 0.0, y: 100.0), Vector(x: -100.0, y: 0.0)])
-        let gesture2 = Gesture(action: action2, enabled: true, fingers: 1, id: "gesture2", pattern: pattern2)
+        let gesture2 = Gesture(action: action2, enabled: true, id: "gesture2", pattern: pattern2)
         List {
             GestureListItem(gesture: gesture1, onChangeEnabled: { enabled in
                 print(enabled)

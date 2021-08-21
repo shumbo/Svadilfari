@@ -57,7 +57,6 @@ struct GestureListView: View {
         let newGesture = Gesture(
             action: gesture.action,
             enabled: !gesture.enabled,
-            fingers: gesture.fingers,
             id: gesture.id,
             pattern: gesture.pattern
         )

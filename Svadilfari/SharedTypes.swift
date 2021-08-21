@@ -60,8 +60,6 @@ extension GetGestureResponse {
 struct Gesture: Codable {
     var action: Action
     var enabled: Bool
-    /// Number of fingers to perform the gesture
-    var fingers: Int
     var id: String
     var pattern: Pattern
 }
@@ -87,14 +85,12 @@ extension Gesture {
     func with(
         action: Action? = nil,
         enabled: Bool? = nil,
-        fingers: Int? = nil,
         id: String? = nil,
         pattern: Pattern? = nil
     ) -> Gesture {
         return Gesture(
             action: action ?? self.action,
             enabled: enabled ?? self.enabled,
-            fingers: fingers ?? self.fingers,
             id: id ?? self.id,
             pattern: pattern ?? self.pattern
         )

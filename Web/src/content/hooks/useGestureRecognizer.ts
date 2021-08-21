@@ -22,7 +22,7 @@ export function useGestureRecognizer(
       getClosestGestureByPattern(
         patternConstructor.current.getPattern(),
         new Set(gestures),
-        0.15
+        0.12
       ),
     [gestures]
   );
