@@ -15,6 +15,17 @@ export interface PopupMessenger {
 }
 
 export class PopupMessengerImpl implements PopupMessenger {
+  /**
+   * Notify updates of exclusion entry to the current tab
+   */
+  private async notifyExclusionEntryUpdate() {
+    const tab = await browser.tabs.getCurrent();
+    if (!tab.id) {
+      return;
+    }
+    const msg = { type: "UPDATE_EXCLUSION_ENTRY" };
+    await browser.tabs.sendMessage(tab.id, msg);
+  }
   async getExclusionEntry(
     domain: string,
     path: string
@@ -39,9 +50,11 @@ export class PopupMessengerImpl implements PopupMessenger {
       type: "NATIVE_PROXY",
       payload: Convert.messageRequestToJson(req),
     };
-    await browser.runtime.sendMessage(msg);
 
     // TODO: Error handling
+    await browser.runtime.sendMessage(msg);
+
+    await this.notifyExclusionEntryUpdate();
   }
   async removeExclusionEntry(uuid: string): Promise<void> {
     const req: MessageRequest = { removeExclusionEntry: uuid };
@@ -49,9 +62,11 @@ export class PopupMessengerImpl implements PopupMessenger {
       type: "NATIVE_PROXY",
       payload: Convert.messageRequestToJson(req),
     };
-    await browser.runtime.sendMessage(msg);
 
     // TODO: Error handling
+    await browser.runtime.sendMessage(msg);
+
+    await this.notifyExclusionEntryUpdate();
   }
 }
 

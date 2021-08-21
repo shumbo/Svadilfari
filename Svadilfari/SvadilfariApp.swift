@@ -11,8 +11,6 @@ import CoreData
 @main
 struct SvadilfariApp: App {
     var persistentContainer: NSPersistentContainer {
-        print("compute")
-
         let container = PersistenceController.shared.container
         container.viewContext.name = "view_context"
         container.viewContext.transactionAuthor = "main_app"

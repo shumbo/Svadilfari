@@ -1,4 +1,11 @@
+import { urlToExclusionListEntry } from "../core/ExclusionList";
 import { ExecuteActionMessage, InternalMessage } from "../messenger/message";
+import {
+  Convert,
+  GetExclusionEntryResponse,
+  MessageRequest,
+} from "../SharedTypes";
+import { assertUnreachable } from "../utils/assertUnreachable";
 import { executeAction } from "./executeAction";
 
 browser.runtime.onMessage.addListener((request, sender, sendResponse) => {
@@ -34,6 +41,35 @@ browser.runtime.onMessage.addListener((request, sender, sendResponse) => {
         });
       break;
     }
+    case "GET_EXCLUSION_ENTRY":
+      browser.tabs
+        .getCurrent()
+        .then((tab) => {
+          const url = tab.url;
+          if (!url) {
+            sendResponse(false);
+            return;
+          }
+          const currentTabEntry = urlToExclusionListEntry(url);
+          const req: MessageRequest = {
+            getExclusionEntry: {
+              domain: currentTabEntry.domain,
+              path: currentTabEntry.path,
+            },
+          };
+          return browser.runtime.sendNativeMessage(
+            Convert.messageRequestToJson(req)
+          );
+        })
+        .then((responseStr: string) => {
+          const res: GetExclusionEntryResponse =
+            Convert.toGetExclusionEntryResponse(responseStr as string);
+          sendResponse(res);
+        });
+      break;
+    default:
+      assertUnreachable(req);
+      break;
   }
   return true;
 });

@@ -12,7 +12,14 @@ struct GestureListView: View {
     @StateObject private var newGestureState = SheetState()
 
     @Environment(\.managedObjectContext) private var viewContext
-    @FetchRequest(entity: GestureEntity.entity(), sortDescriptors: [], predicate: nil, animation: .default)
+    @FetchRequest(
+        entity: GestureEntity.entity(),
+        sortDescriptors: [
+            NSSortDescriptor(key: "createdAt", ascending: false)
+        ],
+        predicate: nil,
+        animation: .default
+    )
     private var gestures: FetchedResults<GestureEntity>
 
     var body: some View {
@@ -57,7 +64,6 @@ struct GestureListView: View {
         self.viewContext.performAndWait {
             g.gesture = newGesture
             try? self.viewContext.save()
-
         }
     }
     func removeGesture(offsets: IndexSet) {

@@ -1,19 +1,25 @@
-import {
-  ExecuteActionMessage,
-  NativeProxyMessage,
-  TopFrameProxyMessage,
-} from "./message";
+import { isEmbededFrame } from "../content/utils/isEmbedFrame";
 import {
   Action,
   Convert,
   Gesture,
+  GetExclusionEntryResponse,
   GetGestureResponse,
   MessageRequest,
 } from "../SharedTypes";
-import { isEmbededFrame } from "../content/utils/isEmbedFrame";
 import { noop } from "../utils/noop";
+import {
+  ExecuteActionMessage,
+  GetExclusionEntryMessage,
+  NativeProxyMessage,
+  TopFrameProxyMessage,
+} from "./message";
 
 export interface ContentMessanger {
+  /**
+   * Get a exclusion entry that is relevant to the **current tab**
+   */
+  getExclusionEntry(): Promise<GetExclusionEntryResponse>;
   /**
    * Get list of configured gestures from native extension
    */
@@ -47,12 +53,18 @@ export interface ContentMessanger {
    * @return call to unbind the listener
    */
   onGestureRelease(handler: (gesture: Gesture | null) => void): () => void;
+  /**
+   * register event listerner for updates in exclusion entry
+   * @param handler
+   * @return call to unbind the listener
+   */
+  onUpdateExclusionEntry(handler: () => void): () => void;
 }
 
 /**
  * Structure used within ContentMessanger to communicate between frames
  */
-type ForwardMessage =
+type ContentMessage =
   | {
       type: "GESTURE_CHANGE";
       gesture: Gesture | null;
@@ -60,9 +72,19 @@ type ForwardMessage =
   | {
       type: "GESTURE_RELEASE";
       gesture: Gesture | null;
+    }
+  | {
+      type: "UPDATE_EXCLUSION_ENTRY";
     };
 
 export class ContentMessangerImpl implements ContentMessanger {
+  async getExclusionEntry(): Promise<GetExclusionEntryResponse> {
+    const msg: GetExclusionEntryMessage = { type: "GET_EXCLUSION_ENTRY" };
+    const res: GetExclusionEntryResponse = await browser.runtime.sendMessage(
+      msg
+    );
+    return res;
+  }
   async getGesture(): Promise<GetGestureResponse> {
     const req: MessageRequest = { getGestures: true };
     const msg: NativeProxyMessage = {
@@ -83,7 +105,7 @@ export class ContentMessangerImpl implements ContentMessanger {
     await browser.runtime.sendMessage(msg);
   }
   async forwardGestureChange(gesture: Gesture | null): Promise<void> {
-    const forwardMsg: ForwardMessage = {
+    const forwardMsg: ContentMessage = {
       type: "GESTURE_CHANGE",
       gesture,
     };
@@ -94,7 +116,7 @@ export class ContentMessangerImpl implements ContentMessanger {
     await browser.runtime.sendMessage(msg);
   }
   async forwardGestureRelease(gesture: Gesture | null): Promise<void> {
-    const forwardMsg: ForwardMessage = {
+    const forwardMsg: ContentMessage = {
       type: "GESTURE_RELEASE",
       gesture,
     };
@@ -110,7 +132,7 @@ export class ContentMessangerImpl implements ContentMessanger {
     }
     const listener = (message: unknown) => {
       console.log("onGestureChange", message);
-      const payload = message as ForwardMessage;
+      const payload = message as ContentMessage;
       if (payload.type !== "GESTURE_CHANGE") {
         return;
       }
@@ -126,7 +148,7 @@ export class ContentMessangerImpl implements ContentMessanger {
       return noop;
     }
     const listener = (message: unknown) => {
-      const payload = message as ForwardMessage;
+      const payload = message as ContentMessage;
       if (payload.type !== "GESTURE_RELEASE") {
         return;
       }
@@ -137,9 +159,25 @@ export class ContentMessangerImpl implements ContentMessanger {
       browser.runtime.onMessage.removeListener(listener);
     };
   }
+  onUpdateExclusionEntry(handler: () => void): () => void {
+    const listener = (message: unknown) => {
+      const payload = message as ContentMessage;
+      if (payload.type !== "UPDATE_EXCLUSION_ENTRY") {
+        return;
+      }
+      handler();
+    };
+    browser.runtime.onMessage.addListener(listener);
+    return () => {
+      browser.runtime.onMessage.removeListener(listener);
+    };
+  }
 }
 
 export class DebugContentMessenger implements ContentMessanger {
+  async getExclusionEntry(): Promise<GetExclusionEntryResponse> {
+    return { exclusionEntry: undefined };
+  }
   async getGesture(): Promise<GetGestureResponse> {
     return {
       gestures: [
@@ -196,6 +234,9 @@ export class DebugContentMessenger implements ContentMessanger {
     return noop;
   }
   onGestureRelease(_: (_: Gesture | null) => void): () => void {
+    return noop;
+  }
+  onUpdateExclusionEntry(): () => void {
     return noop;
   }
 }

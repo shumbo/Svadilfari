@@ -24,7 +24,12 @@ export type ExecuteActionMessage = {
   action: Action;
 };
 
+export type GetExclusionEntryMessage = {
+  type: "GET_EXCLUSION_ENTRY";
+};
+
 export type InternalMessage =
   | NativeProxyMessage
   | TopFrameProxyMessage
-  | ExecuteActionMessage;
+  | ExecuteActionMessage
+  | GetExclusionEntryMessage;

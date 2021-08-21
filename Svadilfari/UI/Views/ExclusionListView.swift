@@ -10,14 +10,24 @@ import CoreData
 
 struct ExclusionListView: View {
     @Environment(\.managedObjectContext) private var viewContext
-    @FetchRequest(entity: ExclusionEntryEntity.entity(), sortDescriptors: [], predicate: nil, animation: .default)
+    @FetchRequest(
+        entity: ExclusionEntryEntity.entity(),
+        sortDescriptors: [
+            NSSortDescriptor(key: "domain", ascending: true),
+            NSSortDescriptor(key: "path", ascending: true)
+        ],
+        predicate: nil,
+        animation: .default
+    )
     private var entries: FetchedResults<ExclusionEntryEntity>
 
     var body: some View {
         List {
-            ForEach(entries) { entry in
-                let str = "\(entry.domain ?? "")\(entry.path ?? "")"
-                Text(str)
+            Section(footer: Text("Svadilfari will not detect gestures in the above domains or pages")) {
+                ForEach(entries) { entry in
+                    let str = "\(entry.domain ?? "")\(entry.path ?? "")"
+                    Text(str)
+                }
             }
         }.navigationTitle("Exclusion List")
     }

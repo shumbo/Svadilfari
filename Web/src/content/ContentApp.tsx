@@ -1,5 +1,5 @@
 import React, { Fragment, useCallback, useEffect, useMemo, VFC } from "react";
-import { useAsync } from "react-use";
+import { useAsync, useAsyncFn } from "react-use";
 import { useHUD } from "../components/HUD/useHUD";
 import { ContentMessanger } from "../messenger/ContentMessanger";
 import { Gesture } from "../SharedTypes";
@@ -8,17 +8,31 @@ import { getActionHUDContent } from "./utils/getActionHUDContent";
 import { isEmbededFrame } from "./utils/isEmbedFrame";
 
 export type ContentAppProps = {
-  contentMessenger: ContentMessanger;
+  messenger: ContentMessanger;
 };
 
-export const ContentApp: VFC<ContentAppProps> = ({ contentMessenger }) => {
+export const ContentApp: VFC<ContentAppProps> = ({ messenger }) => {
   const { hud, open, cancel, resolve } = useHUD();
-  const { value: gestureResponse } = useAsync(contentMessenger.getGesture, [
-    contentMessenger,
+  const { value: gestureResponse } = useAsync(messenger.getGesture, [
+    messenger,
   ]);
+  const [
+    { value: exclusionEntry, loading: exclusionEntryLoading },
+    fetchExclusionEntry,
+  ] = useAsyncFn(async () => {
+    const response = await messenger.getExclusionEntry();
+    return response.exclusionEntry;
+  }, [messenger]);
+  useEffect(() => {
+    fetchExclusionEntry();
+  }, [fetchExclusionEntry]);
+
   const enabledGestures = useMemo(() => {
+    if (exclusionEntryLoading || (!exclusionEntryLoading && !!exclusionEntry)) {
+      return [];
+    }
     return gestureResponse?.gestures?.filter((g) => g.enabled) ?? [];
-  }, [gestureResponse?.gestures]);
+  }, [gestureResponse?.gestures, exclusionEntry, exclusionEntryLoading]);
 
   const applyOnChangeToHUD = useCallback(
     (g: Gesture | null) => {
@@ -34,45 +48,50 @@ export const ContentApp: VFC<ContentAppProps> = ({ contentMessenger }) => {
   const onChangeHandler = useCallback(
     (g: Gesture | null) => {
       if (isEmbededFrame()) {
-        contentMessenger.forwardGestureChange(g);
+        messenger.forwardGestureChange(g);
       } else {
         applyOnChangeToHUD(g);
       }
     },
-    [applyOnChangeToHUD, contentMessenger]
+    [applyOnChangeToHUD, messenger]
   );
 
   const applyOnReleaseToHUD = useCallback(
     (g: Gesture | null) => {
       if (g) {
         resolve();
-        contentMessenger.executeAction(g.action);
+        messenger.executeAction(g.action);
       } else {
         cancel();
       }
     },
-    [cancel, contentMessenger, resolve]
+    [cancel, messenger, resolve]
   );
 
   const onReleaseHandler = useCallback(
     (g: Gesture | null) => {
       if (isEmbededFrame()) {
-        contentMessenger.forwardGestureRelease(g);
+        messenger.forwardGestureRelease(g);
         return;
       }
       applyOnReleaseToHUD(g);
     },
-    [applyOnReleaseToHUD, contentMessenger]
+    [applyOnReleaseToHUD, messenger]
   );
 
   useEffect(() => {
-    const s = contentMessenger.onGestureChange(applyOnChangeToHUD);
-    const t = contentMessenger.onGestureRelease(applyOnReleaseToHUD);
+    const s = messenger.onGestureChange(applyOnChangeToHUD);
+    const t = messenger.onGestureRelease(applyOnReleaseToHUD);
+    const u = messenger.onUpdateExclusionEntry(() => {
+      console.log("update detected. refetch exclusion entry");
+      fetchExclusionEntry();
+    });
     return () => {
       s();
       t();
+      u();
     };
-  }, [applyOnChangeToHUD, applyOnReleaseToHUD, contentMessenger]);
+  }, [applyOnChangeToHUD, applyOnReleaseToHUD, fetchExclusionEntry, messenger]);
 
   useGestureRecognizer(
     enabledGestures ?? [],

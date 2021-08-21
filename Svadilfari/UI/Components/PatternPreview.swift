@@ -111,6 +111,9 @@ struct PatternPreview: View {
             frame: self.frame,
             pattern: self.pattern
         ).id(self.id)
+            .onReceive(NotificationCenter.default.publisher(for: UIApplication.willEnterForegroundNotification)) { _ in
+                self.id += 1
+            }
             .onAppear {
                 self.id += 1
             }

@@ -15,8 +15,6 @@ const meta: Meta = {
 
 export default meta;
 
-const Template = () => (
-  <ContentApp contentMessenger={new DebugContentMessenger()} />
-);
+const Template = () => <ContentApp messenger={new DebugContentMessenger()} />;
 
 export const Debugger = Template.bind({});
