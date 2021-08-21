@@ -60,7 +60,9 @@ export const ContentApp: VFC<ContentAppProps> = ({ messenger }) => {
     (g: Gesture | null) => {
       if (g) {
         resolve();
-        messenger.executeAction(g.action);
+        setTimeout(() => {
+          messenger.executeAction(g.action);
+        }, 200);
       } else {
         cancel();
       }
