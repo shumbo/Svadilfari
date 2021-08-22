@@ -6,5 +6,56 @@
   "extension_description": {
     "message": "Safariをジェスチャーで操作",
     "description": "Description of what the extension does."
+  },
+  "get_action_hud_content:tab_close": {
+    "message": "タブを閉じる"
+  },
+  "get_action_hud_content:tab_close_all": {
+    "message": "すべてのタブを閉じる"
+  },
+  "get_action_hud_content:tab_open": {
+    "message": "新規タブ"
+  },
+  "get_action_hud_content:tab_duplicate": {
+    "message": "タブをコピー"
+  },
+  "get_action_hud_content:tab_next": {
+    "message": "次のタブへ"
+  },
+  "get_action_hud_content:tab_previous": {
+    "message": "前のタブへ"
+  },
+  "get_action_hud_content:tab_reload": {
+    "message": "リロード"
+  },
+  "get_action_hud_content:javascript_run": {
+    "message": "JavaScriptの実行"
+  },
+  "get_action_hud_content:url_copy": {
+    "message": "URLをコピー"
+  },
+  "get_action_hud_content:scroll_top": {
+    "message": "上までスクロール"
+  },
+  "get_action_hud_content:scroll_bottom": {
+    "message": "下までスクロール"
+  },
+  "get_action_hud_content:unknown": {
+    "message": "不明なアクション"
+  },
+  "exception_toggle_group:disable_gestures_on": {
+    "message": "ジェスチャーを無効化"
+  },
+  "exception_toggle_group:this_domain": {
+    "message": "ドメイン:"
+  },
+  "exception_toggle_group:this_page": {
+    "message": "ページ:"
+  },
+  "status_alert:active": {
+    "message": "Svadilfariは有効です。ジェスチャーでスムーズにWebを楽しみましょう。"
+  },
+  "status_alert:inactive": {
+    "message": "Svadilfariは無効化されています。"
   }
 }

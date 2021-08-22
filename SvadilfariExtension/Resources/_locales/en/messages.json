@@ -6,5 +6,56 @@
     "extension_description": {
         "message": "Svadilfari lets you control Safari with gestures.",
         "description": "Description of what the extension does."
+    },
+    "get_action_hud_content:tab_close": {
+        "message": "Close Tab"
+    },
+    "get_action_hud_content:tab_close_all": {
+        "message": "Close All Tabs"
+    },
+    "get_action_hud_content:tab_open": {
+        "message": "Open Tab"
+    },
+    "get_action_hud_content:tab_duplicate": {
+        "message": "Duplicate Tab"
+    },
+    "get_action_hud_content:tab_next": {
+        "message": "Next Tab"
+    },
+    "get_action_hud_content:tab_previous": {
+        "message": "Previous Tab"
+    },
+    "get_action_hud_content:tab_reload": {
+        "message": "Reload"
+    },
+    "get_action_hud_content:javascript_run": {
+        "message": "Run JavaScript"
+    },
+    "get_action_hud_content:url_copy": {
+        "message": "Copy URL"
+    },
+    "get_action_hud_content:scroll_top": {
+        "message": "Scroll to Top"
+    },
+    "get_action_hud_content:scroll_bottom": {
+        "message": "Scroll to Bottom"
+    },
+    "get_action_hud_content:unknown": {
+        "message": "Unknown Action"
+    },
+    "exception_toggle_group:disable_gestures_on": {
+        "message": "DISABLE GESTURES ON"
+    },
+    "exception_toggle_group:this_domain": {
+        "message": "This domain:"
+    },
+    "exception_toggle_group:this_page": {
+        "message": "This page:"
+    },
+    "status_alert:active": {
+        "message": "Svadilfari is active! Draw a gesture for smooth browsing!"
+    },
+    "status_alert:inactive": {
+        "message": "Svadilfari is not active on this page."
     }
 }

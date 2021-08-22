@@ -10,13 +10,10 @@ import { isEmbededFrame } from "./utils/isEmbedFrame";
 
 export type ContentAppProps = {
   messenger: ContentMessanger;
-  i18n?: I18n.Static;
+  i18n: I18n.Static;
 };
 
-export const ContentApp: VFC<ContentAppProps> = ({
-  messenger,
-  i18n = browser.i18n,
-}) => {
+export const ContentApp: VFC<ContentAppProps> = ({ messenger, i18n }) => {
   const { hud, open, cancel, resolve } = useHUD();
   const { value: gestureResponse } = useAsync(messenger.getGesture, [
     messenger,
@@ -42,12 +39,12 @@ export const ContentApp: VFC<ContentAppProps> = ({
   const applyOnChangeToHUD = useCallback(
     (g: Gesture | null) => {
       if (g) {
-        open(getActionHUDContent(g.action));
+        open(getActionHUDContent(g.action, i18n));
       } else {
         cancel();
       }
     },
-    [cancel, open]
+    [cancel, open, i18n]
   );
 
   const onChangeHandler = useCallback(

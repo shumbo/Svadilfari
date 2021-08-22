@@ -1,5 +1,6 @@
 import { Box, Heading, VStack } from "@chakra-ui/react";
-import React, { VFC } from "react";
+import React, { useMemo, VFC } from "react";
+import { I18n } from "webextension-polyfill/namespaces/i18n";
 import { ExceptionToggle } from "./ExceptionToggle";
 
 export type ExceptionStatus = {
@@ -14,6 +15,7 @@ export type ExceptionStatus = {
 };
 
 export type ExceptionToggleGroupProps = {
+  i18n: I18n.Static;
   domain: string;
   path: string;
   value: ExceptionStatus;
@@ -21,6 +23,7 @@ export type ExceptionToggleGroupProps = {
 };
 
 export const ExceptionToggleGroup: VFC<ExceptionToggleGroupProps> = ({
+  i18n,
   domain,
   path,
   value,
@@ -29,10 +32,16 @@ export const ExceptionToggleGroup: VFC<ExceptionToggleGroupProps> = ({
   return (
     <VStack align="stretch" padding={4}>
       <Heading size="xs" color="gray.500">
-        DISABLE GESTURES ON
+        {useMemo(
+          () => i18n.getMessage("exception_toggle_group:disable_gestures_on"),
+          [i18n]
+        )}
       </Heading>
       <ExceptionToggle
-        title="This website:"
+        title={useMemo(
+          () => i18n.getMessage("exception_toggle_group:this_domain"),
+          [i18n]
+        )}
         description={domain}
         onChange={(b) => {
           onChange({ disabledDomain: b });
@@ -41,7 +50,10 @@ export const ExceptionToggleGroup: VFC<ExceptionToggleGroupProps> = ({
       />
       <Box paddingLeft={2} borderLeftColor="gray.200" borderLeftWidth={4}>
         <ExceptionToggle
-          title="This page:"
+          title={useMemo(
+            () => i18n.getMessage("exception_toggle_group:this_page"),
+            [i18n]
+          )}
           description={path}
           isDisabled={value.disabledDomain}
           onChange={(b) => {

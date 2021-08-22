@@ -1,16 +1,26 @@
 import { Alert, AlertIcon } from "@chakra-ui/react";
-import React, { VFC } from "react";
+import React, { useMemo, VFC } from "react";
+import { I18n } from "webextension-polyfill/namespaces/i18n";
 
 export type StatusAlertProps = {
+  i18n: I18n.Static;
   status: "ACTIVE" | "INACTIVE" | null;
 };
 
-export const StatusAlert: VFC<StatusAlertProps> = ({ status }) => {
+export const StatusAlert: VFC<StatusAlertProps> = ({ i18n, status }) => {
+  const activeMsg = useMemo(
+    () => i18n.getMessage("status_alert:active"),
+    [i18n]
+  );
+  const inactiveMsg = useMemo(
+    () => i18n.getMessage("status_alert:inactive"),
+    [i18n]
+  );
   if (status === "ACTIVE") {
     return (
       <Alert variant="left-accent" status="success">
         <AlertIcon />
-        Svadilfari is active! Draw gestures for smooth browsing!
+        {activeMsg}
       </Alert>
     );
   }
@@ -18,7 +28,7 @@ export const StatusAlert: VFC<StatusAlertProps> = ({ status }) => {
     return (
       <Alert variant="left-accent" status="warning">
         <AlertIcon />
-        Svadilfari is not active on this page.
+        {inactiveMsg}
       </Alert>
     );
   }

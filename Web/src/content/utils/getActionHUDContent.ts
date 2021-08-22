@@ -17,41 +17,44 @@ import { getActionCode } from "../../utils/getActionCode";
 
 export function getActionHUDContent(
   action: Action,
-  i18n: I18n.Static = browser.i18n
+  i18n: I18n.Static
 ): HUDContent {
   const key = getActionCode(action);
+  const getTitle = (code: string) => {
+    return i18n.getMessage(`get_action_hud_content:${code}`);
+  };
   switch (key) {
     case "tabClose":
-      return { title: "Close Tab", icon: TabProhibited };
+      return { title: getTitle("tab_close"), icon: TabProhibited };
     case "tabCloseAll":
-      return { title: "Close All Tabs", icon: Broom };
+      return { title: getTitle("tab_close_all"), icon: Broom };
     case "tabOpen":
-      return { title: "Open New Tab", icon: TabAdd };
+      return { title: getTitle("tab_open"), icon: TabAdd };
     case "tabDuplicate":
-      return { title: "Duplicate Tab", icon: TabDesktopCopy };
+      return { title: getTitle("tab_duplicate"), icon: TabDesktopCopy };
     case "tabNext":
-      return { title: "Next Tab", icon: ArrowCircleRight };
+      return { title: getTitle("tab_next"), icon: ArrowCircleRight };
     case "tabPrevious":
-      return { title: "Previous Tab", icon: ArrowCircleLeft };
+      return { title: getTitle("tab_previous"), icon: ArrowCircleLeft };
     case "reload":
-      return { title: "Reload", icon: ArrowClockwise };
+      return { title: getTitle("reload"), icon: ArrowClockwise };
     case "javascriptRun": {
-      const c: HUDContent = { title: "Run JavaScript", icon: Code };
+      const c: HUDContent = { title: getTitle("javascript_run"), icon: Code };
       if (action?.javascriptRun?.description) {
         c.message = action.javascriptRun.description;
       }
       return c;
     }
     case "urlCopy":
-      return { title: "Copy URL", icon: ClipboardLink };
+      return { title: getTitle("copy_url"), icon: ClipboardLink };
     case "scrollTop":
-      return { title: "Scroll to Top", icon: ArrowCurveUpLeft };
+      return { title: getTitle("scroll_top"), icon: ArrowCurveUpLeft };
     case "scrollBottom":
-      return { title: "Scroll to Bottom", icon: ArrowCurveDownRight };
+      return { title: getTitle("scroll_bottom"), icon: ArrowCurveDownRight };
     case null:
       break;
     default:
       assertUnreachable(key);
   }
-  return { title: "Unknown Action" };
+  return { title: getTitle("scroll_bottom") };
 }

@@ -4,11 +4,13 @@ import { PopupApp, PopupAppProps } from "./PopupApp";
 import { DebugPopupMessanger } from "./PopupMessenger";
 import { DebugPopupTabManager } from "./PopupTabManager";
 import { chakraDecorator } from "./utils/ChakraDecorator";
+import { MockI18n } from "../utils/MockI18n";
 
 const meta: ComponentMeta<typeof PopupApp> = {
   title: "Popup/Debugger",
   decorators: [chakraDecorator],
   args: {
+    i18n: new MockI18n(),
     messenger: new DebugPopupMessanger(),
     tabManager: new DebugPopupTabManager(),
   },

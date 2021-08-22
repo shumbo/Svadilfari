@@ -10,6 +10,7 @@ if (root) {
   ReactDOM.render(
     <ChakraProvider>
       <PopupApp
+        i18n={browser.i18n}
         messenger={new PopupMessengerImpl()}
         tabManager={new PopupTabManagerImpl()}
       />

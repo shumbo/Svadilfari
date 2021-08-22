@@ -1,6 +1,7 @@
 import { Box } from "@chakra-ui/react";
 import React, { Fragment, useEffect, VFC } from "react";
 import { useAsyncFn } from "react-use";
+import { I18n } from "webextension-polyfill/namespaces/i18n";
 import { urlToExclusionListEntry } from "../core/ExclusionList";
 import { GetExclusionEntryResponse } from "../SharedTypes";
 import { ExceptionToggleGroup } from "./components/ExceptionToggleGroup";
@@ -10,6 +11,7 @@ import { PopupMessenger } from "./PopupMessenger";
 import { PopupTabManager } from "./PopupTabManager";
 
 export type PopupAppProps = {
+  i18n: I18n.Static;
   messenger: PopupMessenger;
   tabManager: PopupTabManager;
 };
@@ -28,7 +30,11 @@ function isPageExcluded(
   return !!entry && !!entry.path;
 }
 
-export const PopupApp: VFC<PopupAppProps> = ({ messenger, tabManager }) => {
+export const PopupApp: VFC<PopupAppProps> = ({
+  i18n,
+  messenger,
+  tabManager,
+}) => {
   const [tabState, updateTabState] = useAsyncFn(async () => {
     const tab = await tabManager.getCurrentTab();
     if (!tab.url) {
@@ -56,9 +62,11 @@ export const PopupApp: VFC<PopupAppProps> = ({ messenger, tabManager }) => {
       {tabState.value && (
         <Fragment>
           <StatusAlert
+            i18n={i18n}
             status={tabState.value.exclusionEntry ? "INACTIVE" : "ACTIVE"}
           />
           <ExceptionToggleGroup
+            i18n={i18n}
             domain={tabState.value.tab.domain}
             path={tabState.value.tab.path}
             value={{
@@ -95,7 +103,6 @@ export const PopupApp: VFC<PopupAppProps> = ({ messenger, tabManager }) => {
                   }
                 }
                 if (typeof status.disabledPage === "boolean") {
-                  // only process if key is present
                   // only process if key is present
                   const currentlyPageExcluded = isPageExcluded(
                     tabState.value?.exclusionEntry
