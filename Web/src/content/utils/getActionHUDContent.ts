@@ -9,12 +9,16 @@ import Code from "@fluentui/svg-icons/icons/code_20_filled.svg";
 import TabAdd from "@fluentui/svg-icons/icons/tab_add_20_regular.svg";
 import TabDesktopCopy from "@fluentui/svg-icons/icons/tab_desktop_copy_20_regular.svg";
 import TabProhibited from "@fluentui/svg-icons/icons/tab_prohibited_24_regular.svg";
+import { I18n } from "webextension-polyfill/namespaces/i18n";
 import { HUDContent } from "../../components/HUD/HUD";
 import { Action } from "../../SharedTypes";
 import { assertUnreachable } from "../../utils/assertUnreachable";
 import { getActionCode } from "../../utils/getActionCode";
 
-export function getActionHUDContent(action: Action): HUDContent {
+export function getActionHUDContent(
+  action: Action,
+  i18n: I18n.Static = browser.i18n
+): HUDContent {
   const key = getActionCode(action);
   switch (key) {
     case "tabClose":

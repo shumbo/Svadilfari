@@ -1,5 +1,6 @@
 import React, { Fragment, useCallback, useEffect, useMemo, VFC } from "react";
 import { useAsync, useAsyncFn } from "react-use";
+import { I18n } from "webextension-polyfill/namespaces/i18n";
 import { useHUD } from "../components/HUD/useHUD";
 import { ContentMessanger } from "../messenger/ContentMessanger";
 import { Gesture } from "../SharedTypes";
@@ -9,9 +10,13 @@ import { isEmbededFrame } from "./utils/isEmbedFrame";
 
 export type ContentAppProps = {
   messenger: ContentMessanger;
+  i18n?: I18n.Static;
 };
 
-export const ContentApp: VFC<ContentAppProps> = ({ messenger }) => {
+export const ContentApp: VFC<ContentAppProps> = ({
+  messenger,
+  i18n = browser.i18n,
+}) => {
   const { hud, open, cancel, resolve } = useHUD();
   const { value: gestureResponse } = useAsync(messenger.getGesture, [
     messenger,
@@ -85,7 +90,6 @@ export const ContentApp: VFC<ContentAppProps> = ({ messenger }) => {
     const s = messenger.onGestureChange(applyOnChangeToHUD);
     const t = messenger.onGestureRelease(applyOnReleaseToHUD);
     const u = messenger.onUpdateExclusionEntry(() => {
-      console.log("update detected. refetch exclusion entry");
       fetchExclusionEntry();
     });
     return () => {

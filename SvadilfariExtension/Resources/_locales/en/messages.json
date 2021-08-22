@@ -1,10 +1,10 @@
 {
     "extension_name": {
-        "message": "SvadilfariExtension",
+        "message": "Svadilfari",
         "description": "The display name for the extension."
     },
     "extension_description": {
-        "message": "This is SvadilfariExtension. You should tell us what your extension does here.",
+        "message": "Svadilfari lets you control Safari with gestures.",
         "description": "Description of what the extension does."
     }
 }

@@ -1,0 +1,10 @@
+{
+  "extension_name": {
+    "message": "Svadilfari",
+    "description": "The display name for the extension."
+  },
+  "extension_description": {
+    "message": "Safariをジェスチャーで操作",
+    "description": "Description of what the extension does."
+  }
+}
