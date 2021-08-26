@@ -1,0 +1,9 @@
+/* 
+  Localizable.strings
+  Svadilfari
+
+  Created by Shun Kashiwa on 2021/08/23.
+  
+*/
+
+MARKDOWN_DEMO = "**MARKDOWN** _Demo_";

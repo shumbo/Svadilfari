@@ -10,8 +10,8 @@ import SwiftUI
 struct HomeListItem: View {
     public static let listRowInsets = EdgeInsets(top: 8, leading: 12, bottom: 8, trailing: 12)
 
-    var title: String
-    var description: String
+    var title: LocalizedStringKey
+    var description: LocalizedStringKey
     var image: Image
     var imageColor: Color = Color.accentColor
 
