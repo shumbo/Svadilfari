@@ -12,16 +12,12 @@ struct HomeListView: View {
         NavigationView {
             List {
                 Section {
-                    NavigationLink(destination: EmptyView()) {
+                    NavigationLink(destination: TutorialView().navigationBarTitleDisplayMode(.inline)) {
                         HomeListItem(
                             title: "Start Tutorial",
                             description: "Learn how to use gestures",
                             image: Image(systemName: "checkmark.circle.fill")
                         )
-                    }.contentShape(Rectangle())
-                        .onTapGesture {
-                            NotificationCenter.default.post(name: .NSPersistentStoreRemoteChange, object: nil)
-                        print("TODO")
                     }
                 }
                 Section {

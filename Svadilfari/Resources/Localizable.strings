@@ -6,4 +6,19 @@
   
 */
 
-MARKDOWN_DEMO = "**MARKDOWN** _Demo_";
+// MARK: COMMON
+COMMON_CONTINUE = "Continue";
+
+// MARK: TUTORIAL
+TUTORIAL_WELCOME_TITLE = "Welcome to Svadilfari";
+TUTORIAL_WELCOME_MESSAGE = "Complete Setup and Browse the Web with Gestures";
+TUTORIAL_OPEN_EXT_TITLE = "Open Extension Settings";
+TUTORIAL_OPEN_EXT_SETTINGS = "Open the **Settings** App";
+TUTORIAL_OPEN_EXT_SAFARI = "Tap **Safari**";
+TUTORIAL_OPEN_EXT_EXTENSIONS = "Tap **Extensions**";
+TUTORIAL_OPEN_EXT_SVADILFARI ="Tap **Svadilfari**";
+TUTORIAL_ENABLE_EXT_TITLE = "Enable Safari Extension";
+TUTORIAL_ENABLE_EXT_ENABLE = "**Enable** Svadilfari";
+TUTORIAL_ENABLE_EXT_ALL_WEBSITES = "Tap the Permission for \"**All Websites**\"";
+TUTORIAL_ENABLE_EXT_ALL_ALLOW = "Select \"**Allow**\"";
+TUTORIAL_ENABLE_EXT_FOOTNOTE = "Steps above will allow Svadilfari to access all websites.\n\nYou can enable gestures on a per-site basis by launching the extension from Safari.";
