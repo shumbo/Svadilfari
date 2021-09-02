@@ -22,3 +22,6 @@ TUTORIAL_ENABLE_EXT_ENABLE = "**Enable** Svadilfari";
 TUTORIAL_ENABLE_EXT_ALL_WEBSITES = "Tap the Permission for \"**All Websites**\"";
 TUTORIAL_ENABLE_EXT_ALL_ALLOW = "Select \"**Allow**\"";
 TUTORIAL_ENABLE_EXT_FOOTNOTE = "Steps above will allow Svadilfari to access all websites.\n\nYou can enable gestures on a per-site basis by launching the extension from Safari.";
+TUTORIAL_DONE_TITLE = "You're All Set!";
+TUTORIAL_DONE_MESSAGE = "Open Safari and try the gesture";
+TUTORIAL_DONE_VIEW_GESTURES = "View Gestures";

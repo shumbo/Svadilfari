@@ -11,7 +11,10 @@ import SwiftUI
 private let SLIDE_MAX_WIDTH: CGFloat = 480.0
 
 struct TutorialView: View {
-    @State private var page = 3
+    @Environment(\.presentationMode) var presentation
+    @State private var page = 1
+
+    var onOpenGestures: () -> Void
 
     var body: some View {
         TabView(selection: $page) {
@@ -98,6 +101,24 @@ struct TutorialView: View {
                     .buttonBorderShape(.roundedRectangle)
                     .buttonStyle(.borderedProminent)
             }.padding(.all, 24).frame(maxWidth: SLIDE_MAX_WIDTH).tag(3)
+            VStack(alignment: .center, spacing: 16) {
+                Image(systemName: "checkmark.circle.fill")
+                    .resizable()
+                    .frame(width: 64, height: 64)
+                    .foregroundColor(Color.green)
+                Text("TUTORIAL_DONE_TITLE").font(.title).bold()
+                Text("TUTORIAL_DONE_MESSAGE")
+                    .font(.body).multilineTextAlignment(.center)
+                Button(action: {
+                    self.presentation.wrappedValue.dismiss()
+                    self.onOpenGestures()
+                }, label: {
+                    Text("TUTORIAL_DONE_VIEW_GESTURES").frame(maxWidth: .infinity).frame(height: 32)
+                })
+                    .buttonBorderShape(.roundedRectangle)
+                    .buttonStyle(.borderedProminent)
+                    .padding(.top, 16)
+            }.padding(.all, 24).frame(maxWidth: SLIDE_MAX_WIDTH).tag(4)
         }.tabViewStyle(.page)
             .indexViewStyle(.page(backgroundDisplayMode: .always))
             .transition(.slide)
@@ -107,6 +128,8 @@ struct TutorialView: View {
 
 struct TutorialView_Previews: PreviewProvider {
     static var previews: some View {
-        TutorialView()
+        TutorialView(onOpenGestures: {
+            // noop
+        })
     }
 }

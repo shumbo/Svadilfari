@@ -22,6 +22,8 @@ struct SvadilfariApp: App {
         )
         persistentHistoryObserver.startObserving()
 
+        InitialDataService.shared.exec()
+
         return container
     }
 
