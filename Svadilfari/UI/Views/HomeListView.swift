@@ -9,58 +9,51 @@ import SwiftUI
 import UIKit
 
 struct HomeListView: View {
-    @State private var selection: NavigationSelection?
-    enum NavigationSelection: Hashable {
-        case none
-        case tutorial
-        case gestures
-        case exclusionList
-    }
-
+    @State private var isFirstLaunch = InitialDataService.shared.isFirstLaunch
+    @State private var isTutorialPresented = false
+    @State private var isGesturePresented = false
     var body: some View {
         NavigationView {
             List {
                 Section {
-                    NavigationLink(tag: NavigationSelection.tutorial, selection: $selection, destination: {
-                        TutorialView(onOpenGestures: {
-                            // TODO: Retrieve 0.35 from somewhere
-                            DispatchQueue.main.asyncAfter(deadline: .now() + 0.35) {
-                                selection = .gestures
-                            }
-                        }).navigationBarTitleDisplayMode(.inline)
-                    }, label: {
+                    NavigationLink(destination: EmptyView()) {
                         HomeListItem(
                             title: "Start Tutorial",
                             description: "Learn how to use gestures",
                             image: Image(systemName: "checkmark.circle.fill")
                         )
-                    })
+                    }.contentShape(Rectangle())
+                        .onTapGesture {
+                            isTutorialPresented = true
+                        }
                 }
                 Section {
-                    NavigationLink(tag: NavigationSelection.gestures, selection: $selection, destination: {
-                        GestureListView()
-                    }, label: {
+                    NavigationLink(isActive: $isGesturePresented, destination: { GestureListView() }, label: {
                         HomeListItem(
                             title: "Gestures",
                             description: "Manage gestures and actions",
                             image: Image(systemName: "hand.draw.fill")
                         )
-                    }).listRowInsets(HomeListItem.listRowInsets)
-                    NavigationLink(
-                        tag: NavigationSelection.exclusionList,
-                        selection: $selection,
-                        destination: { ExclusionListView() },
-                        label: {
-                            HomeListItem(
-                                title: "Exclusion List",
-                                description: "Specify websites you don't wish to use gestures",
-                                image: Image(systemName: "nosign")
-                            )
-                        }
-                    )
+                    })
+                    NavigationLink(destination: { ExclusionListView() }, label: {
+                        HomeListItem(
+                            title: "Exclusion List",
+                            description: "Specify websites you don't wish to use gestures",
+                            image: Image(systemName: "nosign")
+                        )
+                    })
                 }
             }.navigationBarHidden(true)
-        }.navigationViewStyle(.columns)
+        }.navigationViewStyle(.columns).sheet(isPresented: $isTutorialPresented, content: {
+            TutorialView(onOpenGestures: {
+                self.isGesturePresented = true
+            })
+        }).onAppear(perform: {
+            if isFirstLaunch {
+                isFirstLaunch = false
+                isTutorialPresented = true
+            }
+        })
     }
 }
 
