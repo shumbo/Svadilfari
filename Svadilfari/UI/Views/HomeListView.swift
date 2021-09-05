@@ -18,8 +18,8 @@ struct HomeListView: View {
                 Section {
                     NavigationLink(destination: EmptyView()) {
                         HomeListItem(
-                            title: "Start Tutorial",
-                            description: "Learn how to use gestures",
+                            title: "HOME_TUTORIAL_TITLE",
+                            description: "HOME_TUTORIAL_DESCRIPTION",
                             image: Image(systemName: "checkmark.circle.fill")
                         )
                     }.contentShape(Rectangle())
@@ -30,15 +30,15 @@ struct HomeListView: View {
                 Section {
                     NavigationLink(isActive: $isGesturePresented, destination: { GestureListView() }, label: {
                         HomeListItem(
-                            title: "Gestures",
-                            description: "Manage gestures and actions",
+                            title: "HOME_GESTURES_TITLE",
+                            description: "HOME_GESRURES_DESCRIPTION",
                             image: Image(systemName: "hand.draw.fill")
                         )
                     })
                     NavigationLink(destination: { ExclusionListView() }, label: {
                         HomeListItem(
-                            title: "Exclusion List",
-                            description: "Specify websites you don't wish to use gestures",
+                            title: "HOME_EXCLUSION_LIST_TITLE",
+                            description: "HOME_EXCLUSION_LIST_DESCRIPTION",
                             image: Image(systemName: "nosign")
                         )
                     })
