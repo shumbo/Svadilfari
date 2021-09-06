@@ -8,6 +8,7 @@
 
 // MARK: COMMON
 COMMON_CONTINUE = "Continue";
+COMMON_CANCEL = "Cancel";
 
 // MARK: TUTORIAL
 TUTORIAL_WELCOME_TITLE = "Welcome to Svadilfari";
@@ -33,3 +34,24 @@ HOME_GESTURES_TITLE = "Gestures";
 HOME_GESRURES_DESCRIPTION = "Manage Gestures and Actions";
 HOME_EXCLUSION_LIST_TITLE = "Exclusion List";
 HOME_EXCLUSION_LIST_DESCRIPTION = "Control websites you don't want to use gestures on";
+
+// MARK: Gestures
+GESTURE_TITLE = "Gesture";
+
+// MARK: New Gesture
+NEW_GESTURE_TITLE = "New Gesture";
+NEW_GESTURE_SELECT_PATTERN = "Select a pattern from presets";
+NEW_GESTURE_SELECT_PATTERN_BUTTON = "Select Pattern";
+NEW_GESTURE_DRAW_PATTERN = "Draw gesture of your choice";
+NEW_GESTURE_DRAW_PATTERN_BUTTON = "Draw Pattern";
+
+// MARK: Select Pattern
+SELECT_PATTERN_TITLE = "Select Pattern";
+
+// MARK: Draw Pattern
+DRAW_PATTERN_TITLE = "Draw Pattern";
+DRAW_PATTERN_FOOTER = "Draw the pattern you want to use";
+
+// MARK: Preview Pattern
+PREVIEW_PATTERN_TITLE = "Preview Pattern";
+PREVIEW_PATTERN_SELECTED_PATTERN = "Selected Pattern";

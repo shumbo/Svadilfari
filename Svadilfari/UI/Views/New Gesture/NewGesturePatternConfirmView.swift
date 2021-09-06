@@ -14,7 +14,7 @@ struct NewGesturePatternConfirmView: View {
     var body: some View {
         ZStack {
             Form {
-                Section("Selected Pattern") {
+                Section(LocalizedStringKey("PREVIEW_PATTERN_SELECTED_PATTERN")) {
                     HStack {
                         Spacer()
                         GeometryReader { proxy in
@@ -32,7 +32,7 @@ struct NewGesturePatternConfirmView: View {
                         showingNextView = true
                     },
                     label: {
-                        Text("Continue").bold().frame(maxWidth: .infinity)
+                        Text("COMMON_CONTINUE").bold().frame(maxWidth: .infinity)
                     }
                 ).buttonBorderShape(.roundedRectangle)
                     .controlSize(.large)
@@ -45,7 +45,7 @@ struct NewGesturePatternConfirmView: View {
                 destination: { NewGestureSelectActionView(pattern: pattern) },
                 label: { EmptyView() }
             )
-        }.navigationTitle("Preview Pattern")
+        }.navigationTitle("PREVIEW_PATTERN_TITLE")
     }
 }
 

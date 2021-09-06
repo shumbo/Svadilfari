@@ -21,9 +21,9 @@ struct NewGestureView: View {
                 Section {
                     GestureTemplateButton(
                         image: Image(systemName: "list.dash"),
-                        text: "Select a pattern from presets",
+                        text: "NEW_GESTURE_SELECT_PATTERN",
                         color: .blue,
-                        buttonTitle: "Select Pattern",
+                        buttonTitle: "NEW_GESTURE_SELECT_PATTERN_BUTTON",
                         onPress: {
                             showingNewGesturePresets = true
                         }
@@ -32,19 +32,19 @@ struct NewGestureView: View {
                 Section {
                     GestureTemplateButton(
                         image: Image(systemName: "hand.draw"),
-                        text: "Draw gesture of your choice",
+                        text: "NEW_GESTURE_DRAW_PATTERN",
                         color: .green,
-                        buttonTitle: "Draw Pattern",
+                        buttonTitle: "NEW_GESTURE_DRAW_PATTERN_BUTTON",
                         onPress: {
                             showingNewGestureDraw = true
                         }
                     )
                 }
             }
-        }.navigationTitle("New Gesture")
+        }.navigationTitle("NEW_GESTURE_TITLE")
             .navigationBarTitleDisplayMode(.inline)
             .navigationBarItems(leading:
-                Button("Cancel", action: self.dismiss.callAsFunction)
+                Button("COMMON_CANCEL", action: self.dismiss.callAsFunction)
             )
             .interactiveDismissDisabled()
     }

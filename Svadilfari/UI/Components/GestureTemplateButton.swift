@@ -9,9 +9,9 @@ import SwiftUI
 
 struct GestureTemplateButton: View {
     let image: Image
-    let text: String
+    let text: LocalizedStringKey
     let color: Color
-    let buttonTitle: String
+    let buttonTitle: LocalizedStringKey
     let onPress: () -> Void
     var body: some View {
         VStack(spacing: 16) {

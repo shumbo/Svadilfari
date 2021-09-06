@@ -50,7 +50,7 @@ struct NewGestureDrawerView: View {
                     self.pattern = pattern
                     self.nextPageVisible = true
                 }).frame(minHeight: 300)
-            }, header: { Text("Draw Pattern") }, footer: { Text("Draw the pattern you want to use") }).onAppear {
+            }, header: { Text("DRAW_PATTERN_TITLE") }, footer: { Text("DRAW_PATTERN_FOOTER") }).onAppear {
                 self.line = []
             }
         }.background(NavigationLink(isActive: $nextPageVisible, destination: {
@@ -60,7 +60,7 @@ struct NewGestureDrawerView: View {
             } else {
                 EmptyView()
             }
-        }, label: { EmptyView() })).navigationTitle("Draw Pattern")
+        }, label: { EmptyView() })).navigationTitle("DRAW_PATTERN_TITLE")
     }
 }
 
