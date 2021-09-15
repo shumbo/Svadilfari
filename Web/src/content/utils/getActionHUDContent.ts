@@ -46,7 +46,7 @@ export function getActionHUDContent(
       return c;
     }
     case "urlCopy":
-      return { title: getTitle("copy_url"), icon: ClipboardLink };
+      return { title: getTitle("url_copy"), icon: ClipboardLink };
     case "scrollTop":
       return { title: getTitle("scroll_top"), icon: ArrowCurveUpLeft };
     case "scrollBottom":
