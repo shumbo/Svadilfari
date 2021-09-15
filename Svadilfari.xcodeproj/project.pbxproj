@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		240410B426DF8B3400851A2A /* InitialDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240410B326DF8B3400851A2A /* InitialDataService.swift */; };
-		241D8FB726BC1EDE00CBB381 /* ActionList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241D8FB626BC1EDE00CBB381 /* ActionList.swift */; };
 		241D8FB926BC1F2200CBB381 /* Action+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241D8FB826BC1F2200CBB381 /* Action+.swift */; };
 		241D8FC026BC7BDC00CBB381 /* SelectActionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241D8FBF26BC7BDC00CBB381 /* SelectActionView.swift */; };
 		241D8FC226BC7E1600CBB381 /* RunJavascriptActionConfigView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241D8FC126BC7E1600CBB381 /* RunJavascriptActionConfigView.swift */; };
@@ -128,7 +127,6 @@
 
 /* Begin PBXFileReference section */
 		240410B326DF8B3400851A2A /* InitialDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialDataService.swift; sourceTree = "<group>"; };
-		241D8FB626BC1EDE00CBB381 /* ActionList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionList.swift; sourceTree = "<group>"; };
 		241D8FB826BC1F2200CBB381 /* Action+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Action+.swift"; sourceTree = "<group>"; };
 		241D8FBF26BC7BDC00CBB381 /* SelectActionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectActionView.swift; sourceTree = "<group>"; };
 		241D8FC126BC7E1600CBB381 /* RunJavascriptActionConfigView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunJavascriptActionConfigView.swift; sourceTree = "<group>"; };
@@ -344,7 +342,6 @@
 				24B2249F26B5E445009EAB48 /* GestureListItem.swift */,
 				24B224A626B5EDE0009EAB48 /* PatternPreview.swift */,
 				245A016726B9A29200EEE8CD /* GestureTemplateButton.swift */,
-				241D8FB626BC1EDE00CBB381 /* ActionList.swift */,
 				24D759CC26BC80960017498A /* NavigationLinkView.swift */,
 				24500EEE26C6D95800F7BB7E /* GridView.swift */,
 				24A7DBCC26D7ECB000AC3675 /* TutorialStepList.swift */,
@@ -735,7 +732,6 @@
 				24B224A526B5EB9A009EAB48 /* LineSmoother.swift in Sources */,
 				24D00D2226C2BF0B00F8F1FA /* PersistenceController.swift in Sources */,
 				249477C026CEB71B00E6FCC5 /* UserDefaults+transactionTimestamp.swift in Sources */,
-				241D8FB726BC1EDE00CBB381 /* ActionList.swift in Sources */,
 				24FAA2B826B93CAC0083FFAB /* CoreData.xcdatamodeld in Sources */,
 				249477BC26CCF6D800E6FCC5 /* ExclusionListView.swift in Sources */,
 				24A7DBD326D7F16C00AC3675 /* Bundle+icon.swift in Sources */,

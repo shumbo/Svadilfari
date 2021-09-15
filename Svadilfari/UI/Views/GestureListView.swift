@@ -29,13 +29,11 @@ struct GestureListView: View {
                     GestureListItem(gesture: gesture, onChangeEnabled: {_ in
                         toggleGestureEnabled(g: g)
                     })
-                } else {
-                    Text("Error")
                 }
             }.onDelete(perform: self.removeGesture)
         }
             .navigationBarHidden(false)
-            .navigationBarTitle("Gesture")
+            .navigationBarTitle("GESTURE_LIST_TITLE")
             .navigationBarItems(trailing: Button(action: {
                 self.newGestureState.presented = true
             }) {

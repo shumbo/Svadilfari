@@ -13,77 +13,77 @@ struct SelectActionView: View {
     let onSelect: SelectActionCallback
     var body: some View {
         List {
-            Section("Tabs") {
+            Section(LocalizedStringKey("SELECT_ACTION_TABS")) {
                 NavigationLinkView {
-                    ActionListItem(title: "New Tab")
+                    ActionListItem(title: "SELECT_ACTION_TABS_NEW_TAB")
                 }.onTapGesture {
                     self.onSelect(Action(tabOpen: true))
                 }
                 NavigationLinkView {
-                    ActionListItem(title: "Close Tab")
+                    ActionListItem(title: "SELECT_ACTION_TABS_CLOSE_TAB")
                 }
                 .onTapGesture {
                     self.onSelect(Action(tabClose: true))
                 }
                 NavigationLinkView {
-                    ActionListItem(title: "Close All Tabs")
+                    ActionListItem(title: "SELECT_ACTION_TABS_CLOSE_ALL_TABS")
                 }
                 .onTapGesture {
                     self.onSelect(Action(tabCloseAll: true))
                 }
                 NavigationLinkView {
-                    ActionListItem(title: "Duplicate Tab")
+                    ActionListItem(title: "SELECT_ACTION_TABS_DUPLICATE_TAB")
                 }
                 .onTapGesture {
                     self.onSelect(Action(tabDuplicate: true))
                 }
                 NavigationLinkView {
-                    ActionListItem(title: "Next Tab")
+                    ActionListItem(title: "SELECT_ACTION_TABS_NEXT_TAB")
                 }
                 .onTapGesture {
                     self.onSelect(Action(tabNext: true))
                 }
                 NavigationLinkView {
-                    ActionListItem(title: "Previous Tab")
+                    ActionListItem(title: "SELECT_ACTION_TABS_PREVIOUS_TAB")
                 }
                 .onTapGesture {
                     self.onSelect(Action(tabPrevious: true))
                 }
             }
-            Section("Current Page") {
+            Section(LocalizedStringKey("SELECT_ACTION_PAGE")) {
                 NavigationLinkView {
-                    ActionListItem(title: "Reload")
+                    ActionListItem(title: "SELECT_ACTION_PAGE_RELOAD")
                 }
                 .onTapGesture {
                     self.onSelect(Action(reload: true))
                 }
                 NavigationLinkView {
-                    ActionListItem(title: "Copy URL")
+                    ActionListItem(title: "SELECT_ACTION_PAGE_COPY_URL")
                 }
                 .onTapGesture {
                     self.onSelect(Action(urlCopy: true))
                 }
                 NavigationLinkView {
-                    ActionListItem(title: "Scroll to Top")
+                    ActionListItem(title: "SELECT_ACTION_PAGE_SCROLL_TO_TOP")
                 }
                 .onTapGesture {
                     self.onSelect(Action(scrollTop: true))
                 }
                 NavigationLinkView {
-                    ActionListItem(title: "Scroll to Bottom")
+                    ActionListItem(title: "SELECT_ACTION_PAGE_SCROLL_TO_BOTTOM")
                 }
                 .onTapGesture {
                     self.onSelect(Action(scrollBottom: true))
                 }
             }
-            Section("Advanced") {
+            Section(LocalizedStringKey("SELECT_ACTION_ADVANCED")) {
                 NavigationLink(destination: {
                     RunJavascriptActionConfigView(onSelect: self.onSelect)
                 }) {
                     ActionListItem(title: "Run JavaScript")
                 }
             }
-        }.navigationTitle("Action")
+        }.navigationTitle("SELECT_ACTION_ADVANCED_RUN_JAVASCRIPT")
     }
 }
 
@@ -98,7 +98,7 @@ struct SelectActionView_Previews: PreviewProvider {
 }
 
 private struct ActionListItem: View {
-    let title: String
+    let title: LocalizedStringKey
     var body: some View {
         HStack {
             Text(self.title)

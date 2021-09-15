@@ -14,7 +14,7 @@ struct RunJavascriptActionConfigView: View {
     let onSelect: SelectActionView.SelectActionCallback
     var body: some View {
         Form {
-            Section(header: Text("JavaScript Code"), footer: Text("Enter the JavaScript code to be executed")) {
+            Section(header: Text("RUN_JAVASCRIPT_CONFIG_HEADER_1"), footer: Text("RUN_JAVASCRIPT_CONFIG_FOOTER_1")) {
                 ZStack {
                     TextEditor(text: self.$code)
                         .lineLimit(0)
@@ -25,7 +25,7 @@ struct RunJavascriptActionConfigView: View {
                     Text(self.code).opacity(0).padding(.all, 8)
                 }
             }
-            Section(header: Text("Description"), footer: Text("Briefly describe the code")) {
+            Section(header: Text("RUN_JAVASCRIPT_CONFIG_HEADER_2"), footer: Text("RUN_JAVASCRIPT_CONFIG_FOOTER_2")) {
                 TextField("", text: $description)
             }
             Button(
@@ -35,13 +35,13 @@ struct RunJavascriptActionConfigView: View {
                     onSelect(action)
                 },
                 label: {
-                    Text("Continue").bold().frame(maxWidth: .infinity)
+                    Text("COMMON_CONTINUE").bold().frame(maxWidth: .infinity)
                 }
             ).buttonBorderShape(.roundedRectangle)
                 .controlSize(.large)
                 .buttonStyle(.borderedProminent)
                 .listRowInsets(EdgeInsets())
-        }.navigationTitle("Run JavaScript")
+        }.navigationTitle("RUN_JAVASCRIPT_CONFIG_TITLE")
     }
 }
 

@@ -55,3 +55,36 @@ DRAW_PATTERN_FOOTER = "Draw the pattern you want to use";
 // MARK: Preview Pattern
 PREVIEW_PATTERN_TITLE = "Preview Pattern";
 PREVIEW_PATTERN_SELECTED_PATTERN = "Selected Pattern";
+
+// MARK: Exclusion List
+EXCLUSION_LIST_TITLE = "Exclusion List";
+EXCLUSION_LIST_FOOTER = "Svadilfari will not detect gestures in the above domains or pages";
+EXCLUSION_LIST_EMPTY_MESSAGE = "Add domains and websites to the exclusion list to disable gestures.";
+EXCLUSION_LIST_READ_MORE = "Read More";
+
+// MARK: Gesture List
+GESTURE_LIST_TITLE = "Gesture";
+
+// MARK: Select Action
+SELECT_ACTION_TITLE = "Action";
+SELECT_ACTION_TABS = "Tabs";
+SELECT_ACTION_TABS_NEW_TAB = "New Tab";
+SELECT_ACTION_TABS_CLOSE_TAB = "Close Tab";
+SELECT_ACTION_TABS_CLOSE_ALL_TABS = "Close All Tabs";
+SELECT_ACTION_TABS_DUPLICATE_TAB = "Duplicate Tab";
+SELECT_ACTION_TABS_NEXT_TAB = "Next Tab";
+SELECT_ACTION_TABS_PREVIOUS_TAB = "Previous Tab";
+SELECT_ACTION_PAGE = "Current Page";
+SELECT_ACTION_PAGE_RELOAD = "Reload";
+SELECT_ACTION_PAGE_COPY_URL = "Copy URL";
+SELECT_ACTION_PAGE_SCROLL_TO_TOP = "Scroll to Top";
+SELECT_ACTION_PAGE_SCROLL_TO_BOTTOM = "Scroll to Bottom";
+SELECT_ACTION_ADVANCED = "Advanced";
+SELECT_ACTION_ADVANCED_RUN_JAVASCRIPT = "Run JavaScript";
+
+// MARK: Run JavaScript Config
+RUN_JAVASCRIPT_CONFIG_TITLE = "Run JavaScript";
+RUN_JAVASCRIPT_CONFIG_HEADER_1 = "JavaScript Code";
+RUN_JAVASCRIPT_CONFIG_FOOTER_1 = "Enter JavaScript code to execute";
+RUN_JAVASCRIPT_CONFIG_HEADER_2 = "Description";
+RUN_JAVASCRIPT_CONFIG_FOOTER_2 = "Brief description of the code";

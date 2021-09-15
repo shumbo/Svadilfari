@@ -24,7 +24,7 @@ struct ExclusionListView: View {
 
     var body: some View {
         List {
-            Section(footer: Text("Svadilfari will not detect gestures in the above domains or pages")) {
+            Section(footer: Text("EXCLUSION_LIST_FOOTER")) {
                 ForEach(entries) { entry in
                     let str = "\(entry.domain ?? "")\(entry.path ?? "")"
                     Text(str)
@@ -33,15 +33,18 @@ struct ExclusionListView: View {
         }.emptyPlaceholder(self.entries) {
             VStack {
                 Spacer()
-                Text("Add domains and websites to the exclusion list to disable gestures.")
+                Text("EXCLUSION_LIST_EMPTY_MESSAGE")
                     .foregroundColor(.gray)
                     .multilineTextAlignment(.center)
                     .padding(.horizontal, 16)
                     .padding(.bottom, 16)
-                Link("Read More", destination: URL(string: "https://docs.svadilfari.app/guide/exclusion-list")!)
+                Link(
+                    "EXCLUSION_LIST_READ_MORE",
+                    destination: URL(string: "https://rebrand.ly/svadilfari-guide-exclusion-list")!
+                )
                 Spacer()
             }
-        }.navigationTitle("Exclusion List")
+        }.navigationTitle("EXCLUSION_LIST_TITLE")
     }
 
     func removeListEntry(offsets: IndexSet) {
