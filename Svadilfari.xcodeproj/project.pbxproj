@@ -26,6 +26,7 @@
 		24428E3226B33E7700B21130 /* SvadilfariUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24428E3126B33E7700B21130 /* SvadilfariUITests.swift */; };
 		24428E4126B33F5400B21130 /* HomeListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24428E4026B33F5400B21130 /* HomeListItem.swift */; };
 		24428E4426B3436A00B21130 /* HomeListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24428E4326B3436A00B21130 /* HomeListView.swift */; };
+		2445C0AF26F2628C003C1EF6 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2445C0B126F2628C003C1EF6 /* Localizable.strings */; };
 		24500EED26C6D81300F7BB7E /* NewGestureDrawerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24500EEC26C6D81300F7BB7E /* NewGestureDrawerView.swift */; };
 		24500EEF26C6D95800F7BB7E /* GridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24500EEE26C6D95800F7BB7E /* GridView.swift */; };
 		24500EF226C6E03500F7BB7E /* NativeHelper.js in Resources */ = {isa = PBXBuildFile; fileRef = 24500EF126C6E03500F7BB7E /* NativeHelper.js */; };
@@ -51,7 +52,6 @@
 		24A19E2C26B34F9500DA5E20 /* GestureListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A19E2B26B34F9500DA5E20 /* GestureListView.swift */; };
 		24A22F0E26D1404200C60F53 /* NewExclusionEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A22F0D26D1404200C60F53 /* NewExclusionEntryView.swift */; };
 		24A22F1126D1483800C60F53 /* EmptyPlaceholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A22F1026D1483800C60F53 /* EmptyPlaceholder.swift */; };
-		24A22F1B26D2C2E500C60F53 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 24A22F1A26D2C2E500C60F53 /* Localizable.strings */; };
 		24A7DBCD26D7ECB000AC3675 /* TutorialStepList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A7DBCC26D7ECB000AC3675 /* TutorialStepList.swift */; };
 		24A7DBCF26D7ED7600AC3675 /* TutorialStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A7DBCE26D7ED7600AC3675 /* TutorialStep.swift */; };
 		24A7DBD126D7EF7000AC3675 /* TutorialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A7DBD026D7EF7000AC3675 /* TutorialView.swift */; };
@@ -144,6 +144,8 @@
 		24428E3126B33E7700B21130 /* SvadilfariUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SvadilfariUITests.swift; sourceTree = "<group>"; };
 		24428E4026B33F5400B21130 /* HomeListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeListItem.swift; sourceTree = "<group>"; };
 		24428E4326B3436A00B21130 /* HomeListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeListView.swift; sourceTree = "<group>"; };
+		2445C0B026F2628C003C1EF6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		2445C0B226F2629B003C1EF6 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
 		24500EEC26C6D81300F7BB7E /* NewGestureDrawerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewGestureDrawerView.swift; sourceTree = "<group>"; };
 		24500EEE26C6D95800F7BB7E /* GridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridView.swift; sourceTree = "<group>"; };
 		24500EF126C6E03500F7BB7E /* NativeHelper.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = NativeHelper.js; sourceTree = "<group>"; };
@@ -163,7 +165,6 @@
 		24A19E2B26B34F9500DA5E20 /* GestureListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GestureListView.swift; sourceTree = "<group>"; };
 		24A22F0D26D1404200C60F53 /* NewExclusionEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewExclusionEntryView.swift; sourceTree = "<group>"; };
 		24A22F1026D1483800C60F53 /* EmptyPlaceholder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyPlaceholder.swift; sourceTree = "<group>"; };
-		24A22F1A26D2C2E500C60F53 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		24A7DBCC26D7ECB000AC3675 /* TutorialStepList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialStepList.swift; sourceTree = "<group>"; };
 		24A7DBCE26D7ED7600AC3675 /* TutorialStep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialStep.swift; sourceTree = "<group>"; };
 		24A7DBD026D7EF7000AC3675 /* TutorialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialView.swift; sourceTree = "<group>"; };
@@ -368,7 +369,7 @@
 			isa = PBXGroup;
 			children = (
 				24500EF126C6E03500F7BB7E /* NativeHelper.js */,
-				24A22F1A26D2C2E500C60F53 /* Localizable.strings */,
+				2445C0B126F2628C003C1EF6 /* Localizable.strings */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -601,6 +602,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ja,
 			);
 			mainGroup = 24428E0A26B33E7600B21130;
 			productRefGroup = 24428E1426B33E7600B21130 /* Products */;
@@ -621,7 +623,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				24428E1E26B33E7700B21130 /* Preview Assets.xcassets in Resources */,
-				24A22F1B26D2C2E500C60F53 /* Localizable.strings in Resources */,
+				2445C0AF26F2628C003C1EF6 /* Localizable.strings in Resources */,
 				24428E1B26B33E7700B21130 /* Assets.xcassets in Resources */,
 				24500EF226C6E03500F7BB7E /* NativeHelper.js in Resources */,
 			);
@@ -829,11 +831,24 @@
 		};
 /* End PBXTargetDependency section */
 
+/* Begin PBXVariantGroup section */
+		2445C0B126F2628C003C1EF6 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2445C0B026F2628C003C1EF6 /* en */,
+				2445C0B226F2629B003C1EF6 /* ja */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
 		24428E3326B33E7700B21130 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -895,6 +910,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";

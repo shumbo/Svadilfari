@@ -34,46 +34,46 @@ struct NewGesturePresetsView_Previews: PreviewProvider {
 
 private struct Preset: Identifiable {
     var id: UUID = UUID()
-    let name: String
+    let name: LocalizedStringKey
     let pattern: Pattern
 }
 
-private let TOP = Vector(x: 0.0, y: -100.0)
+private let UP = Vector(x: 0.0, y: -100.0)
 private let LEFT = Vector(x: -100.0, y: 0.0)
 private let RIGHT = Vector(x: 100.0, y: 0.0)
-private let BOTTOM = Vector(x: 0.0, y: 100.0)
+private let DOWN = Vector(x: 0.0, y: 100.0)
 
 private let presets: [Preset] = [
     Preset(
-        name: "Top Left",
-        pattern: Pattern(data: [TOP, LEFT])
+        name: "PATTERN_PRESET_UP_LEFT",
+        pattern: Pattern(data: [UP, LEFT])
     ),
     Preset(
-        name: "Top Right",
-        pattern: Pattern(data: [TOP, RIGHT])
+        name: "PATTERN_PRESET_UP_RIGHT",
+        pattern: Pattern(data: [UP, RIGHT])
     ),
     Preset(
-        name: "Bottom Left",
-        pattern: Pattern(data: [BOTTOM, LEFT])
+        name: "PATTERN_PRESET_DOWN_LEFT",
+        pattern: Pattern(data: [DOWN, LEFT])
     ),
     Preset(
-        name: "Bottom Right",
-        pattern: Pattern(data: [BOTTOM, RIGHT])
+        name: "PATTERN_PRESET_DOWN_RIGHT",
+        pattern: Pattern(data: [DOWN, RIGHT])
     ),
     Preset(
-        name: "Left Top",
-        pattern: Pattern(data: [LEFT, TOP])
+        name: "PATTERN_PRESET_LEFT_UP",
+        pattern: Pattern(data: [LEFT, UP])
     ),
     Preset(
-        name: "Left Bottom",
-        pattern: Pattern(data: [LEFT, BOTTOM])
+        name: "PATTERN_PRESET_LEFT_DOWN",
+        pattern: Pattern(data: [LEFT, DOWN])
     ),
     Preset(
-        name: "Right Top",
-        pattern: Pattern(data: [RIGHT, TOP])
+        name: "PATTERN_PRESET_RIGHT_UP",
+        pattern: Pattern(data: [RIGHT, UP])
     ),
     Preset(
-        name: "Right Bottom",
-        pattern: Pattern(data: [RIGHT, BOTTOM])
+        name: "PATTERN_PRESET_RIGHT_DOWN",
+        pattern: Pattern(data: [RIGHT, DOWN])
     )
 ]

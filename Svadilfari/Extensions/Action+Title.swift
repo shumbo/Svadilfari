@@ -6,44 +6,45 @@
 //
 
 import Foundation
+import SwiftUI
 
 extension Action {
-    var title: String {
+    var title: LocalizedStringKey {
         if self.tabOpen != nil {
-            return "Open Tab"
+            return "ACTION_TITLE_OPEN_TAB"
         }
         if self.tabClose != nil {
-            return "Close Tab"
+            return "ACTION_TITLE_CLOSE_TAB"
         }
         if self.tabCloseAll != nil {
-            return "Close All Tabs"
+            return "ACTION_TITLE_CLOSE_ALL_TABS"
         }
         if self.tabDuplicate != nil {
-            return "Duplicate Tab"
+            return "ACTION_TITLE_DUPLICATE_TAB"
         }
         if self.tabNext != nil {
-            return "Next Tab"
+            return "ACTION_TITLE_NEXT_TAB"
         }
         if self.tabPrevious != nil {
-            return "Previous Tab"
+            return "ACTION_TITLE_PREVIOUS_TAB"
         }
         if self.reload != nil {
-            return "Reload"
+            return "ACTION_TITLE_RELOAD"
         }
         if let a = self.javascriptRun {
             if let d = a.javascriptRunDescription, d != "" {
-                return "Run JavaScript (\(d))"
+                return "ACTION_TITLE_RUN_JAVASCRIPT \(d)"
             }
-            return "Run JavaScript"
+            return "ACTION_TITLE_RUN_JAVASCRIPT"
         }
         if self.urlCopy != nil {
-            return "Copy URL"
+            return "ACTION_TITLE_COPY_URL"
         }
         if self.scrollTop != nil {
-            return "Scroll to Top"
+            return "ACTION_TITLE_SCROLL_TO_TOP"
         }
         if self.scrollBottom != nil {
-            return "Scroll to Bottom"
+            return "ACTION_TITLE_SCROLL_TO_BOTTOM"
         }
         return "Unknown Action"
     }

@@ -1,0 +1,115 @@
+/* 
+  Localizable.strings
+  Svadilfari
+
+  Created by Shun Kashiwa on 2021/08/23.
+  
+*/
+
+// MARK: COMMON
+COMMON_CONTINUE = "次へ";
+COMMON_CANCEL = "キャンセル";
+
+// MARK: TUTORIAL
+TUTORIAL_WELCOME_TITLE = "Svadilfariへようこそ";
+TUTORIAL_WELCOME_MESSAGE = "セットアップを完了して、ジェスチャーでWebブラウジングを楽しみましょう";
+TUTORIAL_OPEN_EXT_TITLE = "機能拡張の設定を開く";
+TUTORIAL_OPEN_EXT_SETTINGS = "**設定**アプリを開きます";
+TUTORIAL_OPEN_EXT_SAFARI = "**Safari**を選択します";
+TUTORIAL_OPEN_EXT_EXTENSIONS = "**機能拡張**を選択します";
+TUTORIAL_OPEN_EXT_SVADILFARI ="**Svadilfari**を選択します";
+TUTORIAL_ENABLE_EXT_TITLE = "機能拡張の有効化";
+TUTORIAL_ENABLE_EXT_ENABLE = "Svadilfariを**オン**にします";
+TUTORIAL_ENABLE_EXT_ALL_WEBSITES = "**すべてのWebサイト**のアクセス権をタップします";
+TUTORIAL_ENABLE_EXT_ALL_ALLOW = "**許可**を選択します";
+TUTORIAL_ENABLE_EXT_FOOTNOTE = "上記のステップで、SvadilfariはすべてのWebサイトにアクセスが可能になります。\n\nSafari内から機能拡張を起動することで、サイト毎にジェスチャーを有効化できます。";
+TUTORIAL_DONE_TITLE = "準備完了です!";
+TUTORIAL_DONE_MESSAGE = "Safariを開いて、ジェスチャーを試してみましょう";
+TUTORIAL_DONE_VIEW_GESTURES = "ジェスチャーを確認する";
+
+// MARK: Home
+HOME_TUTORIAL_TITLE = "チュートリアルの開始";
+HOME_TUTORIAL_DESCRIPTION = "SafariでSvadilfariを有効化する方法を確認します";
+HOME_GESTURES_TITLE = "ジェスチャー";
+HOME_GESRURES_DESCRIPTION = "ジェスチャーとアクションを管理します";
+HOME_EXCLUSION_LIST_TITLE = "除外リスト";
+HOME_EXCLUSION_LIST_DESCRIPTION = "ジェスチャーを利用しないWebサイトを管理します";
+
+// MARK: Gestures
+GESTURE_TITLE = "ジェスチャー";
+
+// MARK: New Gesture
+NEW_GESTURE_TITLE = "新しいジェスチャー";
+NEW_GESTURE_SELECT_PATTERN = "プリセットからパターンを選択";
+NEW_GESTURE_SELECT_PATTERN_BUTTON = "パターンを選択";
+NEW_GESTURE_DRAW_PATTERN = "好きなパターンを描く";
+NEW_GESTURE_DRAW_PATTERN_BUTTON = "パターンを描く";
+
+// MARK: Select Pattern
+SELECT_PATTERN_TITLE = "パターンを選択";
+
+// MARK: Draw Pattern
+DRAW_PATTERN_TITLE = "パターンを描く";
+DRAW_PATTERN_FOOTER = "使用するパターンを描いてください";
+
+// MARK: Preview Pattern
+PREVIEW_PATTERN_TITLE = "パターンの確認";
+PREVIEW_PATTERN_SELECTED_PATTERN = "選択されたパターン";
+
+// MARK: Exclusion List
+EXCLUSION_LIST_TITLE = "除外リスト";
+EXCLUSION_LIST_FOOTER = "Svadilfariは上記のドメインおよびWebページにおいてジェスチャーを検出しません";
+EXCLUSION_LIST_EMPTY_MESSAGE = "除外リストにドメインやWebページを追加してジェスチャーを無効化できます";
+EXCLUSION_LIST_READ_MORE = "もっと読む";
+
+// MARK: Gesture List
+GESTURE_LIST_TITLE = "ジェスチャー";
+
+// MARK: Select Action
+SELECT_ACTION_TITLE = "アクションの選択";
+SELECT_ACTION_TABS = "タブ";
+SELECT_ACTION_TABS_NEW_TAB = "新規タブ";
+SELECT_ACTION_TABS_CLOSE_TAB = "タブを閉じる";
+SELECT_ACTION_TABS_CLOSE_ALL_TABS = "すべてのタブを閉じる";
+SELECT_ACTION_TABS_DUPLICATE_TAB = "タブの複製";
+SELECT_ACTION_TABS_NEXT_TAB = "次のタブへ";
+SELECT_ACTION_TABS_PREVIOUS_TAB = "前のタブへ";
+SELECT_ACTION_PAGE = "開いているページ";
+SELECT_ACTION_PAGE_RELOAD = "リロード";
+SELECT_ACTION_PAGE_COPY_URL = "URLをコピー";
+SELECT_ACTION_PAGE_SCROLL_TO_TOP = "上までスクロール";
+SELECT_ACTION_PAGE_SCROLL_TO_BOTTOM = "下までスクロール";
+SELECT_ACTION_ADVANCED = "上級者向け";
+SELECT_ACTION_ADVANCED_RUN_JAVASCRIPT = "JavaScriptの実行";
+
+// MARK: Run JavaScript Config
+RUN_JAVASCRIPT_CONFIG_TITLE = "JavaScriptの実行";
+RUN_JAVASCRIPT_CONFIG_HEADER_1 = "JavaScriptコード";
+RUN_JAVASCRIPT_CONFIG_FOOTER_1 = "実行するJavaScriptコードを入力";
+RUN_JAVASCRIPT_CONFIG_HEADER_2 = "説明";
+RUN_JAVASCRIPT_CONFIG_FOOTER_2 = "コードの簡単な説明";
+
+// MARK: Action Title
+ACTION_TITLE_OPEN_TAB = "新規タブ";
+ACTION_TITLE_CLOSE_TAB = "タブを閉じる";
+ACTION_TITLE_CLOSE_ALL_TABS = "すべてのタブを閉じる";
+ACTION_TITLE_DUPLICATE_TAB = "タブの複製";
+ACTION_TITLE_NEXT_TAB = "次のタブへ";
+ACTION_TITLE_PREVIOUS_TAB = "前のタブへ";
+ACTION_TITLE_RELOAD = "リロード";
+ACTION_TITLE_COPY_URL = "URLをコピー";
+ACTION_TITLE_SCROLL_TO_TOP = "上までスクロール";
+ACTION_TITLE_SCROLL_TO_BOTTOM = "下までスクロール";
+ACTION_TITLE_RUN_JAVASCRIPT = "JavaScriptの実行";
+"ACTION_TITLE_RUN_JAVASCRIPT %@" = "JavaScriptの実行 (%@)";
+ACTION_TITLE_UNKNOWN = "不明なアクション";
+
+// MARK: Pattern Preset
+PATTERN_PRESET_UP_LEFT = "上左";
+PATTERN_PRESET_UP_RIGHT = "上右";
+PATTERN_PRESET_DOWN_LEFT = "下左";
+PATTERN_PRESET_DOWN_RIGHT = "下右";
+PATTERN_PRESET_LEFT_UP = "左上";
+PATTERN_PRESET_LEFT_DOWN = "左下";
+PATTERN_PRESET_RIGHT_UP = "右上";
+PATTERN_PRESET_RIGHT_DOWN = "右下";

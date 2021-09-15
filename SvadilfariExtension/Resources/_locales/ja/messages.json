@@ -17,7 +17,7 @@
     "message": "新規タブ"
   },
   "get_action_hud_content:tab_duplicate": {
-    "message": "タブをコピー"
+    "message": "タブの複製"
   },
   "get_action_hud_content:tab_next": {
     "message": "次のタブへ"

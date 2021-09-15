@@ -19,7 +19,7 @@ struct TutorialView: View {
     var body: some View {
         TabView(selection: $page) {
             VStack(alignment: .center, spacing: 16) {
-                Image(uiImage: Bundle.main.icon ?? UIImage())
+                Image("Icon")
                     .resizable()
                     .frame(width: 120, height: 120)
                     .cornerRadius(16)

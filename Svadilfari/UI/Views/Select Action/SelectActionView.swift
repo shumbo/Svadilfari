@@ -80,10 +80,10 @@ struct SelectActionView: View {
                 NavigationLink(destination: {
                     RunJavascriptActionConfigView(onSelect: self.onSelect)
                 }) {
-                    ActionListItem(title: "Run JavaScript")
+                    ActionListItem(title: "SELECT_ACTION_ADVANCED_RUN_JAVASCRIPT")
                 }
             }
-        }.navigationTitle("SELECT_ACTION_ADVANCED_RUN_JAVASCRIPT")
+        }.navigationTitle("SELECT_ACTION_TITLE")
     }
 }
 
