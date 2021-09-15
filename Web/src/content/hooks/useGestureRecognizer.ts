@@ -15,7 +15,7 @@ export function useGestureRecognizer(
   onChange: (gesture: Gesture | null) => void,
   onRelease: (gesture: Gesture | null) => void
 ): void {
-  const patternConstructor = useRef(new PatternConstructor(0.12, 10));
+  const patternConstructor = useRef(new PatternConstructor(0.12, 60));
 
   const getClosestGesture = useCallback(
     () =>
