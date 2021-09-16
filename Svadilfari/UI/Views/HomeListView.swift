@@ -44,7 +44,7 @@ struct HomeListView: View {
                     })
                 }
             }.navigationBarHidden(true)
-        }.navigationViewStyle(.columns).sheet(isPresented: $isTutorialPresented, content: {
+        }.navigationViewStyle(.stack).sheet(isPresented: $isTutorialPresented, content: {
             TutorialView(onOpenGestures: {
                 self.isGesturePresented = true
             })
