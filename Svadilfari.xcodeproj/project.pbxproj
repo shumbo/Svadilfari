@@ -133,6 +133,7 @@
 		242CD6E826CFB147009DDDB0 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		242CD6ED26CFC6E0009DDDB0 /* ExclusionListService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExclusionListService.swift; sourceTree = "<group>"; };
 		242CD6F026CFD111009DDDB0 /* ExclusionListServiceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExclusionListServiceTest.swift; sourceTree = "<group>"; };
+		242F92AB26F390B3002E04E2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		24428E1326B33E7600B21130 /* Svadilfari.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Svadilfari.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		24428E1626B33E7600B21130 /* SvadilfariApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SvadilfariApp.swift; sourceTree = "<group>"; };
 		24428E1826B33E7600B21130 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -281,6 +282,7 @@
 		24428E1526B33E7600B21130 /* Svadilfari */ = {
 			isa = PBXGroup;
 			children = (
+				242F92AB26F390B3002E04E2 /* Info.plist */,
 				24500EF026C6DC7500F7BB7E /* Resources */,
 				24D00D2326C3580700F8F1FA /* Svadilfari.entitlements */,
 				24B224A826B5EEEE009EAB48 /* Extensions */,
@@ -975,7 +977,7 @@
 				DEVELOPMENT_TEAM = TKVMG44U5W;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_FILE = Svadilfari/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -985,8 +987,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "dev.shun-k.Svadilfari";
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = app.svadilfari.svadilfari;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -1007,7 +1009,7 @@
 				DEVELOPMENT_TEAM = TKVMG44U5W;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_FILE = Svadilfari/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -1017,8 +1019,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "dev.shun-k.Svadilfari";
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = app.svadilfari.svadilfari;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -1137,8 +1139,8 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "dev.shun-k.Svadilfari.SvadilfariExtension";
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "app.svadilfari.svadilfari.safari-extension";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -1164,8 +1166,8 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "dev.shun-k.Svadilfari.SvadilfariExtension";
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "app.svadilfari.svadilfari.safari-extension";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
