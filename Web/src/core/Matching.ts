@@ -123,6 +123,10 @@ export function patternSimilarityByDTW(
   const rows = patternA.data.length;
   const columns = patternB.data.length;
 
+  if (rows === 0 || columns === 0) {
+    return 1;
+  }
+
   // create 2-dimensional array
   const DTW = Array.from(Array(rows), () => Array(columns).fill(Infinity));
 
