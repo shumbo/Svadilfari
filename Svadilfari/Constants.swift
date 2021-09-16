@@ -9,4 +9,4 @@ import Foundation
 
 // swiftlint:disable identifier_name
 
-let APP_GROUP_ID = "group.dev.shun-k.svadilfari"
+let APP_GROUP_ID = "group.app.svadilfari.svadilfari"

@@ -18,6 +18,7 @@
 		242CD6F126CFD111009DDDB0 /* ExclusionListServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242CD6F026CFD111009DDDB0 /* ExclusionListServiceTest.swift */; };
 		242CD6F226CFD31D009DDDB0 /* ExclusionListService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242CD6ED26CFC6E0009DDDB0 /* ExclusionListService.swift */; };
 		242CD6F526CFD6C1009DDDB0 /* CoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 24FAA2B626B93CAC0083FFAB /* CoreData.xcdatamodeld */; };
+		242F92AD26F3923F002E04E2 /* AppHero.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242F92AC26F3923F002E04E2 /* AppHero.swift */; };
 		24428E1726B33E7600B21130 /* SvadilfariApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24428E1626B33E7600B21130 /* SvadilfariApp.swift */; };
 		24428E1926B33E7600B21130 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24428E1826B33E7600B21130 /* ContentView.swift */; };
 		24428E1B26B33E7700B21130 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 24428E1A26B33E7700B21130 /* Assets.xcassets */; };
@@ -134,6 +135,7 @@
 		242CD6ED26CFC6E0009DDDB0 /* ExclusionListService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExclusionListService.swift; sourceTree = "<group>"; };
 		242CD6F026CFD111009DDDB0 /* ExclusionListServiceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExclusionListServiceTest.swift; sourceTree = "<group>"; };
 		242F92AB26F390B3002E04E2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		242F92AC26F3923F002E04E2 /* AppHero.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppHero.swift; sourceTree = "<group>"; };
 		24428E1326B33E7600B21130 /* Svadilfari.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Svadilfari.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		24428E1626B33E7600B21130 /* SvadilfariApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SvadilfariApp.swift; sourceTree = "<group>"; };
 		24428E1826B33E7600B21130 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -349,6 +351,7 @@
 				24500EEE26C6D95800F7BB7E /* GridView.swift */,
 				24A7DBCC26D7ECB000AC3675 /* TutorialStepList.swift */,
 				24A7DBCE26D7ED7600AC3675 /* TutorialStep.swift */,
+				242F92AC26F3923F002E04E2 /* AppHero.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -731,6 +734,7 @@
 				24A22F1126D1483800C60F53 /* EmptyPlaceholder.swift in Sources */,
 				24A7DBCD26D7ECB000AC3675 /* TutorialStepList.swift in Sources */,
 				24F3686E26C365650092F583 /* URL+storeURL.swift in Sources */,
+				242F92AD26F3923F002E04E2 /* AppHero.swift in Sources */,
 				245A016B26B9ACD900EEE8CD /* NewGesturePresetsView.swift in Sources */,
 				24D759CF26BCB3C20017498A /* NewGestureSelectActionView.swift in Sources */,
 				24B224A526B5EB9A009EAB48 /* LineSmoother.swift in Sources */,

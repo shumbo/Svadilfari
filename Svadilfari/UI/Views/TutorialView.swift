@@ -22,7 +22,7 @@ struct TutorialView: View {
                 Image("Icon")
                     .resizable()
                     .frame(width: 120, height: 120)
-                    .cornerRadius(16)
+                    .cornerRadius(21)
                 Text("TUTORIAL_WELCOME_TITLE")
                     .font(.title).bold()
                 Text("TUTORIAL_WELCOME_MESSAGE")

@@ -34,7 +34,7 @@ struct PersistenceController {
         container = NSPersistentContainer(name: "CoreData")
 
         // store the data in App Group
-        let storeURL = URL.storeURL(for: "group.dev.shun-k.svadilfari", databaseName: "Svadilfari")
+        let storeURL = URL.storeURL(for: APP_GROUP_ID, databaseName: "Svadilfari")
 
         let description = NSPersistentStoreDescription(url: storeURL)
 

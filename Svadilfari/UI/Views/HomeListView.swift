@@ -15,6 +15,7 @@ struct HomeListView: View {
     var body: some View {
         NavigationView {
             List {
+                AppHero().frame(maxWidth: .infinity).listRowBackground(Color.clear)
                 Section {
                     NavigationLink(destination: EmptyView()) {
                         HomeListItem(
