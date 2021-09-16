@@ -1,11 +1,11 @@
 name: Check
 on: [push]
 jobs:
-  Check-Web:
+  Check-WebExtension:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: Web
+        working-directory: WebExtension
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2
