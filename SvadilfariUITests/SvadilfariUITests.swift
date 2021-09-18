@@ -24,21 +24,86 @@ class SvadilfariUITests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
+    private func getLocale(app: XCUIApplication) -> String {
+        guard let localeArgIdx = app.launchArguments.firstIndex(of: "-AppleLocale") else {
+            return "?"
+        }
+        if localeArgIdx >= app.launchArguments.count {
+            return "?"
+        }
+        let str = app.launchArguments[localeArgIdx + 1]
+        let start = str.index(str.startIndex, offsetBy: 1)
+        let end = str.index(start, offsetBy: 2)
+        let range = start..<end
+
+        let locale = str[range]
+        return String(locale)
+    }
+
     func testExample() throws {
         // UI tests must launch the application that they test.
         let app = XCUIApplication()
+        app.launchArguments = ["SHOW_TUTORIAL"]
+        setupSnapshot(app)
         app.launch()
 
-        // Use recording to get started writing UI tests.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+        // get current language from arguments
+        func localized(_ key: String) -> String {
+            let locale = getLocale(app: app)
+            let testBundle = Bundle(for: Snapshot.self)
+            if let testBundlePath = testBundle.path(forResource: locale, ofType: "lproj")
+                ?? testBundle.path(forResource: locale, ofType: "lproj"),
+               let localizedBundle = Bundle(path: testBundlePath) {
+                return NSLocalizedString(key, bundle: localizedBundle, comment: "")
+            }
+            return "?"
+        }
+
+        snapshot("1-Tutorial")
+
+        // go to the last screen
+        for _ in 0..<3 {
+            app.buttons[localized("COMMON_CONTINUE")].firstMatch.tap()
+        }
+        app.buttons[localized("TUTORIAL_DONE_VIEW_GESTURES")].firstMatch.tap()
+
+        app.navigationBars.buttons.firstMatch.tap()
+
+        snapshot("2-Home")
+
+        app.tables.cells.element(boundBy: 2).tap()
+
+        snapshot("3-Gestures")
+
+        // Plus Button
+        app.navigationBars.buttons.element(boundBy: 1).tap()
+
+        // Select Pattern from Presets
+        app.buttons[localized("NEW_GESTURE_SELECT_PATTERN_BUTTON")].firstMatch.tap()
+
+        // Top Left Pattern
+        app.staticTexts[localized("PATTERN_PRESET_UP_LEFT")].tap()
+
+        snapshot("4-Pattern")
+
+        // Continue
+        app.buttons[localized("COMMON_CONTINUE")].firstMatch.tap()
+
+        snapshot("5-Actions")
     }
 
-    func testLaunchPerformance() throws {
-        if #available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 7.0, *) {
-            // This measures how long it takes to launch your application.
-            measure(metrics: [XCTApplicationLaunchMetric()]) {
-                XCUIApplication().launch()
-            }
-        }
+}
+
+var currentLanguage: (langCode: String, localeCode: String)? {
+    let currentLocale = Locale(identifier: Locale.preferredLanguages.first!)
+    guard let langCode = currentLocale.languageCode else {
+        return nil
     }
+    var localeCode = langCode
+    if let scriptCode = currentLocale.scriptCode {
+        localeCode = "\(langCode)-\(scriptCode)"
+    } else if let regionCode = currentLocale.regionCode {
+        localeCode = "\(langCode)-\(regionCode)"
+    }
+    return (langCode, localeCode)
 }

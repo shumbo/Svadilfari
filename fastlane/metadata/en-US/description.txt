@@ -1,0 +1,12 @@
+Svadilfari is a Safari extension that lets you control Safari with Gestures.
+
+By drawing gestures on websites, you can perform various actions in Safari, such as manipulating tabs, reloading, and copying URLs.
+
+With Svadilfari installed, you can do the following
+- Draw configured gestures on websites and perform actions
+- Choose from a wide variety of patterns to use
+- Register your favorite patterns by drawing them with your finger
+- Perform over 10 customizable actions
+- Use exclusion lists to disable gestures on specific domains and web pages.
+
+Install Svadilfari, and enjoy a smooth web browsing experience!

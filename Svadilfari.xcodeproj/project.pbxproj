@@ -37,6 +37,8 @@
 		245A016B26B9ACD900EEE8CD /* NewGesturePresetsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245A016A26B9ACD900EEE8CD /* NewGesturePresetsView.swift */; };
 		245A016D26B9CCCA00EEE8CD /* NewGesturePatternConfirmView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245A016C26B9CCCA00EEE8CD /* NewGesturePatternConfirmView.swift */; };
 		2485834C26BCC2DE00A8836E /* SheetState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2485834B26BCC2DE00A8836E /* SheetState.swift */; };
+		248623D126F5DD0300A30E1B /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 248623CF26F5DD0300A30E1B /* SnapshotHelper.swift */; };
+		248623D426F5EAC500A30E1B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2445C0B126F2628C003C1EF6 /* Localizable.strings */; };
 		249477BC26CCF6D800E6FCC5 /* ExclusionListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249477BB26CCF6D800E6FCC5 /* ExclusionListView.swift */; };
 		249477BE26CEB38700E6FCC5 /* PersistentHistoryTracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249477BD26CEB38700E6FCC5 /* PersistentHistoryTracking.swift */; };
 		249477C026CEB71B00E6FCC5 /* UserDefaults+transactionTimestamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249477BF26CEB71B00E6FCC5 /* UserDefaults+transactionTimestamp.swift */; };
@@ -158,6 +160,7 @@
 		245A016A26B9ACD900EEE8CD /* NewGesturePresetsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewGesturePresetsView.swift; sourceTree = "<group>"; };
 		245A016C26B9CCCA00EEE8CD /* NewGesturePatternConfirmView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewGesturePatternConfirmView.swift; sourceTree = "<group>"; };
 		2485834B26BCC2DE00A8836E /* SheetState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetState.swift; sourceTree = "<group>"; };
+		248623CF26F5DD0300A30E1B /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SnapshotHelper.swift; path = SvadilfariUITests/SnapshotHelper.swift; sourceTree = SOURCE_ROOT; };
 		249477BB26CCF6D800E6FCC5 /* ExclusionListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExclusionListView.swift; sourceTree = "<group>"; };
 		249477BD26CEB38700E6FCC5 /* PersistentHistoryTracking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistentHistoryTracking.swift; sourceTree = "<group>"; };
 		249477BF26CEB71B00E6FCC5 /* UserDefaults+transactionTimestamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+transactionTimestamp.swift"; sourceTree = "<group>"; };
@@ -324,6 +327,7 @@
 		24428E3026B33E7700B21130 /* SvadilfariUITests */ = {
 			isa = PBXGroup;
 			children = (
+				248623CF26F5DD0300A30E1B /* SnapshotHelper.swift */,
 				24428E3126B33E7700B21130 /* SvadilfariUITests.swift */,
 			);
 			path = SvadilfariUITests;
@@ -645,6 +649,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				248623D426F5EAC500A30E1B /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -792,6 +797,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				24428E3226B33E7700B21130 /* SvadilfariUITests.swift in Sources */,
+				248623D126F5DD0300A30E1B /* SnapshotHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

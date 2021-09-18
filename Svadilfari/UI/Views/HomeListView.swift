@@ -7,9 +7,11 @@
 
 import SwiftUI
 import UIKit
+import Foundation
 
 struct HomeListView: View {
-    @State private var isFirstLaunch = InitialDataService.shared.isFirstLaunch
+    @State private var isFirstLaunch = InitialDataService.shared.isFirstLaunch ||
+        ProcessInfo.processInfo.arguments.contains("SHOW_TUTORIAL")
     @State private var isTutorialPresented = false
     @State private var isGesturePresented = false
     var body: some View {

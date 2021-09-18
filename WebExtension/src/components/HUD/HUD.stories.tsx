@@ -46,3 +46,5 @@ Cancel.args = {
   visible: false,
   cancel: true,
 };
+
+export const AppStoreJa = Template.bind({})
