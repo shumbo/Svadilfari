@@ -118,6 +118,7 @@ struct TutorialView: View {
                     .buttonBorderShape(.roundedRectangle)
                     .buttonStyle(.borderedProminent)
                     .padding(.top, 16)
+                Link("TUTORIAL_DONE_OPEN_CHECKER", destination: URL(string: "https://rebrand.ly/svadilfari-check")!)
             }.padding(.all, 24).frame(maxWidth: SLIDE_MAX_WIDTH).tag(4)
         }.tabViewStyle(.page)
             .indexViewStyle(.page(backgroundDisplayMode: .always))

@@ -26,6 +26,7 @@ TUTORIAL_ENABLE_EXT_FOOTNOTE = "上記のステップで、Svadilfariはすべ�
 TUTORIAL_DONE_TITLE = "準備完了です!";
 TUTORIAL_DONE_MESSAGE = "Safariを開いて、ジェスチャーを試してみましょう";
 TUTORIAL_DONE_VIEW_GESTURES = "ジェスチャーを確認する";
+TUTORIAL_DONE_OPEN_CHECKER = "チェッカーを開く";
 
 // MARK: Home
 HOME_TUTORIAL_TITLE = "チュートリアルの開始";
