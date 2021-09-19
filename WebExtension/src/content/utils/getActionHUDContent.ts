@@ -37,7 +37,7 @@ export function getActionHUDContent(
     case "tabPrevious":
       return { title: getTitle("tab_previous"), icon: ArrowCircleLeft };
     case "reload":
-      return { title: getTitle("reload"), icon: ArrowClockwise };
+      return { title: getTitle("tab_reload"), icon: ArrowClockwise };
     case "javascriptRun": {
       const c: HUDContent = { title: getTitle("javascript_run"), icon: Code };
       if (action?.javascriptRun?.description) {
