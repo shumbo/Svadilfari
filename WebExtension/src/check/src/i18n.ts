@@ -13,6 +13,8 @@ export function i18n(): void {
         inactive: {
           title: "Svadilfari is NOT Active!",
           description: "Follow the tutorial to activate the extension",
+          still_having_problem: "Still having a problem?",
+          contact_us: "Contact Us",
         },
       },
     },
@@ -27,6 +29,8 @@ export function i18n(): void {
         inactive: {
           title: "Svadilfariが有効化されていません!",
           description: "チュートリアルを完了して機能拡張を有効化してください",
+          still_having_problem: "解決しませんか？",
+          contact_us: "問い合わせる",
         },
       },
     },

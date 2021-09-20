@@ -76,7 +76,9 @@ export const CheckResult: VFC<CheckResultProps> = ({ status, onOpenApp }) => {
           {t("check_result.app_link")}
         </Button>
       </AlertDescription>
-      <AlertDescription mt={4}>解決しませんか？</AlertDescription>
+      <AlertDescription mt={4}>
+        {t("check_result.inactive.still_having_problem")}
+      </AlertDescription>
       <AlertDescription mt={2}>
         <Button
           colorScheme="orange"
@@ -84,7 +86,7 @@ export const CheckResult: VFC<CheckResultProps> = ({ status, onOpenApp }) => {
           as="a"
           href="https://rebrand.ly/svadilfari-contact"
         >
-          お問い合わせください
+          {t("check_result.inactive.contact_us")}
         </Button>
       </AlertDescription>
     </Alert>
