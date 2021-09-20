@@ -17,7 +17,8 @@ jobs:
         run: yarn format
       - name: Lint
         run: yarn lint
-      - name: Type Check
-        run: yarn typecheck
+      # TODO: Enable this again
+      #- name: Type Check
+      #  run: yarn typecheck
       - name: Test
         run: yarn test
