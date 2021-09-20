@@ -10,6 +10,7 @@ import {
   Button,
 } from "@chakra-ui/react";
 import React, { VFC } from "react";
+import { t } from "react-i18nify";
 
 export type CheckResultProps = {
   status: "ACTIVE" | "INACTIVE" | null;
@@ -22,7 +23,7 @@ export const CheckResult: VFC<CheckResultProps> = ({ status, onOpenApp }) => {
       <Flex height="100%" justifyContent="center" alignItems="center">
         <VStack>
           <Spinner />
-          <Text>Check in progress...</Text>
+          <Text>{t("check_result.check_in_progress")}</Text>
         </VStack>
       </Flex>
     );
@@ -40,14 +41,14 @@ export const CheckResult: VFC<CheckResultProps> = ({ status, onOpenApp }) => {
       >
         <AlertIcon boxSize="40px" mr={0} />
         <AlertTitle mt={4} mb={1} fontSize="lg">
-          Svadilfari is Active!
+          {t("check_result.active.title")}
         </AlertTitle>
         <AlertDescription maxWidth="sm">
-          Gestures should work now!
+          {t("check_result.active.description")}
         </AlertDescription>
         <AlertDescription mt={2}>
           <Button colorScheme="green" onClick={onOpenApp}>
-            Open Svadilfari
+            {t("check_result.app_link")}
           </Button>
         </AlertDescription>
       </Alert>
@@ -65,14 +66,14 @@ export const CheckResult: VFC<CheckResultProps> = ({ status, onOpenApp }) => {
     >
       <AlertIcon boxSize="40px" mr={0} />
       <AlertTitle mt={4} mb={1} fontSize="lg">
-        Svadilfari is NOT Active!
+        {t("check_result.inactive.title")}
       </AlertTitle>
       <AlertDescription maxWidth="sm">
-        Follow the tutorial to activate the extension
+        {t("check_result.inactive.description")}
       </AlertDescription>
       <AlertDescription mt={2}>
         <Button colorScheme="orange" onClick={onOpenApp}>
-          Open Svadilfari
+          {t("check_result.app_link")}
         </Button>
       </AlertDescription>
     </Alert>

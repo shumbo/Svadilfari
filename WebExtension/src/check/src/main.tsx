@@ -4,7 +4,9 @@ import "./index.css";
 import { CheckerApp } from "./CheckerApp";
 import { check } from "./check";
 import { ChakraProvider } from "@chakra-ui/react";
+import { i18n } from "./i18n";
 
+i18n();
 ReactDOM.render(
   <React.StrictMode>
     <ChakraProvider>

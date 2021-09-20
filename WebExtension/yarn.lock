@@ -5590,6 +5590,11 @@ data-urls@^2.0.0:
     whatwg-mimetype "^2.3.0"
     whatwg-url "^8.0.0"
 
+date-fns@^2.24.0:
+  version "2.24.0"
+  resolved "https://registry.yarnpkg.com/date-fns/-/date-fns-2.24.0.tgz#7d86dc0d93c87b76b63d213b4413337cfd1c105d"
+  integrity sha512-6ujwvwgPID6zbI0o7UbURi2vlLDR9uP26+tW6Lg+Ji3w7dd0i3DOcjcClLjLPranT60SSEFBwdSyYwn/ZkPIuw==
+
 debug@2.6.9, debug@^2.2.0, debug@^2.3.3, debug@^2.6.0:
   version "2.6.9"
   resolved "https://registry.yarnpkg.com/debug/-/debug-2.6.9.tgz#5d128515df134ff327e90a4c93f4e077a536341f"
@@ -10491,6 +10496,14 @@ react-helmet-async@^1.0.7:
     prop-types "^15.7.2"
     react-fast-compare "^3.2.0"
     shallowequal "^1.1.0"
+
+react-i18nify@^4.2.1:
+  version "4.2.1"
+  resolved "https://registry.yarnpkg.com/react-i18nify/-/react-i18nify-4.2.1.tgz#e63789da1c497d5339c50047ef8cc840515de42b"
+  integrity sha512-S5ZFKjkQ4De3bBh52p3vC9F2U150aHhX7mnXF0VVbEHvSXqPpsyrdcJzarHVmU9n1zZUAwT6u3QZ02u5Bx88uA==
+  dependencies:
+    date-fns "^2.24.0"
+    prop-types "^15.7.2"
 
 react-inspector@^5.1.0:
   version "5.1.1"
