@@ -1,1 +1,21 @@
+Hello, and thank you for reviewing my app.
 
+This app provides a Safari extension that lets users control Safari by drawing gestures on websites. Users can configure gestures and corresponding actions in the app, and the extension will detect these gestures in Safari.
+
+To test the app, please follow the tutorial to enable the extension. The tutorial will pop up on the app's first launch, and you can also open it by tapping "Start Tutorial" on the app's home screen.
+
+Once configured, you can use Svadilfari Checker to test if the extension is activated. Checker is available on https://svadilfari.app/check or from the link at the end of the tutorial. If the extension is active, you will see a green alert.
+
+Now that the extension is active, you should be able to use gestures. If you open "Gesture" in the app, you will see pre-configured gestures. You may add a new gesture by tapping the "+" button on the navigation bar.
+
+To test gestures, open a web page on Safari and draw one of the gestures. I configured the gesture-detection algorithm to be strict so it won't misfire actions. If you cannot trigger actions, try to
+- Draw a large pattern. It won't pick up small gestures.
+- Draw each stroke of the pattern.
+- Open the app's popup menu and verify the extension is active.
+- Reload the webpage.
+
+Users can add domains and URLs to the app's exclusion list from the app's popup menu. On the web pages that are on the exclusion list, the app won't detect gestures. You can check the exclusion list from the app.
+
+I have attached videos explaining the steps above. Please follow the video if you cannot get the app to work as expected.
+
+Thanks again for your time, and hopefully, you can approve my submission.

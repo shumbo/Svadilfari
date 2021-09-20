@@ -50,9 +50,8 @@ class SvadilfariUITests: XCTestCase {
         // get current language from arguments
         func localized(_ key: String) -> String {
             let locale = getLocale(app: app)
-            let testBundle = Bundle(for: Snapshot.self)
-            if let testBundlePath = testBundle.path(forResource: locale, ofType: "lproj")
-                ?? testBundle.path(forResource: locale, ofType: "lproj"),
+            let testBundle = Bundle(for: Self.self)
+            if let testBundlePath = testBundle.path(forResource: locale, ofType: "lproj"),
                let localizedBundle = Bundle(path: testBundlePath) {
                 return NSLocalizedString(key, bundle: localizedBundle, comment: "")
             }
