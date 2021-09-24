@@ -1,7 +1,7 @@
 import React from "react";
 import { ComponentMeta, Story } from "@storybook/react";
 import { CheckResult, CheckResultProps } from "./CheckResult";
-import { chakraDecorator } from "../../../popup/utils/ChakraDecorator";
+import { chakraDecorator } from "../../../../../WebExtension/src/popup/utils/ChakraDecorator";
 import { i18nDecorator } from "../utils/I18nDecorator";
 
 const meta: ComponentMeta<typeof CheckResult> = {
