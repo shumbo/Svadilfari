@@ -15,8 +15,14 @@ properties:
     required:
       - domain
   remove_exclusion_entry:
-    type: string
-    format: uuid
+    title: RemoveExclusionEntryRequest
+    type: object
+    properties:
+      id:
+        type: string
+        format: uuid
+    required:
+      - id
   get_exclusion_entry:
     type: object
     title: GetExclusionEntryRequest
