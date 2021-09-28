@@ -1,0 +1,11 @@
+64a65,69
+> declare global {
+>     // eslint-disable-next-line no-var
+>     var browser: Browser.Browser
+> }
+> 
+238,241d242
+< 
+< // tslint:disable-next-line:export-just-namespace
+< export = Browser;
+< export as namespace browser;
