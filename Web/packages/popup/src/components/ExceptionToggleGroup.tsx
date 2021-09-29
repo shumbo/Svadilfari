@@ -1,6 +1,6 @@
 import { Box, Heading, VStack } from "@chakra-ui/react";
 import React, { useMemo, VFC } from "react";
-import { I18n } from "webextension-polyfill/namespaces/i18n";
+import { Browser } from "webextension-typedef";
 import { ExceptionToggle } from "./ExceptionToggle";
 
 export type ExceptionStatus = {
@@ -15,7 +15,7 @@ export type ExceptionStatus = {
 };
 
 export type ExceptionToggleGroupProps = {
-  i18n: I18n.Static;
+  i18n: Browser.I18n.Static;
   domain: string;
   path: string;
   value: ExceptionStatus;

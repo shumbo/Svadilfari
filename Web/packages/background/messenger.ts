@@ -21,7 +21,6 @@ export class BackgroundMessengerImpl implements BackgroundMessenger {
         | GetExclusionEntryRequestMessage
         | GestureChangeMessage
         | GestureReleaseMessage
-        | ApplyExclusionEntryMessage
         | ExecuteActionMessage,
       sender: Browser.Runtime.MessageSender,
       sendResponse: (...response: any[]) => void

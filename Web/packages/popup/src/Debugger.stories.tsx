@@ -1,17 +1,15 @@
 import React from "react";
 import { ComponentMeta, Story } from "@storybook/react";
 import { PopupApp, PopupAppProps } from "./PopupApp";
-import { DebugPopupMessanger } from "./PopupMessenger";
+import { DebugPopupMessenger } from "./PopupMessenger";
 import { DebugPopupTabManager } from "./PopupTabManager";
-import { chakraDecorator } from "./utils/ChakraDecorator";
-import { MockI18n } from "../utils/MockI18n";
+import { MockI18n } from "mock";
 
 const meta: ComponentMeta<typeof PopupApp> = {
   title: "Popup/Debugger",
-  decorators: [chakraDecorator],
   args: {
     i18n: new MockI18n(),
-    messenger: new DebugPopupMessanger(),
+    messenger: new DebugPopupMessenger(),
     tabManager: new DebugPopupTabManager(),
   },
   parameters: {
@@ -27,10 +25,10 @@ export const Enabled = Template.bind({});
 
 export const DisabledDomain = Template.bind({});
 DisabledDomain.args = {
-  messenger: new DebugPopupMessanger(),
+  messenger: new DebugPopupMessenger("example.com"),
 };
 
 export const DisabledPage = Template.bind({});
 DisabledPage.args = {
-  messenger: new DebugPopupMessanger(),
+  messenger: new DebugPopupMessenger("example.com", "/"),
 };

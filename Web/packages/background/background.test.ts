@@ -1,7 +1,6 @@
 import {
   Action,
   AddExclusionEntryRequestMessage,
-  ApplyExclusionEntryMessage,
   BackgroundMessenger,
   Convert,
   ExecuteActionMessage,
@@ -38,7 +37,6 @@ describe("Background", () => {
             | GetExclusionEntryRequestMessage
             | GestureChangeMessage
             | GestureReleaseMessage
-            | ApplyExclusionEntryMessage
             | ExecuteActionMessage,
           sender: Browser.Runtime.MessageSender,
           sendResponse: (...response: any[]) => void
@@ -108,13 +106,6 @@ describe("Background", () => {
     const msg: GestureReleaseMessage = {
       _tag: "GESTURE_RELEASE",
       gesture: ({ p: 1 } as unknown) as Gesture,
-    };
-    sendMockMessage(msg);
-    expect(sendMessageToContent).toHaveBeenLastCalledWith(1, msg);
-  });
-  test("ApplyExclusionListMessage", () => {
-    const msg: ApplyExclusionEntryMessage = {
-      _tag: "APPLY_EXCLUSION_ENTRY",
     };
     sendMockMessage(msg);
     expect(sendMessageToContent).toHaveBeenLastCalledWith(1, msg);

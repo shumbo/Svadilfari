@@ -1,5 +1,4 @@
-import { Heading, VStack, Text } from "@chakra-ui/layout";
-import { Flex, Spacer, Switch } from "@chakra-ui/react";
+import { Flex, Spacer, Switch, Heading, VStack, Text } from "@chakra-ui/react";
 import React, { VFC } from "react";
 
 export type ExceptionToggleProps = {

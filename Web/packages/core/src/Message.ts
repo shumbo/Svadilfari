@@ -144,7 +144,9 @@ export interface PopupMessenger {
   /**
    * Get the exclusion entry of current page, if any
    */
-  getExclusionEntry(): Promise<GetExclusionEntryResponse>;
+  getExclusionEntry(
+    req: GetExclusionEntryRequest
+  ): Promise<GetExclusionEntryResponse>;
   /**
    * Apply the updated exclusion entry to content
    */
@@ -165,7 +167,6 @@ export interface BackgroundMessenger {
         | GetExclusionEntryRequestMessage
         | GestureChangeMessage
         | GestureReleaseMessage
-        | ApplyExclusionEntryMessage
         | ExecuteActionMessage,
       sender: Browser.Runtime.MessageSender,
       sendResponse: (...response: any[]) => void

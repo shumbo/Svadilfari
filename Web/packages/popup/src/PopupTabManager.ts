@@ -1,3 +1,5 @@
+import { Browser } from "webextension-typedef";
+
 export interface PopupTabManager {
   getCurrentTab(): Promise<Browser.Tabs.Tab>;
 }

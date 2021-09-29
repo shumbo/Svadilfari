@@ -1,13 +1,12 @@
 import { Box } from "@chakra-ui/react";
 import React, { Fragment, useEffect, VFC } from "react";
 import { useAsyncFn } from "react-use";
-import { I18n } from "webextension-polyfill/namespaces/i18n";
-import { urlToExclusionListEntry } from "../core/ExclusionList";
-import { GetExclusionEntryResponse } from "../SharedTypes";
+import { I18n } from "webextension-typedef/namespaces/i18n";
+import { GetExclusionEntryResponse, urlToExclusionListEntry } from "core";
 import { ExceptionToggleGroup } from "./components/ExceptionToggleGroup";
 import { StatusAlert } from "./components/StatusAlert";
 import { PopupGlobalStyle } from "./PopupGlobalStyle";
-import { PopupMessenger } from "./PopupMessenger";
+import { PopupMessenger } from "core";
 import { PopupTabManager } from "./PopupTabManager";
 
 export type PopupAppProps = {
@@ -41,10 +40,10 @@ export const PopupApp: VFC<PopupAppProps> = ({
       return null;
     }
     const entry = urlToExclusionListEntry(tab.url);
-    const exclusionEntry = await messenger.getExclusionEntry(
-      entry.domain,
-      entry.path
-    );
+    const exclusionEntry = await messenger.getExclusionEntry({
+      domain: entry.domain,
+      path: entry.path,
+    });
     return {
       tab: {
         domain: entry.domain,
@@ -96,10 +95,9 @@ export const PopupApp: VFC<PopupAppProps> = ({
                     status.disabledDomain &&
                     tabState.value?.tab
                   ) {
-                    await messenger.addExclusionEntry(
-                      tabState.value.tab.domain,
-                      undefined
-                    );
+                    await messenger.addExclusionEntry({
+                      domain: tabState.value.tab.domain,
+                    });
                   }
                 }
                 if (typeof status.disabledPage === "boolean") {
@@ -123,10 +121,10 @@ export const PopupApp: VFC<PopupAppProps> = ({
                     status.disabledPage &&
                     tabState.value?.tab
                   ) {
-                    await messenger.addExclusionEntry(
-                      tabState.value.tab.domain,
-                      tabState.value.tab.path
-                    );
+                    await messenger.addExclusionEntry({
+                      domain: tabState.value.tab.domain,
+                      path: tabState.value.tab.path,
+                    });
                   }
                 }
                 await updateTabState();

@@ -95,9 +95,6 @@ export function startBackground({ channel, messenger, executeAction }: Deps) {
         handleMessageToContent(msg);
         break;
       }
-      case "APPLY_EXCLUSION_ENTRY":
-        handleMessageToContent(msg);
-        break;
       default:
         unreachableCase(msg);
     }
