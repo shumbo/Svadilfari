@@ -1,4 +1,4 @@
-import { Pattern, Point, Vector } from "../SharedTypes";
+import { Pattern, Point, Vector } from "./SharedTypes";
 import { computeVectorMagnitude } from "./utils/computeVectorMagnitude";
 import { makeVectorFromPoints } from "./utils/makeVectorFromPoints";
 import { vectorDirectionDifference } from "./utils/vectorDirectionDifference";

@@ -1,4 +1,4 @@
-import { Gesture, Pattern } from "../SharedTypes";
+import { Gesture, Pattern } from "./SharedTypes";
 import { computeVectorMagnitude } from "./utils/computeVectorMagnitude";
 import { vectorDirectionDifference } from "./utils/vectorDirectionDifference";
 

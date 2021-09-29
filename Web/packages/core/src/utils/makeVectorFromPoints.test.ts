@@ -1,4 +1,4 @@
-import { Point } from "../../SharedTypes";
+import { Point } from "../SharedTypes";
 import { makeVectorFromPoints } from "./makeVectorFromPoints";
 
 describe("makeVectorFromPoints", () => {

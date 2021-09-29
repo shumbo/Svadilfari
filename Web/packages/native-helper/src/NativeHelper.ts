@@ -1,5 +1,4 @@
-import { PatternConstructor } from "../core/PatternConstructor";
-import { Convert } from "../SharedTypes";
+import { PatternConstructor, Convert } from "core";
 
 export function pointsToPattern(json: string): string {
   const points = Convert.toPointList(json);

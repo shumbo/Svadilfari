@@ -1,4 +1,4 @@
-import { Vector } from "../../SharedTypes";
+import { Vector } from "../SharedTypes";
 
 /**
  * Returns the dierection difference of 2 vectors

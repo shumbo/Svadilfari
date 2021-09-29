@@ -80,6 +80,12 @@ importers:
       typescript: 4.4.3
       webextension-typedef: link:../webextension-typedef
 
+  packages/native-helper:
+    specifiers:
+      core: workspace:*
+    dependencies:
+      core: link:../core
+
   packages/webextension-typedef:
     specifiers: {}
 
