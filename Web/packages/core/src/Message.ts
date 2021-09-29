@@ -1,3 +1,4 @@
+import { Browser } from "webextension-typedef";
 import {
   Action,
   AddExclusionEntryRequest,
@@ -7,6 +8,11 @@ import {
   GetGestureResponse,
   RemoveExclusionEntryRequest,
 } from "./SharedTypes";
+
+/**
+ * Message types are only used by browser extension components (Popup, Content and Background)
+ * Background is in charge of converting these messages into
+ */
 
 type Base<T extends string, S = {}> = {
   /**
@@ -160,7 +166,9 @@ export interface BackgroundMessenger {
         | GestureChangeMessage
         | GestureReleaseMessage
         | ApplyExclusionEntryMessage
-        | ExecuteActionMessage
+        | ExecuteActionMessage,
+      sender: Browser.Runtime.MessageSender,
+      sendResponse: (...response: any[]) => void
     ) => void
   ): () => void;
 }

@@ -6,3 +6,4 @@ cp tmp/DefinitelyTyped/types/webextension-polyfill/index.d.ts .
 cp -r tmp/DefinitelyTyped/types/webextension-polyfill/namespaces .
 patch index.d.ts patches/index.d.ts.patch
 patch namespaces/runtime.d.ts patches/runtime.d.ts.patch
+rm -rf tmp

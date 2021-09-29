@@ -1,7 +1,13 @@
-import { Action } from "../SharedTypes";
-import { assertUnreachable } from "../utils/assertUnreachable";
-import { getActionCode } from "../utils/getActionCode";
+import { Action } from "../../../WebExtension/src/SharedTypes";
+import { assertUnreachable } from "../../../WebExtension/src/utils/assertUnreachable";
+import { getActionCode } from "../../../WebExtension/src/utils/getActionCode";
+import { Browser } from "webextension-typedef";
 import { findNext, findPrevious } from "./utils/find";
+
+export type ExecuteAction = (
+  action: Action,
+  sender: Browser.Runtime.MessageSender
+) => Promise<void>;
 
 export async function executeAction(
   action: Action,
