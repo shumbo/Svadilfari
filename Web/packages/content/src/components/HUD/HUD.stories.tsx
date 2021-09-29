@@ -47,4 +47,4 @@ Cancel.args = {
   cancel: true,
 };
 
-export const AppStoreJa = Template.bind({})
+export const AppStoreJa = Template.bind({});

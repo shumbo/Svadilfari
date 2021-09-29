@@ -1,4 +1,4 @@
-import { isEmbededFrame } from "../content/utils/isEmbedFrame";
+import { isEmbededFrame } from "../../../Web/packages/content/src/utils/isEmbedFrame";
 import {
   Action,
   Convert,

@@ -10,7 +10,7 @@ import TabAdd from "@fluentui/svg-icons/icons/tab_add_20_regular.svg";
 import TabDesktopCopy from "@fluentui/svg-icons/icons/tab_desktop_copy_20_regular.svg";
 import TabProhibited from "@fluentui/svg-icons/icons/tab_prohibited_24_regular.svg";
 import { I18n } from "webextension-polyfill/namespaces/i18n";
-import { HUDContent } from "../../components/HUD/HUD";
+import { HUDContent } from "../../../../Web/packages/content/src/components/HUD/HUD";
 import { Action } from "../../SharedTypes";
 import { assertUnreachable } from "../../utils/assertUnreachable";
 import { getActionCode } from "../../utils/getActionCode";

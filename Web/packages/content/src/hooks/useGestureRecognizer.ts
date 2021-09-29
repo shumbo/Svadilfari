@@ -1,8 +1,6 @@
 import { useCallback, useRef } from "react";
 import { useEvent } from "react-use";
-import { getClosestGestureByPattern } from "../../core/Matching";
-import { PatternConstructor } from "../../core/PatternConstructor";
-import { Gesture } from "../../SharedTypes";
+import { getClosestGestureByPattern, PatternConstructor, Gesture } from "core";
 
 /**
  * Recognize gestures and send events

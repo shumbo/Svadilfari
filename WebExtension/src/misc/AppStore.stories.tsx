@@ -1,6 +1,9 @@
 import React from "react";
 import { ComponentMeta, Story } from "@storybook/react";
-import { HUD, HUDProps } from "../components/HUD/HUD";
+import {
+  HUD,
+  HUDProps,
+} from "../../../Web/packages/content/src/components/HUD/HUD";
 import AddIcon from "@fluentui/svg-icons/icons/tab_add_20_regular.svg";
 import { ChakraProvider } from "@chakra-ui/react";
 

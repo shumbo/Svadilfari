@@ -101,7 +101,9 @@ export interface ContentMessenger {
   /**
    * Get the exclusion entry of current page, if any
    */
-  getExclusionEntry(): Promise<GetExclusionEntryResponse>;
+  getExclusionEntry(
+    req: GetExclusionEntryRequest
+  ): Promise<GetExclusionEntryResponse>;
   /**
    * Notify the top frame the change in gesture
    * @param gesture Gesture to preview, or null to hide preview
@@ -112,6 +114,11 @@ export interface ContentMessenger {
    * @param gesture Gesture to execute, or null to do nothing
    */
   gestureRelease(gesture: Gesture | null): Promise<void>;
+  /**
+   * Notify the background page to execute the selected action
+   * @param action
+   */
+  executeAction(action: Action): Promise<void>;
   /**
    * Set up a handler function that is called when the content receives message
    * @param handler a function that handles incoming messages

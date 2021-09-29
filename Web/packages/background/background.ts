@@ -8,6 +8,10 @@ import { Channel } from "./channel";
 import { ExecuteAction } from "./executeAction";
 import { unreachableCase } from "ts-assert-unreachable";
 
+function id<T>(x: T) {
+  return x;
+}
+
 type Deps = {
   messenger: BackgroundMessenger;
   channel: Channel;
@@ -20,12 +24,15 @@ export function startBackground({ channel, messenger, executeAction }: Deps) {
      * A helper function that encodes MessageRequest and sends it to the backend
      * @param msgReq Message Request
      */
-    const handleMessageToNative = async (msgReq: MessageRequest) => {
+    async function handleMessageToNative(
+      msgReq: MessageRequest,
+      decode: (rawResponse: string) => unknown = id
+    ) {
       const response = await channel.sendNativeMessage(
         Convert.messageRequestToJson(msgReq)
       );
-      sendResponse(response);
-    };
+      sendResponse(decode(response));
+    }
 
     /**
      * A helper function that sends a message to the sender's tab
@@ -61,12 +68,15 @@ export function startBackground({ channel, messenger, executeAction }: Deps) {
               return;
             }
             const currentTabEntry = urlToExclusionListEntry(url);
-            handleMessageToNative({
-              getExclusionEntry: {
-                domain: currentTabEntry.domain,
-                path: currentTabEntry.path,
+            handleMessageToNative(
+              {
+                getExclusionEntry: {
+                  domain: currentTabEntry.domain,
+                  path: currentTabEntry.path,
+                },
               },
-            });
+              (rawResponse) => Convert.toGetExclusionEntryResponse(rawResponse)
+            );
           })
           .catch(() => {
             sendResponse(false);
@@ -74,7 +84,9 @@ export function startBackground({ channel, messenger, executeAction }: Deps) {
         break;
       }
       case "GET_GESTURE_REQUEST": {
-        handleMessageToNative({ getGestures: true });
+        handleMessageToNative({ getGestures: true }, (rawResponse) =>
+          Convert.toGetExclusionEntryResponse(rawResponse)
+        );
         break;
       }
       case "ADD_EXCLUSION_ENTRY_REQUEST": {

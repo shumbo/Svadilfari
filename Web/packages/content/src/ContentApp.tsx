@@ -1,19 +1,21 @@
+import { ContentMessenger, urlToExclusionListEntry } from "core";
 import React, { Fragment, useCallback, useEffect, useMemo, VFC } from "react";
 import { useAsync, useAsyncFn } from "react-use";
-import { I18n } from "webextension-polyfill/namespaces/i18n";
-import { useHUD } from "../components/HUD/useHUD";
-import { ContentMessanger } from "../messenger/ContentMessanger";
-import { Gesture } from "../SharedTypes";
+import { unreachableCase } from "ts-assert-unreachable";
+import { Browser } from "webextension-typedef";
+import { Gesture } from "../../../../WebExtension/src/SharedTypes";
+import { useHUD } from "./components/HUD/useHUD";
 import { useGestureRecognizer } from "./hooks/useGestureRecognizer";
 import { getActionHUDContent } from "./utils/getActionHUDContent";
 import { isEmbededFrame } from "./utils/isEmbedFrame";
 
 export type ContentAppProps = {
-  messenger: ContentMessanger;
-  i18n: I18n.Static;
+  messenger: ContentMessenger;
+  i18n: Browser.I18n.Static;
+  tabs: Browser.Tabs.Static;
 };
 
-export const ContentApp: VFC<ContentAppProps> = ({ messenger, i18n }) => {
+export const ContentApp: VFC<ContentAppProps> = ({ messenger, i18n, tabs }) => {
   const { hud, open, cancel, resolve } = useHUD();
   const { value: gestureResponse } = useAsync(messenger.getGesture, [
     messenger,
@@ -22,7 +24,15 @@ export const ContentApp: VFC<ContentAppProps> = ({ messenger, i18n }) => {
     { value: exclusionEntry, loading: exclusionEntryLoading },
     fetchExclusionEntry,
   ] = useAsyncFn(async () => {
-    const response = await messenger.getExclusionEntry();
+    const currentTab = await tabs.getCurrent();
+    if (!currentTab?.url) {
+      return;
+    }
+    const entry = urlToExclusionListEntry(currentTab.url);
+    const response = await messenger.getExclusionEntry({
+      domain: entry.domain,
+      path: entry.path,
+    });
     return response.exclusionEntry;
   }, [messenger]);
   useEffect(() => {
@@ -50,7 +60,7 @@ export const ContentApp: VFC<ContentAppProps> = ({ messenger, i18n }) => {
   const onChangeHandler = useCallback(
     (g: Gesture | null) => {
       if (isEmbededFrame()) {
-        messenger.forwardGestureChange(g);
+        messenger.gestureChange(g);
       } else {
         applyOnChangeToHUD(g);
       }
@@ -75,7 +85,7 @@ export const ContentApp: VFC<ContentAppProps> = ({ messenger, i18n }) => {
   const onReleaseHandler = useCallback(
     (g: Gesture | null) => {
       if (isEmbededFrame()) {
-        messenger.forwardGestureRelease(g);
+        messenger.gestureRelease(g);
         return;
       }
       applyOnReleaseToHUD(g);
@@ -84,15 +94,26 @@ export const ContentApp: VFC<ContentAppProps> = ({ messenger, i18n }) => {
   );
 
   useEffect(() => {
-    const s = messenger.onGestureChange(applyOnChangeToHUD);
-    const t = messenger.onGestureRelease(applyOnReleaseToHUD);
-    const u = messenger.onUpdateExclusionEntry(() => {
-      fetchExclusionEntry();
+    const unsubscribe = messenger.onMessage((msg) => {
+      switch (msg._tag) {
+        case "APPLY_EXCLUSION_ENTRY": {
+          fetchExclusionEntry();
+          break;
+        }
+        case "GESTURE_CHANGE": {
+          applyOnChangeToHUD(msg.gesture);
+          break;
+        }
+        case "GESTURE_RELEASE": {
+          applyOnReleaseToHUD(msg.gesture);
+          break;
+        }
+        default:
+          unreachableCase(msg);
+      }
     });
     return () => {
-      s();
-      t();
-      u();
+      unsubscribe();
     };
   }, [applyOnChangeToHUD, applyOnReleaseToHUD, fetchExclusionEntry, messenger]);
 

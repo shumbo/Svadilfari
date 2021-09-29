@@ -6,7 +6,6 @@ import {
   AddExclusionEntryRequestMessage,
   PopupMessenger,
   GetExclusionEntryRequestMessage,
-  Convert,
   ApplyExclusionEntryMessage,
 } from "core";
 
@@ -35,9 +34,7 @@ export class PopupMessengerImpl implements PopupMessenger {
       path: req.path,
       _tag: "GET_EXCLUSION_ENTRY_REQUEST",
     };
-    const responseStr: string = await browser.runtime.sendMessage(msg);
-    const response = Convert.toGetExclusionEntryResponse(responseStr);
-    return response;
+    return await browser.runtime.sendMessage(msg);
   }
   async applyExclusionEntry(): Promise<void> {
     const tab = await browser.tabs.getCurrent();
