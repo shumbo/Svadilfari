@@ -143,8 +143,11 @@ importers:
   packages/native-helper:
     specifiers:
       core: workspace:*
+      webextension-toolkit: workspace:*
     dependencies:
       core: link:../core
+    devDependencies:
+      webextension-toolkit: link:../webextension-toolkit
 
   packages/popup:
     specifiers:

@@ -27,6 +27,7 @@ function buildWebExtension(options) {
     watch: options.watch ?? argv["watch"],
     logLevel: "info",
     plugins: [svgrPlugin({ icon: true })],
+    globalName: options.globalName,
   });
 }
 

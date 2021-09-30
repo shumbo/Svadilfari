@@ -4,6 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "dev": "node build.js --watch",
+    "build": "node build.js --minify",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -11,5 +13,8 @@
   "license": "ISC",
   "dependencies": {
     "core": "workspace:*"
+  },
+  "devDependencies": {
+    "webextension-toolkit": "workspace:*"
   }
 }
