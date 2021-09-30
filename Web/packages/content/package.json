@@ -4,6 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "build": "node build.js --minify",
+    "dev": "node build.js --watch",
     "storybook": "start-storybook -p 6006",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -22,13 +24,17 @@
     "babel-loader": "^8.2.2",
     "mock": "workspace:*",
     "typescript": "^4.3.2",
+    "webextension-toolkit": "workspace:*",
     "webextension-typedef": "workspace:*"
   },
   "dependencies": {
+    "@emotion/styled": "^11",
     "@fluentui/svg-icons": "^1.1.141",
     "@react-spring/web": "^9.2.4",
     "core": "workspace:*",
     "modern-css-reset": "^1.4.0",
+    "react": "^17.0.0",
+    "react-dom": "^17.0.0",
     "react-use": "^17.3.1",
     "ts-assert-unreachable": "^0.0.9"
   }
