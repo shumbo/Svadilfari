@@ -1,6 +1,5 @@
-import { Action } from "../../../WebExtension/src/SharedTypes";
-import { assertUnreachable } from "../../../WebExtension/src/utils/assertUnreachable";
-import { getActionCode } from "../../../WebExtension/src/utils/getActionCode";
+import { Action, getActionCode } from "core";
+import { unreachableCase } from "ts-assert-unreachable";
 import { Browser } from "webextension-typedef";
 import { findNext, findPrevious } from "./utils/find";
 
@@ -107,6 +106,6 @@ export async function executeAction(
     case null:
       break;
     default:
-      assertUnreachable(code);
+      unreachableCase(code);
   }
 }

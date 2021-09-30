@@ -15,6 +15,7 @@ importers:
       ts-assert-unreachable: ^0.0.9
       ts-jest: ^27.0.5
       typescript: ^4.3.2
+      webextension-toolkit: workspace:*
       webextension-typedef: workspace:*
     dependencies:
       core: link:../core
@@ -23,6 +24,7 @@ importers:
       jest: 27.2.2
       ts-jest: 27.0.5_jest@27.2.2+typescript@4.4.3
       typescript: 4.4.3
+      webextension-toolkit: link:../webextension-toolkit
       webextension-typedef: link:../webextension-typedef
 
   packages/check:

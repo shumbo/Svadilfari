@@ -11,9 +11,8 @@ import TabDesktopCopy from "@fluentui/svg-icons/icons/tab_desktop_copy_20_regula
 import TabProhibited from "@fluentui/svg-icons/icons/tab_prohibited_24_regular.svg";
 import { Browser } from "webextension-typedef";
 import { HUDContent } from "../components/HUD/HUD";
-import { Action } from "../../../../../WebExtension/src/SharedTypes";
-import { assertUnreachable } from "../../../../../WebExtension/src/utils/assertUnreachable";
-import { getActionCode } from "../../../../../WebExtension/src/utils/getActionCode";
+import { unreachableCase } from "ts-assert-unreachable";
+import { getActionCode, Action } from "core";
 
 export function getActionHUDContent(
   action: Action,
@@ -54,7 +53,7 @@ export function getActionHUDContent(
     case null:
       break;
     default:
-      assertUnreachable(key);
+      unreachableCase(key);
   }
   return { title: getTitle("scroll_bottom") };
 }

@@ -1,4 +1,4 @@
-import { Action } from "../SharedTypes";
+import { Action } from "./SharedTypes";
 
 type ActionKey = keyof Action;
 
