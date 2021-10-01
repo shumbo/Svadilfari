@@ -7,7 +7,7 @@
     "dev": "node build.js --watch",
     "build": "node build.js --minify",
     "storybook": "start-storybook -p 6006",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 0"
   },
   "keywords": [],
   "author": "",

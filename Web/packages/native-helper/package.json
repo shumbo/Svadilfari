@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "node build.js --watch",
     "build": "node build.js --minify",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 0"
   },
   "keywords": [],
   "author": "",
