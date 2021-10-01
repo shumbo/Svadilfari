@@ -24,6 +24,7 @@ function buildWebExtension(options) {
     target: ["safari15"],
     outfile: options.outfile,
     minify: argv["minify"],
+    pure: argv["minify"] && ["console.log"],
     watch: options.watch ?? argv["watch"],
     logLevel: "info",
     plugins: [svgrPlugin({ icon: true })],
