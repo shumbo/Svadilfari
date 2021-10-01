@@ -4,5 +4,4 @@ import { setupContentApp } from "./setup";
 setupContentApp({
   messenger: new ContentMessengerImpl(),
   i18n: browser.i18n,
-  tabs: browser.tabs,
 });

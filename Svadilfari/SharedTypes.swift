@@ -412,7 +412,7 @@ struct MessageRequest: Codable {
     /// If the extension is active on the given page, return null
     var getExclusionEntry: GetExclusionEntryRequest?
     var getGestures: Bool?
-    var removeExclusionEntry: String?
+    var removeExclusionEntry: RemoveExclusionEntryRequest?
 
     enum CodingKeys: String, CodingKey {
         case addExclusionEntry = "add_exclusion_entry"
@@ -444,7 +444,7 @@ extension MessageRequest {
         addExclusionEntry: AddExclusionEntryRequest?? = nil,
         getExclusionEntry: GetExclusionEntryRequest?? = nil,
         getGestures: Bool?? = nil,
-        removeExclusionEntry: String?? = nil
+        removeExclusionEntry: RemoveExclusionEntryRequest?? = nil
     ) -> MessageRequest {
         return MessageRequest(
             addExclusionEntry: addExclusionEntry ?? self.addExclusionEntry,
@@ -541,6 +541,46 @@ extension GetExclusionEntryRequest {
         return GetExclusionEntryRequest(
             domain: domain ?? self.domain,
             path: path ?? self.path
+        )
+    }
+
+    func jsonData() throws -> Data {
+        return try newJSONEncoder().encode(self)
+    }
+
+    func jsonString(encoding: String.Encoding = .utf8) throws -> String? {
+        return String(data: try self.jsonData(), encoding: encoding)
+    }
+}
+
+// MARK: - RemoveExclusionEntryRequest
+struct RemoveExclusionEntryRequest: Codable {
+    var id: String
+}
+
+// MARK: RemoveExclusionEntryRequest convenience initializers and mutators
+
+extension RemoveExclusionEntryRequest {
+    init(data: Data) throws {
+        self = try newJSONDecoder().decode(RemoveExclusionEntryRequest.self, from: data)
+    }
+
+    init(_ json: String, using encoding: String.Encoding = .utf8) throws {
+        guard let data = json.data(using: encoding) else {
+            throw NSError(domain: "JSONDecoding", code: 0, userInfo: nil)
+        }
+        try self.init(data: data)
+    }
+
+    init(fromURL url: URL) throws {
+        try self.init(data: try Data(contentsOf: url))
+    }
+
+    func with(
+        id: String? = nil
+    ) -> RemoveExclusionEntryRequest {
+        return RemoveExclusionEntryRequest(
+            id: id ?? self.id
         )
     }
 

@@ -123,7 +123,7 @@ class SafariWebExtensionHandler: NSObject, NSExtensionRequestHandling {
 
         if let removeExclusionEntryRequest = req.removeExclusionEntry {
             do {
-                try self.els.remove(uuid: removeExclusionEntryRequest)
+                try self.els.remove(uuid: removeExclusionEntryRequest.id)
             } catch {
                 respondError(msg: "Failed to remove exclusion entry")
                 return

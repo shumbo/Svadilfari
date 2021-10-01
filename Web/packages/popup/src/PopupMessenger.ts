@@ -25,6 +25,7 @@ export class PopupMessengerImpl implements PopupMessenger {
       _tag: "REMOVE_EXCLUSION_ENTRY_REQUEST",
     };
     await browser.runtime.sendMessage(msg);
+    await this.applyExclusionEntry();
   }
   async getExclusionEntry(
     req: GetExclusionEntryRequest
@@ -34,7 +35,8 @@ export class PopupMessengerImpl implements PopupMessenger {
       path: req.path,
       _tag: "GET_EXCLUSION_ENTRY_REQUEST",
     };
-    return await browser.runtime.sendMessage(msg);
+    const response = await browser.runtime.sendMessage(msg);
+    return response;
   }
   async applyExclusionEntry(): Promise<void> {
     const tab = await browser.tabs.getCurrent();

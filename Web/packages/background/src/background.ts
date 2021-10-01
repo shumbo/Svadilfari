@@ -28,10 +28,11 @@ export function startBackground({ channel, messenger, executeAction }: Deps) {
       msgReq: MessageRequest,
       decode: (rawResponse: string) => unknown = id
     ) {
-      const response = await channel.sendNativeMessage(
+      const rawResponse = await channel.sendNativeMessage(
         Convert.messageRequestToJson(msgReq)
       );
-      sendResponse(decode(response));
+      const response = decode(rawResponse);
+      sendResponse(response);
     }
 
     /**
@@ -59,6 +60,18 @@ export function startBackground({ channel, messenger, executeAction }: Deps) {
         break;
       }
       case "GET_EXCLUSION_ENTRY_REQUEST": {
+        handleMessageToNative(
+          {
+            getExclusionEntry: {
+              domain: msg.domain,
+              path: msg.path,
+            },
+          },
+          (rawResponse) => Convert.toGetExclusionEntryResponse(rawResponse)
+        );
+        break;
+      }
+      case "GET_CURRENT_TAB_EXCLUSION_ENTRY_REQUEST": {
         browser.tabs
           .getCurrent()
           .then((tab) => {
@@ -85,7 +98,7 @@ export function startBackground({ channel, messenger, executeAction }: Deps) {
       }
       case "GET_GESTURE_REQUEST": {
         handleMessageToNative({ getGestures: true }, (rawResponse) =>
-          Convert.toGetExclusionEntryResponse(rawResponse)
+          Convert.toGetGestureResponse(rawResponse)
         );
         break;
       }
@@ -110,5 +123,7 @@ export function startBackground({ channel, messenger, executeAction }: Deps) {
       default:
         unreachableCase(msg);
     }
+    // DO NOT remove this line. Needed to use `sendResponse`
+    return true;
   });
 }

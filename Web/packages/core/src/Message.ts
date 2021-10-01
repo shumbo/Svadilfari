@@ -47,13 +47,22 @@ export type RemoveExclusionEntryRequestMessage = Base<
 >;
 
 /**
- * Get a list of exclusion entries
- * Popup/Content -> Background -> Native
+ * Get the exclusion entry
+ * Returns null if the entry is not found
+ * Popup -> Background -> Native
  */
 export type GetExclusionEntryRequestMessage = Base<
   "GET_EXCLUSION_ENTRY_REQUEST",
-  GetExclusionEntryRequest
+  { domain: string; path: string }
 >;
+
+/**
+ * Get the exclusion entry for the current tab
+ * Background will use the information of sender to determine the domain and path
+ * Returns null if the entry is not found
+ * Content -> Background -> Native
+ */
+export type GetCurrentTabExclusionEntryRequestMessage = Base<"GET_CURRENT_TAB_EXCLUSION_ENTRY_REQUEST">;
 
 /**
  * Preview gesture
@@ -101,9 +110,7 @@ export interface ContentMessenger {
   /**
    * Get the exclusion entry of current page, if any
    */
-  getExclusionEntry(
-    req: GetExclusionEntryRequest
-  ): Promise<GetExclusionEntryResponse>;
+  getCurrentTabExclusionEntry(): Promise<GetExclusionEntryResponse>;
   /**
    * Notify the top frame the change in gesture
    * @param gesture Gesture to preview, or null to hide preview
@@ -172,6 +179,7 @@ export interface BackgroundMessenger {
         | AddExclusionEntryRequestMessage
         | RemoveExclusionEntryRequestMessage
         | GetExclusionEntryRequestMessage
+        | GetCurrentTabExclusionEntryRequestMessage
         | GestureChangeMessage
         | GestureReleaseMessage
         | ExecuteActionMessage,

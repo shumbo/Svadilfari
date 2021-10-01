@@ -15,15 +15,13 @@ export function useGestureRecognizer(
 ): void {
   const patternConstructor = useRef(new PatternConstructor(0.12, 60));
 
-  const getClosestGesture = useCallback(
-    () =>
-      getClosestGestureByPattern(
-        patternConstructor.current.getPattern(),
-        new Set(gestures),
-        0.12
-      ),
-    [gestures]
-  );
+  const getClosestGesture = useCallback(() => {
+    return getClosestGestureByPattern(
+      patternConstructor.current.getPattern(),
+      new Set(gestures),
+      0.12
+    );
+  }, [gestures]);
 
   const touchMoveHandler = useCallback(
     (ev: TouchEvent) => {

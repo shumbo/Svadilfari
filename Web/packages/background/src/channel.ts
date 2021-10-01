@@ -11,6 +11,7 @@ export interface Channel {
 
 export class ChannelImpl implements Channel {
   sendNativeMessage(message: any): Promise<any> {
+    console.log("send message to native", message);
     return browser.runtime.sendNativeMessage(message);
   }
   sendMessage(
@@ -18,6 +19,7 @@ export class ChannelImpl implements Channel {
     message: any,
     options?: Browser.Tabs.SendMessageOptionsType
   ): Promise<any> {
+    console.log("send message", tabId, message);
     return browser.tabs.sendMessage(tabId, message, options);
   }
 }

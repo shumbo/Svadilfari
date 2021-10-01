@@ -1,7 +1,7 @@
 import React from "react";
 import { Meta } from "@storybook/react";
 import { ContentApp } from "./ContentApp";
-import { MockI18n, mockTabsInstance } from "mock";
+import { MockI18n } from "mock";
 import { DebugContentMessenger } from "./ContentMessenger";
 
 const meta: Meta = {
@@ -17,11 +17,7 @@ const meta: Meta = {
 export default meta;
 
 const Template = () => (
-  <ContentApp
-    messenger={new DebugContentMessenger()}
-    i18n={new MockI18n()}
-    tabs={mockTabsInstance}
-  />
+  <ContentApp messenger={new DebugContentMessenger()} i18n={new MockI18n()} />
 );
 
 export const Debugger = Template.bind({});

@@ -1,9 +1,8 @@
-import { ContentMessenger, urlToExclusionListEntry } from "core";
+import { ContentMessenger, urlToExclusionListEntry, Gesture } from "core";
 import React, { Fragment, useCallback, useEffect, useMemo, VFC } from "react";
 import { useAsync, useAsyncFn } from "react-use";
 import { unreachableCase } from "ts-assert-unreachable";
 import { Browser } from "webextension-typedef";
-import { Gesture } from "../../../../WebExtension/src/SharedTypes";
 import { useHUD } from "./components/HUD/useHUD";
 import { useGestureRecognizer } from "./hooks/useGestureRecognizer";
 import { getActionHUDContent } from "./utils/getActionHUDContent";
@@ -12,10 +11,9 @@ import { isEmbededFrame } from "./utils/isEmbedFrame";
 export type ContentAppProps = {
   messenger: ContentMessenger;
   i18n: Browser.I18n.Static;
-  tabs: Browser.Tabs.Static;
 };
 
-export const ContentApp: VFC<ContentAppProps> = ({ messenger, i18n, tabs }) => {
+export const ContentApp: VFC<ContentAppProps> = ({ messenger, i18n }) => {
   const { hud, open, cancel, resolve } = useHUD();
   const { value: gestureResponse } = useAsync(messenger.getGesture, [
     messenger,
@@ -24,15 +22,7 @@ export const ContentApp: VFC<ContentAppProps> = ({ messenger, i18n, tabs }) => {
     { value: exclusionEntry, loading: exclusionEntryLoading },
     fetchExclusionEntry,
   ] = useAsyncFn(async () => {
-    const currentTab = await tabs.getCurrent();
-    if (!currentTab?.url) {
-      return;
-    }
-    const entry = urlToExclusionListEntry(currentTab.url);
-    const response = await messenger.getExclusionEntry({
-      domain: entry.domain,
-      path: entry.path,
-    });
+    const response = await messenger.getCurrentTabExclusionEntry();
     return response.exclusionEntry;
   }, [messenger]);
   useEffect(() => {
@@ -43,7 +33,8 @@ export const ContentApp: VFC<ContentAppProps> = ({ messenger, i18n, tabs }) => {
     if (exclusionEntryLoading || (!exclusionEntryLoading && !!exclusionEntry)) {
       return [];
     }
-    return gestureResponse?.gestures?.filter((g) => g.enabled) ?? [];
+    const egs = gestureResponse?.gestures?.filter((g) => g.enabled) ?? [];
+    return egs;
   }, [gestureResponse?.gestures, exclusionEntry, exclusionEntryLoading]);
 
   const applyOnChangeToHUD = useCallback(
@@ -101,10 +92,16 @@ export const ContentApp: VFC<ContentAppProps> = ({ messenger, i18n, tabs }) => {
           break;
         }
         case "GESTURE_CHANGE": {
+          if (isEmbededFrame()) {
+            break;
+          }
           applyOnChangeToHUD(msg.gesture);
           break;
         }
         case "GESTURE_RELEASE": {
+          if (isEmbededFrame()) {
+            break;
+          }
           applyOnReleaseToHUD(msg.gesture);
           break;
         }

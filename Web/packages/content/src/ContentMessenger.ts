@@ -5,8 +5,7 @@ import {
   Gesture,
   GestureChangeMessage,
   GestureReleaseMessage,
-  GetExclusionEntryRequest,
-  GetExclusionEntryRequestMessage,
+  GetCurrentTabExclusionEntryRequestMessage,
   GetExclusionEntryResponse,
   GetGestureRequestMessage,
   GetGestureResponse,
@@ -24,15 +23,12 @@ export class ContentMessengerImpl implements ContentMessenger {
     const msg: GetGestureRequestMessage = {
       _tag: "GET_GESTURE_REQUEST",
     };
-    return await browser.runtime.sendMessage(msg);
+    const response = await browser.runtime.sendMessage(msg);
+    return response;
   }
-  async getExclusionEntry(
-    req: GetExclusionEntryRequest
-  ): Promise<GetExclusionEntryResponse> {
-    const msg: GetExclusionEntryRequestMessage = {
-      _tag: "GET_EXCLUSION_ENTRY_REQUEST",
-      domain: req.domain,
-      path: req.path,
+  async getCurrentTabExclusionEntry(): Promise<GetExclusionEntryResponse> {
+    const msg: GetCurrentTabExclusionEntryRequestMessage = {
+      _tag: "GET_CURRENT_TAB_EXCLUSION_ENTRY_REQUEST",
     };
     return await browser.runtime.sendMessage(msg);
   }
@@ -43,8 +39,12 @@ export class ContentMessengerImpl implements ContentMessenger {
     };
     await browser.runtime.sendMessage(msg);
   }
-  gestureRelease(gesture: Gesture | null): Promise<void> {
-    throw new Error("Method not implemented.");
+  async gestureRelease(gesture: Gesture | null): Promise<void> {
+    const msg: GestureReleaseMessage = {
+      _tag: "GESTURE_RELEASE",
+      gesture,
+    };
+    await browser.runtime.sendMessage(msg);
   }
   onMessage(
     handler: (
@@ -102,7 +102,7 @@ export class DebugContentMessenger implements ContentMessenger {
       ],
     };
   }
-  async getExclusionEntry(): Promise<GetExclusionEntryResponse> {
+  async getCurrentTabExclusionEntry(): Promise<GetExclusionEntryResponse> {
     return { exclusionEntry: undefined };
   }
   async gestureChange(gesture: Gesture | null): Promise<void> {
