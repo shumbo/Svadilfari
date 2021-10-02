@@ -1,4 +1,5 @@
 import { Browser } from "webextension-typedef";
+
 import {
   Action,
   AddExclusionEntryRequest,
@@ -14,7 +15,7 @@ import {
  * Background is in charge of converting these messages into
  */
 
-type Base<T extends string, S = {}> = {
+type Base<T extends string, S = Record<string, never>> = {
   /**
    * Internal tag for message distinction
    * Have no meaning on Swift
@@ -184,7 +185,7 @@ export interface BackgroundMessenger {
         | GestureReleaseMessage
         | ExecuteActionMessage,
       sender: Browser.Runtime.MessageSender,
-      sendResponse: (...response: any[]) => void
+      sendResponse: (...response: any[]) => void // eslint-disable-line
     ) => void
   ): () => void;
 }
