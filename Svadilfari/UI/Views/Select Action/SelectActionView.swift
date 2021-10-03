@@ -70,12 +70,6 @@ struct SelectActionView: View {
                     self.onSelect(Action(reload: true))
                 }
                 NavigationLinkView {
-                    ActionListItem(title: "SELECT_ACTION_PAGE_RELOAD")
-                }
-                .onTapGesture {
-                    self.onSelect(Action(reload: true))
-                }
-                NavigationLinkView {
                     ActionListItem(title: "SELECT_ACTION_PAGE_COPY_URL")
                 }
                 .onTapGesture {
