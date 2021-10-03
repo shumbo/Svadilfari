@@ -1,4 +1,5 @@
-import { MockI18n } from "../../utils/MockI18n";
+import { MockI18n } from "mock";
+
 import { getActionHUDContent } from "./getActionHUDContent";
 
 const i18n = new MockI18n();

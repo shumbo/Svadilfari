@@ -15,7 +15,7 @@ import {
  * Background is in charge of converting these messages into
  */
 
-type Base<T extends string, S = Record<string, never>> = {
+type Base<T extends string, S = unknown> = {
   /**
    * Internal tag for message distinction
    * Have no meaning on Swift

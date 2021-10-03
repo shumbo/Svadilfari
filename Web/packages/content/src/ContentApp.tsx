@@ -1,8 +1,9 @@
-import { ContentMessenger, urlToExclusionListEntry, Gesture } from "core";
+import { ContentMessenger, Gesture } from "core";
 import React, { Fragment, useCallback, useEffect, useMemo, VFC } from "react";
 import { useAsync, useAsyncFn } from "react-use";
 import { unreachableCase } from "ts-assert-unreachable";
 import { Browser } from "webextension-typedef";
+
 import { useHUD } from "./components/HUD/useHUD";
 import { useGestureRecognizer } from "./hooks/useGestureRecognizer";
 import { getActionHUDContent } from "./utils/getActionHUDContent";

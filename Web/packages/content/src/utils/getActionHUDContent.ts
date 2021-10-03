@@ -10,9 +10,10 @@ import TabAdd from "@fluentui/svg-icons/icons/tab_add_20_regular.svg";
 import TabDesktopCopy from "@fluentui/svg-icons/icons/tab_desktop_copy_20_regular.svg";
 import TabProhibited from "@fluentui/svg-icons/icons/tab_prohibited_24_regular.svg";
 import { Browser } from "webextension-typedef";
-import { HUDContent } from "../components/HUD/HUD";
 import { unreachableCase } from "ts-assert-unreachable";
 import { getActionCode, Action } from "core";
+
+import { HUDContent } from "../components/HUD/HUD";
 
 export function getActionHUDContent(
   action: Action,

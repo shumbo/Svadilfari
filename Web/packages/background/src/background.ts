@@ -4,9 +4,10 @@ import {
   MessageRequest,
   urlToExclusionListEntry,
 } from "core";
+import { unreachableCase } from "ts-assert-unreachable";
+
 import { Channel } from "./channel";
 import { ExecuteAction } from "./executeAction";
-import { unreachableCase } from "ts-assert-unreachable";
 
 function id<T>(x: T) {
   return x;
@@ -18,7 +19,11 @@ type Deps = {
   executeAction: ExecuteAction;
 };
 
-export function startBackground({ channel, messenger, executeAction }: Deps) {
+export function startBackground({
+  channel,
+  messenger,
+  executeAction,
+}: Deps): void {
   messenger.onMessage((msg, sender, sendResponse) => {
     /**
      * A helper function that encodes MessageRequest and sends it to the backend

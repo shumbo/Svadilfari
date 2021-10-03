@@ -1,6 +1,7 @@
 import { Box, Heading, VStack } from "@chakra-ui/react";
 import React, { useMemo, VFC } from "react";
 import { Browser } from "webextension-typedef";
+
 import { ExceptionToggle } from "./ExceptionToggle";
 
 export type ExceptionStatus = {

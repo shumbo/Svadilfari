@@ -1,6 +1,5 @@
 import {
   AddExclusionEntryRequestMessage,
-  ApplyExclusionEntryMessage,
   BackgroundMessenger,
   ExecuteActionMessage,
   GestureChangeMessage,
@@ -23,6 +22,7 @@ export class BackgroundMessengerImpl implements BackgroundMessenger {
         | GestureReleaseMessage
         | ExecuteActionMessage,
       sender: Browser.Runtime.MessageSender,
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       sendResponse: (...response: any[]) => void
     ) => void
   ): () => void {

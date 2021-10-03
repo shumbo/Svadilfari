@@ -1,10 +1,11 @@
+import { ChakraProvider } from "@chakra-ui/react";
 import React from "react";
 import ReactDOM from "react-dom";
-import "./index.css";
-import { CheckerApp } from "./CheckerApp";
+
 import { check } from "./check";
-import { ChakraProvider } from "@chakra-ui/react";
+import { CheckerApp } from "./CheckerApp";
 import { i18n } from "./i18n";
+import "./index.css";
 
 i18n();
 ReactDOM.render(

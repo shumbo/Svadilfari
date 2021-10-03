@@ -7,7 +7,10 @@
     "build": "node build.js --minify",
     "dev": "node build.js --watch",
     "storybook": "start-storybook -p 6006",
-    "test": "echo \"Error: no test specified\" && exit 0"
+    "test": "echo \"Error: no test specified\" && exit 0",
+    "lint": "eslint src --ext .js,.jsx,.ts,.tsx",
+    "lint:fix": "eslint src --ext .js,.jsx,.ts,.tsx --fix",
+    "typecheck": "tsc --noEmit"
   },
   "keywords": [],
   "author": "",
@@ -22,6 +25,8 @@
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
     "babel-loader": "^8.2.2",
+    "eslint": "^7.32.0",
+    "eslint-config-svadilfari": "workspace:^1.0.0",
     "mock": "workspace:*",
     "typescript": "^4.3.2",
     "webextension-toolkit": "workspace:*",

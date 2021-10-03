@@ -1,7 +1,9 @@
 import React from "react";
 import { ComponentMeta, Story } from "@storybook/react";
-import { StatusAlert, StatusAlertProps } from "./StatusAlert";
+
 import { chakraDecorator } from "../utils/ChakraDecorator";
+
+import { StatusAlert, StatusAlertProps } from "./StatusAlert";
 
 const meta: ComponentMeta<typeof StatusAlert> = {
   title: "Popup/StatusAlert",

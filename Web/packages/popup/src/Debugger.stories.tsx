@@ -1,9 +1,10 @@
 import React from "react";
 import { ComponentMeta, Story } from "@storybook/react";
+import { MockI18n } from "mock";
+
 import { PopupApp, PopupAppProps } from "./PopupApp";
 import { DebugPopupMessenger } from "./PopupMessenger";
 import { DebugPopupTabManager } from "./PopupTabManager";
-import { MockI18n } from "mock";
 
 const meta: ComponentMeta<typeof PopupApp> = {
   title: "Popup/Debugger",

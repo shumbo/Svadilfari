@@ -1,7 +1,8 @@
 import React from "react";
 import { ComponentMeta, Story } from "@storybook/react";
-import { HUD, HUDProps } from "./HUD";
 import AddIcon from "@fluentui/svg-icons/icons/tab_add_20_regular.svg";
+
+import { HUD, HUDProps } from "./HUD";
 
 const meta: ComponentMeta<typeof HUD> = {
   title: "HUD",

@@ -1,4 +1,5 @@
 import React, { VFC } from "react";
+
 import { CheckResult } from "./components/CheckResult";
 import { useChecker } from "./hooks/useChecker";
 

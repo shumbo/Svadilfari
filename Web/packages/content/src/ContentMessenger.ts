@@ -106,10 +106,10 @@ export class DebugContentMessenger implements ContentMessenger {
     return { exclusionEntry: undefined };
   }
   async gestureChange(gesture: Gesture | null): Promise<void> {
-    console.log("gesture change");
+    console.log("gesture change", gesture);
   }
   async gestureRelease(gesture: Gesture | null): Promise<void> {
-    console.log("gesture release");
+    console.log("gesture release", gesture);
   }
   async executeAction(action: Action): Promise<void> {
     console.log("execute action", action);

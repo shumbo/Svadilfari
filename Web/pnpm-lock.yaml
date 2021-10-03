@@ -11,6 +11,8 @@ importers:
   packages/background:
     specifiers:
       core: workspace:*
+      eslint: ^7.32.0
+      eslint-config-svadilfari: workspace:^1.0.0
       jest: ^27.2.2
       ts-assert-unreachable: ^0.0.9
       ts-jest: ^27.0.5
@@ -21,6 +23,8 @@ importers:
       core: link:../core
       ts-assert-unreachable: 0.0.9
     devDependencies:
+      eslint: 7.32.0
+      eslint-config-svadilfari: link:../eslint-config-svadilfari
       jest: 27.2.2
       ts-jest: 27.0.5_jest@27.2.2+typescript@4.4.3
       typescript: 4.4.3
@@ -41,6 +45,8 @@ importers:
       '@types/react-dom': ^17.0.0
       '@vitejs/plugin-react-refresh': ^1.3.1
       babel-loader: ^8.2.2
+      eslint: ^7.32.0
+      eslint-config-svadilfari: workspace:^1.0.0
       framer-motion: ^4
       react: ^17.0.0
       react-dom: ^17.0.0
@@ -65,6 +71,8 @@ importers:
       '@types/react-dom': 17.0.9
       '@vitejs/plugin-react-refresh': 1.3.6
       babel-loader: 8.2.2_@babel+core@7.15.5
+      eslint: 7.32.0
+      eslint-config-svadilfari: link:../eslint-config-svadilfari
       typescript: 4.4.3
       vite: 2.5.10
 
@@ -83,6 +91,8 @@ importers:
       '@types/react-dom': ^17.0.0
       babel-loader: ^8.2.2
       core: workspace:*
+      eslint: ^7.32.0
+      eslint-config-svadilfari: workspace:^1.0.0
       mock: workspace:*
       modern-css-reset: ^1.4.0
       react: ^17.0.0
@@ -112,6 +122,8 @@ importers:
       '@types/react': 17.0.24
       '@types/react-dom': 17.0.9
       babel-loader: 8.2.2_@babel+core@7.15.5
+      eslint: 7.32.0
+      eslint-config-svadilfari: link:../eslint-config-svadilfari
       mock: link:../mock
       typescript: 4.4.3
       webextension-toolkit: link:../webextension-toolkit
@@ -187,6 +199,8 @@ importers:
       '@types/react-dom': ^17.0.0
       babel-loader: ^8.2.2
       core: workspace:*
+      eslint: ^7.32.0
+      eslint-config-svadilfari: workspace:^1.0.0
       framer-motion: ^4
       mock: workspace:*
       react: ^17.0.0
@@ -213,6 +227,8 @@ importers:
       '@types/react': 17.0.24
       '@types/react-dom': 17.0.9
       babel-loader: 8.2.2_@babel+core@7.15.5
+      eslint: 7.32.0
+      eslint-config-svadilfari: link:../eslint-config-svadilfari
       mock: link:../mock
       typescript: 4.4.3
       webextension-toolkit: link:../webextension-toolkit

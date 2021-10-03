@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import {
   Action,
   AddExclusionEntryRequestMessage,
@@ -12,6 +13,7 @@ import {
   RemoveExclusionEntryRequestMessage,
 } from "core";
 import { Browser } from "webextension-typedef";
+
 import { startBackground } from "./background";
 
 const TAB_ID = 1;

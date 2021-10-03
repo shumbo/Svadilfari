@@ -1,6 +1,7 @@
 import { Action, getActionCode } from "core";
 import { unreachableCase } from "ts-assert-unreachable";
 import { Browser } from "webextension-typedef";
+
 import { findNext, findPrevious } from "./utils/find";
 
 export type ExecuteAction = (

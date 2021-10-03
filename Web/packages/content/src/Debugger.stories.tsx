@@ -1,7 +1,8 @@
 import React from "react";
 import { Meta } from "@storybook/react";
-import { ContentApp } from "./ContentApp";
 import { MockI18n } from "mock";
+
+import { ContentApp } from "./ContentApp";
 import { DebugContentMessenger } from "./ContentMessenger";
 
 const meta: Meta = {
