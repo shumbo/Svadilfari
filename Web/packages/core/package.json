@@ -7,7 +7,9 @@
     "test": "jest",
     "lint": "eslint src --ext .js,.jsx,.ts,.tsx",
     "lint:fix": "eslint src --ext .js,.jsx,.ts,.tsx --fix",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "format": "prettier --check .",
+    "format:fix": "prettier --write ."
   },
   "keywords": [],
   "author": "",
@@ -15,10 +17,11 @@
   "devDependencies": {
     "@types/jest": "^27.0.2",
     "eslint": "^7.32.0",
+    "eslint-config-svadilfari": "workspace:*",
     "jest": "^27.2.2",
+    "prettier": "^2.4.1",
     "ts-jest": "^27.0.5",
     "typescript": "^4.3.2",
-    "webextension-typedef": "workspace:*",
-    "eslint-config-svadilfari": "workspace:*"
+    "webextension-typedef": "workspace:*"
   }
 }

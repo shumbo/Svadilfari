@@ -63,7 +63,8 @@ export type GetExclusionEntryRequestMessage = Base<
  * Returns null if the entry is not found
  * Content -> Background -> Native
  */
-export type GetCurrentTabExclusionEntryRequestMessage = Base<"GET_CURRENT_TAB_EXCLUSION_ENTRY_REQUEST">;
+export type GetCurrentTabExclusionEntryRequestMessage =
+  Base<"GET_CURRENT_TAB_EXCLUSION_ENTRY_REQUEST">;
 
 /**
  * Preview gesture

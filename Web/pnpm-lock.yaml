@@ -14,6 +14,7 @@ importers:
       eslint: ^7.32.0
       eslint-config-svadilfari: workspace:^1.0.0
       jest: ^27.2.2
+      prettier: ^2.4.1
       ts-assert-unreachable: ^0.0.9
       ts-jest: ^27.0.5
       typescript: ^4.3.2
@@ -26,6 +27,7 @@ importers:
       eslint: 7.32.0
       eslint-config-svadilfari: link:../eslint-config-svadilfari
       jest: 27.2.2
+      prettier: 2.4.1
       ts-jest: 27.0.5_jest@27.2.2+typescript@4.4.3
       typescript: 4.4.3
       webextension-toolkit: link:../webextension-toolkit
@@ -48,6 +50,7 @@ importers:
       eslint: ^7.32.0
       eslint-config-svadilfari: workspace:^1.0.0
       framer-motion: ^4
+      prettier: ^2.4.1
       react: ^17.0.0
       react-dom: ^17.0.0
       react-i18nify: ^4.2.1
@@ -73,6 +76,7 @@ importers:
       babel-loader: 8.2.2_@babel+core@7.15.5
       eslint: 7.32.0
       eslint-config-svadilfari: link:../eslint-config-svadilfari
+      prettier: 2.4.1
       typescript: 4.4.3
       vite: 2.5.10
 
@@ -95,6 +99,7 @@ importers:
       eslint-config-svadilfari: workspace:^1.0.0
       mock: workspace:*
       modern-css-reset: ^1.4.0
+      prettier: ^2.4.1
       react: ^17.0.0
       react-dom: ^17.0.0
       react-use: ^17.3.1
@@ -125,6 +130,7 @@ importers:
       eslint: 7.32.0
       eslint-config-svadilfari: link:../eslint-config-svadilfari
       mock: link:../mock
+      prettier: 2.4.1
       typescript: 4.4.3
       webextension-toolkit: link:../webextension-toolkit
       webextension-typedef: link:../webextension-typedef
@@ -135,6 +141,7 @@ importers:
       eslint: ^7.32.0
       eslint-config-svadilfari: workspace:*
       jest: ^27.2.2
+      prettier: ^2.4.1
       ts-jest: ^27.0.5
       typescript: ^4.3.2
       webextension-typedef: workspace:*
@@ -143,6 +150,7 @@ importers:
       eslint: 7.32.0
       eslint-config-svadilfari: link:../eslint-config-svadilfari
       jest: 27.2.2
+      prettier: 2.4.1
       ts-jest: 27.0.5_1c26bd7af7c289ab64b4c561804bfe7c
       typescript: 4.4.3
       webextension-typedef: link:../webextension-typedef
@@ -169,20 +177,24 @@ importers:
 
   packages/mock:
     specifiers:
+      prettier: ^2.4.1
       typescript: ^4.3.2
       webextension-typedef: workspace:*
     dependencies:
       webextension-typedef: link:../webextension-typedef
     devDependencies:
+      prettier: 2.4.1
       typescript: 4.4.3
 
   packages/native-helper:
     specifiers:
       core: workspace:*
+      prettier: ^2.4.1
       webextension-toolkit: workspace:*
     dependencies:
       core: link:../core
     devDependencies:
+      prettier: 2.4.1
       webextension-toolkit: link:../webextension-toolkit
 
   packages/popup:
@@ -203,6 +215,7 @@ importers:
       eslint-config-svadilfari: workspace:^1.0.0
       framer-motion: ^4
       mock: workspace:*
+      prettier: ^2.4.1
       react: ^17.0.0
       react-dom: ^17.0.0
       react-use: ^17.3.1
@@ -230,6 +243,7 @@ importers:
       eslint: 7.32.0
       eslint-config-svadilfari: link:../eslint-config-svadilfari
       mock: link:../mock
+      prettier: 2.4.1
       typescript: 4.4.3
       webextension-toolkit: link:../webextension-toolkit
       webextension-typedef: link:../webextension-typedef
@@ -11335,6 +11349,12 @@ packages:
 
   /prettier/2.2.1:
     resolution: {integrity: sha512-PqyhM2yCjg/oKkFPtTGUojv7gnZAoG80ttl45O6x2Ug/rMJw4wcc9k6aaf2hibP7BGVCCM33gZoGjyvt9mm16Q==}
+    engines: {node: '>=10.13.0'}
+    hasBin: true
+    dev: true
+
+  /prettier/2.4.1:
+    resolution: {integrity: sha512-9fbDAXSBcc6Bs1mZrDYb3XKzDLm4EXXL9sC1LqKP5rZkT6KRr/rf9amVUcODVXgguK/isJz0d0hP72WeaKWsvA==}
     engines: {node: '>=10.13.0'}
     hasBin: true
     dev: true

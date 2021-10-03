@@ -2,7 +2,11 @@ import { Box } from "@chakra-ui/react";
 import React, { Fragment, useEffect, VFC } from "react";
 import { useAsyncFn } from "react-use";
 import { I18n } from "webextension-typedef/namespaces/i18n";
-import { GetExclusionEntryResponse, urlToExclusionListEntry , PopupMessenger } from "core";
+import {
+  GetExclusionEntryResponse,
+  urlToExclusionListEntry,
+  PopupMessenger,
+} from "core";
 
 import { ExceptionToggleGroup } from "./components/ExceptionToggleGroup";
 import { StatusAlert } from "./components/StatusAlert";

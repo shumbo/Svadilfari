@@ -8,12 +8,14 @@ export type StatusAlertProps = {
 };
 
 export const StatusAlert: VFC<StatusAlertProps> = ({ i18n, status }) => {
-  const activeMsg = useMemo(() => i18n.getMessage("status_alert:active"), [
-    i18n,
-  ]);
-  const inactiveMsg = useMemo(() => i18n.getMessage("status_alert:inactive"), [
-    i18n,
-  ]);
+  const activeMsg = useMemo(
+    () => i18n.getMessage("status_alert:active"),
+    [i18n]
+  );
+  const inactiveMsg = useMemo(
+    () => i18n.getMessage("status_alert:inactive"),
+    [i18n]
+  );
   if (status === "ACTIVE") {
     return (
       <Alert variant="left-accent" status="success">
