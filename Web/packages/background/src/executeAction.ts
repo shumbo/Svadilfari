@@ -122,6 +122,13 @@ export async function executeAction(
       });
       break;
     }
+    case "openURL": {
+      if (!action.openURL?.url) {
+        break;
+      }
+      await browser.tabs.create({ url: action.openURL.url });
+      break;
+    }
     case null:
       break;
     default:

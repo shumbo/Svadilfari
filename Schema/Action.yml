@@ -37,3 +37,12 @@ properties:
     type: boolean
   scroll_bottom:
     type: boolean
+  open_url:
+    title: OpenURlAction
+    type: object
+    properties:
+      url:
+        type: string
+        format: uri
+    required:
+      - url

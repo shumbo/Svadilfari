@@ -1,6 +1,9 @@
 .PHONY: main
 main: swift typescript extension
 
+.PHONY: schema
+schema: swift typescript
+
 .PHONY: swift
 swift:
 	quicktype -o Svadilfari/SharedTypes.swift --mutable-properties --src-lang schema $(shell find Schema -type f)

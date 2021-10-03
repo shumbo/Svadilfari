@@ -8,6 +8,7 @@ import ArrowLeft from "@fluentui/svg-icons/icons/arrow_left_20_regular.svg";
 import Broom from "@fluentui/svg-icons/icons/broom_20_regular.svg";
 import ClipboardLink from "@fluentui/svg-icons/icons/clipboard_link_20_regular.svg";
 import Code from "@fluentui/svg-icons/icons/code_20_filled.svg";
+import GlobeAdd from "@fluentui/svg-icons/icons/globe_add_24_regular.svg";
 import TabAdd from "@fluentui/svg-icons/icons/tab_add_20_regular.svg";
 import TabDesktopCopy from "@fluentui/svg-icons/icons/tab_desktop_copy_20_regular.svg";
 import TabProhibited from "@fluentui/svg-icons/icons/tab_prohibited_24_regular.svg";
@@ -57,6 +58,12 @@ export function getActionHUDContent(
       return { title: getTitle("go_backward"), icon: ArrowLeft };
     case "goForward":
       return { title: getTitle("go_forward"), icon: ArrowRight };
+    case "openURL":
+      return {
+        title: getTitle("open_url"),
+        message: action.openURL?.url,
+        icon: GlobeAdd,
+      };
     case null:
       break;
     default:
