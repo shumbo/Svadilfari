@@ -38,11 +38,16 @@ properties:
   scroll_bottom:
     type: boolean
   open_url:
-    title: OpenURlAction
+    title: OpenURLAction
     type: object
     properties:
       url:
         type: string
-        format: uri
+      title:
+        type: string
+      new_tab:
+        type: boolean
     required:
       - url
+      - new_tab
+      - title

@@ -123,10 +123,17 @@ export async function executeAction(
       break;
     }
     case "openURL": {
-      if (!action.openURL?.url) {
+      if (!action.openURL) {
         break;
       }
-      await browser.tabs.create({ url: action.openURL.url });
+      if (action.openURL.newTab) {
+        await browser.tabs.create({ url: action.openURL.url });
+      } else {
+        if (!sender.tab?.id) {
+          break;
+        }
+        await browser.tabs.update(sender.tab.id, { url: action.openURL.url });
+      }
       break;
     }
     case null:

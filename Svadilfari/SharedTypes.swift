@@ -109,7 +109,7 @@ extension Gesture {
 struct Action: Codable {
     var goBackward, goForward: Bool?
     var javascriptRun: JavascriptRun?
-    var openURL: OpenURlAction?
+    var openURL: OpenURLAction?
     var reload, scrollBottom, scrollTop, tabClose: Bool?
     var tabCloseAll, tabDuplicate, tabNext, tabOpen: Bool?
     var tabPrevious, urlCopy: Bool?
@@ -154,7 +154,7 @@ extension Action {
         goBackward: Bool?? = nil,
         goForward: Bool?? = nil,
         javascriptRun: JavascriptRun?? = nil,
-        openURL: OpenURlAction?? = nil,
+        openURL: OpenURLAction?? = nil,
         reload: Bool?? = nil,
         scrollBottom: Bool?? = nil,
         scrollTop: Bool?? = nil,
@@ -241,16 +241,22 @@ extension JavascriptRun {
     }
 }
 
-// MARK: - OpenURlAction
-struct OpenURlAction: Codable {
-    var url: String
+// MARK: - OpenURLAction
+struct OpenURLAction: Codable {
+    var newTab: Bool
+    var title, url: String
+
+    enum CodingKeys: String, CodingKey {
+        case newTab = "new_tab"
+        case title, url
+    }
 }
 
-// MARK: OpenURlAction convenience initializers and mutators
+// MARK: OpenURLAction convenience initializers and mutators
 
-extension OpenURlAction {
+extension OpenURLAction {
     init(data: Data) throws {
-        self = try newJSONDecoder().decode(OpenURlAction.self, from: data)
+        self = try newJSONDecoder().decode(OpenURLAction.self, from: data)
     }
 
     init(_ json: String, using encoding: String.Encoding = .utf8) throws {
@@ -265,9 +271,13 @@ extension OpenURlAction {
     }
 
     func with(
+        newTab: Bool? = nil,
+        title: String? = nil,
         url: String? = nil
-    ) -> OpenURlAction {
-        return OpenURlAction(
+    ) -> OpenURLAction {
+        return OpenURLAction(
+            newTab: newTab ?? self.newTab,
+            title: title ?? self.title,
             url: url ?? self.url
         )
     }

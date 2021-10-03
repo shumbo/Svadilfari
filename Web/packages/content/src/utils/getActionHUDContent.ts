@@ -61,7 +61,7 @@ export function getActionHUDContent(
     case "openURL":
       return {
         title: getTitle("open_url"),
-        message: action.openURL?.url,
+        message: action.openURL?.title ?? action.openURL?.url,
         icon: GlobeAdd,
       };
     case null:
