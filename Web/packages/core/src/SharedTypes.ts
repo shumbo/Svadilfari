@@ -28,6 +28,8 @@ export interface Gesture {
 }
 
 export interface Action {
+    goBackward?:    GoBackward;
+    goForward?:     GoForward;
     javascriptRun?: JavascriptRun;
     reload?:        boolean;
     scrollBottom?:  boolean;
@@ -39,6 +41,14 @@ export interface Action {
     tabOpen?:       boolean;
     tabPrevious?:   boolean;
     urlCopy?:       boolean;
+}
+
+export interface GoBackward {
+    action: boolean;
+}
+
+export interface GoForward {
+    action: boolean;
 }
 
 export interface JavascriptRun {
@@ -328,6 +338,8 @@ const typeMap: any = {
         { json: "pattern", js: "pattern", typ: r("Pattern") },
     ], "any"),
     "Action": o([
+        { json: "go_backward", js: "goBackward", typ: u(undefined, r("GoBackward")) },
+        { json: "go_forward", js: "goForward", typ: u(undefined, r("GoForward")) },
         { json: "javascript_run", js: "javascriptRun", typ: u(undefined, r("JavascriptRun")) },
         { json: "reload", js: "reload", typ: u(undefined, true) },
         { json: "scroll_bottom", js: "scrollBottom", typ: u(undefined, true) },
@@ -339,6 +351,12 @@ const typeMap: any = {
         { json: "tab_open", js: "tabOpen", typ: u(undefined, true) },
         { json: "tab_previous", js: "tabPrevious", typ: u(undefined, true) },
         { json: "url_copy", js: "urlCopy", typ: u(undefined, true) },
+    ], "any"),
+    "GoBackward": o([
+        { json: "action", js: "action", typ: true },
+    ], "any"),
+    "GoForward": o([
+        { json: "action", js: "action", typ: true },
     ], "any"),
     "JavascriptRun": o([
         { json: "code", js: "code", typ: "" },

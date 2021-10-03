@@ -16,6 +16,20 @@ properties:
     type: boolean
   tab_previous:
     type: boolean
+  go_forward:
+    type: object
+    properties:
+      action:
+        type: boolean
+    required:
+      - action
+  go_backward:
+    type: object
+    properties:
+      action:
+        type: boolean
+    required:
+      - action
   reload:
     type: boolean
   javascript_run:

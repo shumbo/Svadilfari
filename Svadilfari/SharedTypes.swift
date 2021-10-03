@@ -107,12 +107,16 @@ extension Gesture {
 
 // MARK: - Action
 struct Action: Codable {
+    var goBackward: GoBackward?
+    var goForward: GoForward?
     var javascriptRun: JavascriptRun?
     var reload, scrollBottom, scrollTop, tabClose: Bool?
     var tabCloseAll, tabDuplicate, tabNext, tabOpen: Bool?
     var tabPrevious, urlCopy: Bool?
 
     enum CodingKeys: String, CodingKey {
+        case goBackward = "go_backward"
+        case goForward = "go_forward"
         case javascriptRun = "javascript_run"
         case reload
         case scrollBottom = "scroll_bottom"
@@ -146,6 +150,8 @@ extension Action {
     }
 
     func with(
+        goBackward: GoBackward?? = nil,
+        goForward: GoForward?? = nil,
         javascriptRun: JavascriptRun?? = nil,
         reload: Bool?? = nil,
         scrollBottom: Bool?? = nil,
@@ -159,6 +165,8 @@ extension Action {
         urlCopy: Bool?? = nil
     ) -> Action {
         return Action(
+            goBackward: goBackward ?? self.goBackward,
+            goForward: goForward ?? self.goForward,
             javascriptRun: javascriptRun ?? self.javascriptRun,
             reload: reload ?? self.reload,
             scrollBottom: scrollBottom ?? self.scrollBottom,
@@ -170,6 +178,86 @@ extension Action {
             tabOpen: tabOpen ?? self.tabOpen,
             tabPrevious: tabPrevious ?? self.tabPrevious,
             urlCopy: urlCopy ?? self.urlCopy
+        )
+    }
+
+    func jsonData() throws -> Data {
+        return try newJSONEncoder().encode(self)
+    }
+
+    func jsonString(encoding: String.Encoding = .utf8) throws -> String? {
+        return String(data: try self.jsonData(), encoding: encoding)
+    }
+}
+
+// MARK: - GoBackward
+struct GoBackward: Codable {
+    var action: Bool
+}
+
+// MARK: GoBackward convenience initializers and mutators
+
+extension GoBackward {
+    init(data: Data) throws {
+        self = try newJSONDecoder().decode(GoBackward.self, from: data)
+    }
+
+    init(_ json: String, using encoding: String.Encoding = .utf8) throws {
+        guard let data = json.data(using: encoding) else {
+            throw NSError(domain: "JSONDecoding", code: 0, userInfo: nil)
+        }
+        try self.init(data: data)
+    }
+
+    init(fromURL url: URL) throws {
+        try self.init(data: try Data(contentsOf: url))
+    }
+
+    func with(
+        action: Bool? = nil
+    ) -> GoBackward {
+        return GoBackward(
+            action: action ?? self.action
+        )
+    }
+
+    func jsonData() throws -> Data {
+        return try newJSONEncoder().encode(self)
+    }
+
+    func jsonString(encoding: String.Encoding = .utf8) throws -> String? {
+        return String(data: try self.jsonData(), encoding: encoding)
+    }
+}
+
+// MARK: - GoForward
+struct GoForward: Codable {
+    var action: Bool
+}
+
+// MARK: GoForward convenience initializers and mutators
+
+extension GoForward {
+    init(data: Data) throws {
+        self = try newJSONDecoder().decode(GoForward.self, from: data)
+    }
+
+    init(_ json: String, using encoding: String.Encoding = .utf8) throws {
+        guard let data = json.data(using: encoding) else {
+            throw NSError(domain: "JSONDecoding", code: 0, userInfo: nil)
+        }
+        try self.init(data: data)
+    }
+
+    init(fromURL url: URL) throws {
+        try self.init(data: try Data(contentsOf: url))
+    }
+
+    func with(
+        action: Bool? = nil
+    ) -> GoForward {
+        return GoForward(
+            action: action ?? self.action
         )
     }
 

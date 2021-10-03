@@ -6,4 +6,4 @@ swift:
 	quicktype -o Svadilfari/SharedTypes.swift --mutable-properties --src-lang schema $(shell find Schema -type f)
 .PHONY: typescript
 typescript:
-	quicktype -o Web/packages/core/SharedTypes.ts --nice-property-names --src-lang schema $(shell find Schema -type f)
+	quicktype -o Web/packages/core/src/SharedTypes.ts --nice-property-names --src-lang schema $(shell find Schema -type f)
