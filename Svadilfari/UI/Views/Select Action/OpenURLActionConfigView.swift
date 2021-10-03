@@ -16,7 +16,7 @@ struct OpenURLActionConfigView: View {
     var body: some View {
         Form {
             Section(header: Text("OPEN_URL_CONFIG_HEADER_1"), footer: Text("OPEN_URL_CONFIG_FOOTER_1")) {
-                TextField("http://apple.com", text: $url, prompt: nil).keyboardType(.URL)
+                TextField("https://apple.com", text: $url, prompt: nil).keyboardType(.URL)
             }
             Section(header: Text("OPEN_URL_CONFIG_HEADER_2")) {
                 TextField("URL Title", text: $title, prompt: Text("Apple"))
