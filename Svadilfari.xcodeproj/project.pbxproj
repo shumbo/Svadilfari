@@ -438,7 +438,6 @@
 			isa = PBXGroup;
 			children = (
 				249477C426CEB95B00E6FCC5 /* System */,
-				24D759D026BCB7E40017498A /* UI */,
 				24FAA2B926B942420083FFAB /* Core Data */,
 				24B224A126B5E6B3009EAB48 /* Action+Title.swift */,
 				24B224A926B5EEFB009EAB48 /* Vector+.swift */,
@@ -475,13 +474,6 @@
 				24C11E6426B4366B00E018B5 /* popup.js */,
 			);
 			path = Resources;
-			sourceTree = "<group>";
-		};
-		24D759D026BCB7E40017498A /* UI */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = UI;
 			sourceTree = "<group>";
 		};
 		24FAA2B926B942420083FFAB /* Core Data */ = {

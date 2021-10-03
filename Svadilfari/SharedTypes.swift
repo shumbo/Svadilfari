@@ -107,12 +107,15 @@ extension Gesture {
 
 // MARK: - Action
 struct Action: Codable {
+    var goBackward, goForward: Bool?
     var javascriptRun: JavascriptRun?
     var reload, scrollBottom, scrollTop, tabClose: Bool?
     var tabCloseAll, tabDuplicate, tabNext, tabOpen: Bool?
     var tabPrevious, urlCopy: Bool?
 
     enum CodingKeys: String, CodingKey {
+        case goBackward = "go_backward"
+        case goForward = "go_forward"
         case javascriptRun = "javascript_run"
         case reload
         case scrollBottom = "scroll_bottom"
@@ -146,6 +149,8 @@ extension Action {
     }
 
     func with(
+        goBackward: Bool?? = nil,
+        goForward: Bool?? = nil,
         javascriptRun: JavascriptRun?? = nil,
         reload: Bool?? = nil,
         scrollBottom: Bool?? = nil,
@@ -159,6 +164,8 @@ extension Action {
         urlCopy: Bool?? = nil
     ) -> Action {
         return Action(
+            goBackward: goBackward ?? self.goBackward,
+            goForward: goForward ?? self.goForward,
             javascriptRun: javascriptRun ?? self.javascriptRun,
             reload: reload ?? self.reload,
             scrollBottom: scrollBottom ?? self.scrollBottom,

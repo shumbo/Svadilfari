@@ -28,6 +28,8 @@ export interface Gesture {
 }
 
 export interface Action {
+    goBackward?:    boolean;
+    goForward?:     boolean;
     javascriptRun?: JavascriptRun;
     reload?:        boolean;
     scrollBottom?:  boolean;
@@ -328,6 +330,8 @@ const typeMap: any = {
         { json: "pattern", js: "pattern", typ: r("Pattern") },
     ], "any"),
     "Action": o([
+        { json: "go_backward", js: "goBackward", typ: u(undefined, true) },
+        { json: "go_forward", js: "goForward", typ: u(undefined, true) },
         { json: "javascript_run", js: "javascriptRun", typ: u(undefined, r("JavascriptRun")) },
         { json: "reload", js: "reload", typ: u(undefined, true) },
         { json: "scroll_bottom", js: "scrollBottom", typ: u(undefined, true) },

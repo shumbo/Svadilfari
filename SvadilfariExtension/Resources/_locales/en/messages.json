@@ -40,6 +40,12 @@
     "get_action_hud_content:scroll_bottom": {
         "message": "Scroll to Bottom"
     },
+    "get_action_hud_content:go_forward": {
+        "message": "Go Forward"
+    },
+    "get_action_hud_content:go_backward": {
+        "message": "Go Backward"
+    },
     "get_action_hud_content:unknown": {
         "message": "Unknown Action"
     },

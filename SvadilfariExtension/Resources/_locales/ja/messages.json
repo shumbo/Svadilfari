@@ -40,6 +40,12 @@
   "get_action_hud_content:scroll_bottom": {
     "message": "下までスクロール"
   },
+  "get_action_hud_content:go_forward": {
+    "message": "次のページに進む"
+  },
+  "get_action_hud_content:go_backward": {
+    "message": "前のページに戻る"
+  },
   "get_action_hud_content:unknown": {
     "message": "不明なアクション"
   },

@@ -62,6 +62,24 @@ export async function executeAction(
       await browser.tabs.update(previousTabId, { active: true });
       break;
     }
+    case "goForward": {
+      if (!sender.tab?.id) {
+        break;
+      }
+      await browser.tabs.executeScript(sender.tab.id, {
+        code: `window.history.forward()`,
+      });
+      break;
+    }
+    case "goBackward": {
+      if (!sender.tab?.id) {
+        break;
+      }
+      await browser.tabs.executeScript(sender.tab.id, {
+        code: `window.history.back()`,
+      });
+      break;
+    }
     case "reload":
       if (!sender?.tab?.id) {
         break;

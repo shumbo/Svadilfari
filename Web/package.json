@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "build:extension": "pnpm -r build --filter 'background' --filter 'content' --filter 'popup' --filter 'native-helper'"
+  },
   "author": "",
   "license": "ISC",
   "dependencies": {

@@ -52,6 +52,18 @@ struct SelectActionView: View {
             }
             Section(LocalizedStringKey("SELECT_ACTION_PAGE")) {
                 NavigationLinkView {
+                    ActionListItem(title: "SELECT_ACTION_PAGE_GO_BACKWARD")
+                }
+                .onTapGesture {
+                    self.onSelect(Action(goBackward: true))
+                }
+                NavigationLinkView {
+                    ActionListItem(title: "SELECT_ACTION_PAGE_GO_FORWARD")
+                }
+                .onTapGesture {
+                    self.onSelect(Action(goForward: true))
+                }
+                NavigationLinkView {
                     ActionListItem(title: "SELECT_ACTION_PAGE_RELOAD")
                 }
                 .onTapGesture {
