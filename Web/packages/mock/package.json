@@ -1,0 +1,19 @@
+{
+  "name": "mock",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "format": "prettier --check .",
+    "format:fix": "prettier --write ."
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "webextension-typedef": "workspace:*"
+  },
+  "devDependencies": {
+    "prettier": "^2.4.1",
+    "typescript": "^4.3.2"
+  }
+}

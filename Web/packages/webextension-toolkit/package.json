@@ -1,0 +1,15 @@
+{
+  "name": "webextension-toolkit",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {},
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "esbuild": "^0.13.3",
+    "esbuild-plugin-svgr": "^0.0.3",
+    "minimist": "^1.2.5"
+  }
+}

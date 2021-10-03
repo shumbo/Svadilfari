@@ -1,0 +1,46 @@
+{
+  "name": "popup",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node build.js --watch",
+    "build": "node build.js --minify",
+    "storybook": "start-storybook -p 6006",
+    "lint": "eslint src --ext .js,.jsx,.ts,.tsx",
+    "lint:fix": "eslint src --ext .js,.jsx,.ts,.tsx --fix",
+    "typecheck": "tsc --noEmit",
+    "format": "prettier --check .",
+    "format:fix": "prettier --write ."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@chakra-ui/react": "^1.6.8",
+    "@emotion/react": "^11",
+    "@emotion/styled": "^11",
+    "core": "workspace:*",
+    "framer-motion": "^4",
+    "react": "^17.0.0",
+    "react-dom": "^17.0.0",
+    "react-use": "^17.3.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.15.5",
+    "@storybook/addon-actions": "^6.3.8",
+    "@storybook/addon-essentials": "^6.3.8",
+    "@storybook/addon-links": "^6.3.8",
+    "@storybook/react": "^6.3.8",
+    "@types/react": "^17.0.0",
+    "@types/react-dom": "^17.0.0",
+    "babel-loader": "^8.2.2",
+    "eslint": "^7.32.0",
+    "eslint-config-svadilfari": "workspace:^1.0.0",
+    "mock": "workspace:*",
+    "prettier": "^2.4.1",
+    "typescript": "^4.3.2",
+    "webextension-toolkit": "workspace:*",
+    "webextension-typedef": "workspace:*"
+  }
+}

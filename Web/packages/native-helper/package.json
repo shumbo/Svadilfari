@@ -1,0 +1,22 @@
+{
+  "name": "native-helper",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node build.js --watch",
+    "build": "node build.js --minify",
+    "format": "prettier --check .",
+    "format:fix": "prettier --write ."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "core": "workspace:*"
+  },
+  "devDependencies": {
+    "prettier": "^2.4.1",
+    "webextension-toolkit": "workspace:*"
+  }
+}

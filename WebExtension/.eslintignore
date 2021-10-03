@@ -1,6 +1,0 @@
-# node
-jest.config.js
-bundle.js
-
-# src
-src/SharedTypes.ts

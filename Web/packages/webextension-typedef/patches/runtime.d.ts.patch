@@ -1,0 +1,12 @@
+343a344
+>         sendNativeMessage(message: any): Promise<any>;
+406c407,413
+<         onMessage: Events.Event<(message: any, sender: MessageSender) => Promise<any> | void>;
+---
+>         onMessage: Events.Event<
+>         | ((message: any, sender: MessageSender) => Promise<any> | void) 
+>         | ((
+>             message: any,
+>             sender: MessageSender,
+>             sendResponse: (...response: any[]) => void
+>         ) => void)>

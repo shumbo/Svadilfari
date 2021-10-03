@@ -246,13 +246,6 @@
 			path = "Select Action";
 			sourceTree = "<group>";
 		};
-		242CD6EC26CFB560009DDDB0 /* Services */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Services;
-			sourceTree = "<group>";
-		};
 		242CD6EF26CFCE1B009DDDB0 /* Services */ = {
 			isa = PBXGroup;
 			children = (
@@ -461,7 +454,6 @@
 		24C11E5226B4366B00E018B5 /* SvadilfariExtension */ = {
 			isa = PBXGroup;
 			children = (
-				242CD6EC26CFB560009DDDB0 /* Services */,
 				24F3686826C359F00092F583 /* SvadilfariExtension.entitlements */,
 				24C11E5326B4366B00E018B5 /* SafariWebExtensionHandler.swift */,
 				24C11E6626B4366B00E018B5 /* Info.plist */,
