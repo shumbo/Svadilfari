@@ -46,6 +46,12 @@ extension Action {
         if self.scrollBottom != nil {
             return "ACTION_TITLE_SCROLL_TO_BOTTOM"
         }
-        return "Unknown Action"
+        if self.goForward != nil {
+            return "ACTION_TITLE_GO_FORWARD"
+        }
+        if self.goBackward != nil {
+            return "ACTION_TITLE_GO_BACKWARD"
+        }
+        return "ACTION_TITLE_UNKNOWN"
     }
 }

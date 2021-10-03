@@ -3,8 +3,8 @@ import ArrowCircleRight from "@fluentui/svg-icons/icons/arrow_circle_right_24_re
 import ArrowClockwise from "@fluentui/svg-icons/icons/arrow_clockwise_20_regular.svg";
 import ArrowCurveDownRight from "@fluentui/svg-icons/icons/arrow_curve_down_right_20_regular.svg";
 import ArrowCurveUpLeft from "@fluentui/svg-icons/icons/arrow_curve_up_left_20_regular.svg";
-import ArrowNext from "@fluentui/svg-icons/icons/arrow_next_20_regular.svg";
-import ArrowPrevious from "@fluentui/svg-icons/icons/arrow_previous_20_regular.svg";
+import ArrowRight from "@fluentui/svg-icons/icons/arrow_right_20_regular.svg";
+import ArrowLeft from "@fluentui/svg-icons/icons/arrow_left_20_regular.svg";
 import Broom from "@fluentui/svg-icons/icons/broom_20_regular.svg";
 import ClipboardLink from "@fluentui/svg-icons/icons/clipboard_link_20_regular.svg";
 import Code from "@fluentui/svg-icons/icons/code_20_filled.svg";
@@ -54,9 +54,9 @@ export function getActionHUDContent(
     case "scrollBottom":
       return { title: getTitle("scroll_bottom"), icon: ArrowCurveDownRight };
     case "goBackward":
-      return { title: getTitle("scroll_bottom"), icon: ArrowPrevious };
+      return { title: getTitle("go_backward"), icon: ArrowLeft };
     case "goForward":
-      return { title: getTitle("scroll_bottom"), icon: ArrowNext };
+      return { title: getTitle("go_forward"), icon: ArrowRight };
     case null:
       break;
     default:
