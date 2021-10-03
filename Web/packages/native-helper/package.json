@@ -6,7 +6,6 @@
   "scripts": {
     "dev": "node build.js --watch",
     "build": "node build.js --minify",
-    "test": "echo \"Error: no test specified\" && exit 0",
     "format": "prettier --check .",
     "format:fix": "prettier --write ."
   },

@@ -4,7 +4,6 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 0",
     "format": "prettier --check .",
     "format:fix": "prettier --write ."
   },

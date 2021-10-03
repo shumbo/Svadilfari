@@ -99,7 +99,7 @@ describe("Background", () => {
   test("GestureChangeMessage", () => {
     const msg: GestureChangeMessage = {
       _tag: "GESTURE_CHANGE",
-      gesture: ({ p: 1 } as unknown) as Gesture,
+      gesture: { p: 1 } as unknown as Gesture,
     };
     sendMockMessage(msg);
     expect(sendMessageToContent).toHaveBeenLastCalledWith(1, msg);
@@ -107,7 +107,7 @@ describe("Background", () => {
   test("GestureReleaseMessage", () => {
     const msg: GestureReleaseMessage = {
       _tag: "GESTURE_RELEASE",
-      gesture: ({ p: 1 } as unknown) as Gesture,
+      gesture: { p: 1 } as unknown as Gesture,
     };
     sendMockMessage(msg);
     expect(sendMessageToContent).toHaveBeenLastCalledWith(1, msg);
@@ -115,7 +115,7 @@ describe("Background", () => {
   test("ExecuteActionMessage", () => {
     const msg: ExecuteActionMessage = {
       _tag: "EXECUTE_ACTION",
-      action: ("ACTION_OBJ" as unknown) as Action,
+      action: "ACTION_OBJ" as unknown as Action,
     };
     sendMockMessage(msg);
     expect(executeAction).toHaveBeenLastCalledWith(
