@@ -25,6 +25,10 @@ export function useGestureRecognizer(
 
   const touchMoveHandler = useCallback(
     (ev: TouchEvent) => {
+      // ignore if more than 1 fingers are on screen
+      if (ev.touches.length > 1) {
+        return;
+      }
       const r = patternConstructor.current.addPoint({
         x: ev.touches[0].clientX,
         y: ev.touches[0].clientY,
