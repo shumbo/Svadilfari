@@ -52,18 +52,6 @@ struct SelectActionView: View {
             }
             Section(LocalizedStringKey("SELECT_ACTION_PAGE")) {
                 NavigationLinkView {
-                    ActionListItem(title: "SELECT_ACTION_PAGE_GO_BACKWARD")
-                }
-                .onTapGesture {
-                    self.onSelect(Action(goBackward: true))
-                }
-                NavigationLinkView {
-                    ActionListItem(title: "SELECT_ACTION_PAGE_GO_FORWARD")
-                }
-                .onTapGesture {
-                    self.onSelect(Action(goForward: true))
-                }
-                NavigationLinkView {
                     ActionListItem(title: "SELECT_ACTION_PAGE_RELOAD")
                 }
                 .onTapGesture {
@@ -86,6 +74,25 @@ struct SelectActionView: View {
                 }
                 .onTapGesture {
                     self.onSelect(Action(scrollBottom: true))
+                }
+            }
+            Section(LocalizedStringKey("SELECT_ACTION_TRANSITION")) {
+                NavigationLinkView {
+                    ActionListItem(title: "SELECT_ACTION_TRANSITION_GO_BACKWARD")
+                }
+                .onTapGesture {
+                    self.onSelect(Action(goBackward: true))
+                }
+                NavigationLinkView {
+                    ActionListItem(title: "SELECT_ACTION_TRANSITION_GO_FORWARD")
+                }
+                .onTapGesture {
+                    self.onSelect(Action(goForward: true))
+                }
+                NavigationLink(destination: {
+                    OpenURLActionConfigView(onSelect: self.onSelect)
+                }) {
+                    ActionListItem(title: "SELECT_ACTION_TRANSITION_OPEN_URL")
                 }
             }
             Section(LocalizedStringKey("SELECT_ACTION_ADVANCED")) {

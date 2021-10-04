@@ -109,6 +109,7 @@ extension Gesture {
 struct Action: Codable {
     var goBackward, goForward: Bool?
     var javascriptRun: JavascriptRun?
+    var openURL: OpenURLAction?
     var reload, scrollBottom, scrollTop, tabClose: Bool?
     var tabCloseAll, tabDuplicate, tabNext, tabOpen: Bool?
     var tabPrevious, urlCopy: Bool?
@@ -117,6 +118,7 @@ struct Action: Codable {
         case goBackward = "go_backward"
         case goForward = "go_forward"
         case javascriptRun = "javascript_run"
+        case openURL = "open_url"
         case reload
         case scrollBottom = "scroll_bottom"
         case scrollTop = "scroll_top"
@@ -152,6 +154,7 @@ extension Action {
         goBackward: Bool?? = nil,
         goForward: Bool?? = nil,
         javascriptRun: JavascriptRun?? = nil,
+        openURL: OpenURLAction?? = nil,
         reload: Bool?? = nil,
         scrollBottom: Bool?? = nil,
         scrollTop: Bool?? = nil,
@@ -167,6 +170,7 @@ extension Action {
             goBackward: goBackward ?? self.goBackward,
             goForward: goForward ?? self.goForward,
             javascriptRun: javascriptRun ?? self.javascriptRun,
+            openURL: openURL ?? self.openURL,
             reload: reload ?? self.reload,
             scrollBottom: scrollBottom ?? self.scrollBottom,
             scrollTop: scrollTop ?? self.scrollTop,
@@ -225,6 +229,56 @@ extension JavascriptRun {
         return JavascriptRun(
             code: code ?? self.code,
             javascriptRunDescription: javascriptRunDescription ?? self.javascriptRunDescription
+        )
+    }
+
+    func jsonData() throws -> Data {
+        return try newJSONEncoder().encode(self)
+    }
+
+    func jsonString(encoding: String.Encoding = .utf8) throws -> String? {
+        return String(data: try self.jsonData(), encoding: encoding)
+    }
+}
+
+// MARK: - OpenURLAction
+struct OpenURLAction: Codable {
+    var newTab: Bool
+    var title, url: String
+
+    enum CodingKeys: String, CodingKey {
+        case newTab = "new_tab"
+        case title, url
+    }
+}
+
+// MARK: OpenURLAction convenience initializers and mutators
+
+extension OpenURLAction {
+    init(data: Data) throws {
+        self = try newJSONDecoder().decode(OpenURLAction.self, from: data)
+    }
+
+    init(_ json: String, using encoding: String.Encoding = .utf8) throws {
+        guard let data = json.data(using: encoding) else {
+            throw NSError(domain: "JSONDecoding", code: 0, userInfo: nil)
+        }
+        try self.init(data: data)
+    }
+
+    init(fromURL url: URL) throws {
+        try self.init(data: try Data(contentsOf: url))
+    }
+
+    func with(
+        newTab: Bool? = nil,
+        title: String? = nil,
+        url: String? = nil
+    ) -> OpenURLAction {
+        return OpenURLAction(
+            newTab: newTab ?? self.newTab,
+            title: title ?? self.title,
+            url: url ?? self.url
         )
     }
 

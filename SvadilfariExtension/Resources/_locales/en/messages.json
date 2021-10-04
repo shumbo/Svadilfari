@@ -46,6 +46,9 @@
     "get_action_hud_content:go_backward": {
         "message": "Go Backward"
     },
+    "get_action_hud_content:open_url": {
+        "message": "Open URL"
+    },
     "get_action_hud_content:unknown": {
         "message": "Unknown Action"
     },

@@ -37,3 +37,17 @@ properties:
     type: boolean
   scroll_bottom:
     type: boolean
+  open_url:
+    title: OpenURLAction
+    type: object
+    properties:
+      url:
+        type: string
+      title:
+        type: string
+      new_tab:
+        type: boolean
+    required:
+      - url
+      - new_tab
+      - title

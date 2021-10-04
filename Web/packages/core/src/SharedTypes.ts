@@ -31,6 +31,7 @@ export interface Action {
     goBackward?:    boolean;
     goForward?:     boolean;
     javascriptRun?: JavascriptRun;
+    openURL?:       OpenURLAction;
     reload?:        boolean;
     scrollBottom?:  boolean;
     scrollTop?:     boolean;
@@ -46,6 +47,12 @@ export interface Action {
 export interface JavascriptRun {
     code:         string;
     description?: string;
+}
+
+export interface OpenURLAction {
+    newTab: boolean;
+    title:  string;
+    url:    string;
 }
 
 export interface Pattern {
@@ -333,6 +340,7 @@ const typeMap: any = {
         { json: "go_backward", js: "goBackward", typ: u(undefined, true) },
         { json: "go_forward", js: "goForward", typ: u(undefined, true) },
         { json: "javascript_run", js: "javascriptRun", typ: u(undefined, r("JavascriptRun")) },
+        { json: "open_url", js: "openURL", typ: u(undefined, r("OpenURLAction")) },
         { json: "reload", js: "reload", typ: u(undefined, true) },
         { json: "scroll_bottom", js: "scrollBottom", typ: u(undefined, true) },
         { json: "scroll_top", js: "scrollTop", typ: u(undefined, true) },
@@ -347,6 +355,11 @@ const typeMap: any = {
     "JavascriptRun": o([
         { json: "code", js: "code", typ: "" },
         { json: "description", js: "description", typ: u(undefined, "") },
+    ], "any"),
+    "OpenURLAction": o([
+        { json: "new_tab", js: "newTab", typ: true },
+        { json: "title", js: "title", typ: "" },
+        { json: "url", js: "url", typ: "" },
     ], "any"),
     "Pattern": o([
         { json: "data", js: "data", typ: a(r("Vector")) },

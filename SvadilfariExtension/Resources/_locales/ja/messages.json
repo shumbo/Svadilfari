@@ -46,6 +46,9 @@
   "get_action_hud_content:go_backward": {
     "message": "前のページに戻る"
   },
+  "get_action_hud_content:open_url": {
+    "message": "URLを開く"
+  },
   "get_action_hud_content:unknown": {
     "message": "不明なアクション"
   },

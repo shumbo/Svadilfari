@@ -52,6 +52,12 @@ extension Action {
         if self.goBackward != nil {
             return "ACTION_TITLE_GO_BACKWARD"
         }
+        if let a = self.openURL {
+            if a.title != "" {
+                return "ACTION_TITLE_OPEN_URL \(a.title)"
+            }
+            return "ACTION_TITLE_OPEN_URL"
+        }
         return "ACTION_TITLE_UNKNOWN"
     }
 }
