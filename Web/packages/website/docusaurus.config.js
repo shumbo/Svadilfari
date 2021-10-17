@@ -15,6 +15,10 @@ const config = {
   favicon: "img/favicon.ico",
   organizationName: "shumbo", // Usually your GitHub org/user name.
   projectName: "Svadilfari", // Usually your repo name.
+  i18n: {
+    defaultLocale: "en",
+    locales: ["en", "ja"],
+  },
 
   presets: [
     [
@@ -61,6 +65,10 @@ const config = {
           //   label: "GitHub",
           //   position: "right",
           // },
+          {
+            type: "localeDropdown",
+            position: "left",
+          },
         ],
       },
       footer: {
@@ -71,7 +79,7 @@ const config = {
             items: [
               {
                 label: "Getting Started",
-                to: "/docs/intro",
+                to: "/docs/getting-started",
               },
             ],
           },
