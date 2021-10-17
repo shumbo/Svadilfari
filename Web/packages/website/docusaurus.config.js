@@ -18,6 +18,14 @@ const config = {
   i18n: {
     defaultLocale: "en",
     locales: ["en", "ja"],
+    localeConfigs: {
+      en: {
+        label: "English",
+      },
+      ja: {
+        label: "日本語",
+      },
+    },
   },
 
   presets: [
@@ -67,7 +75,7 @@ const config = {
           // },
           {
             type: "localeDropdown",
-            position: "left",
+            position: "right",
           },
         ],
       },
