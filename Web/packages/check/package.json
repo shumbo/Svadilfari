@@ -1,6 +1,7 @@
 {
-  "name": "vite-project",
+  "name": "check",
   "version": "0.0.0",
+  "main": "index.js",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
@@ -12,6 +13,7 @@
     "format:fix": "prettier --write ."
   },
   "dependencies": {
+    "@cloudflare/kv-asset-handler": "~0.1.2",
     "@chakra-ui/react": "^1.6.8",
     "@emotion/react": "^11",
     "@emotion/styled": "^11",
