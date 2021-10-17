@@ -7,6 +7,7 @@
 
 import SafariServices
 import CoreData
+import CoreHaptics
 import os.log
 
 class SafariWebExtensionHandler: NSObject, NSExtensionRequestHandling {
@@ -25,6 +26,11 @@ class SafariWebExtensionHandler: NSObject, NSExtensionRequestHandling {
     lazy var els: ExclusionListService = {
         return ExclusionListService(moc: self.moc)
     }()
+
+    override init() {
+        UserDefaults.shared.register(defaults: UserDefaults.userDefaultsDefaults)
+        super.init()
+    }
 
     // swiftlint:disable:next function_body_length cyclomatic_complexity
     func beginRequest(with context: NSExtensionContext) {
@@ -73,7 +79,14 @@ class SafariWebExtensionHandler: NSObject, NSExtensionRequestHandling {
                 respondError(msg: "Failed to fetch gestures")
                 return
             }
-            let response = GetGestureResponse(error: nil, gestures: gestures)
+            let response = GetGestureResponse(
+                error: nil,
+                gestures: gestures,
+                sensitivity: UserDefaults.shared.double(
+                    forKey: UserDefaults.Keys.gestureRecognitionSensitivity
+                )
+            )
+
             respond(response)
             return
         }

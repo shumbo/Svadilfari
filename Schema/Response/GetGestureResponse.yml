@@ -1,10 +1,17 @@
+# yaml-language-server: $schema=https://json-schema.org/draft/2019-09/schema
 title: GetGestureResponse
 type: object
-description: ''
+description: ""
 properties:
   gestures:
     type: array
     items:
       $ref: ../Gesture.yml
+  sensitivity:
+    type: number
+    description: Gesture Recognition Sensitivity ([-3, 3])
   error:
     type: string
+required:
+  - gestures
+  - sensitivity

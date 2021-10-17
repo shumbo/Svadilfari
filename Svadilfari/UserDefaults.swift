@@ -15,14 +15,12 @@ extension UserDefaults {
 
     static let userDefaultsDefaults = [
         Keys.previouslyLaunched: false,
-        Keys.gestureRecognitionSensitivity: 5.0,
-        Keys.gestureHapticFeedback: true
+        Keys.gestureRecognitionSensitivity: 0.0
     ] as [String: Any]
 
     public enum Keys {
         static let previouslyLaunched = "previouslyLaunched"
         static let gestureRecognitionSensitivity = "gestureRecognitionSensitivity"
-        static let gestureHapticFeedback = "gestureHapticFeedback"
     }
 
     var isFirstLaunch: Bool {

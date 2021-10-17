@@ -49,8 +49,8 @@ struct HomeListView: View {
                 Section {
                     NavigationLink(destination: { SettingsView() }) {
                         HomeListItem(
-                            title: "Settings",
-                            description: "Settings",
+                            title: "HOME_SETTINGS_TITLE",
+                            description: "HOME_SETTINGS_DESCRIPTION",
                             image: Image(systemName: "gearshape.fill")
                         )
                     }

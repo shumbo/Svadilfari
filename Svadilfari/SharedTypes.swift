@@ -16,7 +16,9 @@ import Foundation
 // MARK: - GetGestureResponse
 struct GetGestureResponse: Codable {
     var error: String?
-    var gestures: [Gesture]?
+    var gestures: [Gesture]
+    /// Gesture Recognition Sensitivity ([-3, 3])
+    var sensitivity: Double
 }
 
 // MARK: GetGestureResponse convenience initializers and mutators
@@ -39,11 +41,13 @@ extension GetGestureResponse {
 
     func with(
         error: String?? = nil,
-        gestures: [Gesture]?? = nil
+        gestures: [Gesture]? = nil,
+        sensitivity: Double? = nil
     ) -> GetGestureResponse {
         return GetGestureResponse(
             error: error ?? self.error,
-            gestures: gestures ?? self.gestures
+            gestures: gestures ?? self.gestures,
+            sensitivity: sensitivity ?? self.sensitivity
         )
     }
 

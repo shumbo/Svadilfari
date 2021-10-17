@@ -16,8 +16,12 @@
 // match the expected interface, even if the JSON is valid.
 
 export interface GetGestureResponse {
-    error?:    string;
-    gestures?: Gesture[];
+    error?:   string;
+    gestures: Gesture[];
+    /**
+     * Gesture Recognition Sensitivity ([-3, 3])
+     */
+    sensitivity: number;
 }
 
 export interface Gesture {
@@ -328,7 +332,8 @@ function r(name: string) {
 const typeMap: any = {
     "GetGestureResponse": o([
         { json: "error", js: "error", typ: u(undefined, "") },
-        { json: "gestures", js: "gestures", typ: u(undefined, a(r("Gesture"))) },
+        { json: "gestures", js: "gestures", typ: a(r("Gesture")) },
+        { json: "sensitivity", js: "sensitivity", typ: 3.14 },
     ], "any"),
     "Gesture": o([
         { json: "action", js: "action", typ: r("Action") },

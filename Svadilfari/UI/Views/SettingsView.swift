@@ -8,22 +8,24 @@
 import SwiftUI
 
 struct SettingsView: View {
-    @State private var sensitivity: Double = 5.0
-    @State private var hapticFeedback: Bool = false
+    @State private var sensitivity: Double = 0.0
 
     var body: some View {
         List {
-            Section(header: Text("Sensitivity"), footer: Text("ジェスチャーの感度を変更できます。感度を高めるとジェスチャーが認識されやすくなりますが、誤検知もしやすくなります。")) {
+            Section(
+                header: Text("SETTINGS_GESTURE_SENSITIVITY_HEADER"),
+                footer: Text("SETTINGS_GESTURE_SENSITIVITY_FOOTER")
+            ) {
                 Slider(
                     value: $sensitivity.onChange { nv in
                         UserDefaults.shared.set(nv, forKey: UserDefaults.Keys.gestureRecognitionSensitivity)
                     },
-                    in: 1...10,
-                    step: 2,
-                    minimumValueLabel: Text("低い"),
-                    maximumValueLabel: Text("高い"),
+                    in: -3...3,
+                    step: 1,
+                    minimumValueLabel: Text("SETTINGS_GESTURE_SENSITIVITY_LOW"),
+                    maximumValueLabel: Text("SETTINGS_GESTURE_SENSITIVITY_HIGH"),
                     label: {
-                    Text("Sensitivity")
+                    Text("SETTINGS_GESTURE_SENSITIVITY_HEADER")
                     }
                 ).onAppear {
                     self.sensitivity = UserDefaults.shared.double(
@@ -31,24 +33,12 @@ struct SettingsView: View {
                     )
                 }
             }
-            Section {
-                Toggle("Haptic Feedback", isOn: $hapticFeedback.onChange({ nv in
-                    UserDefaults.shared.set(
-                        nv,
-                        forKey: UserDefaults.Keys.gestureHapticFeedback
-                    )
-                })).onAppear {
-                    self.hapticFeedback = UserDefaults.shared.bool(
-                        forKey: UserDefaults.Keys.gestureHapticFeedback
-                    )
-                }
+            Section(header: Text("SETTINGS_LINKS_HEADER")) {
+                Link("SETTINGS_LINKS_ABOUT_APP", destination: URL(string: "https://www.svadilfari.app")!)
+                Link("SETTINGS_LINKS_FAQ", destination: URL(string: "https://www.svadilfari.app")!)
+                Link("SETTINGS_LINKS_CONTACT", destination: URL(string: "https://www.svadilfari.app")!)
             }
-            Section("リンク") {
-                Link("このアプリについて", destination: URL(string: "https://www.svadilfari.app")!)
-                Link("よくある質問", destination: URL(string: "https://www.svadilfari.app")!)
-                Link("お問い合わせ", destination: URL(string: "https://www.svadilfari.app")!)
-            }
-        }.navigationTitle("Settings")
+        }.navigationTitle("SETTINGS_TITLE")
     }
 }
 
