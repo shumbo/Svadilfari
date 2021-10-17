@@ -1,0 +1,12 @@
+name = "svadilfari-checker"
+type = "webpack"
+route = ''
+zone_id = 'd8923c9eacc2736daa626ca8b5e47553'
+usage_model = ''
+compatibility_flags = []
+workers_dev = true
+compatibility_date = "2021-10-17"
+
+[site]
+bucket = "./dist" # <-- Add your build directory name here!
+entry-point = "."
