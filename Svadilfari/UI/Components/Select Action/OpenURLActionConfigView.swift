@@ -50,6 +50,7 @@ struct OpenURLActionConfigView: View {
                 .buttonStyle(.borderedProminent)
                 .listRowInsets(EdgeInsets())
         }.navigationTitle("OPEN_URL_CONFIG_TITLE")
+            .interactiveDismissDisabled()
     }
 }
 

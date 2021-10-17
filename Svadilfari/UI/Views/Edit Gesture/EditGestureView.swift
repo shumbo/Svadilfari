@@ -105,7 +105,6 @@ struct EditGestureView: View {
                                         }
                                     }
                                 }.navigationBarTitleDisplayMode(.inline)
-                                .interactiveDismissDisabled()
                             }
                         }
                     } else {
@@ -135,7 +134,6 @@ struct EditGestureView: View {
                                     }
                                 }
                                 .navigationBarTitleDisplayMode(.inline)
-                                .interactiveDismissDisabled()
                         }
                     }
                 }

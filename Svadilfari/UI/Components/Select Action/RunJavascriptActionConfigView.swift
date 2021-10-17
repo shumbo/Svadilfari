@@ -51,6 +51,7 @@ struct RunJavascriptActionConfigView: View {
                 .buttonStyle(.borderedProminent)
                 .listRowInsets(EdgeInsets())
         }.navigationTitle("RUN_JAVASCRIPT_CONFIG_TITLE")
+            .interactiveDismissDisabled()
     }
 }
 
