@@ -46,6 +46,15 @@ struct HomeListView: View {
                         )
                     })
                 }
+                Section {
+                    NavigationLink(destination: { SettingsView() }) {
+                        HomeListItem(
+                            title: "HOME_SETTINGS_TITLE",
+                            description: "HOME_SETTINGS_DESCRIPTION",
+                            image: Image(systemName: "gearshape.fill")
+                        )
+                    }
+                }
             }.navigationBarHidden(true)
         }.navigationViewStyle(.stack).sheet(isPresented: $isTutorialPresented, content: {
             TutorialView(onOpenGestures: {

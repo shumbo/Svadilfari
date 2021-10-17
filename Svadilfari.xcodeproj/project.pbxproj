@@ -52,6 +52,7 @@
 		249477CF26CEBEA900E6FCC5 /* PersistentHistoryCleaner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249477C926CEBC4500E6FCC5 /* PersistentHistoryCleaner.swift */; };
 		249477D026CEBEBF00E6FCC5 /* UserDefaults+transactionTimestamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249477BF26CEB71B00E6FCC5 /* UserDefaults+transactionTimestamp.swift */; };
 		24978F35271BA3DF00117689 /* ActionConfigView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24978F34271BA3DF00117689 /* ActionConfigView.swift */; };
+		24978F3B271BD05900117689 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24978F3A271BD05900117689 /* SettingsView.swift */; };
 		24A19E2C26B34F9500DA5E20 /* GestureListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A19E2B26B34F9500DA5E20 /* GestureListView.swift */; };
 		24A22F0E26D1404200C60F53 /* NewExclusionEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A22F0D26D1404200C60F53 /* NewExclusionEntryView.swift */; };
 		24A22F1126D1483800C60F53 /* EmptyPlaceholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A22F1026D1483800C60F53 /* EmptyPlaceholder.swift */; };
@@ -175,6 +176,7 @@
 		249477C726CEBA0D00E6FCC5 /* PersistentHistoryFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistentHistoryFetcher.swift; sourceTree = "<group>"; };
 		249477C926CEBC4500E6FCC5 /* PersistentHistoryCleaner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistentHistoryCleaner.swift; sourceTree = "<group>"; };
 		24978F34271BA3DF00117689 /* ActionConfigView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionConfigView.swift; sourceTree = "<group>"; };
+		24978F3A271BD05900117689 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		24A19E2B26B34F9500DA5E20 /* GestureListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GestureListView.swift; sourceTree = "<group>"; };
 		24A22F0D26D1404200C60F53 /* NewExclusionEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewExclusionEntryView.swift; sourceTree = "<group>"; };
 		24A22F1026D1483800C60F53 /* EmptyPlaceholder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyPlaceholder.swift; sourceTree = "<group>"; };
@@ -379,6 +381,7 @@
 				24A19E2B26B34F9500DA5E20 /* GestureListView.swift */,
 				249477BB26CCF6D800E6FCC5 /* ExclusionListView.swift */,
 				24A7DBD026D7EF7000AC3675 /* TutorialView.swift */,
+				24978F3A271BD05900117689 /* SettingsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -810,6 +813,7 @@
 				24F15F2E271B3E2C00156A6C /* PatternSelectPresetsView.swift in Sources */,
 				24EC0159270A5ABC0023AAE9 /* OpenURLActionConfigView.swift in Sources */,
 				245A016126B9A07700EEE8CD /* UserDefaults.swift in Sources */,
+				24978F3B271BD05900117689 /* SettingsView.swift in Sources */,
 				24B224A026B5E445009EAB48 /* GestureListItem.swift in Sources */,
 				242EBAF6270FD97000FF3A21 /* Gesture+.swift in Sources */,
 				24D759CD26BC80960017498A /* NavigationLinkView.swift in Sources */,

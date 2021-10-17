@@ -13,8 +13,14 @@ extension UserDefaults {
         return Self(suiteName: APP_GROUP_ID)!
     }
 
-    private enum Keys {
+    static let userDefaultsDefaults = [
+        Keys.previouslyLaunched: false,
+        Keys.gestureRecognitionSensitivity: 0.0
+    ] as [String: Any]
+
+    public enum Keys {
         static let previouslyLaunched = "previouslyLaunched"
+        static let gestureRecognitionSensitivity = "gestureRecognitionSensitivity"
     }
 
     var isFirstLaunch: Bool {
