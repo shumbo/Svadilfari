@@ -120,6 +120,7 @@ const config = {
         disableSwitch: true,
         respectPrefersColorScheme: false,
       },
+      image: "/img/ogp.png",
     }),
 };
 
