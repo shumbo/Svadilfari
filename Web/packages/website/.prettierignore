@@ -1,2 +1,4 @@
 *.md
 *.mdx
+build
+.docusaurus
