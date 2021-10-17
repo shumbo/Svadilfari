@@ -24,6 +24,9 @@ struct SvadilfariApp: App {
 
         InitialDataService.shared.exec()
 
+        // register default values
+        UserDefaults.shared.register(defaults: UserDefaults.userDefaultsDefaults)
+
         return container
     }
 
