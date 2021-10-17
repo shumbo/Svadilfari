@@ -86,7 +86,7 @@ class SvadilfariUITests: XCTestCase {
         snapshot("4-Pattern")
 
         // Continue
-        app.buttons[localized("COMMON_CONTINUE")].firstMatch.tap()
+        app.buttons[localized("PREVIEW_PATTERN_USE")].firstMatch.tap()
 
         snapshot("5-Actions")
     }
