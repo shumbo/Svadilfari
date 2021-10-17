@@ -54,7 +54,7 @@ jobs:
         uses: cloudflare/wrangler-action@1.3.0
         with:
           apiToken: ${{ secrets.CF_API_TOKEN }}
-          working-directory: Web/packages/check
+          workingDirectory: Web/packages/check
   Deploy-Go:
     runs-on: ubuntu-latest
     needs: [Web-Test]
@@ -80,4 +80,4 @@ jobs:
         uses: cloudflare/wrangler-action@1.3.0
         with:
           apiToken: ${{ secrets.CF_API_TOKEN }}
-          working-directory: Web/packages/go
+          workingDirectory: Web/packages/go
