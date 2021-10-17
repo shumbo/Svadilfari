@@ -43,9 +43,7 @@ struct GestureListView: View {
                 get: { self.newGestureState.presented },
                 set: { self.newGestureState.presented = $0 }
             )) {
-                NavigationView {
-                    NewGestureView()
-                }.environmentObject(self.newGestureState)
+                NewGestureView()
             }
     }
     func removeGesture(offsets: IndexSet) {

@@ -1,16 +1,15 @@
 //
-//  SelectActionView.swift
-//  SelectActionView
+//  ActionSelectView.swift
+//  Svadilfari
 //
-//  Created by Shun Kashiwa on 2021/08/06.
+//  Created by Shun Kashiwa on 2021/10/16.
 //
 
 import SwiftUI
 
-struct SelectActionView: View {
-    public typealias SelectActionCallback = (Action) -> Void
+struct ActionSelectView: View {
+    var onSelect: (Action) -> Void
 
-    let onSelect: SelectActionCallback
     var body: some View {
         List {
             Section(LocalizedStringKey("SELECT_ACTION_TABS")) {
@@ -106,21 +105,19 @@ struct SelectActionView: View {
     }
 }
 
-struct SelectActionView_Previews: PreviewProvider {
-    static var previews: some View {
-        NavigationView {
-            SelectActionView(onSelect: { action in
-                print("Selected \(action.title)")
-            })
-        }
-    }
-}
-
 private struct ActionListItem: View {
     let title: LocalizedStringKey
     var body: some View {
         HStack {
             Text(self.title)
         }
+    }
+}
+
+struct ActionSelectView_Previews: PreviewProvider {
+    static var previews: some View {
+        ActionSelectView(onSelect: { _ in
+            // noop
+        })
     }
 }

@@ -9,11 +9,46 @@ import SwiftUI
 
 struct NewGestureView: View {
     @Environment(\.dismiss) var dismiss
+    @Environment(\.managedObjectContext) private var viewContext
 
-    @State private var showingNewGesturePresets = false
-    @State private var showingNewGestureDraw = false
+    @State private var actionVisible: Bool = false
+    @State private var pattern: Pattern = Pattern(data: [])
 
     var body: some View {
+        NavigationView {
+
+            VStack {
+                PatternSelectView(onSelect: { pattern in
+                    self.pattern = pattern
+                    self.actionVisible = true
+                }) {
+                    NavigationLink(
+                        isActive: $actionVisible,
+                        destination: {
+                            SelectActionView { action in
+                                let id = UUID()
+                                let g = Gesture(
+                                    action: action,
+                                    enabled: true,
+                                    id: id.uuidString,
+                                    pattern: self.pattern
+                                )
+                                let e = GestureEntity(context: self.viewContext)
+                                e.json = try? g.jsonString()
+                                e.createdAt = Date()
+                                e.updatedAt = Date()
+                                e.id = id
+                                try? self.viewContext.save()
+                                self.dismiss()
+                            }
+                        }, label: {
+                            EmptyView()
+                        }
+                    )
+                }
+            }
+        }
+        /*
         VStack {
             NavigationLink(destination: NewGesturePresetsView(), isActive: $showingNewGesturePresets) { EmptyView() }
             NavigationLink(destination: NewGestureDrawerView(), isActive: $showingNewGestureDraw) { EmptyView() }
@@ -47,6 +82,7 @@ struct NewGestureView: View {
                 Button("COMMON_CANCEL", action: self.dismiss.callAsFunction)
             )
             .interactiveDismissDisabled()
+         */
     }
 }
 

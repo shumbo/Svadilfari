@@ -22,6 +22,15 @@ struct EditGestureView: View {
     @State
     private var confirmationVisible = false
 
+    @State
+    private var patternSelectorVisible = false
+
+    @State
+    private var actionSelectorVisible = false
+
+    @State
+    private var actionConfigVisible = false
+
     var body: some View {
         if let gesture = self.gestureEntity.gesture {
             Form {
@@ -52,12 +61,63 @@ struct EditGestureView: View {
                         Spacer()
                     }
                     Button("Select a New Pattern") {
-                        // TODO
+                        self.patternSelectorVisible = true
+                    }.sheet(isPresented: $patternSelectorVisible, onDismiss: { patternSelectorVisible = false }) {
+                        NavigationView {
+                            PatternSelectView(onSelect: {pattern in
+                                // edit local copy
+                                self.pattern = pattern
+                                self.updateGestureEntity(
+                                    g: self.gestureEntity,
+                                    updatedGesture: gesture.change(
+                                        path: \.pattern, to: pattern
+                                    )
+                                )
+                                self.patternSelectorVisible = false
+                            })
+                            .navigationTitle("New Pattern")
+                        }
                     }
                 }
                 Section("Action") {
-                    NavigationLinkView {
+                    if gesture.action.hasAdditionalConfig {
+                        NavigationLinkView {
+                            Text(gesture.action.title)
+                        }.background {
+                            NavigationLink(isActive: $actionConfigVisible, destination: {
+                                ActionConfigView(action: gesture.action) { newAction in
+                                    self.updateGestureEntity(
+                                        g: self.gestureEntity,
+                                        updatedGesture: gesture.change(
+                                            path: \.action, to: newAction
+                                        )
+                                    )
+                                    self.actionConfigVisible = false
+                                }
+                            }, label: { EmptyView() })
+                        }.onTapGesture {
+                            actionConfigVisible = true
+                        }
+                    } else {
                         Text(gesture.action.title)
+                    }
+                    Button("Select a New Action") {
+                        self.actionSelectorVisible = true
+                    }.sheet(
+                        isPresented: $actionSelectorVisible,
+                        onDismiss: { self.actionSelectorVisible = false }
+                    ) {
+                        NavigationView {
+                            ActionSelectView(onSelect: { newAction in
+                                self.updateGestureEntity(
+                                    g: self.gestureEntity,
+                                    updatedGesture: gesture.change(
+                                        path: \.action, to: newAction
+                                    )
+                                )
+                                self.actionSelectorVisible = false
+                            }).navigationTitle("New Action")
+                        }
                     }
                 }
                 Section {
@@ -75,10 +135,7 @@ struct EditGestureView: View {
                     }
                 }
             }
-            .navigationTitle("Edit Gesture")
-            .onAppear {
-
-            }
+            .navigationTitle(gesture.action.title)
         }
     }
 

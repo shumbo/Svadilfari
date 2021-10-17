@@ -54,6 +54,7 @@
 		249477CE26CEBEA600E6FCC5 /* PersistentHistoryFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249477C726CEBA0D00E6FCC5 /* PersistentHistoryFetcher.swift */; };
 		249477CF26CEBEA900E6FCC5 /* PersistentHistoryCleaner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249477C926CEBC4500E6FCC5 /* PersistentHistoryCleaner.swift */; };
 		249477D026CEBEBF00E6FCC5 /* UserDefaults+transactionTimestamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249477BF26CEB71B00E6FCC5 /* UserDefaults+transactionTimestamp.swift */; };
+		24978F35271BA3DF00117689 /* ActionConfigView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24978F34271BA3DF00117689 /* ActionConfigView.swift */; };
 		24A19E2C26B34F9500DA5E20 /* GestureListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A19E2B26B34F9500DA5E20 /* GestureListView.swift */; };
 		24A22F0E26D1404200C60F53 /* NewExclusionEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A22F0D26D1404200C60F53 /* NewExclusionEntryView.swift */; };
 		24A22F1126D1483800C60F53 /* EmptyPlaceholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A22F1026D1483800C60F53 /* EmptyPlaceholder.swift */; };
@@ -85,6 +86,11 @@
 		24E29D0026B5F8A3003AF136 /* UIBezierPath+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24E29CFF26B5F8A3003AF136 /* UIBezierPath+.swift */; };
 		24EC0159270A5ABC0023AAE9 /* OpenURLActionConfigView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24EC0158270A5ABC0023AAE9 /* OpenURLActionConfigView.swift */; };
 		24F15F27271B319700156A6C /* Binding+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F15F26271B319700156A6C /* Binding+.swift */; };
+		24F15F2C271B38E200156A6C /* PatternSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F15F2B271B38E200156A6C /* PatternSelectView.swift */; };
+		24F15F2E271B3E2C00156A6C /* PatternSelectPresetsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F15F2D271B3E2C00156A6C /* PatternSelectPresetsView.swift */; };
+		24F15F30271B3EE300156A6C /* PatternSelectConfirmView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F15F2F271B3EE300156A6C /* PatternSelectConfirmView.swift */; };
+		24F15F32271B4D1C00156A6C /* PatternSelectDrawerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F15F31271B4D1C00156A6C /* PatternSelectDrawerView.swift */; };
+		24F15F37271B6D6500156A6C /* ActionSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F15F36271B6D6500156A6C /* ActionSelectView.swift */; };
 		24F3686A26C35B1D0092F583 /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D00D2126C2BF0B00F8F1FA /* PersistenceController.swift */; };
 		24F3686B26C35EA90092F583 /* SharedTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C11E4826B4307100E018B5 /* SharedTypes.swift */; };
 		24F3686C26C362A80092F583 /* GestureEntity+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24FAA2BA26B942540083FFAB /* GestureEntity+.swift */; };
@@ -175,6 +181,7 @@
 		249477C526CEB96E00E6FCC5 /* Logger+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Logger+.swift"; sourceTree = "<group>"; };
 		249477C726CEBA0D00E6FCC5 /* PersistentHistoryFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistentHistoryFetcher.swift; sourceTree = "<group>"; };
 		249477C926CEBC4500E6FCC5 /* PersistentHistoryCleaner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistentHistoryCleaner.swift; sourceTree = "<group>"; };
+		24978F34271BA3DF00117689 /* ActionConfigView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionConfigView.swift; sourceTree = "<group>"; };
 		24A19E2B26B34F9500DA5E20 /* GestureListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GestureListView.swift; sourceTree = "<group>"; };
 		24A22F0D26D1404200C60F53 /* NewExclusionEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewExclusionEntryView.swift; sourceTree = "<group>"; };
 		24A22F1026D1483800C60F53 /* EmptyPlaceholder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyPlaceholder.swift; sourceTree = "<group>"; };
@@ -208,6 +215,11 @@
 		24E29CFF26B5F8A3003AF136 /* UIBezierPath+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIBezierPath+.swift"; sourceTree = "<group>"; };
 		24EC0158270A5ABC0023AAE9 /* OpenURLActionConfigView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenURLActionConfigView.swift; sourceTree = "<group>"; };
 		24F15F26271B319700156A6C /* Binding+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Binding+.swift"; sourceTree = "<group>"; };
+		24F15F2B271B38E200156A6C /* PatternSelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatternSelectView.swift; sourceTree = "<group>"; };
+		24F15F2D271B3E2C00156A6C /* PatternSelectPresetsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatternSelectPresetsView.swift; sourceTree = "<group>"; };
+		24F15F2F271B3EE300156A6C /* PatternSelectConfirmView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatternSelectConfirmView.swift; sourceTree = "<group>"; };
+		24F15F31271B4D1C00156A6C /* PatternSelectDrawerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatternSelectDrawerView.swift; sourceTree = "<group>"; };
+		24F15F36271B6D6500156A6C /* ActionSelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionSelectView.swift; sourceTree = "<group>"; };
 		24F3686826C359F00092F583 /* SvadilfariExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SvadilfariExtension.entitlements; sourceTree = "<group>"; };
 		24F3686D26C365650092F583 /* URL+storeURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+storeURL.swift"; sourceTree = "<group>"; };
 		24FAA2B726B93CAC0083FFAB /* Gesture.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Gesture.xcdatamodel; sourceTree = "<group>"; };
@@ -351,6 +363,8 @@
 		24428E3F26B33F3D00B21130 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				24F15F35271B6C4500156A6C /* Select Action */,
+				24F15F28271B389800156A6C /* Select Pattern */,
 				24428E4026B33F5400B21130 /* HomeListItem.swift */,
 				24B2249F26B5E445009EAB48 /* GestureListItem.swift */,
 				24B224A626B5EDE0009EAB48 /* PatternPreview.swift */,
@@ -460,10 +474,10 @@
 				249477C426CEB95B00E6FCC5 /* System */,
 				24FAA2B926B942420083FFAB /* Core Data */,
 				24B224A126B5E6B3009EAB48 /* Action+Title.swift */,
+				241D8FB826BC1F2200CBB381 /* Action+.swift */,
 				24B224A926B5EEFB009EAB48 /* Vector+.swift */,
 				24E29CFD26B5F576003AF136 /* Pattern+.swift */,
 				24E29CFF26B5F8A3003AF136 /* UIBezierPath+.swift */,
-				241D8FB826BC1F2200CBB381 /* Action+.swift */,
 				24F3686D26C365650092F583 /* URL+storeURL.swift */,
 				24A7DBD226D7F16C00AC3675 /* Bundle+icon.swift */,
 				242EBAF3270FD94600FF3A21 /* Changeable.swift */,
@@ -497,6 +511,26 @@
 				24C11E6426B4366B00E018B5 /* popup.js */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		24F15F28271B389800156A6C /* Select Pattern */ = {
+			isa = PBXGroup;
+			children = (
+				24F15F2B271B38E200156A6C /* PatternSelectView.swift */,
+				24F15F2D271B3E2C00156A6C /* PatternSelectPresetsView.swift */,
+				24F15F31271B4D1C00156A6C /* PatternSelectDrawerView.swift */,
+				24F15F2F271B3EE300156A6C /* PatternSelectConfirmView.swift */,
+			);
+			path = "Select Pattern";
+			sourceTree = "<group>";
+		};
+		24F15F35271B6C4500156A6C /* Select Action */ = {
+			isa = PBXGroup;
+			children = (
+				24F15F36271B6D6500156A6C /* ActionSelectView.swift */,
+				24978F34271BA3DF00117689 /* ActionConfigView.swift */,
+			);
+			path = "Select Action";
 			sourceTree = "<group>";
 		};
 		24FAA2B926B942420083FFAB /* Core Data */ = {
@@ -740,6 +774,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				24C11E4926B4307100E018B5 /* SharedTypes.swift in Sources */,
+				24F15F2C271B38E200156A6C /* PatternSelectView.swift in Sources */,
 				24A22F0E26D1404200C60F53 /* NewExclusionEntryView.swift in Sources */,
 				24428E1926B33E7600B21130 /* ContentView.swift in Sources */,
 				24E29CFE26B5F576003AF136 /* Pattern+.swift in Sources */,
@@ -755,10 +790,12 @@
 				249477C026CEB71B00E6FCC5 /* UserDefaults+transactionTimestamp.swift in Sources */,
 				24FAA2B826B93CAC0083FFAB /* CoreData.xcdatamodeld in Sources */,
 				249477BC26CCF6D800E6FCC5 /* ExclusionListView.swift in Sources */,
+				24F15F32271B4D1C00156A6C /* PatternSelectDrawerView.swift in Sources */,
 				24A7DBD326D7F16C00AC3675 /* Bundle+icon.swift in Sources */,
 				24500EEF26C6D95800F7BB7E /* GridView.swift in Sources */,
 				24B224A226B5E6B4009EAB48 /* Action+Title.swift in Sources */,
 				24AEEEB6270F6915004F9E51 /* EditGestureView.swift in Sources */,
+				24F15F37271B6D6500156A6C /* ActionSelectView.swift in Sources */,
 				249477C626CEB96E00E6FCC5 /* Logger+.swift in Sources */,
 				242CD6E926CFB147009DDDB0 /* Constants.swift in Sources */,
 				24FAA2BB26B942540083FFAB /* GestureEntity+.swift in Sources */,
@@ -770,8 +807,10 @@
 				24B224AA26B5EEFC009EAB48 /* Vector+.swift in Sources */,
 				2485834C26BCC2DE00A8836E /* SheetState.swift in Sources */,
 				241D8FC226BC7E1600CBB381 /* RunJavascriptActionConfigView.swift in Sources */,
+				24F15F30271B3EE300156A6C /* PatternSelectConfirmView.swift in Sources */,
 				245A016826B9A29200EEE8CD /* GestureTemplateButton.swift in Sources */,
 				245A016626B9A24600EEE8CD /* NewGestureView.swift in Sources */,
+				24978F35271BA3DF00117689 /* ActionConfigView.swift in Sources */,
 				24FAA2BD26B943330083FFAB /* Error.swift in Sources */,
 				24F15F27271B319700156A6C /* Binding+.swift in Sources */,
 				24428E4426B3436A00B21130 /* HomeListView.swift in Sources */,
@@ -782,6 +821,7 @@
 				249477C826CEBA0D00E6FCC5 /* PersistentHistoryFetcher.swift in Sources */,
 				249477BE26CEB38700E6FCC5 /* PersistentHistoryTracking.swift in Sources */,
 				24428E1726B33E7600B21130 /* SvadilfariApp.swift in Sources */,
+				24F15F2E271B3E2C00156A6C /* PatternSelectPresetsView.swift in Sources */,
 				24500EED26C6D81300F7BB7E /* NewGestureDrawerView.swift in Sources */,
 				24EC0159270A5ABC0023AAE9 /* OpenURLActionConfigView.swift in Sources */,
 				245A016126B9A07700EEE8CD /* UserDefaults.swift in Sources */,
