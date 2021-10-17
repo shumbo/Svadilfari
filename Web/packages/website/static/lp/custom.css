@@ -1,0 +1,11 @@
+.header-app-icon {
+  border-radius: 20px;
+  height: 128px;
+  width: 128px;
+}
+
+.header-video-demo {
+  max-height: 600px;
+  margin: 0 auto;
+  border-radius: 40px;
+}
