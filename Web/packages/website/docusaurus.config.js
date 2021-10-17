@@ -86,6 +86,10 @@ const config = {
                 label: "Privacy Policy",
                 href: "/privacy-policy",
               },
+              {
+                label: "Contact",
+                href: "/contact",
+              },
             ],
           },
         ],
@@ -94,6 +98,11 @@ const config = {
       prism: {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
+      },
+      colorMode: {
+        defaultMode: "light",
+        disableSwitch: true,
+        respectPrefersColorScheme: false,
       },
     }),
 };
