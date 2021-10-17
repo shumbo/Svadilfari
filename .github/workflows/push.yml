@@ -76,6 +76,9 @@ jobs:
         run: curl -f https://get.pnpm.io/v6.16.js | node - add --global pnpm@6
       - name: pnpm Build
         run: pnpm install
+      - name: Build
+        run: pnpm build
+        working-directory: Web/packages/go
       - name: Publish
         uses: cloudflare/wrangler-action@1.3.0
         with:
