@@ -153,7 +153,7 @@ GESTURE_EDIT_DELETE_CONFIRM_BUTTON = "ジェスチャーを削除";
 // MARK: Settings
 SETTINGS_TITLE = "設定";
 SETTINGS_GESTURE_SENSITIVITY_HEADER = "ジェスチャー感度";
-SETTINGS_GESTURE_SENSITIVITY_FOOTER = "ジェスチャーの感度を変更できます。感度を高めるとジェスチャーが認識されやすくなりますが、誤検知もしやすくなります。";
+SETTINGS_GESTURE_SENSITIVITY_FOOTER = "ジェスチャー感度を高めるとジェスチャーが認識されやすくなりますが、誤検知もしやすくなります。";
 SETTINGS_GESTURE_SENSITIVITY_LOW = "低い";
 SETTINGS_GESTURE_SENSITIVITY_HIGH = "高い";
 SETTINGS_LINKS_HEADER = "リンク";
