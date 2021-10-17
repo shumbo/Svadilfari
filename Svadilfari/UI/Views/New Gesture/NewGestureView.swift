@@ -16,73 +16,35 @@ struct NewGestureView: View {
 
     var body: some View {
         NavigationView {
-
-            VStack {
-                PatternSelectView(onSelect: { pattern in
-                    self.pattern = pattern
-                    self.actionVisible = true
-                }) {
-                    NavigationLink(
-                        isActive: $actionVisible,
-                        destination: {
-                            SelectActionView { action in
-                                let id = UUID()
-                                let g = Gesture(
-                                    action: action,
-                                    enabled: true,
-                                    id: id.uuidString,
-                                    pattern: self.pattern
-                                )
-                                let e = GestureEntity(context: self.viewContext)
-                                e.json = try? g.jsonString()
-                                e.createdAt = Date()
-                                e.updatedAt = Date()
-                                e.id = id
-                                try? self.viewContext.save()
-                                self.dismiss()
-                            }
-                        }, label: {
-                            EmptyView()
-                        }
-                    )
-                }
-            }
+            PatternSelectView(onSelect: { pattern in
+                self.pattern = pattern
+                self.actionVisible = true
+            }) {
+                NavigationLink(
+                    isActive: $actionVisible,
+                    destination: {
+                        SelectActionView { action in
+                            let id = UUID()
+                            let g = Gesture(
+                                action: action,
+                                enabled: true,
+                                id: id.uuidString,
+                                pattern: self.pattern
+                            )
+                            let e = GestureEntity(context: self.viewContext)
+                            e.json = try? g.jsonString()
+                            e.createdAt = Date()
+                            e.updatedAt = Date()
+                            e.id = id
+                            try? self.viewContext.save()
+                            self.dismiss()
+                        }.navigationTitle("SELECT_ACTION_TITLE")
+                    }, label: {
+                        EmptyView()
+                    }
+                )
+            }.navigationTitle("New Gesture")
         }
-        /*
-        VStack {
-            NavigationLink(destination: NewGesturePresetsView(), isActive: $showingNewGesturePresets) { EmptyView() }
-            NavigationLink(destination: NewGestureDrawerView(), isActive: $showingNewGestureDraw) { EmptyView() }
-            List {
-                Section {
-                    GestureTemplateButton(
-                        image: Image(systemName: "list.dash"),
-                        text: "NEW_GESTURE_SELECT_PATTERN",
-                        color: .blue,
-                        buttonTitle: "NEW_GESTURE_SELECT_PATTERN_BUTTON",
-                        onPress: {
-                            showingNewGesturePresets = true
-                        }
-                    )
-                }
-                Section {
-                    GestureTemplateButton(
-                        image: Image(systemName: "hand.draw"),
-                        text: "NEW_GESTURE_DRAW_PATTERN",
-                        color: .green,
-                        buttonTitle: "NEW_GESTURE_DRAW_PATTERN_BUTTON",
-                        onPress: {
-                            showingNewGestureDraw = true
-                        }
-                    )
-                }
-            }
-        }.navigationTitle("NEW_GESTURE_TITLE")
-            .navigationBarTitleDisplayMode(.inline)
-            .navigationBarItems(leading:
-                Button("COMMON_CANCEL", action: self.dismiss.callAsFunction)
-            )
-            .interactiveDismissDisabled()
-         */
     }
 }
 

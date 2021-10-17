@@ -83,8 +83,13 @@ struct EditGestureView: View {
                     if gesture.action.hasAdditionalConfig {
                         NavigationLinkView {
                             Text(gesture.action.title)
-                        }.background {
-                            NavigationLink(isActive: $actionConfigVisible, destination: {
+                        }.onTapGesture {
+                            self.actionConfigVisible = true
+                        }.sheet(
+                            isPresented: $actionConfigVisible,
+                            onDismiss: { actionConfigVisible = false }
+                        ) {
+                            NavigationView {
                                 ActionConfigView(action: gesture.action) { newAction in
                                     self.updateGestureEntity(
                                         g: self.gestureEntity,
@@ -93,10 +98,15 @@ struct EditGestureView: View {
                                         )
                                     )
                                     self.actionConfigVisible = false
-                                }
-                            }, label: { EmptyView() })
-                        }.onTapGesture {
-                            actionConfigVisible = true
+                                }.toolbar {
+                                    ToolbarItem(placement: .navigationBarLeading) {
+                                        Button("COMMON_CANCEL") {
+                                            self.actionConfigVisible = false
+                                        }
+                                    }
+                                }.navigationBarTitleDisplayMode(.inline)
+                                .interactiveDismissDisabled()
+                            }
                         }
                     } else {
                         Text(gesture.action.title)
@@ -117,6 +127,15 @@ struct EditGestureView: View {
                                 )
                                 self.actionSelectorVisible = false
                             }).navigationTitle("New Action")
+                                .toolbar {
+                                    ToolbarItem(placement: .navigationBarLeading) {
+                                        Button("COMMON_CANCEL") {
+                                            self.actionSelectorVisible = false
+                                        }
+                                    }
+                                }
+                                .navigationBarTitleDisplayMode(.inline)
+                                .interactiveDismissDisabled()
                         }
                     }
                 }
@@ -135,7 +154,7 @@ struct EditGestureView: View {
                     }
                 }
             }
-            .navigationTitle(gesture.action.title)
+            .navigationTitle(gesture.action.shortTitle)
         }
     }
 

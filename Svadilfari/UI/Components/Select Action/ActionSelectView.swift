@@ -101,7 +101,7 @@ struct ActionSelectView: View {
                     ActionListItem(title: "SELECT_ACTION_ADVANCED_RUN_JAVASCRIPT")
                 }
             }
-        }.navigationTitle("SELECT_ACTION_TITLE")
+        }
     }
 }
 
