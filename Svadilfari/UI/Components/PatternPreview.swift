@@ -11,6 +11,7 @@ import UIKit
 private struct PatternPreviewContent: UIViewRepresentable {
     let frame: CGRect
     var pattern: Pattern
+    var color: UIColor
 
     func makeUIView(context: Context) -> UIView {
         let view = UIView()
@@ -41,7 +42,7 @@ private struct PatternPreviewContent: UIViewRepresentable {
 
         let dashedLayer = CAShapeLayer()
         dashedLayer.path = bezierPath.cgPath
-        dashedLayer.strokeColor = UIColor.systemBlue.cgColor
+        dashedLayer.strokeColor = self.color.cgColor
         dashedLayer.fillColor = nil
         dashedLayer.lineWidth = 1
         dashedLayer.lineDashPattern = [2]
@@ -50,7 +51,7 @@ private struct PatternPreviewContent: UIViewRepresentable {
         let shapeLayer = CAShapeLayer()
         shapeLayer.path = bezierPath.cgPath
         shapeLayer.lineWidth = 2
-        shapeLayer.strokeColor = UIColor.systemBlue.cgColor
+        shapeLayer.strokeColor = self.color.cgColor
         shapeLayer.fillColor = nil
         shapeLayer.lineCap = .round
         uiView.layer.addSublayer(shapeLayer)
@@ -74,8 +75,8 @@ private struct PatternPreviewContent: UIViewRepresentable {
         arrowHeadPath.addLine(to: CGPoint(x: 10, y: 10))
         let arrowHeadLayer = CAShapeLayer()
         arrowHeadLayer.path = Circle().path(in: CGRect(x: -2.5, y: -2.5, width: 5.0, height: 5.0)).cgPath
-        arrowHeadLayer.strokeColor = UIColor.systemBlue.cgColor
-        arrowHeadLayer.fillColor = UIColor.systemBlue.cgColor
+        arrowHeadLayer.strokeColor = self.color.cgColor
+        arrowHeadLayer.fillColor = self.color.cgColor
         arrowHeadLayer.lineWidth = 2
         uiView.layer.addSublayer(arrowHeadLayer)
 
@@ -105,11 +106,13 @@ struct PatternPreview: View {
 
     let frame: CGRect
     var pattern: Pattern
+    var color: UIColor = UIColor.systemBlue
 
     var body: some View {
         PatternPreviewContent(
             frame: self.frame,
-            pattern: self.pattern
+            pattern: self.pattern,
+            color: self.color
         ).id(self.id)
             .onReceive(NotificationCenter.default.publisher(for: UIApplication.willEnterForegroundNotification)) { _ in
                 self.id += 1

@@ -9,6 +9,7 @@
 // MARK: COMMON
 COMMON_CONTINUE = "次へ";
 COMMON_CANCEL = "キャンセル";
+COMMON_SAVE = "保存";
 
 // MARK: TUTORIAL
 TUTORIAL_WELCOME_TITLE = "Svadilfariへようこそ";
@@ -56,6 +57,7 @@ DRAW_PATTERN_FOOTER = "使用するパターンを描いてください";
 // MARK: Preview Pattern
 PREVIEW_PATTERN_TITLE = "パターンの確認";
 PREVIEW_PATTERN_SELECTED_PATTERN = "選択されたパターン";
+PREVIEW_PATTERN_USE = "このパターンを使う";
 
 // MARK: Exclusion List
 EXCLUSION_LIST_TITLE = "除外リスト";
@@ -133,3 +135,15 @@ PATTERN_PRESET_LEFT_UP = "左上";
 PATTERN_PRESET_LEFT_DOWN = "左下";
 PATTERN_PRESET_RIGHT_UP = "右上";
 PATTERN_PRESET_RIGHT_DOWN = "右下";
+
+// MARK: Edit Gesture
+GESTURE_EDIT_ENABLED = "このジェスチャーを有効化";
+GESTURE_EDIT_PATTERN = "パターン";
+GESTURE_EDIT_NEW_PATTERN_SELECT = "新しいパターンを選択";
+GESTURE_EDIT_NEW_PATTERN_NAV_TITLE = "新しいパターン";
+GESTURE_EDIT_ACTION = "アクション";
+GESTURE_EDIT_NEW_ACTION_SELECT = "新しいアクションを選択";
+GESTURE_EDIT_NEW_ACTION_NAV_TITLE = "新しいアクション";
+GESTURE_EDIT_DELETE = "このジェスチャーを削除";
+GESTURE_EDIT_DELETE_CONFIRM_TITLE = "この操作は取り消せません。本当に削除してよろしいですか？";
+GESTURE_EDIT_DELETE_CONFIRM_BUTTON = "ジェスチャーを削除";

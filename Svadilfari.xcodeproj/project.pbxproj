@@ -18,6 +18,8 @@
 		242CD6F126CFD111009DDDB0 /* ExclusionListServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242CD6F026CFD111009DDDB0 /* ExclusionListServiceTest.swift */; };
 		242CD6F226CFD31D009DDDB0 /* ExclusionListService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242CD6ED26CFC6E0009DDDB0 /* ExclusionListService.swift */; };
 		242CD6F526CFD6C1009DDDB0 /* CoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 24FAA2B626B93CAC0083FFAB /* CoreData.xcdatamodeld */; };
+		242EBAF4270FD94600FF3A21 /* Changeable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242EBAF3270FD94600FF3A21 /* Changeable.swift */; };
+		242EBAF6270FD97000FF3A21 /* Gesture+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242EBAF5270FD97000FF3A21 /* Gesture+.swift */; };
 		242F92AD26F3923F002E04E2 /* AppHero.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242F92AC26F3923F002E04E2 /* AppHero.swift */; };
 		24428E1726B33E7600B21130 /* SvadilfariApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24428E1626B33E7600B21130 /* SvadilfariApp.swift */; };
 		24428E1926B33E7600B21130 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24428E1826B33E7600B21130 /* ContentView.swift */; };
@@ -28,14 +30,11 @@
 		24428E4126B33F5400B21130 /* HomeListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24428E4026B33F5400B21130 /* HomeListItem.swift */; };
 		24428E4426B3436A00B21130 /* HomeListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24428E4326B3436A00B21130 /* HomeListView.swift */; };
 		2445C0AF26F2628C003C1EF6 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2445C0B126F2628C003C1EF6 /* Localizable.strings */; };
-		24500EED26C6D81300F7BB7E /* NewGestureDrawerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24500EEC26C6D81300F7BB7E /* NewGestureDrawerView.swift */; };
 		24500EEF26C6D95800F7BB7E /* GridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24500EEE26C6D95800F7BB7E /* GridView.swift */; };
 		24500EF226C6E03500F7BB7E /* NativeHelper.js in Resources */ = {isa = PBXBuildFile; fileRef = 24500EF126C6E03500F7BB7E /* NativeHelper.js */; };
 		245A016126B9A07700EEE8CD /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245A016026B9A07700EEE8CD /* UserDefaults.swift */; };
 		245A016626B9A24600EEE8CD /* NewGestureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245A016526B9A24600EEE8CD /* NewGestureView.swift */; };
 		245A016826B9A29200EEE8CD /* GestureTemplateButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245A016726B9A29200EEE8CD /* GestureTemplateButton.swift */; };
-		245A016B26B9ACD900EEE8CD /* NewGesturePresetsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245A016A26B9ACD900EEE8CD /* NewGesturePresetsView.swift */; };
-		245A016D26B9CCCA00EEE8CD /* NewGesturePatternConfirmView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245A016C26B9CCCA00EEE8CD /* NewGesturePatternConfirmView.swift */; };
 		2485834C26BCC2DE00A8836E /* SheetState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2485834B26BCC2DE00A8836E /* SheetState.swift */; };
 		248623D126F5DD0300A30E1B /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 248623CF26F5DD0300A30E1B /* SnapshotHelper.swift */; };
 		248623D426F5EAC500A30E1B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2445C0B126F2628C003C1EF6 /* Localizable.strings */; };
@@ -52,6 +51,7 @@
 		249477CE26CEBEA600E6FCC5 /* PersistentHistoryFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249477C726CEBA0D00E6FCC5 /* PersistentHistoryFetcher.swift */; };
 		249477CF26CEBEA900E6FCC5 /* PersistentHistoryCleaner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249477C926CEBC4500E6FCC5 /* PersistentHistoryCleaner.swift */; };
 		249477D026CEBEBF00E6FCC5 /* UserDefaults+transactionTimestamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249477BF26CEB71B00E6FCC5 /* UserDefaults+transactionTimestamp.swift */; };
+		24978F35271BA3DF00117689 /* ActionConfigView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24978F34271BA3DF00117689 /* ActionConfigView.swift */; };
 		24A19E2C26B34F9500DA5E20 /* GestureListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A19E2B26B34F9500DA5E20 /* GestureListView.swift */; };
 		24A22F0E26D1404200C60F53 /* NewExclusionEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A22F0D26D1404200C60F53 /* NewExclusionEntryView.swift */; };
 		24A22F1126D1483800C60F53 /* EmptyPlaceholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A22F1026D1483800C60F53 /* EmptyPlaceholder.swift */; };
@@ -59,6 +59,7 @@
 		24A7DBCF26D7ED7600AC3675 /* TutorialStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A7DBCE26D7ED7600AC3675 /* TutorialStep.swift */; };
 		24A7DBD126D7EF7000AC3675 /* TutorialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A7DBD026D7EF7000AC3675 /* TutorialView.swift */; };
 		24A7DBD326D7F16C00AC3675 /* Bundle+icon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A7DBD226D7F16C00AC3675 /* Bundle+icon.swift */; };
+		24AEEEB6270F6915004F9E51 /* EditGestureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AEEEB5270F6915004F9E51 /* EditGestureView.swift */; };
 		24B224A026B5E445009EAB48 /* GestureListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B2249F26B5E445009EAB48 /* GestureListItem.swift */; };
 		24B224A226B5E6B4009EAB48 /* Action+Title.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B224A126B5E6B3009EAB48 /* Action+Title.swift */; };
 		24B224A526B5EB9A009EAB48 /* LineSmoother.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B224A426B5EB9A009EAB48 /* LineSmoother.swift */; };
@@ -77,10 +78,15 @@
 		24C11E6926B4366B00E018B5 /* SvadilfariExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 24C11E5126B4366B00E018B5 /* SvadilfariExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		24D00D2226C2BF0B00F8F1FA /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D00D2126C2BF0B00F8F1FA /* PersistenceController.swift */; };
 		24D759CD26BC80960017498A /* NavigationLinkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D759CC26BC80960017498A /* NavigationLinkView.swift */; };
-		24D759CF26BCB3C20017498A /* NewGestureSelectActionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D759CE26BCB3C20017498A /* NewGestureSelectActionView.swift */; };
 		24E29CFE26B5F576003AF136 /* Pattern+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24E29CFD26B5F576003AF136 /* Pattern+.swift */; };
 		24E29D0026B5F8A3003AF136 /* UIBezierPath+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24E29CFF26B5F8A3003AF136 /* UIBezierPath+.swift */; };
 		24EC0159270A5ABC0023AAE9 /* OpenURLActionConfigView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24EC0158270A5ABC0023AAE9 /* OpenURLActionConfigView.swift */; };
+		24F15F27271B319700156A6C /* Binding+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F15F26271B319700156A6C /* Binding+.swift */; };
+		24F15F2C271B38E200156A6C /* PatternSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F15F2B271B38E200156A6C /* PatternSelectView.swift */; };
+		24F15F2E271B3E2C00156A6C /* PatternSelectPresetsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F15F2D271B3E2C00156A6C /* PatternSelectPresetsView.swift */; };
+		24F15F30271B3EE300156A6C /* PatternSelectConfirmView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F15F2F271B3EE300156A6C /* PatternSelectConfirmView.swift */; };
+		24F15F32271B4D1C00156A6C /* PatternSelectDrawerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F15F31271B4D1C00156A6C /* PatternSelectDrawerView.swift */; };
+		24F15F37271B6D6500156A6C /* ActionSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F15F36271B6D6500156A6C /* ActionSelectView.swift */; };
 		24F3686A26C35B1D0092F583 /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D00D2126C2BF0B00F8F1FA /* PersistenceController.swift */; };
 		24F3686B26C35EA90092F583 /* SharedTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C11E4826B4307100E018B5 /* SharedTypes.swift */; };
 		24F3686C26C362A80092F583 /* GestureEntity+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24FAA2BA26B942540083FFAB /* GestureEntity+.swift */; };
@@ -137,6 +143,8 @@
 		242CD6E826CFB147009DDDB0 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		242CD6ED26CFC6E0009DDDB0 /* ExclusionListService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExclusionListService.swift; sourceTree = "<group>"; };
 		242CD6F026CFD111009DDDB0 /* ExclusionListServiceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExclusionListServiceTest.swift; sourceTree = "<group>"; };
+		242EBAF3270FD94600FF3A21 /* Changeable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Changeable.swift; sourceTree = "<group>"; };
+		242EBAF5270FD97000FF3A21 /* Gesture+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Gesture+.swift"; sourceTree = "<group>"; };
 		242F92AB26F390B3002E04E2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		242F92AC26F3923F002E04E2 /* AppHero.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppHero.swift; sourceTree = "<group>"; };
 		24428E1326B33E7600B21130 /* Svadilfari.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Svadilfari.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -152,14 +160,11 @@
 		24428E4326B3436A00B21130 /* HomeListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeListView.swift; sourceTree = "<group>"; };
 		2445C0B026F2628C003C1EF6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		2445C0B226F2629B003C1EF6 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
-		24500EEC26C6D81300F7BB7E /* NewGestureDrawerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewGestureDrawerView.swift; sourceTree = "<group>"; };
 		24500EEE26C6D95800F7BB7E /* GridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridView.swift; sourceTree = "<group>"; };
 		24500EF126C6E03500F7BB7E /* NativeHelper.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = NativeHelper.js; sourceTree = "<group>"; };
 		245A016026B9A07700EEE8CD /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
 		245A016526B9A24600EEE8CD /* NewGestureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewGestureView.swift; sourceTree = "<group>"; };
 		245A016726B9A29200EEE8CD /* GestureTemplateButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GestureTemplateButton.swift; sourceTree = "<group>"; };
-		245A016A26B9ACD900EEE8CD /* NewGesturePresetsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewGesturePresetsView.swift; sourceTree = "<group>"; };
-		245A016C26B9CCCA00EEE8CD /* NewGesturePatternConfirmView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewGesturePatternConfirmView.swift; sourceTree = "<group>"; };
 		2485834B26BCC2DE00A8836E /* SheetState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetState.swift; sourceTree = "<group>"; };
 		248623CF26F5DD0300A30E1B /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SnapshotHelper.swift; path = SvadilfariUITests/SnapshotHelper.swift; sourceTree = SOURCE_ROOT; };
 		249477BB26CCF6D800E6FCC5 /* ExclusionListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExclusionListView.swift; sourceTree = "<group>"; };
@@ -169,6 +174,7 @@
 		249477C526CEB96E00E6FCC5 /* Logger+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Logger+.swift"; sourceTree = "<group>"; };
 		249477C726CEBA0D00E6FCC5 /* PersistentHistoryFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistentHistoryFetcher.swift; sourceTree = "<group>"; };
 		249477C926CEBC4500E6FCC5 /* PersistentHistoryCleaner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistentHistoryCleaner.swift; sourceTree = "<group>"; };
+		24978F34271BA3DF00117689 /* ActionConfigView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionConfigView.swift; sourceTree = "<group>"; };
 		24A19E2B26B34F9500DA5E20 /* GestureListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GestureListView.swift; sourceTree = "<group>"; };
 		24A22F0D26D1404200C60F53 /* NewExclusionEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewExclusionEntryView.swift; sourceTree = "<group>"; };
 		24A22F1026D1483800C60F53 /* EmptyPlaceholder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyPlaceholder.swift; sourceTree = "<group>"; };
@@ -176,6 +182,7 @@
 		24A7DBCE26D7ED7600AC3675 /* TutorialStep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialStep.swift; sourceTree = "<group>"; };
 		24A7DBD026D7EF7000AC3675 /* TutorialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialView.swift; sourceTree = "<group>"; };
 		24A7DBD226D7F16C00AC3675 /* Bundle+icon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+icon.swift"; sourceTree = "<group>"; };
+		24AEEEB5270F6915004F9E51 /* EditGestureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditGestureView.swift; sourceTree = "<group>"; };
 		24B2249F26B5E445009EAB48 /* GestureListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GestureListItem.swift; sourceTree = "<group>"; };
 		24B224A126B5E6B3009EAB48 /* Action+Title.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Action+Title.swift"; sourceTree = "<group>"; };
 		24B224A426B5EB9A009EAB48 /* LineSmoother.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineSmoother.swift; sourceTree = "<group>"; };
@@ -196,10 +203,15 @@
 		24D00D2126C2BF0B00F8F1FA /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
 		24D00D2326C3580700F8F1FA /* Svadilfari.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Svadilfari.entitlements; sourceTree = "<group>"; };
 		24D759CC26BC80960017498A /* NavigationLinkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationLinkView.swift; sourceTree = "<group>"; };
-		24D759CE26BCB3C20017498A /* NewGestureSelectActionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewGestureSelectActionView.swift; sourceTree = "<group>"; };
 		24E29CFD26B5F576003AF136 /* Pattern+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Pattern+.swift"; sourceTree = "<group>"; };
 		24E29CFF26B5F8A3003AF136 /* UIBezierPath+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIBezierPath+.swift"; sourceTree = "<group>"; };
 		24EC0158270A5ABC0023AAE9 /* OpenURLActionConfigView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenURLActionConfigView.swift; sourceTree = "<group>"; };
+		24F15F26271B319700156A6C /* Binding+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Binding+.swift"; sourceTree = "<group>"; };
+		24F15F2B271B38E200156A6C /* PatternSelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatternSelectView.swift; sourceTree = "<group>"; };
+		24F15F2D271B3E2C00156A6C /* PatternSelectPresetsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatternSelectPresetsView.swift; sourceTree = "<group>"; };
+		24F15F2F271B3EE300156A6C /* PatternSelectConfirmView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatternSelectConfirmView.swift; sourceTree = "<group>"; };
+		24F15F31271B4D1C00156A6C /* PatternSelectDrawerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatternSelectDrawerView.swift; sourceTree = "<group>"; };
+		24F15F36271B6D6500156A6C /* ActionSelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionSelectView.swift; sourceTree = "<group>"; };
 		24F3686826C359F00092F583 /* SvadilfariExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SvadilfariExtension.entitlements; sourceTree = "<group>"; };
 		24F3686D26C365650092F583 /* URL+storeURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+storeURL.swift"; sourceTree = "<group>"; };
 		24FAA2B726B93CAC0083FFAB /* Gesture.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Gesture.xcdatamodel; sourceTree = "<group>"; };
@@ -243,8 +255,6 @@
 			isa = PBXGroup;
 			children = (
 				241D8FBF26BC7BDC00CBB381 /* SelectActionView.swift */,
-				241D8FC126BC7E1600CBB381 /* RunJavascriptActionConfigView.swift */,
-				24EC0158270A5ABC0023AAE9 /* OpenURLActionConfigView.swift */,
 			);
 			path = "Select Action";
 			sourceTree = "<group>";
@@ -343,6 +353,8 @@
 		24428E3F26B33F3D00B21130 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				24F15F35271B6C4500156A6C /* Select Action */,
+				24F15F28271B389800156A6C /* Select Pattern */,
 				24428E4026B33F5400B21130 /* HomeListItem.swift */,
 				24B2249F26B5E445009EAB48 /* GestureListItem.swift */,
 				24B224A626B5EDE0009EAB48 /* PatternPreview.swift */,
@@ -359,6 +371,7 @@
 		24428E4226B3435700B21130 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				24AEEEB4270F6907004F9E51 /* Edit Gesture */,
 				241D8FBA26BC7B5700CBB381 /* Select Action */,
 				245A016926B9ACBE00EEE8CD /* New Gesture */,
 				24A22F0C26D1402F00C60F53 /* New Exclusion Entry */,
@@ -383,10 +396,6 @@
 			isa = PBXGroup;
 			children = (
 				245A016526B9A24600EEE8CD /* NewGestureView.swift */,
-				245A016A26B9ACD900EEE8CD /* NewGesturePresetsView.swift */,
-				24500EEC26C6D81300F7BB7E /* NewGestureDrawerView.swift */,
-				245A016C26B9CCCA00EEE8CD /* NewGesturePatternConfirmView.swift */,
-				24D759CE26BCB3C20017498A /* NewGestureSelectActionView.swift */,
 			);
 			path = "New Gesture";
 			sourceTree = "<group>";
@@ -428,6 +437,14 @@
 			path = Modifiers;
 			sourceTree = "<group>";
 		};
+		24AEEEB4270F6907004F9E51 /* Edit Gesture */ = {
+			isa = PBXGroup;
+			children = (
+				24AEEEB5270F6915004F9E51 /* EditGestureView.swift */,
+			);
+			path = "Edit Gesture";
+			sourceTree = "<group>";
+		};
 		24B224A326B5EB71009EAB48 /* Misc */ = {
 			isa = PBXGroup;
 			children = (
@@ -443,12 +460,15 @@
 				249477C426CEB95B00E6FCC5 /* System */,
 				24FAA2B926B942420083FFAB /* Core Data */,
 				24B224A126B5E6B3009EAB48 /* Action+Title.swift */,
+				241D8FB826BC1F2200CBB381 /* Action+.swift */,
 				24B224A926B5EEFB009EAB48 /* Vector+.swift */,
 				24E29CFD26B5F576003AF136 /* Pattern+.swift */,
 				24E29CFF26B5F8A3003AF136 /* UIBezierPath+.swift */,
-				241D8FB826BC1F2200CBB381 /* Action+.swift */,
 				24F3686D26C365650092F583 /* URL+storeURL.swift */,
 				24A7DBD226D7F16C00AC3675 /* Bundle+icon.swift */,
+				242EBAF3270FD94600FF3A21 /* Changeable.swift */,
+				242EBAF5270FD97000FF3A21 /* Gesture+.swift */,
+				24F15F26271B319700156A6C /* Binding+.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -477,6 +497,28 @@
 				24C11E6426B4366B00E018B5 /* popup.js */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		24F15F28271B389800156A6C /* Select Pattern */ = {
+			isa = PBXGroup;
+			children = (
+				24F15F2B271B38E200156A6C /* PatternSelectView.swift */,
+				24F15F2D271B3E2C00156A6C /* PatternSelectPresetsView.swift */,
+				24F15F31271B4D1C00156A6C /* PatternSelectDrawerView.swift */,
+				24F15F2F271B3EE300156A6C /* PatternSelectConfirmView.swift */,
+			);
+			path = "Select Pattern";
+			sourceTree = "<group>";
+		};
+		24F15F35271B6C4500156A6C /* Select Action */ = {
+			isa = PBXGroup;
+			children = (
+				24F15F36271B6D6500156A6C /* ActionSelectView.swift */,
+				24978F34271BA3DF00117689 /* ActionConfigView.swift */,
+				241D8FC126BC7E1600CBB381 /* RunJavascriptActionConfigView.swift */,
+				24EC0158270A5ABC0023AAE9 /* OpenURLActionConfigView.swift */,
+			);
+			path = "Select Action";
 			sourceTree = "<group>";
 		};
 		24FAA2B926B942420083FFAB /* Core Data */ = {
@@ -720,23 +762,26 @@
 			buildActionMask = 2147483647;
 			files = (
 				24C11E4926B4307100E018B5 /* SharedTypes.swift in Sources */,
+				24F15F2C271B38E200156A6C /* PatternSelectView.swift in Sources */,
 				24A22F0E26D1404200C60F53 /* NewExclusionEntryView.swift in Sources */,
 				24428E1926B33E7600B21130 /* ContentView.swift in Sources */,
 				24E29CFE26B5F576003AF136 /* Pattern+.swift in Sources */,
 				24A22F1126D1483800C60F53 /* EmptyPlaceholder.swift in Sources */,
+				242EBAF4270FD94600FF3A21 /* Changeable.swift in Sources */,
 				24A7DBCD26D7ECB000AC3675 /* TutorialStepList.swift in Sources */,
 				24F3686E26C365650092F583 /* URL+storeURL.swift in Sources */,
 				242F92AD26F3923F002E04E2 /* AppHero.swift in Sources */,
-				245A016B26B9ACD900EEE8CD /* NewGesturePresetsView.swift in Sources */,
-				24D759CF26BCB3C20017498A /* NewGestureSelectActionView.swift in Sources */,
 				24B224A526B5EB9A009EAB48 /* LineSmoother.swift in Sources */,
 				24D00D2226C2BF0B00F8F1FA /* PersistenceController.swift in Sources */,
 				249477C026CEB71B00E6FCC5 /* UserDefaults+transactionTimestamp.swift in Sources */,
 				24FAA2B826B93CAC0083FFAB /* CoreData.xcdatamodeld in Sources */,
 				249477BC26CCF6D800E6FCC5 /* ExclusionListView.swift in Sources */,
+				24F15F32271B4D1C00156A6C /* PatternSelectDrawerView.swift in Sources */,
 				24A7DBD326D7F16C00AC3675 /* Bundle+icon.swift in Sources */,
 				24500EEF26C6D95800F7BB7E /* GridView.swift in Sources */,
 				24B224A226B5E6B4009EAB48 /* Action+Title.swift in Sources */,
+				24AEEEB6270F6915004F9E51 /* EditGestureView.swift in Sources */,
+				24F15F37271B6D6500156A6C /* ActionSelectView.swift in Sources */,
 				249477C626CEB96E00E6FCC5 /* Logger+.swift in Sources */,
 				242CD6E926CFB147009DDDB0 /* Constants.swift in Sources */,
 				24FAA2BB26B942540083FFAB /* GestureEntity+.swift in Sources */,
@@ -748,9 +793,12 @@
 				24B224AA26B5EEFC009EAB48 /* Vector+.swift in Sources */,
 				2485834C26BCC2DE00A8836E /* SheetState.swift in Sources */,
 				241D8FC226BC7E1600CBB381 /* RunJavascriptActionConfigView.swift in Sources */,
+				24F15F30271B3EE300156A6C /* PatternSelectConfirmView.swift in Sources */,
 				245A016826B9A29200EEE8CD /* GestureTemplateButton.swift in Sources */,
 				245A016626B9A24600EEE8CD /* NewGestureView.swift in Sources */,
+				24978F35271BA3DF00117689 /* ActionConfigView.swift in Sources */,
 				24FAA2BD26B943330083FFAB /* Error.swift in Sources */,
+				24F15F27271B319700156A6C /* Binding+.swift in Sources */,
 				24428E4426B3436A00B21130 /* HomeListView.swift in Sources */,
 				24A7DBCF26D7ED7600AC3675 /* TutorialStep.swift in Sources */,
 				24A7DBD126D7EF7000AC3675 /* TutorialView.swift in Sources */,
@@ -759,11 +807,11 @@
 				249477C826CEBA0D00E6FCC5 /* PersistentHistoryFetcher.swift in Sources */,
 				249477BE26CEB38700E6FCC5 /* PersistentHistoryTracking.swift in Sources */,
 				24428E1726B33E7600B21130 /* SvadilfariApp.swift in Sources */,
-				24500EED26C6D81300F7BB7E /* NewGestureDrawerView.swift in Sources */,
+				24F15F2E271B3E2C00156A6C /* PatternSelectPresetsView.swift in Sources */,
 				24EC0159270A5ABC0023AAE9 /* OpenURLActionConfigView.swift in Sources */,
 				245A016126B9A07700EEE8CD /* UserDefaults.swift in Sources */,
 				24B224A026B5E445009EAB48 /* GestureListItem.swift in Sources */,
-				245A016D26B9CCCA00EEE8CD /* NewGesturePatternConfirmView.swift in Sources */,
+				242EBAF6270FD97000FF3A21 /* Gesture+.swift in Sources */,
 				24D759CD26BC80960017498A /* NavigationLinkView.swift in Sources */,
 				24428E4126B33F5400B21130 /* HomeListItem.swift in Sources */,
 				24A19E2C26B34F9500DA5E20 /* GestureListView.swift in Sources */,

@@ -9,15 +9,16 @@ import SwiftUI
 
 struct GestureListItem: View {
     var gesture: Gesture
-    var onChangeEnabled: (Bool) -> Void
     var body: some View {
         HStack(alignment: .center) {
             GeometryReader { proxy in
-                PatternPreview(frame: proxy.frame(in: .local), pattern: self.gesture.pattern)
+                PatternPreview(
+                    frame: proxy.frame(in: .local),
+                    pattern: self.gesture.pattern,
+                    color: self.gesture.enabled ? UIColor.systemBlue : UIColor.systemGray
+                )
             }.frame(width: 44, height: 44).fixedSize()
             Text(self.gesture.action.title)
-            Spacer()
-            Toggle("", isOn: Binding(get: { self.gesture.enabled }, set: { self.onChangeEnabled($0) })).labelsHidden()
         }
     }
 }
@@ -33,12 +34,8 @@ struct GestureListItem_Previews: PreviewProvider {
         let pattern2 = Pattern(data: [Vector(x: 0.0, y: 100.0), Vector(x: -100.0, y: 0.0)])
         let gesture2 = Gesture(action: action2, enabled: true, id: "gesture2", pattern: pattern2)
         List {
-            GestureListItem(gesture: gesture1, onChangeEnabled: { enabled in
-                print(enabled)
-            })
-            GestureListItem(gesture: gesture2, onChangeEnabled: { enabled in
-                print(enabled)
-            })
+            GestureListItem(gesture: gesture1)
+            GestureListItem(gesture: gesture2)
         }.preferredColorScheme(.light)
     }
 }

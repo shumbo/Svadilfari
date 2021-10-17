@@ -60,4 +60,18 @@ extension Action {
         }
         return "ACTION_TITLE_UNKNOWN"
     }
+
+    var shortTitle: LocalizedStringKey {
+        if let a = self.openURL {
+            if a.title != "" {
+                return LocalizedStringKey(a.title)
+            }
+        }
+        if let a = self.javascriptRun, let b = a.javascriptRunDescription {
+            if b != "" {
+                return LocalizedStringKey(b)
+            }
+        }
+        return self.title
+    }
 }

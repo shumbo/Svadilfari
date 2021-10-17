@@ -8,22 +8,8 @@
 import Foundation
 
 extension Action {
-    var label: String {
-        if self.reload != nil {
-            return "Reload"
-        }
-        if self.tabClose != nil {
-            return "Close Tab"
-        }
-        if self.tabNext != nil {
-            return "Next Tab"
-        }
-        if self.tabPrevious != nil {
-            return "Previous Tab"
-        }
-        if self.javascriptRun != nil {
-            return "Run JavaScript"
-        }
-        return "Unknown Action"
+    /// true if the action has additional configurations
+    public var hasAdditionalConfig: Bool {
+        return self.openURL != nil || self.javascriptRun != nil
     }
 }

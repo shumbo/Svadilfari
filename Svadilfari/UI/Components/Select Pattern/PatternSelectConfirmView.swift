@@ -1,15 +1,16 @@
 //
-//  NewGesturePatternConfirm.swift
-//  NewGesturePatternConfirm
+//  PatternSelectConfirmView.swift
+//  Svadilfari
 //
-//  Created by Shun Kashiwa on 2021/08/04.
+//  Created by Shun Kashiwa on 2021/10/16.
 //
 
 import SwiftUI
 
-struct NewGesturePatternConfirmView: View {
+struct PatternSelectConfirmView<Content: View>: View {
     var pattern: Pattern
-    @State private var showingNextView = false
+    var onSelect: (Pattern) -> Void
+    var content: () -> Content
 
     var body: some View {
         ZStack {
@@ -29,34 +30,31 @@ struct NewGesturePatternConfirmView: View {
                 }
                 Button(
                     action: {
-                        showingNextView = true
+                        self.onSelect(pattern)
                     },
                     label: {
-                        Text("COMMON_CONTINUE").bold().frame(maxWidth: .infinity)
+                        Text("PREVIEW_PATTERN_USE").bold().frame(maxWidth: .infinity)
                     }
                 ).buttonBorderShape(.roundedRectangle)
                     .controlSize(.large)
                     .buttonStyle(.borderedProminent)
                     .listRowInsets(EdgeInsets())
             }
-            // Navigation
-            NavigationLink(
-                isActive: self.$showingNextView,
-                destination: { NewGestureSelectActionView(pattern: pattern) },
-                label: { EmptyView() }
-            )
+            content()
         }.navigationTitle("PREVIEW_PATTERN_TITLE")
     }
 }
 
-struct NewGesturePatternConfirmView_Previews: PreviewProvider {
+struct PatternSelectConfirmView_Previews: PreviewProvider {
     static var previews: some View {
-        NavigationView {
-            NewGesturePatternConfirmView(
-                pattern: Pattern(
-                    data: [Vector(x: 100.0, y: 0.0), Vector(x: 0.0, y: 100.0)]
-                )
-            )
-        }
+        PatternSelectConfirmView(
+            pattern: Pattern(
+                data: [Vector(x: 100.0, y: 0.0), Vector(x: 0.0, y: 100.0)]
+            ),
+            onSelect: { _ in
+                // noop
+            },
+            content: { EmptyView() }
+        )
     }
 }

@@ -1,14 +1,17 @@
 //
-//  NewGestureDrawerView.swift
-//  NewGestureDrawerView
+//  PatternSelectDrawerView.swift
+//  Svadilfari
 //
-//  Created by Shun Kashiwa on 2021/08/14.
+//  Created by Shun Kashiwa on 2021/10/16.
 //
 
 import SwiftUI
 import JavaScriptCore
 
-struct NewGestureDrawerView: View {
+struct PatternSelectDrawerView<Content: View>: View {
+    var onSelect: (Pattern) -> Void
+    let content: () -> Content
+
     @State private var line: [CGPoint] = []
     @State private var nextPageVisible = false
     @State private var pattern: Pattern?
@@ -54,9 +57,8 @@ struct NewGestureDrawerView: View {
                 self.line = []
             }
         }.background(NavigationLink(isActive: $nextPageVisible, destination: {
-            // TODO: Is this legal? Shouldn't I be using Binding?
             if let pattern = pattern {
-                NewGesturePatternConfirmView(pattern: pattern)
+                PatternSelectConfirmView(pattern: pattern, onSelect: self.onSelect, content: self.content)
             } else {
                 EmptyView()
             }
@@ -64,8 +66,14 @@ struct NewGestureDrawerView: View {
     }
 }
 
-struct NewGestureDrawerView_Previews: PreviewProvider {
+struct PatternSelectDrawerView_Previews: PreviewProvider {
     static var previews: some View {
-        NewGestureDrawerView()
+        NavigationView {
+            PatternSelectDrawerView(onSelect: { _ in
+                // noop
+            }) {
+                EmptyView()
+            }
+        }
     }
 }

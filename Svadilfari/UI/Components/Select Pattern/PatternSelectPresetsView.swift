@@ -1,17 +1,26 @@
 //
-//  NewGesturePresetsView.swift
-//  NewGesturePresetsView
+//  PatternSelectPresetsView.swift
+//  Svadilfari
 //
-//  Created by Shun Kashiwa on 2021/08/04.
+//  Created by Shun Kashiwa on 2021/10/16.
 //
 
 import SwiftUI
 
-struct NewGesturePresetsView: View {
+struct PatternSelectPresetsView<Content: View>: View {
+    var onSelect: (Pattern) -> Void
+    let content: () -> Content
+
     var body: some View {
         List {
             ForEach(presets) { preset in
-                NavigationLink(destination: NewGesturePatternConfirmView(pattern: preset.pattern)) {
+                NavigationLink(
+                    destination: PatternSelectConfirmView(
+                        pattern: preset.pattern,
+                        onSelect: self.onSelect,
+                        content: self.content
+                    )
+                ) {
                     HStack {
                         GeometryReader { proxy in
                             PatternPreview(frame: proxy.frame(in: .local), pattern: preset.pattern)
@@ -24,10 +33,14 @@ struct NewGesturePresetsView: View {
     }
 }
 
-struct NewGesturePresetsView_Previews: PreviewProvider {
+struct PatternSelectPresetsView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            NewGesturePresetsView()
+            PatternSelectPresetsView(onSelect: { _ in
+                // noop
+            }) {
+                EmptyView()
+            }
         }
     }
 }
@@ -38,6 +51,7 @@ private struct Preset: Identifiable {
     let pattern: Pattern
 }
 
+// TODO: Replace those with Vector's static fields
 private let UP = Vector(x: 0.0, y: -100.0)
 private let LEFT = Vector(x: -100.0, y: 0.0)
 private let RIGHT = Vector(x: 100.0, y: 0.0)

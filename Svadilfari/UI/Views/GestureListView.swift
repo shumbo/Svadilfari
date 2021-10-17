@@ -20,19 +20,20 @@ struct GestureListView: View {
         predicate: nil,
         animation: .default
     )
-    private var gestures: FetchedResults<GestureEntity>
+    private var gestureEntities: FetchedResults<GestureEntity>
 
     var body: some View {
         List {
-            ForEach(gestures) { (g: GestureEntity) in
-                if let gesture = g.gesture {
-                    GestureListItem(gesture: gesture, onChangeEnabled: {_ in
-                        toggleGestureEnabled(g: g)
+            ForEach(self.gestureEntities) { entity in
+                if let gesture = entity.gesture {
+                    NavigationLink(destination: {
+                        EditGestureView(gestureEntity: entity)
+                    }, label: {
+                        GestureListItem(gesture: gesture)
                     })
                 }
             }.onDelete(perform: self.removeGesture)
-        }
-            .navigationBarHidden(false)
+        }.navigationBarHidden(false)
             .navigationBarTitle("GESTURE_LIST_TITLE")
             .navigationBarItems(trailing: Button(action: {
                 self.newGestureState.presented = true
@@ -42,30 +43,12 @@ struct GestureListView: View {
                 get: { self.newGestureState.presented },
                 set: { self.newGestureState.presented = $0 }
             )) {
-                NavigationView {
-                    NewGestureView()
-                }.environmentObject(self.newGestureState)
+                NewGestureView()
             }
-    }
-
-    func toggleGestureEnabled(g: GestureEntity) {
-        guard let gesture = g.gesture else {
-            return
-        }
-        let newGesture = Gesture(
-            action: gesture.action,
-            enabled: !gesture.enabled,
-            id: gesture.id,
-            pattern: gesture.pattern
-        )
-        self.viewContext.performAndWait {
-            g.gesture = newGesture
-            try? self.viewContext.save()
-        }
     }
     func removeGesture(offsets: IndexSet) {
         withAnimation {
-            offsets.map { self.gestures[$0] }.forEach(self.viewContext.delete)
+            offsets.map { self.gestureEntities[$0] }.forEach(self.viewContext.delete)
             try? self.viewContext.save()
         }
     }
