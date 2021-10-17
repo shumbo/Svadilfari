@@ -1,0 +1,12 @@
+name = "go"
+type = "javascript"
+zone_id = 'd8923c9eacc2736daa626ca8b5e47553'
+account_id = ""
+route = ""
+workers_dev = true
+compatibility_date = "2021-10-17"
+
+[build]
+command = "pnpm install && pnpm run build"
+[build.upload]
+format = "service-worker"
