@@ -9,6 +9,7 @@
 // MARK: COMMON
 COMMON_CONTINUE = "Continue";
 COMMON_CANCEL = "Cancel";
+COMMON_SAVE = "Save";
 
 // MARK: TUTORIAL
 TUTORIAL_WELCOME_TITLE = "Welcome to Svadilfari";
@@ -56,6 +57,7 @@ DRAW_PATTERN_FOOTER = "Draw the pattern you want to use";
 // MARK: Preview Pattern
 PREVIEW_PATTERN_TITLE = "Preview Pattern";
 PREVIEW_PATTERN_SELECTED_PATTERN = "Selected Pattern";
+PREVIEW_PATTERN_USE = "Use This Pattern";
 
 // MARK: Exclusion List
 EXCLUSION_LIST_TITLE = "Exclusion List";
@@ -133,3 +135,15 @@ PATTERN_PRESET_LEFT_UP = "Left Up";
 PATTERN_PRESET_LEFT_DOWN = "Left Down";
 PATTERN_PRESET_RIGHT_UP = "Right Up";
 PATTERN_PRESET_RIGHT_DOWN = "Right Down";
+
+// MARK: Edit Gesture
+GESTURE_EDIT_ENABLED = "Enable This Gesture";
+GESTURE_EDIT_PATTERN = "Pattern";
+GESTURE_EDIT_NEW_PATTERN_SELECT = "Select New Pattern";
+GESTURE_EDIT_NEW_PATTERN_NAV_TITLE = "New Pattern";
+GESTURE_EDIT_ACTION = "Action";
+GESTURE_EDIT_NEW_ACTION_SELECT = "Select New Action";
+GESTURE_EDIT_NEW_ACTION_NAV_TITLE = "New Action";
+GESTURE_EDIT_DELETE = "Delete This Gesture";
+GESTURE_EDIT_DELETE_CONFIRM_TITLE = "Are you sure you want to delete this gesture? This cannot be undone.";
+GESTURE_EDIT_DELETE_CONFIRM_BUTTON = "Delete Gesture";

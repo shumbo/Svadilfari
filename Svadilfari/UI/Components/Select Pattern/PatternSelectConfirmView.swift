@@ -33,7 +33,7 @@ struct PatternSelectConfirmView<Content: View>: View {
                         self.onSelect(pattern)
                     },
                     label: {
-                        Text("COMMON_CONTINUE").bold().frame(maxWidth: .infinity)
+                        Text("PREVIEW_PATTERN_USE").bold().frame(maxWidth: .infinity)
                     }
                 ).buttonBorderShape(.roundedRectangle)
                     .controlSize(.large)

@@ -35,7 +35,7 @@ struct EditGestureView: View {
         if let gesture = self.gestureEntity.gesture {
             Form {
                 Section {
-                    Toggle("Enabled", isOn: $enabled.onChange {
+                    Toggle("GESTURE_EDIT_ENABLED", isOn: $enabled.onChange {
                         self.updateGestureEntity(
                             g: self.gestureEntity,
                             updatedGesture: gesture.change(
@@ -47,7 +47,7 @@ struct EditGestureView: View {
                         self.enabled = gesture.enabled
                     }
                 }
-                Section("Pattern") {
+                Section(header: Text("GESTURE_EDIT_PATTERN")) {
                     HStack {
                         Spacer()
                         GeometryReader { proxy in
@@ -60,7 +60,7 @@ struct EditGestureView: View {
                         .clipped()
                         Spacer()
                     }
-                    Button("Select a New Pattern") {
+                    Button("GESTURE_EDIT_NEW_PATTERN_SELECT") {
                         self.patternSelectorVisible = true
                     }.sheet(isPresented: $patternSelectorVisible, onDismiss: { patternSelectorVisible = false }) {
                         NavigationView {
@@ -75,11 +75,11 @@ struct EditGestureView: View {
                                 )
                                 self.patternSelectorVisible = false
                             })
-                            .navigationTitle("New Pattern")
+                            .navigationTitle("GESTURE_EDIT_NEW_PATTERN_NAV_TITLE")
                         }
                     }
                 }
-                Section("Action") {
+                Section(header: Text("GESTURE_EDIT_ACTION")) {
                     if gesture.action.hasAdditionalConfig {
                         NavigationLinkView {
                             Text(gesture.action.title)
@@ -111,7 +111,7 @@ struct EditGestureView: View {
                     } else {
                         Text(gesture.action.title)
                     }
-                    Button("Select a New Action") {
+                    Button("GESTURE_EDIT_NEW_ACTION_SELECT") {
                         self.actionSelectorVisible = true
                     }.sheet(
                         isPresented: $actionSelectorVisible,
@@ -126,7 +126,7 @@ struct EditGestureView: View {
                                     )
                                 )
                                 self.actionSelectorVisible = false
-                            }).navigationTitle("New Action")
+                            }).navigationTitle("GESTURE_EDIT_NEW_ACTION_NAV_TITLE")
                                 .toolbar {
                                     ToolbarItem(placement: .navigationBarLeading) {
                                         Button("COMMON_CANCEL") {
@@ -140,14 +140,13 @@ struct EditGestureView: View {
                     }
                 }
                 Section {
-                    Button("Delete Gesture") {
+                    Button("GESTURE_EDIT_DELETE") {
                         self.confirmationVisible = true
                     }.foregroundColor(.red).confirmationDialog(
-                        "Are you sure you want to delete this gesture? This cannot be undone.",
-                        isPresented: $confirmationVisible,
-                        titleVisibility: .visible
+                        "GESTURE_EDIT_DELETE_CONFIRM_TITLE",
+                        isPresented: $confirmationVisible
                     ) {
-                        Button("Delete this gesture", role: .destructive) {
+                        Button("GESTURE_EDIT_DELETE_CONFIRM_BUTTON", role: .destructive) {
                             self.viewContext.delete(self.gestureEntity)
                             dismiss()
                         }

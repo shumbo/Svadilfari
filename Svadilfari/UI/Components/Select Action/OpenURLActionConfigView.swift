@@ -41,7 +41,9 @@ struct OpenURLActionConfigView: View {
                     onSelect(action)
                 },
                 label: {
-                    Text("COMMON_CONTINUE").bold().frame(maxWidth: .infinity)
+                    Text(self.openURL == nil ? "COMMON_CONTINUE" : "COMMON_SAVE")
+                        .bold()
+                        .frame(maxWidth: .infinity)
                 }
             ).buttonBorderShape(.roundedRectangle)
                 .controlSize(.large)

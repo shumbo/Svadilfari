@@ -42,7 +42,9 @@ struct RunJavascriptActionConfigView: View {
                     onSelect(action)
                 },
                 label: {
-                    Text("COMMON_CONTINUE").bold().frame(maxWidth: .infinity)
+                    Text(self.javascriptRun == nil ? "COMMON_CONTINUE" : "COMMON_SAVE")
+                        .bold()
+                        .frame(maxWidth: .infinity)
                 }
             ).buttonBorderShape(.roundedRectangle)
                 .controlSize(.large)
