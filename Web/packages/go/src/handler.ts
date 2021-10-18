@@ -16,6 +16,10 @@ export async function handleRequest(request: Request): Promise<Response> {
     ['privacy-policy', website(acceptLanguageValue, '/privacy-policy')],
     ['faq', website(acceptLanguageValue, '/docs/faq')],
     ['contact', website(acceptLanguageValue, '/contact')],
+    [
+      'exclusion-list',
+      website(acceptLanguageValue, '/docs/guide/exclusion-list'),
+    ],
     ['checker', 'https://check.svadilfari.app'],
   ])
   const pathname = new URL(request.url).pathname.replace('/', '')
