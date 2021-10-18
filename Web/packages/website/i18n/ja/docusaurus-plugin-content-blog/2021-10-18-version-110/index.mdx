@@ -1,0 +1,70 @@
+---
+slug: version-110
+title: Svadilfari v1.1.0 をリリースしました
+authors: shun
+tags: [Release Notes]
+---
+
+Svadilfari v1.1.0 が App Store からダウンロードできるようになりました。初期リリースからはじめてのアップデートとなる今回は、いくつかの新機能を実装しました！
+
+## 新機能
+
+### 新しいアクション
+
+特にご要望の多かった以下 3 つのアクションが、アプリ内で利用できるようになりました。
+
+1. 前のページに戻る
+1. 次のページに進む
+1. URL を開く
+
+import newActions from "./new-actions.png";
+
+<div style={{ textAlign: "center" }}>
+  <img style={{ maxWidth: "300px" }} src={newActions} />
+</div>
+
+ページの前後は iPad など画面の大きな端末で、画面端からのスワイプが大変な場合に役立つと思います。「URL を開く」を使うと、お気に入りのサイトを素早く開くことができます。
+
+### ジェスチャーの編集
+
+遂に作成したジェスチャーが編集できるようになりました 🎉 編集したいジェスチャーをタップすることで、パターン、アクションを編集することができます。
+
+import editGesture from "./edit-gesture.png";
+
+<div style={{ textAlign: "center" }}>
+  <img style={{ maxWidth: "300px" }} src={editGesture} />
+</div>
+
+### ジェスチャー感度
+
+新しく「ジェスチャー感度」を設定項目に追加しました。
+
+<div style={{ textAlign: "center" }}>
+  <img
+    style={{ maxWidth: "300px" }}
+    src={require("./gesture-sensitivity.png").default}
+  />
+</div>
+
+ジェスチャーは認識されづらい場合は、感度を高めてみてください。
+
+### ポップアップメニューのダークモード対応
+
+<div style={{ textAlign: "center" }}>
+  <img
+    style={{ maxWidth: "300px" }}
+    src={require("./popup-dark-mode.png").default}
+  />
+</div>
+
+システムでダークモードを利用している場合に、ポップアップもダークモードで表示されるようにしました。
+
+## その他の改善
+
+- ピンチ操作の際の誤検出を防止するため、画面上の 2 本以上の指がある場合、ジェスチャーを認識しないようになりました。
+
+## フィードバックをお願いします
+
+今回実装させていただいた機能の多くは、ユーザー様のリクエストによるものです。何かご意見ございましたら、お気軽に[お問い合わせフォーム]](/contact)からフィードバックをお寄せください。
+
+まだまだ実装できていない機能も多いですが、引き続き改善に務めさせていただきますので、よろしくお願い申し上げます。

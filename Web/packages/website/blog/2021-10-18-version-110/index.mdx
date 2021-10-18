@@ -1,0 +1,68 @@
+---
+slug: version-110
+title: Announcing Svadilfari v1.1.0
+authors: shun
+tags: [Release Notes]
+---
+
+Svadilfari v1.1.0 is now available on the App Store. This version is the first update after the initial release and comes with several new features!
+
+## New Features
+
+### New Actions
+
+As requested by many users, the following three new actions are now available.
+
+1. Go Forward
+1. Go Backward
+1. Open URL
+
+import newActions from "./new-actions.png";
+
+<div style={{ textAlign: "center" }}>
+  <img style={{ maxWidth: "300px" }} src={newActions} />
+</div>
+
+"Go Forward" and "Go Backward" are useful when using larger screens, and you can use "Open URL" to quickly open your favorite sites.
+
+### Edit Gestures
+
+You can now edit gestures! Simply tap the gesture and you can change the pattern, action and additional configuration if any.
+
+import editGesture from "./edit-gesture.png";
+
+<div style={{ textAlign: "center" }}>
+  <img style={{ maxWidth: "300px" }} src={editGesture} />
+</div>
+
+### Gesture Sensitivity
+
+A new "Gesture Sensitivity" setting has been added.
+
+<div style={{ textAlign: "center" }}>
+  <img
+    style={{ maxWidth: "300px" }}
+    src={require("./gesture-sensitivity.png").default}
+  />
+</div>
+
+If the gesture is difficult to fire, try increasing the sensitivity.
+
+### Dark Mode in Popup Menu
+
+<div style={{ textAlign: "center" }}>
+  <img
+    style={{ maxWidth: "300px" }}
+    src={require("./popup-dark-mode.png").default}
+  />
+</div>
+
+When using dark mode in the system, pop-ups will now also be displayed in dark mode.
+
+## Other Improvements
+
+- Gestures are no longer recognized when there are more than two fingers on the screen.
+
+## Send me feedback!
+
+Many of the features implemented this time are in response to user requests. Feel free to send me feedback through the [contact form](/contact).
