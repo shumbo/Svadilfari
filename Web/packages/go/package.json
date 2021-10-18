@@ -35,5 +35,8 @@
     "typescript": "^4.3.2",
     "webpack": "^5.38.1",
     "webpack-cli": "^4.7.0"
+  },
+  "dependencies": {
+    "accept-language": "^3.0.18"
   }
 }

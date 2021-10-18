@@ -25,7 +25,7 @@ struct SettingsView: View {
                     minimumValueLabel: Text("SETTINGS_GESTURE_SENSITIVITY_LOW"),
                     maximumValueLabel: Text("SETTINGS_GESTURE_SENSITIVITY_HIGH"),
                     label: {
-                    Text("SETTINGS_GESTURE_SENSITIVITY_HEADER")
+                        Text("SETTINGS_GESTURE_SENSITIVITY_HEADER")
                     }
                 ).onAppear {
                     self.sensitivity = UserDefaults.shared.double(
@@ -34,9 +34,9 @@ struct SettingsView: View {
                 }
             }
             Section(header: Text("SETTINGS_LINKS_HEADER")) {
-                Link("SETTINGS_LINKS_ABOUT_APP", destination: URL(string: "https://www.svadilfari.app")!)
-                Link("SETTINGS_LINKS_FAQ", destination: URL(string: "https://www.svadilfari.app")!)
-                Link("SETTINGS_LINKS_CONTACT", destination: URL(string: "https://www.svadilfari.app")!)
+                Link("SETTINGS_LINKS_ABOUT_APP", destination: URL(string: "https://go.svadilfari.app/about")!)
+                Link("SETTINGS_LINKS_FAQ", destination: URL(string: "https://go.svadilfari.app/faq")!)
+                Link("SETTINGS_LINKS_CONTACT", destination: URL(string: "https://go.svadilfari.app/contact")!)
             }
         }.navigationTitle("SETTINGS_TITLE")
     }
