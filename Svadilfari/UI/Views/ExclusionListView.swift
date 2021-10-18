@@ -40,7 +40,7 @@ struct ExclusionListView: View {
                     .padding(.bottom, 16)
                 Link(
                     "EXCLUSION_LIST_READ_MORE",
-                    destination: URL(string: "https://rebrand.ly/svadilfari-guide-exclusion-list")!
+                    destination: URL(string: "https://go.svadilfari.app/exclusion-list")!
                 )
                 Spacer()
             }
