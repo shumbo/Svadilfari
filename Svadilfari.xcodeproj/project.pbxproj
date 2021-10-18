@@ -1177,7 +1177,7 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = SvadilfariExtension/SvadilfariExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = TKVMG44U5W;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SvadilfariExtension/Info.plist;
@@ -1204,7 +1204,7 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = SvadilfariExtension/SvadilfariExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = TKVMG44U5W;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SvadilfariExtension/Info.plist;
