@@ -1,5 +1,6 @@
 title: Gesture
 type: object
+description: Gesture represents a configuration of the gesture, which is a pair of a pattern and action, plus some additional information
 properties:
   id:
     type: string

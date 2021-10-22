@@ -1,3 +1,7 @@
+# eslint-config-svadilfari
+
+This package contains a shared eslint settings.
+
 ## Installation
 
 ```bash

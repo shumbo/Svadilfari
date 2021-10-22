@@ -2,7 +2,7 @@ type: object
 title: Action
 minProperties: 1
 maxProperties: 1
-description: ""
+description: "Action represents an action that can be performed on a website. It should have a non-null value exactly one property."
 properties:
   tab_close:
     type: boolean
