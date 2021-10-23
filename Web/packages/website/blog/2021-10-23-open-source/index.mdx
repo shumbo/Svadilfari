@@ -1,0 +1,34 @@
+---
+slug: oss
+title: Svadilfari is now Open Source!
+authors: shun
+tags: []
+---
+
+The code for the Svadilfari app, extension, and related projects is now available on GitHub.
+
+https://github.com/shumbo/Svadilfari
+
+<!--truncate-->
+
+## Privacy Matters
+
+Due to its nature, Svadilfari requires a permission to "execute scripts on all websites," and since it has access to all information displayed and entered on websites, the risk of misuse is high, and I have been receiving concerns about privacy.
+
+With the release of the GitHub repository, anyone can view the scripts that run on Safari.
+
+- [Web/packages/content](https://github.com/shumbo/Svadilfari/tree/main/Web/packages/content) contains the script that runs on web pages.
+- [Web/packages/background](https://github.com/shumbo/Svadilfari/tree/main/Web/packages/background) has the script that runs on background
+- [Web/packages/popup](https://github.com/shumbo/Svadilfari/tree/main/Web/packages/popup) contains the script that runs on popup
+
+At this time, there is no guarantee that the code in this repository is actually published to the App Store. I will be looking into possibility of using GitHub Actions to automate the release flow so anyone can confirm safety of the released version of the app.
+
+## For Developers
+
+Safari Extensions have only just been supported in iOS 15, and I think that not much information has been made public.
+
+In the course of development, I confirmed that some of the WebExtensions API behave differently from other browsers. Also the data exchange between the native app and extension is not always straightforward.
+
+By releasing the source code, I hope it will be helpful for developers who work on Safari extensions.
+
+Of course, I am also looking forward to receiving Issues and Pull Requests.

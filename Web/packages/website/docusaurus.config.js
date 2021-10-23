@@ -68,11 +68,11 @@ const config = {
             label: "Docs",
           },
           { to: "/blog", label: "Blog", position: "left" },
-          // {
-          //   href: "https://github.com/facebook/docusaurus",
-          //   label: "GitHub",
-          //   position: "right",
-          // },
+          {
+            href: "https://github.com/shumbo/Svadilfari",
+            label: "GitHub",
+            position: "right",
+          },
           {
             type: "localeDropdown",
             position: "right",

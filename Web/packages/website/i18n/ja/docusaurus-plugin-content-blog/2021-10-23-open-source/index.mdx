@@ -1,0 +1,36 @@
+---
+slug: oss
+title: Svadilfariをオープンソース化しました
+authors: shun
+tags: []
+---
+
+GitHub にて、Svadilfari のアプリ、機能拡張及び関連プロジェクトのコードを公開しました。
+
+https://github.com/shumbo/Svadilfari
+
+こちらから関連コードを閲覧いただけます。
+
+<!--truncate-->
+
+## プライバシー観点における透明性の向上
+
+Svadilfari は、その性質から「すべてのサイトでのスクリプトの実行」という強い権限を必要とします。Web サイトに表示・入力される全ての情報にアクセスできるため、悪用された際のリスクは大きく、これまでもこの権限に対する不安の声をいただいてきました。
+
+今回の GitHub リポジトリの公開によって、Safari 上で実行されているスクリプトを誰でも閲覧できるようになりました。具体的には、
+
+- [Web/packages/content](https://github.com/shumbo/Svadilfari/tree/main/Web/packages/content) に Web ページ上で実行されるスクリプト
+- [Web/packages/background](https://github.com/shumbo/Svadilfari/tree/main/Web/packages/background) にバックグラウンドで実行されるスクリプト
+- [Web/packages/popup](https://github.com/shumbo/Svadilfari/tree/main/Web/packages/popup) にポップアップで実行されるスクリプト
+
+が保存されています。こちらのコードをご確認いただくことで、機能拡張に必要な処理だけを行っていることが分かると思います。
+
+現時点では、実際にこのリポジトリのコードが App Store で公開されていることを保証できないため、今後は GitHub Actions などを通じて App Store へのリリースも外部から透明性を確認できないか検討する予定です。
+
+## 開発者の方へ
+
+Safari 機能拡張は iOS 15 でサポートされたばかりで、あまり開発における情報も公開されていないのが現実だと思います。実際に、私が Svadilfari を開発するにあたっても、WebExtensions API が他ブラウザと異なる挙動をすることを確認しています。また、ネイティブアプリとのデータのやりとりに関しても、一筋縄ではいかない部分があると思っています。
+
+ソースコードを公開することで、Safari 機能拡張を開発される方の参考になればと思っています。
+
+もちろん、Issue や Pull Requests もお待ちしています。
