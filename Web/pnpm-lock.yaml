@@ -89,7 +89,6 @@ importers:
   packages/content:
     specifiers:
       '@babel/core': ^7.15.5
-      '@emotion/styled': ^11
       '@fluentui/svg-icons': ^1.1.141
       '@react-spring/web': ^9.2.4
       '@storybook/addon-actions': ^6.3.8
@@ -116,7 +115,6 @@ importers:
       webextension-toolkit: workspace:*
       webextension-typedef: workspace:*
     dependencies:
-      '@emotion/styled': 11.3.0_7d120459bc49ec1f7e6eba73754045f3
       '@fluentui/svg-icons': 1.1.141
       '@react-spring/web': 9.2.4_react-dom@17.0.2+react@17.0.2
       '@vanilla-extract/css': 1.6.3
@@ -3381,29 +3379,6 @@ packages:
       babel-plugin-emotion: 10.2.2
       react: 17.0.2
     dev: true
-
-  /@emotion/styled/11.3.0_7d120459bc49ec1f7e6eba73754045f3:
-    resolution: {integrity: sha512-fUoLcN3BfMiLlRhJ8CuPUMEyKkLEoM+n+UyAbnqGEsCd5IzKQ7VQFLtzpJOaCD2/VR2+1hXQTnSZXVJeiTNltA==}
-    peerDependencies:
-      '@babel/core': ^7.0.0
-      '@emotion/react': ^11.0.0-rc.0
-      '@types/react': '*'
-      react: '>=16.8.0'
-    peerDependenciesMeta:
-      '@babel/core':
-        optional: true
-      '@types/react':
-        optional: true
-    dependencies:
-      '@babel/core': 7.15.5
-      '@babel/runtime': 7.15.4
-      '@emotion/babel-plugin': 11.3.0_@babel+core@7.15.5
-      '@emotion/is-prop-valid': 1.1.0
-      '@emotion/serialize': 1.0.2
-      '@emotion/utils': 1.0.0
-      '@types/react': 17.0.24
-      react: 17.0.2
-    dev: false
 
   /@emotion/styled/11.3.0_a661e66cf90fd1accef1d0016fe8ab8b:
     resolution: {integrity: sha512-fUoLcN3BfMiLlRhJ8CuPUMEyKkLEoM+n+UyAbnqGEsCd5IzKQ7VQFLtzpJOaCD2/VR2+1hXQTnSZXVJeiTNltA==}

@@ -16,6 +16,7 @@ export const wrapperStyle = style({
   width: 250,
   height: 250,
   backdropFilter: "blur(3px)",
+  WebkitBackdropFilter: "blur(3px)",
   borderRadius: 8,
   display: "flex",
   flexDirection: "column",
