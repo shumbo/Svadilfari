@@ -1,6 +1,13 @@
-import styled from "@emotion/styled";
 import React, { VFC } from "react";
 import { animated, useTransition } from "@react-spring/web";
+
+import {
+  animationContainerStyle,
+  iconWrapperStyle,
+  textStyle,
+  titleStyle,
+  wrapperStyle,
+} from "./HUD.css";
 
 export type HUDContent = {
   /**
@@ -50,67 +57,22 @@ export const HUD: VFC<HUDProps> = ({
     ({ opacity, scale }, item) =>
       item && (
         <animated.div
+          className={animationContainerStyle}
           style={{
             opacity,
             scale,
-            position: "fixed",
-            top: 0,
-            left: 0,
-            right: 0,
-            bottom: 0,
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            zIndex: 2147483647,
           }}
         >
-          <Wrapper>
+          <div className={wrapperStyle}>
             {Icon && (
-              <IconWrapper>
+              <div className={iconWrapperStyle}>
                 <Icon style={{ width: 100, height: 100 }} />
-              </IconWrapper>
+              </div>
             )}
-            <Title>{title}</Title>
-            {message && <Message>{message}</Message>}
-          </Wrapper>
+            <p className={titleStyle}>{title}</p>
+            {message && <p className={textStyle}>{message}</p>}
+          </div>
         </animated.div>
       )
   );
 };
-
-const Wrapper = styled.div`
-  width: 250px;
-  height: 250px;
-  backdrop-filter: blur(3px);
-  border-radius: 8px;
-  background-color: rgba(255, 255, 255, 0.8);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  @media (prefers-color-scheme: dark) {
-    background-color: rgba(0, 0, 0, 0.8);
-  }
-`;
-
-const IconWrapper = styled.div`
-  fill: #636366ff;
-  @media (prefers-color-scheme: dark) {
-    fill: #aeaeb2ff;
-  }
-`;
-
-const Text = styled.p`
-  text-align: center;
-  margin: 0;
-  font-family: -apple-system;
-  color: #636366ff;
-  @media (prefers-color-scheme: dark) {
-    color: #aeaeb2ff;
-  }
-`;
-
-const Title = styled(Text)`
-  font-size: 24px;
-`;
-const Message = styled(Text)``;

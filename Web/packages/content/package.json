@@ -35,9 +35,10 @@
     "webextension-typedef": "workspace:*"
   },
   "dependencies": {
-    "@emotion/styled": "^11",
     "@fluentui/svg-icons": "^1.1.141",
     "@react-spring/web": "^9.2.4",
+    "@vanilla-extract/css": "^1.6.3",
+    "@vanilla-extract/esbuild-plugin": "^2.0.0",
     "core": "workspace:*",
     "modern-css-reset": "^1.4.0",
     "react": "^17.0.0",

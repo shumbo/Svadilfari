@@ -11,6 +11,7 @@ const argv = require("minimist")(process.argv.slice(2));
  * @property {string} outfile - An output file
  * @property {boolean | undefined} watch - True to watch for changes
  * @property {string | undefined} globalName - globalName
+ * @property {esbuild.Plugin[]} plugins - additional plugins
  */
 
 /**
@@ -27,7 +28,7 @@ function buildWebExtension(options) {
     pure: argv["minify"] && ["console.log"],
     watch: options.watch ?? argv["watch"],
     logLevel: "info",
-    plugins: [svgrPlugin({ icon: true })],
+    plugins: [svgrPlugin({ icon: true }), ...options.plugins],
     globalName: options.globalName,
   });
 }
