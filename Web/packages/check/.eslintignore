@@ -1,3 +1,5 @@
 node_modules
 .eslintrc.js
 worker
+jest.config.js
+index.js
