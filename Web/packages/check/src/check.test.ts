@@ -28,7 +28,7 @@ describe("checkBrowser", () => {
   test("test Safari on iPad", () => {
     expect(
       checkBrowser(
-        "Mozilla/5.0 (Macintosh; Intel Mac OS X 11_2_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.152 Safari/537.36",
+        "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.0 Safari/605.1.15",
         true
       )
     ).toBe(true);
