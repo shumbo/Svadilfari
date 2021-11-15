@@ -5,10 +5,15 @@ import { useChecker } from "./hooks/useChecker";
 
 export type CheckerAppProps = {
   check: () => boolean;
+  checkBrowser: () => boolean;
   onOpenApp: () => void;
 };
 
-export const CheckerApp: VFC<CheckerAppProps> = ({ check, onOpenApp }) => {
-  const status = useChecker(check);
+export const CheckerApp: VFC<CheckerAppProps> = ({
+  check,
+  checkBrowser,
+  onOpenApp,
+}) => {
+  const status = useChecker(check, checkBrowser);
   return <CheckResult status={status} onOpenApp={onOpenApp} />;
 };

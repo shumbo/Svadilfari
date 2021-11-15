@@ -1,6 +1,9 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useMemo } from "react";
 
-export function useChecker(check: () => boolean): "ACTIVE" | "INACTIVE" | null {
+export function useChecker(
+  check: () => boolean,
+  checkBrowser: () => boolean
+): "ACTIVE" | "INACTIVE" | "UNSUPPORTED" | null {
   const [enabled, setEnabled] = useState<boolean | null>(null);
   useEffect(() => {
     let subscribed = true;
@@ -27,6 +30,15 @@ export function useChecker(check: () => boolean): "ACTIVE" | "INACTIVE" | null {
       subscribed = false;
     };
   }, [check]);
+
+  const isSupported = useMemo(() => {
+    return checkBrowser();
+  }, [checkBrowser]);
+  console.log({ isSupported });
+  if (!isSupported) {
+    return "UNSUPPORTED";
+  }
+
   if (enabled === null) {
     return null;
   }

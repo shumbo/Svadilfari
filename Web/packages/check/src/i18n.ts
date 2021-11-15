@@ -16,6 +16,11 @@ export function i18n(): void {
           still_having_problem: "Still having a problem?",
           contact_us: "Contact Us",
         },
+        unsupported: {
+          title: "Svadilfari is NOT Supported on this browser",
+          description:
+            "This app is only supported on iPhones/iPads Safari browser",
+        },
       },
     },
     ja: {
@@ -31,6 +36,10 @@ export function i18n(): void {
           description: "チュートリアルを完了して機能拡張を有効化してください",
           still_having_problem: "解決しませんか？",
           contact_us: "問い合わせる",
+        },
+        unsupported: {
+          title: "Svadilfariはこのブラウザ上では使用できません！",
+          description: "iPhone及びiPadのSafariのみサポートしています！",
         },
       },
     },
