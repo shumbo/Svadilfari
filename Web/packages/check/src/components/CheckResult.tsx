@@ -13,7 +13,7 @@ import React, { VFC } from "react";
 import { t } from "react-i18nify";
 
 export type CheckResultProps = {
-  status: "ACTIVE" | "INACTIVE" | null;
+  status: "ACTIVE" | "INACTIVE" | "UNSUPPORTED" | null;
   onOpenApp: () => void;
 };
 
@@ -50,6 +50,27 @@ export const CheckResult: VFC<CheckResultProps> = ({ status, onOpenApp }) => {
           <Button colorScheme="green" onClick={onOpenApp}>
             {t("check_result.app_link")}
           </Button>
+        </AlertDescription>
+      </Alert>
+    );
+  }
+  if (status === "UNSUPPORTED") {
+    return (
+      <Alert
+        status="error"
+        variant="subtle"
+        flexDirection="column"
+        alignItems="center"
+        justifyContent="center"
+        textAlign="center"
+        height="100%"
+      >
+        <AlertIcon boxSize="40px" mr={0} />
+        <AlertTitle mt={4} mb={1} fontSize="lg">
+          {t("check_result.unsupported.title")}
+        </AlertTitle>
+        <AlertDescription maxWidth="sm">
+          {t("check_result.unsupported.description")}
         </AlertDescription>
       </Alert>
     );

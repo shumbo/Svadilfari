@@ -22,3 +22,6 @@ Active.args = { status: "ACTIVE" };
 
 export const Inactive = Template.bind({});
 Inactive.args = { status: "INACTIVE" };
+
+export const Unsupported = Template.bind({});
+Unsupported.args = { status: "UNSUPPORTED" };
