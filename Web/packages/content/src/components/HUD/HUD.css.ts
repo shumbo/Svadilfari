@@ -25,7 +25,7 @@ export const wrapperStyle = style({
 
   backgroundColor: "rgba(255, 255, 255, 0.8)",
   "@media": {
-    "prefers-color-scheme: dark": {
+    "(prefers-color-scheme: dark)": {
       backgroundColor: "rgba(0, 0, 0, 0.8)",
     },
   },
@@ -34,7 +34,7 @@ export const wrapperStyle = style({
 export const iconWrapperStyle = style({
   fill: "#636366ff",
   "@media": {
-    "prefers-color-scheme: dark": {
+    "(prefers-color-scheme: dark)": {
       fill: "#aeaeb2ff",
     },
   },
@@ -46,7 +46,7 @@ export const textStyle = style({
   fontFamily: "-apple-system",
   color: "#636366ff",
   "@media": {
-    "prefers-color-scheme: dark": {
+    "(prefers-color-scheme: dark)": {
       color: "#aeaeb2ff",
     },
   },
