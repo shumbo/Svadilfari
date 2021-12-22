@@ -34,7 +34,6 @@ export function useChecker(
   const isSupported = useMemo(() => {
     return checkBrowser();
   }, [checkBrowser]);
-  console.log({ isSupported });
   if (!isSupported) {
     return "UNSUPPORTED";
   }
