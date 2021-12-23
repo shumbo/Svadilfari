@@ -11,6 +11,10 @@
 		241D8FB926BC1F2200CBB381 /* Action+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241D8FB826BC1F2200CBB381 /* Action+.swift */; };
 		241D8FC026BC7BDC00CBB381 /* SelectActionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241D8FBF26BC7BDC00CBB381 /* SelectActionView.swift */; };
 		241D8FC226BC7E1600CBB381 /* RunJavascriptActionConfigView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241D8FC126BC7E1600CBB381 /* RunJavascriptActionConfigView.swift */; };
+		241F7C4B2773CE6F0015713E /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 241F7C4A2773CE6F0015713E /* CloudKit.framework */; };
+		241F7C4D2774ED520015713E /* UserDefaultsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241F7C4C2774ED520015713E /* UserDefaultsTest.swift */; };
+		241F7C4E2774EE580015713E /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245A016026B9A07700EEE8CD /* UserDefaults.swift */; };
+		241F7C4F2774F0850015713E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242CD6E826CFB147009DDDB0 /* Constants.swift */; };
 		242CD6E926CFB147009DDDB0 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242CD6E826CFB147009DDDB0 /* Constants.swift */; };
 		242CD6EA26CFB228009DDDB0 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245A016026B9A07700EEE8CD /* UserDefaults.swift */; };
 		242CD6EB26CFB246009DDDB0 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242CD6E826CFB147009DDDB0 /* Constants.swift */; };
@@ -141,6 +145,8 @@
 		241D8FB826BC1F2200CBB381 /* Action+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Action+.swift"; sourceTree = "<group>"; };
 		241D8FBF26BC7BDC00CBB381 /* SelectActionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectActionView.swift; sourceTree = "<group>"; };
 		241D8FC126BC7E1600CBB381 /* RunJavascriptActionConfigView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunJavascriptActionConfigView.swift; sourceTree = "<group>"; };
+		241F7C4A2773CE6F0015713E /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		241F7C4C2774ED520015713E /* UserDefaultsTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsTest.swift; sourceTree = "<group>"; };
 		242CD6E826CFB147009DDDB0 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		242CD6ED26CFC6E0009DDDB0 /* ExclusionListService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExclusionListService.swift; sourceTree = "<group>"; };
 		242CD6F026CFD111009DDDB0 /* ExclusionListServiceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExclusionListServiceTest.swift; sourceTree = "<group>"; };
@@ -226,6 +232,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				241F7C4B2773CE6F0015713E /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,6 +268,14 @@
 			path = "Select Action";
 			sourceTree = "<group>";
 		};
+		241F7C492773CE6F0015713E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				241F7C4A2773CE6F0015713E /* CloudKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		242CD6EF26CFCE1B009DDDB0 /* Services */ = {
 			isa = PBXGroup;
 			children = (
@@ -278,6 +293,7 @@
 				24428E3026B33E7700B21130 /* SvadilfariUITests */,
 				24C11E5226B4366B00E018B5 /* SvadilfariExtension */,
 				24428E1426B33E7600B21130 /* Products */,
+				241F7C492773CE6F0015713E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -328,6 +344,7 @@
 			children = (
 				24428E2726B33E7700B21130 /* SvadilfariTests.swift */,
 				242CD6F026CFD111009DDDB0 /* ExclusionListServiceTest.swift */,
+				241F7C4C2774ED520015713E /* UserDefaultsTest.swift */,
 			);
 			path = SvadilfariTests;
 			sourceTree = "<group>";
@@ -827,8 +844,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				241F7C4F2774F0850015713E /* Constants.swift in Sources */,
+				241F7C4E2774EE580015713E /* UserDefaults.swift in Sources */,
 				242CD6F126CFD111009DDDB0 /* ExclusionListServiceTest.swift in Sources */,
 				24428E2826B33E7700B21130 /* SvadilfariTests.swift in Sources */,
+				241F7C4D2774ED520015713E /* UserDefaultsTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1189,7 +1209,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.0.0;
+				MARKETING_VERSION = 1.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "app.svadilfari.svadilfari.safari-extension";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -1216,7 +1236,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.0.0;
+				MARKETING_VERSION = 1.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "app.svadilfari.svadilfari.safari-extension";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;

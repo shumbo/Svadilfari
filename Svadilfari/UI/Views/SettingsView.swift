@@ -8,10 +8,19 @@
 import SwiftUI
 
 struct SettingsView: View {
+    @State private var sync: Bool = true
     @State private var sensitivity: Double = 0.0
 
     var body: some View {
         List {
+            Section(footer: Text("SETTINGS_SYNC_FOOTER")) {
+                Toggle("SETTINGS_SYNC_TOGGLE_LABEL", isOn: self.$sync.onChange { nv in
+                    UserDefaults.shared.icloudSyncEnabled = nv
+                    PersistenceController.shared.toggleSync(sync: nv)
+                }).onAppear {
+                    self.sync = UserDefaults.shared.icloudSyncEnabled
+                }
+            }
             Section(
                 header: Text("SETTINGS_GESTURE_SENSITIVITY_HEADER"),
                 footer: Text("SETTINGS_GESTURE_SENSITIVITY_FOOTER")

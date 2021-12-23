@@ -11,9 +11,12 @@ import CoreData
 @main
 struct SvadilfariApp: App {
     var persistentContainer: NSPersistentContainer {
-        let container = PersistenceController.shared.container
+        let container: NSPersistentContainer = PersistenceController.shared.container
         container.viewContext.name = "view_context"
         container.viewContext.transactionAuthor = "main_app"
+
+        container.viewContext.automaticallyMergesChangesFromParent = true
+        try? container.viewContext.setQueryGenerationFrom(.current)
 
         let persistentHistoryObserver = PersistentHistoryObserver(
             target: .app,
@@ -23,9 +26,6 @@ struct SvadilfariApp: App {
         persistentHistoryObserver.startObserving()
 
         InitialDataService.shared.exec()
-
-        // register default values
-        UserDefaults.shared.register(defaults: UserDefaults.userDefaultsDefaults)
 
         return container
     }
