@@ -15,6 +15,10 @@
 		241F7C4D2774ED520015713E /* UserDefaultsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241F7C4C2774ED520015713E /* UserDefaultsTest.swift */; };
 		241F7C4E2774EE580015713E /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245A016026B9A07700EEE8CD /* UserDefaults.swift */; };
 		241F7C4F2774F0850015713E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242CD6E826CFB147009DDDB0 /* Constants.swift */; };
+		241F7C512774F99A0015713E /* GestureHashTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241F7C502774F99A0015713E /* GestureHashTest.swift */; };
+		241F7C522774F9C20015713E /* SharedTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C11E4826B4307100E018B5 /* SharedTypes.swift */; };
+		241F7C532774F9C70015713E /* Gesture+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242EBAF5270FD97000FF3A21 /* Gesture+.swift */; };
+		241F7C542774FA720015713E /* Changeable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242EBAF3270FD94600FF3A21 /* Changeable.swift */; };
 		242CD6E926CFB147009DDDB0 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242CD6E826CFB147009DDDB0 /* Constants.swift */; };
 		242CD6EA26CFB228009DDDB0 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245A016026B9A07700EEE8CD /* UserDefaults.swift */; };
 		242CD6EB26CFB246009DDDB0 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242CD6E826CFB147009DDDB0 /* Constants.swift */; };
@@ -147,6 +151,7 @@
 		241D8FC126BC7E1600CBB381 /* RunJavascriptActionConfigView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunJavascriptActionConfigView.swift; sourceTree = "<group>"; };
 		241F7C4A2773CE6F0015713E /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		241F7C4C2774ED520015713E /* UserDefaultsTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsTest.swift; sourceTree = "<group>"; };
+		241F7C502774F99A0015713E /* GestureHashTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GestureHashTest.swift; sourceTree = "<group>"; };
 		242CD6E826CFB147009DDDB0 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		242CD6ED26CFC6E0009DDDB0 /* ExclusionListService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExclusionListService.swift; sourceTree = "<group>"; };
 		242CD6F026CFD111009DDDB0 /* ExclusionListServiceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExclusionListServiceTest.swift; sourceTree = "<group>"; };
@@ -345,6 +350,7 @@
 				24428E2726B33E7700B21130 /* SvadilfariTests.swift */,
 				242CD6F026CFD111009DDDB0 /* ExclusionListServiceTest.swift */,
 				241F7C4C2774ED520015713E /* UserDefaultsTest.swift */,
+				241F7C502774F99A0015713E /* GestureHashTest.swift */,
 			);
 			path = SvadilfariTests;
 			sourceTree = "<group>";
@@ -847,8 +853,12 @@
 				241F7C4F2774F0850015713E /* Constants.swift in Sources */,
 				241F7C4E2774EE580015713E /* UserDefaults.swift in Sources */,
 				242CD6F126CFD111009DDDB0 /* ExclusionListServiceTest.swift in Sources */,
+				241F7C532774F9C70015713E /* Gesture+.swift in Sources */,
+				241F7C522774F9C20015713E /* SharedTypes.swift in Sources */,
+				241F7C542774FA720015713E /* Changeable.swift in Sources */,
 				24428E2826B33E7700B21130 /* SvadilfariTests.swift in Sources */,
 				241F7C4D2774ED520015713E /* UserDefaultsTest.swift in Sources */,
+				241F7C512774F99A0015713E /* GestureHashTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -77,4 +77,3 @@ func makeInitialGestures() -> [Gesture] {
         pattern: pattern
     )})
 }
- 
