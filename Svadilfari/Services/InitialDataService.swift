@@ -68,12 +68,3 @@ private let initialGestureData: [(Action, Pattern)] = [
     (Action(tabOpen: true), Pattern(data: [Vector.Bottom, Vector.Left])),
     (Action(tabDuplicate: true), Pattern(data: [Vector.Bottom, Vector.Left, Vector.Top]))
 ]
-
-func makeInitialGestures() -> [Gesture] {
-    return initialGestureData.map({ (action, pattern) in Gesture(
-        action: action,
-        enabled: true,
-        id: UUID().uuidString,
-        pattern: pattern
-    )})
-}
