@@ -63,7 +63,7 @@ class InitialDataService {
     }
 
     /// Set of hash of initial gestures. Used to determine duplicated initial gestures.
-    static let initialGestureHashs: Set<Int> = {
+    static let initialGestureHashes: Set<Int> = {
         var s = Set<Int>()
         for (action, pattern) in initialGestureData {
             let g = Gesture(action: action, enabled: true, id: UUID().uuidString, pattern: pattern)

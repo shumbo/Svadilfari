@@ -63,7 +63,7 @@ class DuplicatedEntityService {
                 dict[gesture.contentHash] = true
                 continue
             }
-            if InitialDataService.initialGestureHashs.contains(hash) {
+            if InitialDataService.initialGestureHashes.contains(hash) {
                 // already has this gesture. Remove
                 entitiesToRemove.insert(entity)
             }
