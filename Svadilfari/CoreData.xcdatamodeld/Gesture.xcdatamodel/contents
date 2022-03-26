@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="19206" systemVersion="21C52" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="YES" userDefinedModelVersionIdentifier="">
-    <entity name="ExclusionEntry" representedClassName="ExclusionEntryEntity" syncable="YES" codeGenerationType="class">
+    <entity name="ExclusionEntry" representedClassName=".ExclusionEntryEntity" syncable="YES" codeGenerationType="class">
         <attribute name="domain" optional="YES" attributeType="String"/>
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="path" optional="YES" attributeType="String"/>
     </entity>
-    <entity name="Gesture" representedClassName="GestureEntity" syncable="YES" codeGenerationType="class">
+    <entity name="GestureEntity" representedClassName=".GestureEntity" syncable="YES" codeGenerationType="class">
         <attribute name="createdAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="json" optional="YES" attributeType="String"/>
@@ -13,6 +13,6 @@
     </entity>
     <elements>
         <element name="ExclusionEntry" positionX="-63" positionY="9" width="128" height="74"/>
-        <element name="Gesture" positionX="-63" positionY="-18" width="128" height="89"/>
+        <element name="GestureEntity" positionX="-63" positionY="-18" width="128" height="89"/>
     </elements>
 </model>

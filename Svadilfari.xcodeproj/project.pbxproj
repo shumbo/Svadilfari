@@ -20,7 +20,6 @@
 		241F7C532774F9C70015713E /* Gesture+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242EBAF5270FD97000FF3A21 /* Gesture+.swift */; };
 		241F7C542774FA720015713E /* Changeable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242EBAF3270FD94600FF3A21 /* Changeable.swift */; };
 		241F7C5627751E400015713E /* DuplicatedEntityService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241F7C5527751E400015713E /* DuplicatedEntityService.swift */; };
-		241F7C582775229B0015713E /* DuplicatedEntityServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241F7C572775229B0015713E /* DuplicatedEntityServiceTests.swift */; };
 		241F7C592775229F0015713E /* DuplicatedEntityService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241F7C5527751E400015713E /* DuplicatedEntityService.swift */; };
 		241F7C5D2775234B0015713E /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D00D2126C2BF0B00F8F1FA /* PersistenceController.swift */; };
 		241F7C5F277525350015713E /* InitialDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240410B326DF8B3400851A2A /* InitialDataService.swift */; };
@@ -94,6 +93,9 @@
 		24D00D2226C2BF0B00F8F1FA /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D00D2126C2BF0B00F8F1FA /* PersistenceController.swift */; };
 		24D2698627752BA800F570B0 /* GestureEntity+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24FAA2BA26B942540083FFAB /* GestureEntity+.swift */; };
 		24D2698727752C5B00F570B0 /* CoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 24FAA2B626B93CAC0083FFAB /* CoreData.xcdatamodeld */; };
+		24D26989277534E400F570B0 /* Gesture+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242EBAF5270FD97000FF3A21 /* Gesture+.swift */; };
+		24D2698A277534EB00F570B0 /* Changeable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242EBAF3270FD94600FF3A21 /* Changeable.swift */; };
+		24D2698C2776928100F570B0 /* IcloudKvsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D2698B2776928100F570B0 /* IcloudKvsService.swift */; };
 		24D759CD26BC80960017498A /* NavigationLinkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D759CC26BC80960017498A /* NavigationLinkView.swift */; };
 		24E29CFE26B5F576003AF136 /* Pattern+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24E29CFD26B5F576003AF136 /* Pattern+.swift */; };
 		24E29D0026B5F8A3003AF136 /* UIBezierPath+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24E29CFF26B5F8A3003AF136 /* UIBezierPath+.swift */; };
@@ -161,7 +163,6 @@
 		241F7C4C2774ED520015713E /* UserDefaultsTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsTest.swift; sourceTree = "<group>"; };
 		241F7C502774F99A0015713E /* GestureHashTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GestureHashTest.swift; sourceTree = "<group>"; };
 		241F7C5527751E400015713E /* DuplicatedEntityService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DuplicatedEntityService.swift; sourceTree = "<group>"; };
-		241F7C572775229B0015713E /* DuplicatedEntityServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DuplicatedEntityServiceTests.swift; sourceTree = "<group>"; };
 		242CD6E826CFB147009DDDB0 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		242CD6ED26CFC6E0009DDDB0 /* ExclusionListService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExclusionListService.swift; sourceTree = "<group>"; };
 		242CD6F026CFD111009DDDB0 /* ExclusionListServiceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExclusionListServiceTest.swift; sourceTree = "<group>"; };
@@ -225,6 +226,7 @@
 		24C11E6626B4366B00E018B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		24D00D2126C2BF0B00F8F1FA /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
 		24D00D2326C3580700F8F1FA /* Svadilfari.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Svadilfari.entitlements; sourceTree = "<group>"; };
+		24D2698B2776928100F570B0 /* IcloudKvsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IcloudKvsService.swift; sourceTree = "<group>"; };
 		24D759CC26BC80960017498A /* NavigationLinkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationLinkView.swift; sourceTree = "<group>"; };
 		24E29CFD26B5F576003AF136 /* Pattern+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Pattern+.swift"; sourceTree = "<group>"; };
 		24E29CFF26B5F8A3003AF136 /* UIBezierPath+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIBezierPath+.swift"; sourceTree = "<group>"; };
@@ -297,6 +299,7 @@
 				242CD6ED26CFC6E0009DDDB0 /* ExclusionListService.swift */,
 				240410B326DF8B3400851A2A /* InitialDataService.swift */,
 				241F7C5527751E400015713E /* DuplicatedEntityService.swift */,
+				24D2698B2776928100F570B0 /* IcloudKvsService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -362,7 +365,6 @@
 				242CD6F026CFD111009DDDB0 /* ExclusionListServiceTest.swift */,
 				241F7C4C2774ED520015713E /* UserDefaultsTest.swift */,
 				241F7C502774F99A0015713E /* GestureHashTest.swift */,
-				241F7C572775229B0015713E /* DuplicatedEntityServiceTests.swift */,
 			);
 			path = SvadilfariTests;
 			sourceTree = "<group>";
@@ -837,6 +839,7 @@
 				245A016626B9A24600EEE8CD /* NewGestureView.swift in Sources */,
 				24978F35271BA3DF00117689 /* ActionConfigView.swift in Sources */,
 				24FAA2BD26B943330083FFAB /* Error.swift in Sources */,
+				24D2698C2776928100F570B0 /* IcloudKvsService.swift in Sources */,
 				24F15F27271B319700156A6C /* Binding+.swift in Sources */,
 				24428E4426B3436A00B21130 /* HomeListView.swift in Sources */,
 				24A7DBCF26D7ED7600AC3675 /* TutorialStep.swift in Sources */,
@@ -878,7 +881,6 @@
 				241F7C592775229F0015713E /* DuplicatedEntityService.swift in Sources */,
 				241F7C512774F99A0015713E /* GestureHashTest.swift in Sources */,
 				241F7C60277526ED0015713E /* Vector+.swift in Sources */,
-				241F7C582775229B0015713E /* DuplicatedEntityServiceTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -900,6 +902,7 @@
 				242CD6F526CFD6C1009DDDB0 /* CoreData.xcdatamodeld in Sources */,
 				24F3686B26C35EA90092F583 /* SharedTypes.swift in Sources */,
 				24F3686A26C35B1D0092F583 /* PersistenceController.swift in Sources */,
+				24D2698A277534EB00F570B0 /* Changeable.swift in Sources */,
 				242CD6EA26CFB228009DDDB0 /* UserDefaults.swift in Sources */,
 				249477CB26CEBE9500E6FCC5 /* Logger+.swift in Sources */,
 				24F3686C26C362A80092F583 /* GestureEntity+.swift in Sources */,
@@ -908,6 +911,7 @@
 				249477CD26CEBEA300E6FCC5 /* PersistentHistoryMerger.swift in Sources */,
 				242CD6EB26CFB246009DDDB0 /* Constants.swift in Sources */,
 				249477D026CEBEBF00E6FCC5 /* UserDefaults+transactionTimestamp.swift in Sources */,
+				24D26989277534E400F570B0 /* Gesture+.swift in Sources */,
 				249477CE26CEBEA600E6FCC5 /* PersistentHistoryFetcher.swift in Sources */,
 				242CD6EE26CFC6E0009DDDB0 /* ExclusionListService.swift in Sources */,
 			);

@@ -8,13 +8,16 @@
 import Foundation
 import CoreData
 import Combine
+import OSLog
 
 class DuplicatedEntityService {
     private var disposables = Set<AnyCancellable>()
     private let viewContext: NSManagedObjectContext
     init(viewContext: NSManagedObjectContext) {
         self.viewContext = viewContext
+    }
 
+    public func start() {
         NotificationCenter.default
             .publisher(for: NSPersistentCloudKitContainer.eventChangedNotification)
             .sink(receiveValue: { notification in
@@ -35,6 +38,7 @@ class DuplicatedEntityService {
                 }
             })
             .store(in: &disposables)
+        removeDuplicatedEntities()
     }
 
     public func removeDuplicatedEntities() {
@@ -59,11 +63,15 @@ class DuplicatedEntityService {
                 dict[gesture.contentHash] = true
                 continue
             }
-            // have seen the same gesture in previous iteration
-            entitiesToRemove.insert(entity)
+            if InitialDataService.initialGestureHashs.contains(hash) {
+                // already has this gesture. Remove
+                entitiesToRemove.insert(entity)
+            }
         }
+        print("Found \(entitiesToRemove.count) duplicated initial gestures")
         for entity in entitiesToRemove {
             self.viewContext.delete(entity)
         }
+        try? self.viewContext.save()
     }
 }

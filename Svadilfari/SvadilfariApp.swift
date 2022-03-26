@@ -10,7 +10,9 @@ import CoreData
 
 @main
 struct SvadilfariApp: App {
-    var persistentContainer: NSPersistentContainer {
+    let persistentContainer: NSPersistentContainer
+    let duplicatedEntityService: DuplicatedEntityService
+    init() {
         let container: NSPersistentContainer = PersistenceController.shared.container
         container.viewContext.name = "view_context"
         container.viewContext.transactionAuthor = "main_app"
@@ -27,7 +29,10 @@ struct SvadilfariApp: App {
 
         InitialDataService.shared.exec()
 
-        return container
+        self.persistentContainer = container
+        self.duplicatedEntityService = DuplicatedEntityService(viewContext: container.viewContext)
+        print("launch")
+        self.duplicatedEntityService.start()
     }
 
     var body: some Scene {
