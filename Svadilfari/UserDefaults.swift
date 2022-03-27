@@ -18,16 +18,12 @@ extension UserDefaults {
     /// Set initial data to a specified UserDefault instance
     static public func setInitialData(defaults: UserDefaults) {
         defaults.register(defaults: userDefaultsDefaults)
-        if defaults.isFirstLaunch {
-            // if it is the first launch, enable icloud sync
-            // if not, the app already has data, and we do not want to enable sync and corrupt data
-            defaults.register(defaults: [Keys.icloudSyncEnabled: true])
-        }
     }
 
     static private let userDefaultsDefaults = [
         Keys.previouslyLaunched: false,
-        Keys.gestureRecognitionSensitivity: 0.0
+        Keys.gestureRecognitionSensitivity: 0.0,
+        Keys.icloudSyncEnabled: false
     ] as [String: Any]
 
     public enum Keys {
