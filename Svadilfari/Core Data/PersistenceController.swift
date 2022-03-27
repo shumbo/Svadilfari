@@ -46,7 +46,7 @@ class PersistenceController {
         description.setOption(true as NSNumber, forKey: NSPersistentStoreRemoteChangeNotificationPostOptionKey)
         if sync {
             description.cloudKitContainerOptions = NSPersistentCloudKitContainerOptions(
-                containerIdentifier: "iCloud.app.svadilfari.svadilfari"
+                containerIdentifier: CLOUDKIT_CONTAINER_ID
             )
         } else {
             description.cloudKitContainerOptions = nil
