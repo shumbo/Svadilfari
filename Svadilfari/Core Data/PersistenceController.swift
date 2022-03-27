@@ -69,10 +69,6 @@ class PersistenceController {
         self.container.viewContext.automaticallyMergesChangesFromParent = true
     }
 
-    private func setupDuplicateCollector() {
-
-    }
-
     public func toggleSync(sync: Bool) {
         setupContainer(sync: sync, inMemory: false)
     }
