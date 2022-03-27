@@ -1,0 +1,46 @@
+---
+sidebar_position: 2
+---
+
+# iCloud Sync (Experimental)
+
+iCloud Sync allows you to sync your gestures and exclusion list between your devices.
+
+:::caution
+
+iCloud Sync is experimental. This feature is disabled by default and enabling it might cause losses in your data (gestures, exclusion list). If you encounter a bug, please report via the [contact form](/contact).
+
+:::
+
+## Enable
+
+By default, iCloud Sync is disabled.
+
+To enable it, open "Settings" in the app and turn on "iCloud Sync".
+
+import IcloudSyncImage from "./assets/icloud-sync.png";
+
+<div style={{ textAlign: "center" }}>
+  <img style={{ maxWidth: "300px" }} src={IcloudSyncImage} />
+</div>
+
+You need to turn on iCloud Sync on all devices you wish to sync data.
+
+## What is synced?
+
+After you turn on the toggle, the following data will be synced.
+
+- Gestures
+- Exclusion List
+
+## When does the synchronization happen?
+
+**Data synchronization happens when the Svadilfari app is open**. The changes might take a while to be reflected on another device. You may close and reopen app to encourage the synchronization to happen.
+
+Note that **if you add/remove an entry to the exclusion list within Safari**, it wouldn't be synced between devices **unless you open the app**.
+
+:::info For Developers
+
+This is due to the limitations of Core Data with CloudKit where [`NSPersistentCloudKitContainer` is not reliable on App Extensions](https://developer.apple.com/forums/thread/651916?answerId=670522022#670522022) and one of the reasons why iCloud Sync is experimental. If you are an iOS developer and know how to make changes to Core Data + CloudKit from an App Extension (Safari Extension), please let me know on [the GitHub issue](https://github.com/shumbo/Svadilfari/issues/39)! Any help would be appreciated!
+
+:::
