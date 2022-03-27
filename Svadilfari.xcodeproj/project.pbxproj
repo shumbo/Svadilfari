@@ -74,6 +74,7 @@
 		24A7DBD126D7EF7000AC3675 /* TutorialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A7DBD026D7EF7000AC3675 /* TutorialView.swift */; };
 		24A7DBD326D7F16C00AC3675 /* Bundle+icon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A7DBD226D7F16C00AC3675 /* Bundle+icon.swift */; };
 		24AEEEB6270F6915004F9E51 /* EditGestureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AEEEB5270F6915004F9E51 /* EditGestureView.swift */; };
+		24AFE69F27EFE47100E3F034 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 241F7C4A2773CE6F0015713E /* CloudKit.framework */; };
 		24B224A026B5E445009EAB48 /* GestureListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B2249F26B5E445009EAB48 /* GestureListItem.swift */; };
 		24B224A226B5E6B4009EAB48 /* Action+Title.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B224A126B5E6B3009EAB48 /* Action+Title.swift */; };
 		24B224A526B5EB9A009EAB48 /* LineSmoother.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B224A426B5EB9A009EAB48 /* LineSmoother.swift */; };
@@ -95,7 +96,6 @@
 		24D2698727752C5B00F570B0 /* CoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 24FAA2B626B93CAC0083FFAB /* CoreData.xcdatamodeld */; };
 		24D26989277534E400F570B0 /* Gesture+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242EBAF5270FD97000FF3A21 /* Gesture+.swift */; };
 		24D2698A277534EB00F570B0 /* Changeable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242EBAF3270FD94600FF3A21 /* Changeable.swift */; };
-		24D2698C2776928100F570B0 /* IcloudKvsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D2698B2776928100F570B0 /* IcloudKvsService.swift */; };
 		24D759CD26BC80960017498A /* NavigationLinkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D759CC26BC80960017498A /* NavigationLinkView.swift */; };
 		24E29CFE26B5F576003AF136 /* Pattern+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24E29CFD26B5F576003AF136 /* Pattern+.swift */; };
 		24E29D0026B5F8A3003AF136 /* UIBezierPath+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24E29CFF26B5F8A3003AF136 /* UIBezierPath+.swift */; };
@@ -226,7 +226,6 @@
 		24C11E6626B4366B00E018B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		24D00D2126C2BF0B00F8F1FA /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
 		24D00D2326C3580700F8F1FA /* Svadilfari.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Svadilfari.entitlements; sourceTree = "<group>"; };
-		24D2698B2776928100F570B0 /* IcloudKvsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IcloudKvsService.swift; sourceTree = "<group>"; };
 		24D759CC26BC80960017498A /* NavigationLinkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationLinkView.swift; sourceTree = "<group>"; };
 		24E29CFD26B5F576003AF136 /* Pattern+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Pattern+.swift"; sourceTree = "<group>"; };
 		24E29CFF26B5F8A3003AF136 /* UIBezierPath+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIBezierPath+.swift"; sourceTree = "<group>"; };
@@ -271,6 +270,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				24AFE69F27EFE47100E3F034 /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -299,7 +299,6 @@
 				242CD6ED26CFC6E0009DDDB0 /* ExclusionListService.swift */,
 				240410B326DF8B3400851A2A /* InitialDataService.swift */,
 				241F7C5527751E400015713E /* DuplicatedEntityService.swift */,
-				24D2698B2776928100F570B0 /* IcloudKvsService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -839,7 +838,6 @@
 				245A016626B9A24600EEE8CD /* NewGestureView.swift in Sources */,
 				24978F35271BA3DF00117689 /* ActionConfigView.swift in Sources */,
 				24FAA2BD26B943330083FFAB /* Error.swift in Sources */,
-				24D2698C2776928100F570B0 /* IcloudKvsService.swift in Sources */,
 				24F15F27271B319700156A6C /* Binding+.swift in Sources */,
 				24428E4426B3436A00B21130 /* HomeListView.swift in Sources */,
 				24A7DBCF26D7ED7600AC3675 /* TutorialStep.swift in Sources */,
