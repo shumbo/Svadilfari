@@ -1,4 +1,4 @@
-const path = require("path");
+const { VanillaExtractPlugin } = require("@vanilla-extract/webpack-plugin");
 
 module.exports = {
   stories: ["../src/**/*.stories.mdx", "../src/**/*.stories.@(js|jsx|ts|tsx)"],
@@ -8,6 +8,7 @@ module.exports = {
       rule.test.test(".svg")
     );
     fileLoaderRule.exclude = /\.svg$/;
+    config.plugins.push(new VanillaExtractPlugin());
     config.module.rules.push({
       test: /\.svg$/,
       issuer: {

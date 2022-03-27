@@ -76,3 +76,4 @@ export const HUD: VFC<HUDProps> = ({
       )
   );
 };
+HUD.displayName = "HUD";
