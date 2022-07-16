@@ -7,7 +7,6 @@
 
 import SafariServices
 import CoreData
-import CoreHaptics
 import os.log
 
 class SafariWebExtensionHandler: NSObject, NSExtensionRequestHandling {
@@ -28,7 +27,6 @@ class SafariWebExtensionHandler: NSObject, NSExtensionRequestHandling {
     }()
 
     override init() {
-        UserDefaults.shared.register(defaults: UserDefaults.userDefaultsDefaults)
         super.init()
     }
 
@@ -37,8 +35,6 @@ class SafariWebExtensionHandler: NSObject, NSExtensionRequestHandling {
         // swiftlint:disable all
         let item = context.inputItems[0] as! NSExtensionItem
         let message = item.userInfo?[SFExtensionMessageKey]
-        
-        // TODO
         
         // swiftlint:disable:next all
         os_log(.default, "Received message from browser.runtime.sendNativeMessage: %@", message as! CVarArg)

@@ -10,10 +10,15 @@ import CoreData
 
 @main
 struct SvadilfariApp: App {
-    var persistentContainer: NSPersistentContainer {
-        let container = PersistenceController.shared.container
+    let persistentContainer: NSPersistentContainer
+    let duplicatedEntityService: DuplicatedEntityService
+    init() {
+        let container: NSPersistentContainer = PersistenceController.shared.container
         container.viewContext.name = "view_context"
         container.viewContext.transactionAuthor = "main_app"
+
+        container.viewContext.automaticallyMergesChangesFromParent = true
+        try? container.viewContext.setQueryGenerationFrom(.current)
 
         let persistentHistoryObserver = PersistentHistoryObserver(
             target: .app,
@@ -24,10 +29,10 @@ struct SvadilfariApp: App {
 
         InitialDataService.shared.exec()
 
-        // register default values
-        UserDefaults.shared.register(defaults: UserDefaults.userDefaultsDefaults)
-
-        return container
+        self.persistentContainer = container
+        self.duplicatedEntityService = DuplicatedEntityService(viewContext: container.viewContext)
+        print("launch")
+        self.duplicatedEntityService.start()
     }
 
     var body: some Scene {

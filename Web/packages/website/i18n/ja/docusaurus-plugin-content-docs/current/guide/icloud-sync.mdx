@@ -1,0 +1,46 @@
+---
+sidebar_position: 2
+---
+
+# iCloud 同期 (試験運用)
+
+iCloud 同期を用いて、ジェスチャーと除外リストを複数端末間で同期することができます。
+
+:::caution 注意
+
+iCloud Sync は試験運用中の機能です。デフォルトでは無効化されており、有効化によってジェスチャー・除外リストのデータが破損する可能性があります。バグを発見した場合は、[コンタクトフォーム](/ja/contact)より報告いただければ幸いです。
+
+:::
+
+## 有効化
+
+デフォルトでは、iCloud Sync は無効化されています。
+
+有効化するには、アプリ内の「設定」画面を開き、「iCloud 同期」のトグルをオンにします。
+
+import IcloudSyncImage from "./assets/icloud-sync.png";
+
+<div style={{ textAlign: "center" }}>
+  <img style={{ maxWidth: "300px" }} src={IcloudSyncImage} />
+</div>
+
+データを同期するすべての端末で有効にしてください。
+
+## 同期されるデータについて
+
+トグルをオンにすると、以下のデータが同期されるようになります。
+
+- ジェスチャー
+- 除外リスト
+
+## 同期のタイミングについて
+
+**データの同期は Svadilfari アプリが開かれている場合にのみ行われます**。変更が同期されるには時間がかかる場合があります。アプリを閉じて開くことで、同期を促すことができます。
+
+**Safari から除外リストを追加/削除した場合、アプリを開くまで他の端末とは同期されないことに注意してください**。
+
+:::info 開発者の方へ
+
+この制約は、Core Data と CloudKit を組み合わせ、[`NSPersistentCloudKitContainer` を App Extensions から利用した場合に動作が不安定となる](https://developer.apple.com/forums/thread/651916)ことに起因します。改善方法をご存知の方がいらっしゃいましたら、[GitHub の Issue](https://github.com/shumbo/Svadilfari/issues/39) にコメントいただければ幸いです(日本語でも大丈夫です)。
+
+:::

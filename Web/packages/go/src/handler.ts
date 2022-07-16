@@ -21,6 +21,10 @@ export async function handleRequest(request: Request): Promise<Response> {
       website(acceptLanguageValue, '/docs/guide/exclusion-list'),
     ],
     ['checker', 'https://check.svadilfari.app'],
+    [
+      'icloud-sync-experimental',
+      website(acceptLanguageValue, '/docs/guide/icloud-sync'),
+    ],
   ])
   const pathname = new URL(request.url).pathname.replace('/', '')
   const location = redirects.get(pathname)

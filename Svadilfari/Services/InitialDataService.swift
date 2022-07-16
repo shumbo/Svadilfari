@@ -38,10 +38,13 @@ class InitialDataService {
 
         if _isFirstLaunch {
             self.registerInitialGestures()
+        } else {
+            print("Not first launch, skipping initial gesture registration")
         }
     }
 
     private func registerInitialGestures() {
+        print("This is first launch, registering initial gestures")
         for (action, pattern) in initialGestureData.reversed() {
             let id = UUID()
             let g = Gesture(
@@ -58,6 +61,16 @@ class InitialDataService {
         }
         try? self.moc.save()
     }
+
+    /// Set of hash of initial gestures. Used to determine duplicated initial gestures.
+    static let initialGestureHashes: Set<Int> = {
+        var s = Set<Int>()
+        for (action, pattern) in initialGestureData {
+            let g = Gesture(action: action, enabled: true, id: UUID().uuidString, pattern: pattern)
+            s.insert(g.contentHash)
+        }
+        return s
+    }()
 }
 
 private let initialGestureData: [(Action, Pattern)] = [
@@ -68,12 +81,3 @@ private let initialGestureData: [(Action, Pattern)] = [
     (Action(tabOpen: true), Pattern(data: [Vector.Bottom, Vector.Left])),
     (Action(tabDuplicate: true), Pattern(data: [Vector.Bottom, Vector.Left, Vector.Top]))
 ]
-
-func makeInitialGestures() -> [Gesture] {
-    return initialGestureData.map({ (action, pattern) in Gesture(
-        action: action,
-        enabled: true,
-        id: UUID().uuidString,
-        pattern: pattern
-    )})
-}

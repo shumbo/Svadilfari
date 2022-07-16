@@ -11,6 +11,19 @@
 		241D8FB926BC1F2200CBB381 /* Action+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241D8FB826BC1F2200CBB381 /* Action+.swift */; };
 		241D8FC026BC7BDC00CBB381 /* SelectActionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241D8FBF26BC7BDC00CBB381 /* SelectActionView.swift */; };
 		241D8FC226BC7E1600CBB381 /* RunJavascriptActionConfigView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241D8FC126BC7E1600CBB381 /* RunJavascriptActionConfigView.swift */; };
+		241F7C4B2773CE6F0015713E /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 241F7C4A2773CE6F0015713E /* CloudKit.framework */; };
+		241F7C4D2774ED520015713E /* UserDefaultsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241F7C4C2774ED520015713E /* UserDefaultsTest.swift */; };
+		241F7C4E2774EE580015713E /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245A016026B9A07700EEE8CD /* UserDefaults.swift */; };
+		241F7C4F2774F0850015713E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242CD6E826CFB147009DDDB0 /* Constants.swift */; };
+		241F7C512774F99A0015713E /* GestureHashTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241F7C502774F99A0015713E /* GestureHashTest.swift */; };
+		241F7C522774F9C20015713E /* SharedTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C11E4826B4307100E018B5 /* SharedTypes.swift */; };
+		241F7C532774F9C70015713E /* Gesture+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242EBAF5270FD97000FF3A21 /* Gesture+.swift */; };
+		241F7C542774FA720015713E /* Changeable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242EBAF3270FD94600FF3A21 /* Changeable.swift */; };
+		241F7C5627751E400015713E /* DuplicatedEntityService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241F7C5527751E400015713E /* DuplicatedEntityService.swift */; };
+		241F7C592775229F0015713E /* DuplicatedEntityService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241F7C5527751E400015713E /* DuplicatedEntityService.swift */; };
+		241F7C5D2775234B0015713E /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D00D2126C2BF0B00F8F1FA /* PersistenceController.swift */; };
+		241F7C5F277525350015713E /* InitialDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240410B326DF8B3400851A2A /* InitialDataService.swift */; };
+		241F7C60277526ED0015713E /* Vector+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B224A926B5EEFB009EAB48 /* Vector+.swift */; };
 		242CD6E926CFB147009DDDB0 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242CD6E826CFB147009DDDB0 /* Constants.swift */; };
 		242CD6EA26CFB228009DDDB0 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245A016026B9A07700EEE8CD /* UserDefaults.swift */; };
 		242CD6EB26CFB246009DDDB0 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242CD6E826CFB147009DDDB0 /* Constants.swift */; };
@@ -61,6 +74,7 @@
 		24A7DBD126D7EF7000AC3675 /* TutorialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A7DBD026D7EF7000AC3675 /* TutorialView.swift */; };
 		24A7DBD326D7F16C00AC3675 /* Bundle+icon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A7DBD226D7F16C00AC3675 /* Bundle+icon.swift */; };
 		24AEEEB6270F6915004F9E51 /* EditGestureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AEEEB5270F6915004F9E51 /* EditGestureView.swift */; };
+		24AFE69F27EFE47100E3F034 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 241F7C4A2773CE6F0015713E /* CloudKit.framework */; };
 		24B224A026B5E445009EAB48 /* GestureListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B2249F26B5E445009EAB48 /* GestureListItem.swift */; };
 		24B224A226B5E6B4009EAB48 /* Action+Title.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B224A126B5E6B3009EAB48 /* Action+Title.swift */; };
 		24B224A526B5EB9A009EAB48 /* LineSmoother.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B224A426B5EB9A009EAB48 /* LineSmoother.swift */; };
@@ -78,6 +92,10 @@
 		24C11E6526B4366B00E018B5 /* popup.js in Resources */ = {isa = PBXBuildFile; fileRef = 24C11E6426B4366B00E018B5 /* popup.js */; };
 		24C11E6926B4366B00E018B5 /* SvadilfariExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 24C11E5126B4366B00E018B5 /* SvadilfariExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		24D00D2226C2BF0B00F8F1FA /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D00D2126C2BF0B00F8F1FA /* PersistenceController.swift */; };
+		24D2698627752BA800F570B0 /* GestureEntity+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24FAA2BA26B942540083FFAB /* GestureEntity+.swift */; };
+		24D2698727752C5B00F570B0 /* CoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 24FAA2B626B93CAC0083FFAB /* CoreData.xcdatamodeld */; };
+		24D26989277534E400F570B0 /* Gesture+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242EBAF5270FD97000FF3A21 /* Gesture+.swift */; };
+		24D2698A277534EB00F570B0 /* Changeable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242EBAF3270FD94600FF3A21 /* Changeable.swift */; };
 		24D759CD26BC80960017498A /* NavigationLinkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D759CC26BC80960017498A /* NavigationLinkView.swift */; };
 		24E29CFE26B5F576003AF136 /* Pattern+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24E29CFD26B5F576003AF136 /* Pattern+.swift */; };
 		24E29D0026B5F8A3003AF136 /* UIBezierPath+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24E29CFF26B5F8A3003AF136 /* UIBezierPath+.swift */; };
@@ -141,6 +159,10 @@
 		241D8FB826BC1F2200CBB381 /* Action+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Action+.swift"; sourceTree = "<group>"; };
 		241D8FBF26BC7BDC00CBB381 /* SelectActionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectActionView.swift; sourceTree = "<group>"; };
 		241D8FC126BC7E1600CBB381 /* RunJavascriptActionConfigView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunJavascriptActionConfigView.swift; sourceTree = "<group>"; };
+		241F7C4A2773CE6F0015713E /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		241F7C4C2774ED520015713E /* UserDefaultsTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsTest.swift; sourceTree = "<group>"; };
+		241F7C502774F99A0015713E /* GestureHashTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GestureHashTest.swift; sourceTree = "<group>"; };
+		241F7C5527751E400015713E /* DuplicatedEntityService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DuplicatedEntityService.swift; sourceTree = "<group>"; };
 		242CD6E826CFB147009DDDB0 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		242CD6ED26CFC6E0009DDDB0 /* ExclusionListService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExclusionListService.swift; sourceTree = "<group>"; };
 		242CD6F026CFD111009DDDB0 /* ExclusionListServiceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExclusionListServiceTest.swift; sourceTree = "<group>"; };
@@ -226,6 +248,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				241F7C4B2773CE6F0015713E /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -247,6 +270,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				24AFE69F27EFE47100E3F034 /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,11 +285,20 @@
 			path = "Select Action";
 			sourceTree = "<group>";
 		};
+		241F7C492773CE6F0015713E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				241F7C4A2773CE6F0015713E /* CloudKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		242CD6EF26CFCE1B009DDDB0 /* Services */ = {
 			isa = PBXGroup;
 			children = (
 				242CD6ED26CFC6E0009DDDB0 /* ExclusionListService.swift */,
 				240410B326DF8B3400851A2A /* InitialDataService.swift */,
+				241F7C5527751E400015713E /* DuplicatedEntityService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -278,6 +311,7 @@
 				24428E3026B33E7700B21130 /* SvadilfariUITests */,
 				24C11E5226B4366B00E018B5 /* SvadilfariExtension */,
 				24428E1426B33E7600B21130 /* Products */,
+				241F7C492773CE6F0015713E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -328,6 +362,8 @@
 			children = (
 				24428E2726B33E7700B21130 /* SvadilfariTests.swift */,
 				242CD6F026CFD111009DDDB0 /* ExclusionListServiceTest.swift */,
+				241F7C4C2774ED520015713E /* UserDefaultsTest.swift */,
+				241F7C502774F99A0015713E /* GestureHashTest.swift */,
 			);
 			path = SvadilfariTests;
 			sourceTree = "<group>";
@@ -793,6 +829,7 @@
 				242CD6F226CFD31D009DDDB0 /* ExclusionListService.swift in Sources */,
 				240410B426DF8B3400851A2A /* InitialDataService.swift in Sources */,
 				249477C326CEB75200E6FCC5 /* PersistentHistoryMerger.swift in Sources */,
+				241F7C5627751E400015713E /* DuplicatedEntityService.swift in Sources */,
 				24B224AA26B5EEFC009EAB48 /* Vector+.swift in Sources */,
 				2485834C26BCC2DE00A8836E /* SheetState.swift in Sources */,
 				241D8FC226BC7E1600CBB381 /* RunJavascriptActionConfigView.swift in Sources */,
@@ -827,8 +864,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				24D2698727752C5B00F570B0 /* CoreData.xcdatamodeld in Sources */,
+				241F7C5F277525350015713E /* InitialDataService.swift in Sources */,
+				241F7C4F2774F0850015713E /* Constants.swift in Sources */,
+				241F7C4E2774EE580015713E /* UserDefaults.swift in Sources */,
 				242CD6F126CFD111009DDDB0 /* ExclusionListServiceTest.swift in Sources */,
+				241F7C5D2775234B0015713E /* PersistenceController.swift in Sources */,
+				24D2698627752BA800F570B0 /* GestureEntity+.swift in Sources */,
+				241F7C532774F9C70015713E /* Gesture+.swift in Sources */,
+				241F7C522774F9C20015713E /* SharedTypes.swift in Sources */,
+				241F7C542774FA720015713E /* Changeable.swift in Sources */,
 				24428E2826B33E7700B21130 /* SvadilfariTests.swift in Sources */,
+				241F7C4D2774ED520015713E /* UserDefaultsTest.swift in Sources */,
+				241F7C592775229F0015713E /* DuplicatedEntityService.swift in Sources */,
+				241F7C512774F99A0015713E /* GestureHashTest.swift in Sources */,
+				241F7C60277526ED0015713E /* Vector+.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -850,6 +900,7 @@
 				242CD6F526CFD6C1009DDDB0 /* CoreData.xcdatamodeld in Sources */,
 				24F3686B26C35EA90092F583 /* SharedTypes.swift in Sources */,
 				24F3686A26C35B1D0092F583 /* PersistenceController.swift in Sources */,
+				24D2698A277534EB00F570B0 /* Changeable.swift in Sources */,
 				242CD6EA26CFB228009DDDB0 /* UserDefaults.swift in Sources */,
 				249477CB26CEBE9500E6FCC5 /* Logger+.swift in Sources */,
 				24F3686C26C362A80092F583 /* GestureEntity+.swift in Sources */,
@@ -858,6 +909,7 @@
 				249477CD26CEBEA300E6FCC5 /* PersistentHistoryMerger.swift in Sources */,
 				242CD6EB26CFB246009DDDB0 /* Constants.swift in Sources */,
 				249477D026CEBEBF00E6FCC5 /* UserDefaults+transactionTimestamp.swift in Sources */,
+				24D26989277534E400F570B0 /* Gesture+.swift in Sources */,
 				249477CE26CEBEA600E6FCC5 /* PersistentHistoryFetcher.swift in Sources */,
 				242CD6EE26CFC6E0009DDDB0 /* ExclusionListService.swift in Sources */,
 			);
@@ -1189,7 +1241,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.0.0;
+				MARKETING_VERSION = 1.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "app.svadilfari.svadilfari.safari-extension";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -1216,7 +1268,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.0.0;
+				MARKETING_VERSION = 1.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "app.svadilfari.svadilfari.safari-extension";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;

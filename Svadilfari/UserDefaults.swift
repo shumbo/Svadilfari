@@ -9,18 +9,27 @@ import Foundation
 
 extension UserDefaults {
     /// shared instance that can be accessed from all targets
-    static var shared: Self {
-        return Self(suiteName: APP_GROUP_ID)!
+    static var shared: UserDefaults = {
+        let instance = UserDefaults(suiteName: APP_GROUP_ID)!
+        UserDefaults.setInitialData(defaults: instance)
+        return instance
+    }()
+
+    /// Set initial data to a specified UserDefault instance
+    static public func setInitialData(defaults: UserDefaults) {
+        defaults.register(defaults: userDefaultsDefaults)
     }
 
-    static let userDefaultsDefaults = [
+    static private let userDefaultsDefaults = [
         Keys.previouslyLaunched: false,
-        Keys.gestureRecognitionSensitivity: 0.0
+        Keys.gestureRecognitionSensitivity: 0.0,
+        Keys.icloudSyncEnabled: false
     ] as [String: Any]
 
     public enum Keys {
         static let previouslyLaunched = "previouslyLaunched"
         static let gestureRecognitionSensitivity = "gestureRecognitionSensitivity"
+        static let icloudSyncEnabled = "icloudSyncEnabled"
     }
 
     var isFirstLaunch: Bool {
@@ -30,6 +39,15 @@ extension UserDefaults {
         }
         set {
             self.setValue(!newValue, forKey: Keys.previouslyLaunched)
+        }
+    }
+
+    var icloudSyncEnabled: Bool {
+        get {
+            return self.bool(forKey: Keys.icloudSyncEnabled)
+        }
+        set {
+            self.setValue(newValue, forKey: Keys.icloudSyncEnabled)
         }
     }
 }

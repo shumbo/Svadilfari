@@ -8,7 +8,7 @@
 import CoreData
 import Combine
 
-struct PersistenceController {
+class PersistenceController {
     private var subscriptions: Set<AnyCancellable> = []
 
     static let shared = PersistenceController()
@@ -28,10 +28,14 @@ struct PersistenceController {
         return result
     }()
 
-    let container: NSPersistentContainer
+    var container: NSPersistentContainer!
 
     init(inMemory: Bool = false) {
-        container = NSPersistentContainer(name: "CoreData")
+        setupContainer(sync: UserDefaults.shared.icloudSyncEnabled, inMemory: inMemory)
+    }
+
+    private func setupContainer(sync: Bool = true, inMemory: Bool = false) {
+        self.container = NSPersistentCloudKitContainer(name: "CoreData")
 
         // store the data in App Group
         let storeURL = URL.storeURL(for: APP_GROUP_ID, databaseName: "Svadilfari")
@@ -40,31 +44,32 @@ struct PersistenceController {
 
         description.setOption(true as NSNumber, forKey: NSPersistentHistoryTrackingKey)
         description.setOption(true as NSNumber, forKey: NSPersistentStoreRemoteChangeNotificationPostOptionKey)
-
+        if sync {
+            description.cloudKitContainerOptions = NSPersistentCloudKitContainerOptions(
+                containerIdentifier: CLOUDKIT_CONTAINER_ID
+            )
+        } else {
+            description.cloudKitContainerOptions = nil
+        }
         container.persistentStoreDescriptions = [description]
 
+        // if inMemory is true, store it in memory
         if inMemory {
             container.persistentStoreDescriptions.first!.url = URL(fileURLWithPath: "/dev/null")
         }
-        container.loadPersistentStores(completionHandler: { (description, error) in
-            print(description.options)
-            if let error = error as NSError? {
-                // Replace this implementation with code to handle the error appropriately.
-                // fatalError() causes the application to generate a crash log and terminate.
-                // You should not use this function in a shipping application,
-                // although it may be useful during development.
 
-                /*
-                Typical reasons for an error here include:
-                * The parent directory does not exist, cannot be created, or disallows writing.
-                * The persistent store is not accessible, due to permissions or data protection
-                * when the device is locked.
-                * The device is out of space.
-                * The store could not be migrated to the current model version.
-                Check the error message to determine what the actual problem was.
-                */
+        // load persistent stores
+        self.container.loadPersistentStores(completionHandler: { (_, error) in
+            if let error = error as NSError? {
                 fatalError("Unresolved error \(error), \(error.userInfo)")
             }
         })
+
+        try? self.container.viewContext.setQueryGenerationFrom(.current)
+        self.container.viewContext.automaticallyMergesChangesFromParent = true
+    }
+
+    public func toggleSync(sync: Bool) {
+        setupContainer(sync: sync, inMemory: false)
     }
 }

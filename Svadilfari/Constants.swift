@@ -10,3 +10,4 @@ import Foundation
 // swiftlint:disable identifier_name
 
 let APP_GROUP_ID = "group.app.svadilfari.svadilfari"
+let CLOUDKIT_CONTAINER_ID = "iCloud.app.svadilfari.svadilfari"
