@@ -89,7 +89,6 @@ importers:
   packages/content:
     specifiers:
       '@babel/core': ^7.15.5
-      '@emotion/styled': ^11
       '@fluentui/svg-icons': ^1.1.141
       '@react-spring/web': ^9.2.4
       '@storybook/addon-actions': ^6.3.8
@@ -99,6 +98,9 @@ importers:
       '@svgr/webpack': ^5.5.0
       '@types/react': ^17.0.0
       '@types/react-dom': ^17.0.0
+      '@vanilla-extract/css': ^1.6.3
+      '@vanilla-extract/esbuild-plugin': ^2.0.0
+      '@vanilla-extract/webpack-plugin': ^2.1.6
       babel-loader: ^8.2.2
       core: workspace:*
       eslint: ^7.32.0
@@ -114,9 +116,10 @@ importers:
       webextension-toolkit: workspace:*
       webextension-typedef: workspace:*
     dependencies:
-      '@emotion/styled': 11.3.0_7d120459bc49ec1f7e6eba73754045f3
       '@fluentui/svg-icons': 1.1.141
       '@react-spring/web': 9.2.4_react-dom@17.0.2+react@17.0.2
+      '@vanilla-extract/css': 1.6.3
+      '@vanilla-extract/esbuild-plugin': 2.0.0
       core: link:../core
       modern-css-reset: 1.4.0
       react: 17.0.2
@@ -132,6 +135,7 @@ importers:
       '@svgr/webpack': 5.5.0
       '@types/react': 17.0.24
       '@types/react-dom': 17.0.9
+      '@vanilla-extract/webpack-plugin': 2.1.6
       babel-loader: 8.2.2_@babel+core@7.15.5
       eslint: 7.32.0
       eslint-config-svadilfari: link:../eslint-config-svadilfari
@@ -3378,29 +3382,6 @@ packages:
       react: 17.0.2
     dev: true
 
-  /@emotion/styled/11.3.0_7d120459bc49ec1f7e6eba73754045f3:
-    resolution: {integrity: sha512-fUoLcN3BfMiLlRhJ8CuPUMEyKkLEoM+n+UyAbnqGEsCd5IzKQ7VQFLtzpJOaCD2/VR2+1hXQTnSZXVJeiTNltA==}
-    peerDependencies:
-      '@babel/core': ^7.0.0
-      '@emotion/react': ^11.0.0-rc.0
-      '@types/react': '*'
-      react: '>=16.8.0'
-    peerDependenciesMeta:
-      '@babel/core':
-        optional: true
-      '@types/react':
-        optional: true
-    dependencies:
-      '@babel/core': 7.15.5
-      '@babel/runtime': 7.15.4
-      '@emotion/babel-plugin': 11.3.0_@babel+core@7.15.5
-      '@emotion/is-prop-valid': 1.1.0
-      '@emotion/serialize': 1.0.2
-      '@emotion/utils': 1.0.0
-      '@types/react': 17.0.24
-      react: 17.0.2
-    dev: false
-
   /@emotion/styled/11.3.0_a661e66cf90fd1accef1d0016fe8ab8b:
     resolution: {integrity: sha512-fUoLcN3BfMiLlRhJ8CuPUMEyKkLEoM+n+UyAbnqGEsCd5IzKQ7VQFLtzpJOaCD2/VR2+1hXQTnSZXVJeiTNltA==}
     peerDependencies:
@@ -5889,6 +5870,87 @@ packages:
       eslint-visitor-keys: 2.1.0
     dev: true
 
+  /@vanilla-extract/css/1.6.3:
+    resolution: {integrity: sha512-Jp2bRQfN7O0PY//pnfnjMENXexow7okwHlbQW3nwv+8uFkUVFtjc1+aZcNklYu5fZjGWDFLJhDLHShDN0XmYFg==}
+    dependencies:
+      '@emotion/hash': 0.8.0
+      '@vanilla-extract/private': 1.0.1
+      chalk: 4.1.2
+      css-what: 5.0.1
+      cssesc: 3.0.0
+      csstype: 3.0.9
+      deep-object-diff: 1.1.0
+      deepmerge: 4.2.2
+      outdent: 0.8.0
+    dev: false
+
+  /@vanilla-extract/css/1.6.8:
+    resolution: {integrity: sha512-wkZay2jWe9a3Dt30j+WTJicK4+YV7i65lr+QnpkigVY9uU2KPzaiASEyUV8AouT2cZm7AOhteBBVKI8cYeWnVQ==}
+    dependencies:
+      '@emotion/hash': 0.8.0
+      '@vanilla-extract/private': 1.0.3
+      chalk: 4.1.2
+      css-what: 5.0.1
+      cssesc: 3.0.0
+      csstype: 3.0.9
+      deep-object-diff: 1.1.0
+      deepmerge: 4.2.2
+      escape-string-regexp: 4.0.0
+      outdent: 0.8.0
+    dev: true
+
+  /@vanilla-extract/esbuild-plugin/2.0.0:
+    resolution: {integrity: sha512-NqLVDtcIxfl6J/ksX9xJuJjOqBVCBMHnDqsTZjBiApgd9HPmHLZsKa4w1lsZPhp75FfrKo1WKXGGMrj3+wSvqA==}
+    dependencies:
+      '@vanilla-extract/integration': 1.4.3
+    dev: false
+
+  /@vanilla-extract/integration/1.4.3:
+    resolution: {integrity: sha512-Jax0lADpx8LYwwOyiob9+koGm3H4xSMkWOD+pGTeI87YquALUcp9tqlhZOSPX3X5Jdlpyw2Gxxmo6wa47UEWHA==}
+    dependencies:
+      '@vanilla-extract/css': 1.6.3
+      chalk: 4.1.2
+      esbuild: 0.11.23
+      eval: 0.1.6
+      find-up: 5.0.0
+      javascript-stringify: 2.1.0
+      lodash: 4.17.21
+      outdent: 0.8.0
+    dev: false
+
+  /@vanilla-extract/integration/3.0.1:
+    resolution: {integrity: sha512-4G4WgkalVRIsJyDb/X08S0xcG2eDm1RJvqIgji0D7HvOSeyD+nvPEhbq8FAxs7MeVyyPDoCWsCKQvS3f9jz9UA==}
+    dependencies:
+      '@vanilla-extract/css': 1.6.8
+      esbuild: 0.11.23
+      eval: 0.1.6
+      find-up: 5.0.0
+      javascript-stringify: 2.1.0
+      lodash: 4.17.21
+      outdent: 0.8.0
+    dev: true
+
+  /@vanilla-extract/private/1.0.1:
+    resolution: {integrity: sha512-ABrFJGSmF7a1M+eDTsIeAErPhIeRyBY3ypyLQPc4bUVEK1mvF7F2gx4fTP81pm12bkS0GhjSJtM854lcPWhB+w==}
+    dev: false
+
+  /@vanilla-extract/private/1.0.3:
+    resolution: {integrity: sha512-17kVyLq3ePTKOkveHxXuIJZtGYs+cSoev7BlP+Lf4916qfDhk/HBjvlYDe8egrea7LNPHKwSZJK/bzZC+Q6AwQ==}
+    dev: true
+
+  /@vanilla-extract/webpack-plugin/2.1.6:
+    resolution: {integrity: sha512-DwA92HE6tilgkuFOJk5chZTRuyJL6DKUyFf22VJDkaD2PoX1yzP+C/ERK7BRK9U9fmK44Qwk5oJKAQYMASNV3A==}
+    peerDependencies:
+      webpack: ^4.30.0 || ^5.20.2
+    dependencies:
+      '@vanilla-extract/integration': 3.0.1
+      chalk: 4.1.2
+      debug: 4.3.2
+      loader-utils: 2.0.0
+    transitivePeerDependencies:
+      - supports-color
+    dev: true
+
   /@vitejs/plugin-react-refresh/1.3.6:
     resolution: {integrity: sha512-iNR/UqhUOmFFxiezt0em9CgmiJBdWR+5jGxB2FihaoJfqGt76kiwaKoVOJVU5NYcDWMdN06LbyN2VIGIoYdsEA==}
     engines: {node: '>=12.0.0'}
@@ -8295,7 +8357,6 @@ packages:
 
   /deep-object-diff/1.1.0:
     resolution: {integrity: sha512-b+QLs5vHgS+IoSNcUE4n9HP2NwcHj7aqnJWsjPtuG75Rh5TOaGt0OjAYInh77d5T16V5cRDC+Pw/6ZZZiETBGw==}
-    dev: true
 
   /deepmerge/4.2.2:
     resolution: {integrity: sha512-FJ3UgI4gIl+PHZm53knsuSFpE+nESMr7M4v9QcgB7S63Kj/6WqMiFQJpBBYz1Pt+66bZpP3Q7Lye0Oo9MPKEdg==}
@@ -8966,6 +9027,11 @@ packages:
     dev: true
     optional: true
 
+  /esbuild/0.11.23:
+    resolution: {integrity: sha512-iaiZZ9vUF5wJV8ob1tl+5aJTrwDczlvGP0JoMmnpC2B0ppiMCu8n8gmy5ZTGl5bcG081XBVn+U+jP+mPFm5T5Q==}
+    hasBin: true
+    requiresBuild: true
+
   /esbuild/0.12.29:
     resolution: {integrity: sha512-w/XuoBCSwepyiZtIRsKsetiLDUVGPVw1E/R3VTFSecIy8UR7Cq3SOtwKHJMFoVqqVG36aGkzh4e8BvpO1Fdc7g==}
     hasBin: true
@@ -9285,7 +9351,6 @@ packages:
     engines: {node: '>= 0.8'}
     dependencies:
       require-like: 0.1.2
-    dev: false
 
   /eventemitter3/4.0.7:
     resolution: {integrity: sha512-8guHBZCwKnFhYdHr2ysuRWErTwhoN2X8XELRlrRwpmfeY2jjuUN4taQMsULKUVo1K4DvZl+0pgfyoysHxvmvEw==}
@@ -11260,6 +11325,9 @@ packages:
       es-get-iterator: 1.1.2
       iterate-iterator: 1.0.1
     dev: true
+
+  /javascript-stringify/2.1.0:
+    resolution: {integrity: sha512-JVAfqNPTvNq3sB/VHQJAFxN/sPgKnsKrCwyRt15zwNCdrMMJDdcEOdubuy+DuJYYdm0ox1J4uzEuYKkN+9yhVg==}
 
   /jest-changed-files/27.1.1:
     resolution: {integrity: sha512-5TV9+fYlC2A6hu3qtoyGHprBwCAn0AuGA77bZdUgYvVlRMjHXo063VcWTEAyx6XAZ85DYHqp0+aHKbPlfRDRvA==}
@@ -13507,6 +13575,9 @@ packages:
     resolution: {integrity: sha1-hUNzx/XCMVkU/Jv8a9gjj92h7Cc=}
     dev: true
 
+  /outdent/0.8.0:
+    resolution: {integrity: sha512-KiOAIsdpUTcAXuykya5fnVVT+/5uS0Q1mrkRHcF89tpieSmY33O/tmc54CqwA+bfhbtEfZUNLHaPUiB9X3jt1A==}
+
   /overlayscrollbars/1.13.1:
     resolution: {integrity: sha512-gIQfzgGgu1wy80EB4/6DaJGHMEGmizq27xHIESrzXq0Y/J0Ay1P3DWk6tuVmEPIZH15zaBlxeEJOqdJKmowHCQ==}
     dev: true
@@ -15489,7 +15560,6 @@ packages:
 
   /require-like/0.1.2:
     resolution: {integrity: sha1-rW8wwTvs15cBDEaK+ndcDAprR/o=}
-    dev: false
 
   /require-main-filename/2.0.0:
     resolution: {integrity: sha512-NKN5kMDylKuldxYLSUfrbo5Tuzh4hd+2E8NPPX02mZtn1VuREQToYe/ZdlJy+J3uCpfaiGF05e7B8W0iXbQHmg==}

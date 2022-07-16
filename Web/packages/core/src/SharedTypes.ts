@@ -6,8 +6,8 @@
 //   const getGestureResponse = Convert.toGetGestureResponse(json);
 //   const getExclusionEntryResponse = Convert.toGetExclusionEntryResponse(json);
 //   const messageRequest = Convert.toMessageRequest(json);
-//   const vector = Convert.toVector(json);
 //   const pointList = Convert.toPointList(json);
+//   const vector = Convert.toVector(json);
 //   const pattern = Convert.toPattern(json);
 //   const point = Convert.toPoint(json);
 //   const action = Convert.toAction(json);
@@ -24,6 +24,10 @@ export interface GetGestureResponse {
     sensitivity: number;
 }
 
+/**
+ * Gesture represents a configuration of the gesture, which is a pair of a pattern and
+ * action, plus some additional information
+ */
 export interface Gesture {
     action:  Action;
     enabled: boolean;
@@ -31,6 +35,10 @@ export interface Gesture {
     pattern: Pattern;
 }
 
+/**
+ * Action represents an action that can be performed on a website. It should have a non-null
+ * value exactly one property.
+ */
 export interface Action {
     goBackward?:    boolean;
     goForward?:     boolean;
@@ -156,20 +164,20 @@ export class Convert {
         return JSON.stringify(uncast(value, r("MessageRequest")), null, 2);
     }
 
-    public static toVector(json: string): Vector {
-        return cast(JSON.parse(json), r("Vector"));
-    }
-
-    public static vectorToJson(value: Vector): string {
-        return JSON.stringify(uncast(value, r("Vector")), null, 2);
-    }
-
     public static toPointList(json: string): Point[] {
         return cast(JSON.parse(json), a(r("Point")));
     }
 
     public static pointListToJson(value: Point[]): string {
         return JSON.stringify(uncast(value, a(r("Point"))), null, 2);
+    }
+
+    public static toVector(json: string): Vector {
+        return cast(JSON.parse(json), r("Vector"));
+    }
+
+    public static vectorToJson(value: Vector): string {
+        return JSON.stringify(uncast(value, r("Vector")), null, 2);
     }
 
     public static toPattern(json: string): Pattern {

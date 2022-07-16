@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		24002463272610100015CE9B /* content.css in Resources */ = {isa = PBXBuildFile; fileRef = 24002462272610100015CE9B /* content.css */; };
 		240410B426DF8B3400851A2A /* InitialDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240410B326DF8B3400851A2A /* InitialDataService.swift */; };
 		241D8FB926BC1F2200CBB381 /* Action+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241D8FB826BC1F2200CBB381 /* Action+.swift */; };
 		241D8FC026BC7BDC00CBB381 /* SelectActionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241D8FBF26BC7BDC00CBB381 /* SelectActionView.swift */; };
@@ -155,6 +156,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		24002462272610100015CE9B /* content.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = content.css; sourceTree = "<group>"; };
 		240410B326DF8B3400851A2A /* InitialDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialDataService.swift; sourceTree = "<group>"; };
 		241D8FB826BC1F2200CBB381 /* Action+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Action+.swift"; sourceTree = "<group>"; };
 		241D8FBF26BC7BDC00CBB381 /* SelectActionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectActionView.swift; sourceTree = "<group>"; };
@@ -531,6 +533,7 @@
 				24C11E5A26B4366B00E018B5 /* manifest.json */,
 				24C11E5C26B4366B00E018B5 /* background.js */,
 				24C11E5E26B4366B00E018B5 /* content.js */,
+				24002462272610100015CE9B /* content.css */,
 				24C11E6026B4366B00E018B5 /* popup.html */,
 				24C11E6226B4366B00E018B5 /* popup.css */,
 				24C11E6426B4366B00E018B5 /* popup.js */,
@@ -725,6 +728,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				24002463272610100015CE9B /* content.css in Resources */,
 				24C11E5D26B4366B00E018B5 /* background.js in Resources */,
 				24C11E6326B4366B00E018B5 /* popup.css in Resources */,
 				24C11E6126B4366B00E018B5 /* popup.html in Resources */,

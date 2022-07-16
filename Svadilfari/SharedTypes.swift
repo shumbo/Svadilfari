@@ -5,8 +5,8 @@
 //   let getGestureResponse = try GetGestureResponse(json)
 //   let getExclusionEntryResponse = try GetExclusionEntryResponse(json)
 //   let messageRequest = try MessageRequest(json)
-//   let vector = try Vector(json)
 //   let pointList = try PointList(json)
+//   let vector = try Vector(json)
 //   let pattern = try Pattern(json)
 //   let point = try Point(json)
 //   let action = try Action(json)
@@ -60,6 +60,8 @@ extension GetGestureResponse {
     }
 }
 
+/// Gesture represents a configuration of the gesture, which is a pair of a pattern and
+/// action, plus some additional information
 // MARK: - Gesture
 struct Gesture: Codable {
     var action: Action
@@ -109,6 +111,8 @@ extension Gesture {
     }
 }
 
+/// Action represents an action that can be performed on a website. It should have a non-null
+/// value exactly one property.
 // MARK: - Action
 struct Action: Codable {
     var goBackward, goForward: Bool?
