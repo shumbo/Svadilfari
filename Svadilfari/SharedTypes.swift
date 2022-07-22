@@ -17,6 +17,8 @@ import Foundation
 struct GetGestureResponse: Codable {
     var error: String?
     var gestures: [Gesture]
+    /// True if extension should detect gesture with mouse
+    var mouse: Bool
     /// Gesture Recognition Sensitivity ([-3, 3])
     var sensitivity: Double
 }
@@ -42,11 +44,13 @@ extension GetGestureResponse {
     func with(
         error: String?? = nil,
         gestures: [Gesture]? = nil,
+        mouse: Bool? = nil,
         sensitivity: Double? = nil
     ) -> GetGestureResponse {
         return GetGestureResponse(
             error: error ?? self.error,
             gestures: gestures ?? self.gestures,
+            mouse: mouse ?? self.mouse,
             sensitivity: sensitivity ?? self.sensitivity
         )
     }

@@ -10,8 +10,12 @@ properties:
   sensitivity:
     type: number
     description: Gesture Recognition Sensitivity ([-3, 3])
+  mouse:
+    type: boolean
+    description: True if extension should detect gesture with mouse
   error:
     type: string
 required:
   - gestures
   - sensitivity
+  - mouse
