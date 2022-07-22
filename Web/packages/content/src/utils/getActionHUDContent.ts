@@ -12,6 +12,7 @@ import GlobeAdd from "@fluentui/svg-icons/icons/globe_add_24_regular.svg";
 import TabAdd from "@fluentui/svg-icons/icons/tab_add_20_regular.svg";
 import TabDesktopCopy from "@fluentui/svg-icons/icons/tab_desktop_copy_20_regular.svg";
 import TabProhibited from "@fluentui/svg-icons/icons/tab_prohibited_24_regular.svg";
+import Share from "@fluentui/svg-icons/icons/share_ios_20_regular.svg";
 import { Action, getActionCode } from "core";
 import { unreachableCase } from "ts-assert-unreachable";
 import { Browser } from "webextension-typedef";
@@ -63,6 +64,11 @@ export function getActionHUDContent(
         title: getTitle("open_url"),
         message: action.openURL?.title ?? action.openURL?.url,
         icon: GlobeAdd,
+      };
+    case "share":
+      return {
+        title: getTitle("share"),
+        icon: Share,
       };
     case null:
       break;

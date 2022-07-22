@@ -136,6 +136,8 @@ export async function executeAction(
       }
       break;
     }
+    case "share":
+      throw new Error("Unexpected action type");
     case null:
       break;
     default:

@@ -19,5 +19,12 @@ export function setupContentApp(props: ContentAppProps): void {
   const app = document.createElement("div");
   shadow.appendChild(app);
 
+  const scriptElm = document.createElement("script");
+  const inlineCode = document.createTextNode(
+    "window.SVShare = function(url) { console.log('share', url); navigator.share({url}); }"
+  );
+  scriptElm.appendChild(inlineCode);
+  document.body.appendChild(scriptElm);
+
   ReactDOM.render(<ContentApp {...props} />, app);
 }

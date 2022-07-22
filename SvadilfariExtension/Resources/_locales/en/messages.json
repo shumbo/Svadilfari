@@ -49,6 +49,9 @@
     "get_action_hud_content:open_url": {
         "message": "Open URL"
     },
+    "get_action_hud_content:share": {
+        "message": "Open URL"
+    },
     "get_action_hud_content:unknown": {
         "message": "Unknown Action"
     },

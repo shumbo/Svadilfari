@@ -49,6 +49,9 @@
   "get_action_hud_content:open_url": {
     "message": "URLを開く"
   },
+  "get_action_hud_content:share": {
+    "message": "共有"
+  },
   "get_action_hud_content:unknown": {
     "message": "不明なアクション"
   },

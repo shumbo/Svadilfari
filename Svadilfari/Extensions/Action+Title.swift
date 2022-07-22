@@ -58,6 +58,9 @@ extension Action {
             }
             return "ACTION_TITLE_OPEN_URL"
         }
+        if self.share != nil {
+            return "ACTION_TITLE_SHARE"
+        }
         return "ACTION_TITLE_UNKNOWN"
     }
 

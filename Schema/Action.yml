@@ -51,3 +51,5 @@ properties:
       - url
       - new_tab
       - title
+  share:
+    type: boolean

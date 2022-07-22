@@ -64,6 +64,12 @@ struct SelectActionView: View {
                     self.onSelect(Action(urlCopy: true))
                 }
                 NavigationLinkView {
+                    ActionListItem(title: "SELECT_ACTION_PAGE_SHARE")
+                }
+                .onTapGesture {
+                    self.onSelect(Action(share: true))
+                }
+                NavigationLinkView {
                     ActionListItem(title: "SELECT_ACTION_PAGE_SCROLL_TO_TOP")
                 }
                 .onTapGesture {

@@ -5,6 +5,7 @@ import { unreachableCase } from "ts-assert-unreachable";
 import { Browser } from "webextension-typedef";
 
 import { useHUD } from "./components/HUD/useHUD";
+import { executeOrDelegateAction } from "./executeOrDelegateAction";
 import { useGestureRecognizer } from "./hooks/useGestureRecognizer";
 import { getActionHUDContent } from "./utils/getActionHUDContent";
 import { isEmbededFrame } from "./utils/isEmbedFrame";
@@ -65,7 +66,7 @@ export const ContentApp: FC<ContentAppProps> = ({ messenger, i18n }) => {
       if (g) {
         resolve();
         setTimeout(() => {
-          messenger.executeAction(g.action);
+          executeOrDelegateAction(g.action, messenger);
         }, 200);
       } else {
         cancel();
