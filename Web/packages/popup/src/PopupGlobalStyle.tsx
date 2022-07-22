@@ -1,5 +1,5 @@
 import { Global, css } from "@emotion/react";
-import React, { VFC } from "react";
+import React, { FC } from "react";
 
 const styles = css`
   body {
@@ -8,6 +8,6 @@ const styles = css`
   }
 `;
 
-export const PopupGlobalStyle: VFC = () => {
+export const PopupGlobalStyle: FC = () => {
   return <Global styles={styles} />;
 };

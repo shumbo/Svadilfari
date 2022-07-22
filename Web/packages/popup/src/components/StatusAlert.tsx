@@ -1,5 +1,5 @@
 import { Alert, AlertIcon } from "@chakra-ui/react";
-import React, { useMemo, VFC } from "react";
+import React, { useMemo, FC } from "react";
 import { Browser } from "webextension-typedef";
 
 export type StatusAlertProps = {
@@ -7,7 +7,7 @@ export type StatusAlertProps = {
   status: "ACTIVE" | "INACTIVE" | null;
 };
 
-export const StatusAlert: VFC<StatusAlertProps> = ({ i18n, status }) => {
+export const StatusAlert: FC<StatusAlertProps> = ({ i18n, status }) => {
   const activeMsg = useMemo(
     () => i18n.getMessage("status_alert:active"),
     [i18n]

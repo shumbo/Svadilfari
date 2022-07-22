@@ -1,5 +1,5 @@
 import { Flex, Spacer, Switch, Heading, VStack, Text } from "@chakra-ui/react";
-import React, { VFC } from "react";
+import React, { FC } from "react";
 
 export type ExceptionToggleProps = {
   title: string;
@@ -9,7 +9,7 @@ export type ExceptionToggleProps = {
   onChange: (newValue: boolean) => void;
 };
 
-export const ExceptionToggle: VFC<ExceptionToggleProps> = ({
+export const ExceptionToggle: FC<ExceptionToggleProps> = ({
   title,
   description,
   value,

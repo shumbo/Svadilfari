@@ -1,5 +1,5 @@
 import { Box, Heading, VStack } from "@chakra-ui/react";
-import React, { useMemo, VFC } from "react";
+import React, { useMemo, FC } from "react";
 import { Browser } from "webextension-typedef";
 
 import { ExceptionToggle } from "./ExceptionToggle";
@@ -23,7 +23,7 @@ export type ExceptionToggleGroupProps = {
   onChange: (newValue: Partial<ExceptionStatus>) => void;
 };
 
-export const ExceptionToggleGroup: VFC<ExceptionToggleGroupProps> = ({
+export const ExceptionToggleGroup: FC<ExceptionToggleGroupProps> = ({
   i18n,
   domain,
   path,
