@@ -1,5 +1,7 @@
-import React, { VFC } from "react";
+import React, { Fragment, VFC } from "react";
 import { animated, useTransition } from "@react-spring/web";
+
+import { GlobalStylePortal } from "../GlobalStylePortal/GlobalStylePortal";
 
 import {
   animationContainerStyle,
@@ -53,27 +55,35 @@ export const HUD: VFC<HUDProps> = ({
     },
   });
 
-  return transitions(
-    ({ opacity, scale }, item) =>
-      item && (
-        <animated.div
-          className={animationContainerStyle}
-          style={{
-            opacity,
-            scale,
-          }}
-        >
-          <div className={wrapperStyle}>
-            {Icon && (
-              <div className={iconWrapperStyle}>
-                <Icon style={{ width: 100, height: 100 }} />
+  return (
+    <Fragment>
+      {transitions(
+        ({ opacity, scale }, item) =>
+          item && (
+            <animated.div
+              className={animationContainerStyle}
+              style={{
+                opacity,
+                scale,
+              }}
+            >
+              <div className={wrapperStyle}>
+                {Icon && (
+                  <div className={iconWrapperStyle}>
+                    <Icon style={{ width: 100, height: 100 }} />
+                  </div>
+                )}
+                <p className={titleStyle}>{title}</p>
+                {message && <p className={textStyle}>{message}</p>}
               </div>
-            )}
-            <p className={titleStyle}>{title}</p>
-            {message && <p className={textStyle}>{message}</p>}
-          </div>
-        </animated.div>
-      )
+            </animated.div>
+          )
+      )}
+      {visible && (
+        // TODO: the id can duplicate if two or more HUDs are shown at the same time
+        <GlobalStylePortal id="hud" style="* { -webkit-user-select: none; }" />
+      )}
+    </Fragment>
   );
 };
 HUD.displayName = "HUD";

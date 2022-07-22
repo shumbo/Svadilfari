@@ -19,6 +19,10 @@ export interface GetGestureResponse {
     error?:   string;
     gestures: Gesture[];
     /**
+     * True if extension should detect gesture with mouse
+     */
+    mouse: boolean;
+    /**
      * Gesture Recognition Sensitivity ([-3, 3])
      */
     sensitivity: number;
@@ -341,6 +345,7 @@ const typeMap: any = {
     "GetGestureResponse": o([
         { json: "error", js: "error", typ: u(undefined, "") },
         { json: "gestures", js: "gestures", typ: a(r("Gesture")) },
+        { json: "mouse", js: "mouse", typ: true },
         { json: "sensitivity", js: "sensitivity", typ: 3.14 },
     ], "any"),
     "Gesture": o([

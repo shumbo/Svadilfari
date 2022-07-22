@@ -118,6 +118,7 @@ export const ContentApp: VFC<ContentAppProps> = ({ messenger, i18n }) => {
   useGestureRecognizer(
     enabledGestures ?? [],
     gestureResponse?.sensitivity ?? 5,
+    gestureResponse?.mouse ?? false,
     // onChange
     onChangeHandler,
     // onRelease

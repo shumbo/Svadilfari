@@ -153,11 +153,15 @@ GESTURE_EDIT_DELETE_CONFIRM_BUTTON = "Delete Gesture";
 // MARK: Settings
 SETTINGS_TITLE = "Settings";
 SETTINGS_SYNC_TOGGLE_LABEL = "iCloud Sync (Experimental)";
-SETTINGS_SYNC_FOOTER = "Your gestures and exclusion list will be backed up to iCloud and synced to your devices.\n**Caution**: This feature is experimental and enabling it might cause losses in your settings. [About iCloud Sync...](https://go.svadilfari.app/icloud-sync-experimental)";
+SETTINGS_SYNC_HEADER = "Sync";
+SETTINGS_SYNC_FOOTER = "Your gestures and exclusion list will be backed up to iCloud and synced to your devices.\n**Caution**: This feature is experimental and enabling it might cause losses to your settings. [About iCloud Sync...](https://go.svadilfari.app/icloud-sync-experimental)";
 SETTINGS_GESTURE_SENSITIVITY_HEADER = "Gesture Sensitivity";
 SETTINGS_GESTURE_SENSITIVITY_FOOTER = "Increasing gesture sensitivity makes it easier for gestures to be recognized, but also makes it easier for false positives to occur.";
 SETTINGS_GESTURE_SENSITIVITY_LOW = "Low";
 SETTINGS_GESTURE_SENSITIVITY_HIGH = "High";
+SETTINGS_GESTURE_MOUSE_HEADER = "Mouse/Trackpad";
+SETTINGS_GESTURE_MOUSE_FOOTER = "Detect gestures drawn with mouse and trackpad.";
+SETTINGS_GESTURE_MOUSE_TOGGLE_LABEL = "Gesture with Mouse";
 SETTINGS_LINKS_HEADER = "Links";
 SETTINGS_LINKS_ABOUT_APP = "About This App";
 SETTINGS_LINKS_FAQ = "Frequently Asked Questions";

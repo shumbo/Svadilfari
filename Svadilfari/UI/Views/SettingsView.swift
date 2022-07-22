@@ -10,10 +10,14 @@ import SwiftUI
 struct SettingsView: View {
     @State private var sync: Bool = true
     @State private var sensitivity: Double = 0.0
+    @State private var mouse: Bool = false
 
     var body: some View {
         List {
-            Section(footer: Text("SETTINGS_SYNC_FOOTER")) {
+            Section(
+                header: Text("SETTINGS_SYNC_HEADER"),
+                footer: Text("SETTINGS_SYNC_FOOTER")
+            ) {
                 Toggle("SETTINGS_SYNC_TOGGLE_LABEL", isOn: self.$sync.onChange { nv in
                     UserDefaults.shared.icloudSyncEnabled = nv
                     PersistenceController.shared.toggleSync(sync: nv)
@@ -40,6 +44,16 @@ struct SettingsView: View {
                     self.sensitivity = UserDefaults.shared.double(
                         forKey: UserDefaults.Keys.gestureRecognitionSensitivity
                     )
+                }
+            }
+            Section(
+                header: Text("SETTINGS_GESTURE_MOUSE_HEADER"),
+                footer: Text("SETTINGS_GESTURE_MOUSE_FOOTER")
+            ) {
+                Toggle("SETTINGS_GESTURE_MOUSE_TOGGLE_LABEL", isOn: self.$mouse.onChange { nv in
+                    UserDefaults.shared.set(nv, forKey: UserDefaults.Keys.gestureRecognitionMouse)
+                }).onAppear {
+                    self.mouse = UserDefaults.shared.bool(forKey: UserDefaults.Keys.gestureRecognitionMouse)
                 }
             }
             Section(header: Text("SETTINGS_LINKS_HEADER")) {

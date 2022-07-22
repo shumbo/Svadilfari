@@ -29,6 +29,7 @@ extension UserDefaults {
     public enum Keys {
         static let previouslyLaunched = "previouslyLaunched"
         static let gestureRecognitionSensitivity = "gestureRecognitionSensitivity"
+        static let gestureRecognitionMouse = "gestureRecognitionMouse"
         static let icloudSyncEnabled = "icloudSyncEnabled"
     }
 

@@ -65,6 +65,7 @@ export class DebugContentMessenger implements ContentMessenger {
   async getGesture(): Promise<GetGestureResponse> {
     return {
       sensitivity: 0,
+      mouse: true,
       gestures: [
         {
           action: { tabClose: true },
