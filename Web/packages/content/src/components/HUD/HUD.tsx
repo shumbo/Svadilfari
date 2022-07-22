@@ -1,4 +1,4 @@
-import React, { Fragment, VFC } from "react";
+import React, { Fragment, FC, useId } from "react";
 import { animated, useTransition } from "@react-spring/web";
 
 import { GlobalStylePortal } from "../GlobalStylePortal/GlobalStylePortal";
@@ -16,7 +16,7 @@ export type HUDContent = {
    * Icon
    * Load svg via svgr and pass the component
    */
-  icon?: VFC<React.SVGProps<SVGSVGElement>>;
+  icon?: FC<React.SVGProps<SVGSVGElement>>;
   /**
    * Title
    */
@@ -39,13 +39,14 @@ export type HUDProps = {
   cancel: boolean;
 } & HUDContent;
 
-export const HUD: VFC<HUDProps> = ({
+export const HUD: FC<HUDProps> = ({
   visible,
   icon: Icon,
   title,
   message,
   cancel,
 }) => {
+  const hudId = useId();
   const transitions = useTransition(visible, {
     from: { opacity: 0, scale: 0.8 },
     enter: { opacity: 1, scale: 1 },
@@ -80,8 +81,10 @@ export const HUD: VFC<HUDProps> = ({
           )
       )}
       {visible && (
-        // TODO: the id can duplicate if two or more HUDs are shown at the same time
-        <GlobalStylePortal id="hud" style="* { -webkit-user-select: none; }" />
+        <GlobalStylePortal
+          id={hudId}
+          style="* { -webkit-user-select: none; }"
+        />
       )}
     </Fragment>
   );

@@ -1,5 +1,5 @@
 import { Box } from "@chakra-ui/react";
-import React, { Fragment, useEffect, VFC } from "react";
+import React, { Fragment, useEffect, FC } from "react";
 import { useAsyncFn } from "react-use";
 import { I18n } from "webextension-typedef/namespaces/i18n";
 import {
@@ -33,7 +33,7 @@ function isPageExcluded(
   return !!entry && !!entry.path;
 }
 
-export const PopupApp: VFC<PopupAppProps> = ({
+export const PopupApp: FC<PopupAppProps> = ({
   i18n,
   messenger,
   tabManager,

@@ -47,7 +47,7 @@ export function usePortal(tagName: TagName, id: string): Element {
   useEffect(
     function setupElement() {
       // Look for existing target dom element to append to
-      const existingParent = document.querySelector(`#${id}`);
+      const existingParent = document.getElementById(id);
       // Parent is either a new root or the existing dom element
       const parentElem = existingParent || createRootElement(tagName, id);
 
