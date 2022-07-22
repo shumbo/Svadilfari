@@ -1,5 +1,5 @@
 import { ContentMessenger, Gesture } from "core";
-import React, { Fragment, useCallback, useEffect, useMemo, VFC } from "react";
+import React, { Fragment, useCallback, useEffect, useMemo, FC } from "react";
 import { useAsync, useAsyncFn } from "react-use";
 import { unreachableCase } from "ts-assert-unreachable";
 import { Browser } from "webextension-typedef";
@@ -14,7 +14,7 @@ export type ContentAppProps = {
   i18n: Browser.I18n.Static;
 };
 
-export const ContentApp: VFC<ContentAppProps> = ({ messenger, i18n }) => {
+export const ContentApp: FC<ContentAppProps> = ({ messenger, i18n }) => {
   const { hud, open, cancel, resolve } = useHUD();
   const { value: gestureResponse } = useAsync(messenger.getGesture, [
     messenger,

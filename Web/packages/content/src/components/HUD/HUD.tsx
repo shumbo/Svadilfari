@@ -1,4 +1,4 @@
-import React, { Fragment, VFC, useId } from "react";
+import React, { Fragment, FC, useId } from "react";
 import { animated, useTransition } from "@react-spring/web";
 
 import { GlobalStylePortal } from "../GlobalStylePortal/GlobalStylePortal";
@@ -16,7 +16,7 @@ export type HUDContent = {
    * Icon
    * Load svg via svgr and pass the component
    */
-  icon?: VFC<React.SVGProps<SVGSVGElement>>;
+  icon?: FC<React.SVGProps<SVGSVGElement>>;
   /**
    * Title
    */
@@ -39,7 +39,7 @@ export type HUDProps = {
   cancel: boolean;
 } & HUDContent;
 
-export const HUD: VFC<HUDProps> = ({
+export const HUD: FC<HUDProps> = ({
   visible,
   icon: Icon,
   title,

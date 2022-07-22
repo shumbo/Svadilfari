@@ -1,4 +1,4 @@
-import { VFC } from "react";
+import { FC } from "react";
 import { createPortal } from "react-dom";
 
 import { usePortal } from "../../hooks/usePortal";
@@ -14,7 +14,7 @@ export type GlobalStylePortalProps = {
   style: string;
 };
 
-export const GlobalStylePortal: VFC<GlobalStylePortalProps> = ({
+export const GlobalStylePortal: FC<GlobalStylePortalProps> = ({
   style,
   id,
 }) => {
