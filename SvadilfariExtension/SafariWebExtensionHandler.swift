@@ -78,6 +78,7 @@ class SafariWebExtensionHandler: NSObject, NSExtensionRequestHandling {
             let response = GetGestureResponse(
                 error: nil,
                 gestures: gestures,
+                mouse: UserDefaults.shared.bool(forKey: UserDefaults.Keys.gestureRecognitionMouse),
                 sensitivity: UserDefaults.shared.double(
                     forKey: UserDefaults.Keys.gestureRecognitionSensitivity
                 )

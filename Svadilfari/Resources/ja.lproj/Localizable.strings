@@ -153,11 +153,15 @@ GESTURE_EDIT_DELETE_CONFIRM_BUTTON = "ジェスチャーを削除";
 // MARK: Settings
 SETTINGS_TITLE = "設定";
 SETTINGS_SYNC_TOGGLE_LABEL = "iCloud同期 (試験運用)";
+SETTINGS_SYNC_HEADER = "同期";
 SETTINGS_SYNC_FOOTER = "ジェスチャーと除外リストをiCloudにバックアップし、端末間で同期します。\n**注意**: この機能は試験運用中のため、有効化によってデータの紛失のリスクがあります。[\"iCloud同期\"について...](https://go.svadilfari.app/icloud-sync-experimental)";
 SETTINGS_GESTURE_SENSITIVITY_HEADER = "ジェスチャー感度";
 SETTINGS_GESTURE_SENSITIVITY_FOOTER = "ジェスチャー感度を高めるとジェスチャーが認識されやすくなりますが、誤検知もしやすくなります。";
 SETTINGS_GESTURE_SENSITIVITY_LOW = "低い";
 SETTINGS_GESTURE_SENSITIVITY_HIGH = "高い";
+SETTINGS_GESTURE_MOUSE_HEADER = "マウスとトラックパッド";
+SETTINGS_GESTURE_MOUSE_FOOTER = "マウスやトラックパッドでのジェスチャーも認識します。";
+SETTINGS_GESTURE_MOUSE_TOGGLE_LABEL = "マウス/トラックパッドでジェスチャー";
 SETTINGS_LINKS_HEADER = "リンク";
 SETTINGS_LINKS_ABOUT_APP = "このアプリについて";
 SETTINGS_LINKS_FAQ = "よくある質問";
