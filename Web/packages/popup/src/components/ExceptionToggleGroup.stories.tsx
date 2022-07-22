@@ -1,5 +1,6 @@
 import React from "react";
 import { ComponentMeta, Story } from "@storybook/react";
+import { MockI18n } from "mock";
 
 import { chakraDecorator } from "../utils/ChakraDecorator";
 
@@ -13,6 +14,7 @@ const meta: ComponentMeta<typeof ExceptionToggleGroup> = {
   component: ExceptionToggleGroup,
   decorators: [chakraDecorator],
   args: {
+    i18n: new MockI18n(),
     value: {
       disabledDomain: false,
       disabledPage: false,
