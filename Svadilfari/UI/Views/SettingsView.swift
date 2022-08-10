@@ -16,7 +16,7 @@ struct SettingsView: View {
         List {
             Section(
                 header: Text("SETTINGS_SYNC_HEADER"),
-                footer: Text("SETTINGS_SYNC_FOOTER")
+                footer: Text("SETTINGS_SYNC_FOOTER").fixedSize(horizontal: false, vertical: true)
             ) {
                 Toggle("SETTINGS_SYNC_TOGGLE_LABEL", isOn: self.$sync.onChange { nv in
                     UserDefaults.shared.icloudSyncEnabled = nv
@@ -48,7 +48,7 @@ struct SettingsView: View {
             }
             Section(
                 header: Text("SETTINGS_GESTURE_MOUSE_HEADER"),
-                footer: Text("SETTINGS_GESTURE_MOUSE_FOOTER")
+                footer: Text("SETTINGS_GESTURE_MOUSE_FOOTER").fixedSize(horizontal: false, vertical: true)
             ) {
                 Toggle("SETTINGS_GESTURE_MOUSE_TOGGLE_LABEL", isOn: self.$mouse.onChange { nv in
                     UserDefaults.shared.set(nv, forKey: UserDefaults.Keys.gestureRecognitionMouse)

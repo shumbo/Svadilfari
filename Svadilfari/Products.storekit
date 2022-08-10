@@ -1,0 +1,79 @@
+{
+  "identifier" : "163A38D8",
+  "nonRenewingSubscriptions" : [
+
+  ],
+  "products" : [
+    {
+      "displayPrice" : "3.99",
+      "familyShareable" : false,
+      "internalID" : "15086A98",
+      "localizations" : [
+        {
+          "description" : "Medium tip for developer",
+          "displayName" : "Medium Tip",
+          "locale" : "en_US"
+        },
+        {
+          "description" : "開発者へのチップ",
+          "displayName" : "チップ(中)",
+          "locale" : "ja"
+        }
+      ],
+      "productID" : "app.svadilfari.medium_tip",
+      "referenceName" : "Medium Tip",
+      "type" : "Consumable"
+    },
+    {
+      "displayPrice" : "0.99",
+      "familyShareable" : false,
+      "internalID" : "650E5A83",
+      "localizations" : [
+        {
+          "description" : "Small tip for developer",
+          "displayName" : "Small Tip",
+          "locale" : "en_US"
+        },
+        {
+          "description" : "開発者への少額のチップ",
+          "displayName" : "チップ(小)",
+          "locale" : "ja"
+        }
+      ],
+      "productID" : "app.svadilfari.small_tip",
+      "referenceName" : "Small Tip",
+      "type" : "Consumable"
+    },
+    {
+      "displayPrice" : "7.99",
+      "familyShareable" : false,
+      "internalID" : "2428F944",
+      "localizations" : [
+        {
+          "description" : "Large tip for developer",
+          "displayName" : "Large Tip",
+          "locale" : "en_US"
+        },
+        {
+          "description" : "開発者への高額チップ",
+          "displayName" : "チップ(大)",
+          "locale" : "ja"
+        }
+      ],
+      "productID" : "app.svadilfari.large_tip",
+      "referenceName" : "Large Tip",
+      "type" : "Consumable"
+    }
+  ],
+  "settings" : {
+    "_locale" : "en_US",
+    "_storefront" : "USA"
+  },
+  "subscriptionGroups" : [
+
+  ],
+  "version" : {
+    "major" : 1,
+    "minor" : 2
+  }
+}
