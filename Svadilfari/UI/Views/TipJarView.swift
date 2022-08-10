@@ -42,9 +42,7 @@ struct TipJarView: View {
 
     func purchase(_ product: Product) async {
         do {
-            if try await store.purchase(product) != nil {
-
-            }
+            try await store.purchase(product)
         } catch IAPStoreError.failedVerification {
             print("Failed verification for \(product.id)")
         } catch {
