@@ -43,7 +43,7 @@ struct NewGestureView: View {
                         EmptyView()
                     }
                 )
-            }.navigationTitle("New Gesture")
+            }.navigationTitle("NEW_GESTURE_TITLE")
         }
     }
 }

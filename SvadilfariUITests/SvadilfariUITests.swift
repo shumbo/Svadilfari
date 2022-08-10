@@ -43,7 +43,7 @@ class SvadilfariUITests: XCTestCase {
     func testExample() throws {
         // UI tests must launch the application that they test.
         let app = XCUIApplication()
-        app.launchArguments = ["SHOW_TUTORIAL"]
+        app.launchArguments = ["SHOW_TUTORIAL", "DISABLE_ANIMATION"]
         setupSnapshot(app)
         app.launch()
 
