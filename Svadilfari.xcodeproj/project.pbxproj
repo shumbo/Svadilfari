@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		24002463272610100015CE9B /* content.css in Resources */ = {isa = PBXBuildFile; fileRef = 24002462272610100015CE9B /* content.css */; };
 		240410B426DF8B3400851A2A /* InitialDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240410B326DF8B3400851A2A /* InitialDataService.swift */; };
+		241ABC1028A2906D003F3859 /* TippingAppreciation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241ABC0F28A2906D003F3859 /* TippingAppreciation.swift */; };
 		241D8FB926BC1F2200CBB381 /* Action+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241D8FB826BC1F2200CBB381 /* Action+.swift */; };
 		241D8FC026BC7BDC00CBB381 /* SelectActionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241D8FBF26BC7BDC00CBB381 /* SelectActionView.swift */; };
 		241D8FC226BC7E1600CBB381 /* RunJavascriptActionConfigView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241D8FC126BC7E1600CBB381 /* RunJavascriptActionConfigView.swift */; };
@@ -52,6 +53,7 @@
 		2485834C26BCC2DE00A8836E /* SheetState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2485834B26BCC2DE00A8836E /* SheetState.swift */; };
 		248623D126F5DD0300A30E1B /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 248623CF26F5DD0300A30E1B /* SnapshotHelper.swift */; };
 		248623D426F5EAC500A30E1B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2445C0B126F2628C003C1EF6 /* Localizable.strings */; };
+		249407592897D51C006D80D4 /* Products.storekit in Resources */ = {isa = PBXBuildFile; fileRef = 24DE1321288E1B9000F03C79 /* Products.storekit */; };
 		249477BC26CCF6D800E6FCC5 /* ExclusionListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249477BB26CCF6D800E6FCC5 /* ExclusionListView.swift */; };
 		249477BE26CEB38700E6FCC5 /* PersistentHistoryTracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249477BD26CEB38700E6FCC5 /* PersistentHistoryTracking.swift */; };
 		249477C026CEB71B00E6FCC5 /* UserDefaults+transactionTimestamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249477BF26CEB71B00E6FCC5 /* UserDefaults+transactionTimestamp.swift */; };
@@ -98,6 +100,10 @@
 		24D26989277534E400F570B0 /* Gesture+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242EBAF5270FD97000FF3A21 /* Gesture+.swift */; };
 		24D2698A277534EB00F570B0 /* Changeable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242EBAF3270FD94600FF3A21 /* Changeable.swift */; };
 		24D759CD26BC80960017498A /* NavigationLinkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D759CC26BC80960017498A /* NavigationLinkView.swift */; };
+		24DE1323288E1E5000F03C79 /* TipJarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24DE1322288E1E5000F03C79 /* TipJarView.swift */; };
+		24DE1326288E21C200F03C79 /* TipJarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24DE1325288E21C200F03C79 /* TipJarItem.swift */; };
+		24DE1328288E3DFB00F03C79 /* IAPStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24DE1327288E3DFB00F03C79 /* IAPStore.swift */; };
+		24DE132A288E629000F03C79 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24DE1329288E629000F03C79 /* StoreKit.framework */; };
 		24E29CFE26B5F576003AF136 /* Pattern+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24E29CFD26B5F576003AF136 /* Pattern+.swift */; };
 		24E29D0026B5F8A3003AF136 /* UIBezierPath+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24E29CFF26B5F8A3003AF136 /* UIBezierPath+.swift */; };
 		24EC0159270A5ABC0023AAE9 /* OpenURLActionConfigView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24EC0158270A5ABC0023AAE9 /* OpenURLActionConfigView.swift */; };
@@ -158,6 +164,7 @@
 /* Begin PBXFileReference section */
 		24002462272610100015CE9B /* content.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = content.css; sourceTree = "<group>"; };
 		240410B326DF8B3400851A2A /* InitialDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialDataService.swift; sourceTree = "<group>"; };
+		241ABC0F28A2906D003F3859 /* TippingAppreciation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TippingAppreciation.swift; sourceTree = "<group>"; };
 		241D8FB826BC1F2200CBB381 /* Action+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Action+.swift"; sourceTree = "<group>"; };
 		241D8FBF26BC7BDC00CBB381 /* SelectActionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectActionView.swift; sourceTree = "<group>"; };
 		241D8FC126BC7E1600CBB381 /* RunJavascriptActionConfigView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunJavascriptActionConfigView.swift; sourceTree = "<group>"; };
@@ -229,6 +236,11 @@
 		24D00D2126C2BF0B00F8F1FA /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
 		24D00D2326C3580700F8F1FA /* Svadilfari.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Svadilfari.entitlements; sourceTree = "<group>"; };
 		24D759CC26BC80960017498A /* NavigationLinkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationLinkView.swift; sourceTree = "<group>"; };
+		24DE1321288E1B9000F03C79 /* Products.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = Products.storekit; sourceTree = "<group>"; };
+		24DE1322288E1E5000F03C79 /* TipJarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipJarView.swift; sourceTree = "<group>"; };
+		24DE1325288E21C200F03C79 /* TipJarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipJarItem.swift; sourceTree = "<group>"; };
+		24DE1327288E3DFB00F03C79 /* IAPStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPStore.swift; sourceTree = "<group>"; };
+		24DE1329288E629000F03C79 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		24E29CFD26B5F576003AF136 /* Pattern+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Pattern+.swift"; sourceTree = "<group>"; };
 		24E29CFF26B5F8A3003AF136 /* UIBezierPath+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIBezierPath+.swift"; sourceTree = "<group>"; };
 		24EC0158270A5ABC0023AAE9 /* OpenURLActionConfigView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenURLActionConfigView.swift; sourceTree = "<group>"; };
@@ -251,6 +263,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				241F7C4B2773CE6F0015713E /* CloudKit.framework in Frameworks */,
+				24DE132A288E629000F03C79 /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -290,6 +303,7 @@
 		241F7C492773CE6F0015713E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				24DE1329288E629000F03C79 /* StoreKit.framework */,
 				241F7C4A2773CE6F0015713E /* CloudKit.framework */,
 			);
 			name = Frameworks;
@@ -301,6 +315,7 @@
 				242CD6ED26CFC6E0009DDDB0 /* ExclusionListService.swift */,
 				240410B326DF8B3400851A2A /* InitialDataService.swift */,
 				241F7C5527751E400015713E /* DuplicatedEntityService.swift */,
+				24DE1327288E3DFB00F03C79 /* IAPStore.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -347,6 +362,7 @@
 				24FAA2BC26B943330083FFAB /* Error.swift */,
 				245A016026B9A07700EEE8CD /* UserDefaults.swift */,
 				242CD6E826CFB147009DDDB0 /* Constants.swift */,
+				24DE1321288E1B9000F03C79 /* Products.storekit */,
 			);
 			path = Svadilfari;
 			sourceTree = "<group>";
@@ -393,6 +409,7 @@
 		24428E3F26B33F3D00B21130 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				24DE1324288E216A00F03C79 /* Tip Jar */,
 				24F15F35271B6C4500156A6C /* Select Action */,
 				24F15F28271B389800156A6C /* Select Pattern */,
 				24428E4026B33F5400B21130 /* HomeListItem.swift */,
@@ -420,6 +437,7 @@
 				249477BB26CCF6D800E6FCC5 /* ExclusionListView.swift */,
 				24A7DBD026D7EF7000AC3675 /* TutorialView.swift */,
 				24978F3A271BD05900117689 /* SettingsView.swift */,
+				24DE1322288E1E5000F03C79 /* TipJarView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -539,6 +557,15 @@
 				24C11E6426B4366B00E018B5 /* popup.js */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		24DE1324288E216A00F03C79 /* Tip Jar */ = {
+			isa = PBXGroup;
+			children = (
+				24DE1325288E21C200F03C79 /* TipJarItem.swift */,
+				241ABC0F28A2906D003F3859 /* TippingAppreciation.swift */,
+			);
+			path = "Tip Jar";
 			sourceTree = "<group>";
 		};
 		24F15F28271B389800156A6C /* Select Pattern */ = {
@@ -705,6 +732,7 @@
 				24428E1E26B33E7700B21130 /* Preview Assets.xcassets in Resources */,
 				2445C0AF26F2628C003C1EF6 /* Localizable.strings in Resources */,
 				24428E1B26B33E7700B21130 /* Assets.xcassets in Resources */,
+				249407592897D51C006D80D4 /* Products.storekit in Resources */,
 				24500EF226C6E03500F7BB7E /* NativeHelper.js in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -819,6 +847,7 @@
 				249477C026CEB71B00E6FCC5 /* UserDefaults+transactionTimestamp.swift in Sources */,
 				24FAA2B826B93CAC0083FFAB /* CoreData.xcdatamodeld in Sources */,
 				249477BC26CCF6D800E6FCC5 /* ExclusionListView.swift in Sources */,
+				24DE1328288E3DFB00F03C79 /* IAPStore.swift in Sources */,
 				24F15F32271B4D1C00156A6C /* PatternSelectDrawerView.swift in Sources */,
 				24A7DBD326D7F16C00AC3675 /* Bundle+icon.swift in Sources */,
 				24500EEF26C6D95800F7BB7E /* GridView.swift in Sources */,
@@ -844,10 +873,12 @@
 				24FAA2BD26B943330083FFAB /* Error.swift in Sources */,
 				24F15F27271B319700156A6C /* Binding+.swift in Sources */,
 				24428E4426B3436A00B21130 /* HomeListView.swift in Sources */,
+				241ABC1028A2906D003F3859 /* TippingAppreciation.swift in Sources */,
 				24A7DBCF26D7ED7600AC3675 /* TutorialStep.swift in Sources */,
 				24A7DBD126D7EF7000AC3675 /* TutorialView.swift in Sources */,
 				249477CA26CEBC4500E6FCC5 /* PersistentHistoryCleaner.swift in Sources */,
 				24B224A726B5EDE0009EAB48 /* PatternPreview.swift in Sources */,
+				24DE1323288E1E5000F03C79 /* TipJarView.swift in Sources */,
 				249477C826CEBA0D00E6FCC5 /* PersistentHistoryFetcher.swift in Sources */,
 				249477BE26CEB38700E6FCC5 /* PersistentHistoryTracking.swift in Sources */,
 				24428E1726B33E7600B21130 /* SvadilfariApp.swift in Sources */,
@@ -860,6 +891,7 @@
 				24D759CD26BC80960017498A /* NavigationLinkView.swift in Sources */,
 				24428E4126B33F5400B21130 /* HomeListItem.swift in Sources */,
 				24A19E2C26B34F9500DA5E20 /* GestureListView.swift in Sources */,
+				24DE1326288E21C200F03C79 /* TipJarItem.swift in Sources */,
 				24E29D0026B5F8A3003AF136 /* UIBezierPath+.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1078,7 +1110,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Svadilfari/Svadilfari.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_ASSET_PATHS = "\"Svadilfari/Preview Content\"";
 				DEVELOPMENT_TEAM = TKVMG44U5W;
 				ENABLE_PREVIEWS = YES;
@@ -1093,7 +1125,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.0;
+				MARKETING_VERSION = 1.2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = app.svadilfari.svadilfari;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -1110,7 +1142,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Svadilfari/Svadilfari.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_ASSET_PATHS = "\"Svadilfari/Preview Content\"";
 				DEVELOPMENT_TEAM = TKVMG44U5W;
 				ENABLE_PREVIEWS = YES;
@@ -1125,7 +1157,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.0;
+				MARKETING_VERSION = 1.2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = app.svadilfari.svadilfari;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -1233,7 +1265,7 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = SvadilfariExtension/SvadilfariExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = TKVMG44U5W;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SvadilfariExtension/Info.plist;
@@ -1245,7 +1277,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.1.0;
+				MARKETING_VERSION = 1.2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "app.svadilfari.svadilfari.safari-extension";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -1260,7 +1292,7 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = SvadilfariExtension/SvadilfariExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = TKVMG44U5W;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SvadilfariExtension/Info.plist;
@@ -1272,7 +1304,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.1.0;
+				MARKETING_VERSION = 1.2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "app.svadilfari.svadilfari.safari-extension";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;

@@ -38,6 +38,8 @@ HOME_EXCLUSION_LIST_TITLE = "除外リスト";
 HOME_EXCLUSION_LIST_DESCRIPTION = "ジェスチャーを利用しないWebサイトを管理します";
 HOME_SETTINGS_TITLE = "設定";
 HOME_SETTINGS_DESCRIPTION = "その他の設定・アプリについて";
+HOME_TIP_JAR_TITLE = "募金箱";
+HOME_TIP_JAR_DESCRIPTION = "アプリの開発をサポート";
 
 // MARK: Gestures
 GESTURE_TITLE = "ジェスチャー";
@@ -166,3 +168,11 @@ SETTINGS_LINKS_HEADER = "リンク";
 SETTINGS_LINKS_ABOUT_APP = "このアプリについて";
 SETTINGS_LINKS_FAQ = "よくある質問";
 SETTINGS_LINKS_CONTACT = "お問い合わせ";
+
+// MARK: Tip Jar
+TIP_JAR_TITLE = "募金箱";
+TIP_JAR_MESSAGE = "Svadilfariは無料ですが、アプリの開発・メンテナンス・公開にはコストがかかります。アプリを便利だと思っていただけたなら、ぜひチップをお願いします。";
+TIP_JAR_APPRECIATION_TITLE = "チップを受け取りました";
+TIP_JAR_APPRECIATION_MESSAGE = "アプリの継続的な改善に活用させていただきます。";
+TIP_JAR_APPRECIATION_CONTINUE = "続ける";
+TIP_JAR_APPRECIATION_SEND_FEEDBACK = "フィードバックを送る";

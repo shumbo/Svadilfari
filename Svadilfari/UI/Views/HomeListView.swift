@@ -54,6 +54,13 @@ struct HomeListView: View {
                             image: Image(systemName: "gearshape.fill")
                         )
                     }
+                    NavigationLink(destination: { TipJarView() }) {
+                        HomeListItem(
+                            title: "HOME_TIP_JAR_TITLE",
+                            description: "HOME_TIP_JAR_DESCRIPTION",
+                            image: Image(systemName: "gift.fill")
+                        )
+                    }
                 }
             }.navigationBarHidden(true)
         }.navigationViewStyle(.stack).sheet(isPresented: $isTutorialPresented, content: {

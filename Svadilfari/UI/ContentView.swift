@@ -8,8 +8,11 @@
 import SwiftUI
 
 struct ContentView: View {
+    @StateObject var store: IAPStore = IAPStore()
+
     var body: some View {
         HomeListView()
+            .environmentObject(store)
     }
 }
 

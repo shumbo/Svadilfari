@@ -38,6 +38,8 @@ HOME_EXCLUSION_LIST_TITLE = "Exclusion List";
 HOME_EXCLUSION_LIST_DESCRIPTION = "Control websites you don't want to use gestures on";
 HOME_SETTINGS_TITLE = "Settings";
 HOME_SETTINGS_DESCRIPTION = "Other Settings / About This App";
+HOME_TIP_JAR_TITLE = "Tip Jar";
+HOME_TIP_JAR_DESCRIPTION = "Support the app's development";
 
 // MARK: Gestures
 GESTURE_TITLE = "Gesture";
@@ -166,3 +168,11 @@ SETTINGS_LINKS_HEADER = "Links";
 SETTINGS_LINKS_ABOUT_APP = "About This App";
 SETTINGS_LINKS_FAQ = "Frequently Asked Questions";
 SETTINGS_LINKS_CONTACT = "Contact";
+
+// MARK: Tip Jar
+TIP_JAR_TITLE = "Tip Jar";
+TIP_JAR_MESSAGE = "Svadilfari is completely free, but it still costs money to write, maintain, and distribute it. If you find this app useful, please consider tipping.";
+TIP_JAR_APPRECIATION_TITLE = "Thanks for Tipping!";
+TIP_JAR_APPRECIATION_MESSAGE = "Your support will enable continuous improvement of the app.";
+TIP_JAR_APPRECIATION_CONTINUE = "Continue";
+TIP_JAR_APPRECIATION_SEND_FEEDBACK = "Send Feedback";
