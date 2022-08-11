@@ -171,7 +171,7 @@ SETTINGS_LINKS_CONTACT = "Contact";
 
 // MARK: Tip Jar
 TIP_JAR_TITLE = "Tip Jar";
-TIP_JAR_MESSAGE = "Svadilfari is completely free, but it still costs money to write, maintain, and distribute it. If you find this app useful, please consider tipping.";
+TIP_JAR_MESSAGE = "Svadilfari is free but still costs money to write, maintain, and distribute. If you find this app useful, please consider tipping.";
 TIP_JAR_APPRECIATION_TITLE = "Thanks for Tipping!";
 TIP_JAR_APPRECIATION_MESSAGE = "Your support will enable continuous improvement of the app.";
 TIP_JAR_APPRECIATION_CONTINUE = "Continue";
