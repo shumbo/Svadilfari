@@ -1110,7 +1110,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Svadilfari/Svadilfari.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_ASSET_PATHS = "\"Svadilfari/Preview Content\"";
 				DEVELOPMENT_TEAM = TKVMG44U5W;
 				ENABLE_PREVIEWS = YES;
@@ -1142,7 +1142,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Svadilfari/Svadilfari.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_ASSET_PATHS = "\"Svadilfari/Preview Content\"";
 				DEVELOPMENT_TEAM = TKVMG44U5W;
 				ENABLE_PREVIEWS = YES;
@@ -1265,7 +1265,7 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = SvadilfariExtension/SvadilfariExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = TKVMG44U5W;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SvadilfariExtension/Info.plist;
@@ -1292,7 +1292,7 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = SvadilfariExtension/SvadilfariExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = TKVMG44U5W;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SvadilfariExtension/Info.plist;

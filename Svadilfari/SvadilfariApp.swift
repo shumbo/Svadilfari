@@ -20,6 +20,10 @@ struct SvadilfariApp: App {
         container.viewContext.automaticallyMergesChangesFromParent = true
         try? container.viewContext.setQueryGenerationFrom(.current)
 
+        if ProcessInfo.processInfo.arguments.contains("DISABLE_ANIMATION") {
+            UIView.setAnimationsEnabled(false)
+        }
+
         let persistentHistoryObserver = PersistentHistoryObserver(
             target: .app,
             persistentContainer: container,
