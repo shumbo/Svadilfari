@@ -1,5 +1,8 @@
 name: Check
-on: [push]
+on:
+  - push
+  - pull_request
+
 jobs:
   Web-Test:
     runs-on: ubuntu-latest
