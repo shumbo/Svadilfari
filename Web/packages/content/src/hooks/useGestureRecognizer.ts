@@ -81,6 +81,10 @@ export function useGestureRecognizer(
     const g = getClosestGesture();
     onRelease(g);
     patternConstructor.current.clear();
+
+    if (g) {
+      document?.getSelection()?.removeAllRanges();
+    }
   }, [onRelease, getClosestGesture]);
 
   useEvent("touchmove", touchMoveHandler, undefined, { capture: true });
