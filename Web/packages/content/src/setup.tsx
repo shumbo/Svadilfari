@@ -1,5 +1,5 @@
 import React from "react";
-import ReactDOM from "react-dom";
+import { createRoot } from "react-dom/client";
 
 import { ContentApp, ContentAppProps } from "./ContentApp";
 
@@ -19,5 +19,5 @@ export function setupContentApp(props: ContentAppProps): void {
   const app = document.createElement("div");
   shadow.appendChild(app);
 
-  ReactDOM.render(<ContentApp {...props} />, app);
+  createRoot(app).render(<ContentApp {...props} />);
 }
