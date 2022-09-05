@@ -9,7 +9,7 @@ import {
   AlertDescription,
   Button,
 } from "@chakra-ui/react";
-import React, { VFC } from "react";
+import React, { FC } from "react";
 import { t } from "react-i18nify";
 
 export type CheckResultProps = {
@@ -17,7 +17,7 @@ export type CheckResultProps = {
   onOpenApp: () => void;
 };
 
-export const CheckResult: VFC<CheckResultProps> = ({ status, onOpenApp }) => {
+export const CheckResult: FC<CheckResultProps> = ({ status, onOpenApp }) => {
   if (status === null) {
     return (
       <Flex height="100%" justifyContent="center" alignItems="center">

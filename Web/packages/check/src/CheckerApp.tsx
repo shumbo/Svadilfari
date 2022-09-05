@@ -1,4 +1,4 @@
-import React, { VFC } from "react";
+import React, { FC } from "react";
 
 import { CheckResult } from "./components/CheckResult";
 import { useChecker } from "./hooks/useChecker";
@@ -9,7 +9,7 @@ export type CheckerAppProps = {
   onOpenApp: () => void;
 };
 
-export const CheckerApp: VFC<CheckerAppProps> = ({
+export const CheckerApp: FC<CheckerAppProps> = ({
   check,
   checkBrowser,
   onOpenApp,
