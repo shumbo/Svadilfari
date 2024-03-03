@@ -31,10 +31,10 @@ export function startBackground({
      */
     async function handleMessageToNative(
       msgReq: MessageRequest,
-      decode: (rawResponse: string) => unknown = id
+      decode: (rawResponse: string) => unknown = id,
     ) {
       const rawResponse = await channel.sendNativeMessage(
-        Convert.messageRequestToJson(msgReq)
+        Convert.messageRequestToJson(msgReq),
       );
       const response = decode(rawResponse);
       sendResponse(response);
@@ -72,7 +72,7 @@ export function startBackground({
               path: msg.path,
             },
           },
-          (rawResponse) => Convert.toGetExclusionEntryResponse(rawResponse)
+          (rawResponse) => Convert.toGetExclusionEntryResponse(rawResponse),
         );
         break;
       }
@@ -93,7 +93,7 @@ export function startBackground({
                   path: currentTabEntry.path,
                 },
               },
-              (rawResponse) => Convert.toGetExclusionEntryResponse(rawResponse)
+              (rawResponse) => Convert.toGetExclusionEntryResponse(rawResponse),
             );
           })
           .catch(() => {
@@ -103,7 +103,7 @@ export function startBackground({
       }
       case "GET_GESTURE_REQUEST": {
         handleMessageToNative({ getGestures: true }, (rawResponse) =>
-          Convert.toGetGestureResponse(rawResponse)
+          Convert.toGetGestureResponse(rawResponse),
         );
         break;
       }
