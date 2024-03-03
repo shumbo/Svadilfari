@@ -41,14 +41,14 @@ describe("Background", () => {
             | GestureReleaseMessage
             | ExecuteActionMessage,
           sender: Browser.Runtime.MessageSender,
-          sendResponse: (...response: any[]) => void
-        ) => void
+          sendResponse: (...response: any[]) => void,
+        ) => void,
       ): () => void {
         sendMockMessage = (msg) =>
           handler(
             msg,
             { tab: { id: TAB_ID } } as Browser.Runtime.MessageSender,
-            sendResponseMock
+            sendResponseMock,
           );
         return () => {
           // noop
@@ -68,7 +68,7 @@ describe("Background", () => {
     const msg: GetGestureRequestMessage = { _tag: "GET_GESTURE_REQUEST" };
     sendMockMessage(msg);
     expect(sendMessageToNative).toHaveBeenLastCalledWith(
-      Convert.messageRequestToJson({ getGestures: true })
+      Convert.messageRequestToJson({ getGestures: true }),
     );
   });
   test("AddExclusionEntryRequest", () => {
@@ -80,7 +80,7 @@ describe("Background", () => {
     expect(sendMessageToNative).toHaveBeenLastCalledWith(
       Convert.messageRequestToJson({
         addExclusionEntry: { domain: "example.com" },
-      })
+      }),
     );
   });
   test("RemoveExclusionEntryRequest", () => {
@@ -92,7 +92,7 @@ describe("Background", () => {
     expect(sendMessageToNative).toHaveBeenLastCalledWith(
       Convert.messageRequestToJson({
         removeExclusionEntry: { id: "entry-id" },
-      })
+      }),
     );
   });
   // TODO: Figure out a way to mock browser.tabs.getCurrent and add test for GetExclusionEntryRequest
@@ -120,7 +120,7 @@ describe("Background", () => {
     sendMockMessage(msg);
     expect(executeAction).toHaveBeenLastCalledWith(
       msg.action,
-      expect.anything()
+      expect.anything(),
     );
   });
 });

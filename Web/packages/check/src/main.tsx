@@ -25,6 +25,6 @@ if (container) {
           }}
         />
       </ChakraProvider>
-    </React.StrictMode>
+    </React.StrictMode>,
   );
 }

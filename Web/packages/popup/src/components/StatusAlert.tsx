@@ -10,11 +10,11 @@ export type StatusAlertProps = {
 export const StatusAlert: FC<StatusAlertProps> = ({ i18n, status }) => {
   const activeMsg = useMemo(
     () => i18n.getMessage("status_alert:active"),
-    [i18n]
+    [i18n],
   );
   const inactiveMsg = useMemo(
     () => i18n.getMessage("status_alert:inactive"),
-    [i18n]
+    [i18n],
   );
   if (status === "ACTIVE") {
     return (

@@ -7,7 +7,7 @@ export interface Channel {
   sendMessage(
     tabId: number,
     message: any,
-    options?: Browser.Tabs.SendMessageOptionsType
+    options?: Browser.Tabs.SendMessageOptionsType,
   ): Promise<any>;
 }
 
@@ -19,7 +19,7 @@ export class ChannelImpl implements Channel {
   sendMessage(
     tabId: number,
     message: any,
-    options?: Browser.Tabs.SendMessageOptionsType
+    options?: Browser.Tabs.SendMessageOptionsType,
   ): Promise<any> {
     console.log("send message", tabId, message);
     return browser.tabs.sendMessage(tabId, message, options);

@@ -2,7 +2,7 @@ import { useEffect, useState, useMemo } from "react";
 
 export function useChecker(
   check: () => boolean,
-  checkBrowser: () => boolean
+  checkBrowser: () => boolean,
 ): "ACTIVE" | "INACTIVE" | "UNSUPPORTED" | null {
   const [enabled, setEnabled] = useState<boolean | null>(null);
   useEffect(() => {

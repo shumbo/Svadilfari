@@ -23,8 +23,8 @@ export class BackgroundMessengerImpl implements BackgroundMessenger {
         | ExecuteActionMessage,
       sender: Browser.Runtime.MessageSender,
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      sendResponse: (...response: any[]) => void
-    ) => void
+      sendResponse: (...response: any[]) => void,
+    ) => void,
   ): () => void {
     browser.runtime.onMessage.addListener(handler);
     return () => {

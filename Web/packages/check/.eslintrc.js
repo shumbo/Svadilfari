@@ -1,6 +1,6 @@
 module.exports = {
   root: true,
-  extends: "svadilfari",
+  extends: ["svadilfari", "plugin:storybook/recommended"],
   parserOptions: {
     project: "./tsconfig.json",
   },

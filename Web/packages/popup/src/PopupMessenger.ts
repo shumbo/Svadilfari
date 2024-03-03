@@ -28,7 +28,7 @@ export class PopupMessengerImpl implements PopupMessenger {
     await this.applyExclusionEntry();
   }
   async getExclusionEntry(
-    req: GetExclusionEntryRequest
+    req: GetExclusionEntryRequest,
   ): Promise<GetExclusionEntryResponse> {
     const msg: GetExclusionEntryRequestMessage = {
       domain: req.domain,
@@ -49,7 +49,10 @@ export class PopupMessengerImpl implements PopupMessenger {
 }
 
 export class DebugPopupMessenger implements PopupMessenger {
-  constructor(private domain?: string, private path?: string) {}
+  constructor(
+    private domain?: string,
+    private path?: string,
+  ) {}
   async addExclusionEntry(req: AddExclusionEntryRequest): Promise<void> {
     console.log("add exclusion entry");
     this.domain = req.domain;
@@ -61,7 +64,7 @@ export class DebugPopupMessenger implements PopupMessenger {
     this.path = undefined;
   }
   async getExclusionEntry(
-    req: GetExclusionEntryRequest
+    req: GetExclusionEntryRequest,
   ): Promise<GetExclusionEntryResponse> {
     if (this.domain === req.domain) {
       if (!this.path || this.path === req.path) {

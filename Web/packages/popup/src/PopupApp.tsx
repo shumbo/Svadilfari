@@ -1,7 +1,7 @@
 import { Box } from "@chakra-ui/react";
 import React, { Fragment, useEffect, FC } from "react";
 import { useAsyncFn } from "react-use";
-import { I18n } from "webextension-typedef/namespaces/i18n";
+import { Browser } from "webextension-typedef";
 import {
   GetExclusionEntryResponse,
   urlToExclusionListEntry,
@@ -14,20 +14,20 @@ import { PopupGlobalStyle } from "./PopupGlobalStyle";
 import { PopupTabManager } from "./PopupTabManager";
 
 export type PopupAppProps = {
-  i18n: I18n.Static;
+  i18n: Browser.I18n.Static;
   messenger: PopupMessenger;
   tabManager: PopupTabManager;
 };
 
 function isDomainExcluded(
-  entry: GetExclusionEntryResponse["exclusionEntry"] | undefined
+  entry: GetExclusionEntryResponse["exclusionEntry"] | undefined,
 ): boolean {
   // if exclusion entry exists but it has no path, then the domain is excluded
   return !!entry && !entry.path;
 }
 
 function isPageExcluded(
-  entry: GetExclusionEntryResponse["exclusionEntry"] | undefined
+  entry: GetExclusionEntryResponse["exclusionEntry"] | undefined,
 ): boolean {
   // if exclusion entry exists and has a path, then the page is excluded
   return !!entry && !!entry.path;
@@ -81,7 +81,7 @@ export const PopupApp: FC<PopupAppProps> = ({
                 if (typeof status.disabledDomain === "boolean") {
                   // only process if key is present
                   const currentlyDomainExcluded = isDomainExcluded(
-                    tabState.value?.exclusionEntry
+                    tabState.value?.exclusionEntry,
                   );
                   // currently disabled on this domain and want to enable by removing the domain exclusion entry
                   if (
@@ -90,7 +90,7 @@ export const PopupApp: FC<PopupAppProps> = ({
                     tabState.value?.exclusionEntry?.id
                   ) {
                     await messenger.removeExclusionEntry(
-                      tabState.value.exclusionEntry.id
+                      tabState.value.exclusionEntry.id,
                     );
                   }
                   // currently enabled on this domain and want to disable by adding a new domain exclusion entry
@@ -107,7 +107,7 @@ export const PopupApp: FC<PopupAppProps> = ({
                 if (typeof status.disabledPage === "boolean") {
                   // only process if key is present
                   const currentlyPageExcluded = isPageExcluded(
-                    tabState.value?.exclusionEntry
+                    tabState.value?.exclusionEntry,
                   );
                   // currently disabled on this page and want to enable by removing the page exclusion entry
                   if (
@@ -116,7 +116,7 @@ export const PopupApp: FC<PopupAppProps> = ({
                     tabState.value?.exclusionEntry?.id
                   ) {
                     await messenger.removeExclusionEntry(
-                      tabState.value.exclusionEntry.id
+                      tabState.value.exclusionEntry.id,
                     );
                   }
                   // currently enabled on this page and want to disable by adding a new page exclusion entry
