@@ -1,5 +1,5 @@
 import React from "react";
-import { ComponentMeta, Story } from "@storybook/react";
+import { Meta, StoryFn } from "@storybook/react";
 import { MockI18n } from "mock";
 
 import { chakraDecorator } from "../utils/ChakraDecorator";
@@ -9,7 +9,7 @@ import {
   ExceptionToggleGroupProps,
 } from "./ExceptionToggleGroup";
 
-const meta: ComponentMeta<typeof ExceptionToggleGroup> = {
+const meta: Meta<typeof ExceptionToggleGroup> = {
   title: "Popup/ExceptionToggleGroup",
   component: ExceptionToggleGroup,
   decorators: [chakraDecorator],
@@ -29,7 +29,7 @@ const meta: ComponentMeta<typeof ExceptionToggleGroup> = {
 
 export default meta;
 
-const Template: Story<ExceptionToggleGroupProps> = (args) => (
+const Template: StoryFn<ExceptionToggleGroupProps> = (args) => (
   <ExceptionToggleGroup {...args} />
 );
 

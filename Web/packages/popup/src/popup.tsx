@@ -20,6 +20,6 @@ if (container) {
         messenger={new PopupMessengerImpl()}
         tabManager={new PopupTabManagerImpl()}
       />
-    </ChakraProvider>
+    </ChakraProvider>,
   );
 }
