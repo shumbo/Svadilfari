@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build:extension": "pnpm -r build --filter 'background' --filter 'content' --filter 'popup' --filter 'native-helper'"
+    "build:extension": "pnpm run --recursive --filter 'background' --filter 'content' --filter 'popup' --filter 'native-helper' build"
   },
   "author": "",
   "license": "ISC",
