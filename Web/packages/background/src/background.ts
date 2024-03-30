@@ -32,7 +32,7 @@ export function startBackground({
     async function handleMessageToNative(
       msgReq: MessageRequest,
       decode: (rawResponse: string) => unknown = id,
-    ) {
+    ): Promise<void> {
       const rawResponse = await channel.sendNativeMessage(
         Convert.messageRequestToJson(msgReq),
       );
