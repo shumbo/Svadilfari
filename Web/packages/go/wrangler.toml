@@ -1,10 +1,5 @@
-name = "go"
+main = "dist/worker.js"
 type = "javascript"
-zone_id = 'd8923c9eacc2736daa626ca8b5e47553'
-account_id = ""
-route = ""
+name = "go"
 workers_dev = true
-compatibility_date = "2021-10-17"
-
-[build.upload]
-format = "service-worker"
+compatibility_date = "2024-09-16"
