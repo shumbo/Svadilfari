@@ -1,5 +1,4 @@
 main = "dist/worker.js"
-type = "javascript"
 name = "go"
 workers_dev = true
 compatibility_date = "2024-09-16"

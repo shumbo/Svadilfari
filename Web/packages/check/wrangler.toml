@@ -1,8 +1,7 @@
 name = "svadilfari-checker"
-type = "webpack"
+main = "dist/worker.js"
 workers_dev = true
 compatibility_date = "2024-09-16"
 
 [site]
-bucket = "./dist" # <-- Add your build directory name here!
-entry-point = "."
+bucket = "./dist"
