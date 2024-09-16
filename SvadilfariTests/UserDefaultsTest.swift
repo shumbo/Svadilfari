@@ -24,12 +24,13 @@ class UserDefaultsTest: XCTestCase {
     func testDefault() throws {
         UserDefaults.setInitialData(defaults: self.ud)
         XCTAssertEqual(self.ud.isFirstLaunch, true)
-        XCTAssertEqual(self.ud.icloudSyncEnabled, true)
+        XCTAssertEqual(self.ud.icloudSyncEnabled, false)
     }
 
     func testAlreadyLaunched() throws {
         self.ud.isFirstLaunch = false
         UserDefaults.setInitialData(defaults: self.ud)
+        XCTAssertEqual(self.ud.isFirstLaunch, false)
         XCTAssertEqual(self.ud.icloudSyncEnabled, false)
     }
 

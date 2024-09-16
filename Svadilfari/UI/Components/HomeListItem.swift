@@ -16,15 +16,15 @@ struct HomeListItem: View {
     var imageColor: Color = Color.accentColor
 
     var body: some View {
-        HStack(spacing: 0) {
-            self.image.foregroundColor(self.imageColor).padding(.trailing, 8)
+        Label {
             VStack(alignment: .leading, spacing: 4) {
                 Text(self.title)
                     .font(.body)
                 Text(self.description).font(.caption).foregroundColor(.secondary)
             }
-            Spacer()
-        }.listRowInsets(Self.listRowInsets)
+        } icon: {
+            self.image.foregroundColor(self.imageColor)
+        }
     }
 }
 
