@@ -8,19 +8,18 @@ jobs:
         working-directory: Web
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-node@v2
+      - uses: actions/setup-node@v4
         with:
-          node-version: "20"
-      - uses: pnpm/action-setup@v3
-        name: Install pnpm
-        with:
-          version: 8
-          run_install: false
+          node-version: "22"
+      - name: Enable corepack
+        run: |
+          corepack enable &&
+          corepack install
       - name: Get pnpm store directory
         shell: bash
         run: |
           echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
-      - uses: actions/cache@v3
+      - uses: actions/cache@v4
         name: Setup pnpm cache
         with:
           path: ${{ env.STORE_PATH }}
@@ -44,12 +43,13 @@ jobs:
         working-directory: Web
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-node@v2
+      - uses: actions/setup-node@v4
         with:
-          node-version: "20"
-      - uses: pnpm/action-setup@v3
-        with:
-          version: 8
+          node-version: "22"
+      - name: Enable corepack
+        run: |
+          corepack enable &&
+          corepack install
       - name: pnpm Build
         run: pnpm install
       - name: Build Checker
@@ -71,12 +71,13 @@ jobs:
         working-directory: Web
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-node@v2
+      - uses: actions/setup-node@v4
         with:
-          node-version: "20"
-      - uses: pnpm/action-setup@v3
-        with:
-          version: 8
+          node-version: "22"
+      - name: Enable corepack
+        run: |
+          corepack enable &&
+          corepack install
       - name: pnpm Build
         run: pnpm install
       - name: Build
