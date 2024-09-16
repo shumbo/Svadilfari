@@ -1,5 +1,5 @@
 name = "svadilfari-checker"
-main = "dist/worker.js"
+main = "index.js"
 workers_dev = true
 compatibility_date = "2024-09-16"
 
