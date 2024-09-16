@@ -12,12 +12,12 @@ describe("vectorDirectionDifference", () => {
   });
   test("-3/4*PI", () => {
     expect(vectorDirectionDifference({ x: 0, y: -1 }, { x: -1, y: 1 })).toBe(
-      -0.75
+      -0.75,
     );
   });
   test("3/4*PI", () => {
     expect(vectorDirectionDifference({ x: -1, y: 1 }, { x: 0, y: -1 })).toBe(
-      0.75
+      0.75,
     );
   });
 });

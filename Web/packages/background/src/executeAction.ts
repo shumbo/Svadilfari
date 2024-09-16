@@ -6,12 +6,12 @@ import { findNext, findPrevious } from "./utils/find";
 
 export type ExecuteAction = (
   action: Action,
-  sender: Browser.Runtime.MessageSender
+  sender: Browser.Runtime.MessageSender,
 ) => Promise<void>;
 
 export async function executeAction(
   action: Action,
-  sender: Browser.Runtime.MessageSender
+  sender: Browser.Runtime.MessageSender,
 ): Promise<void> {
   const code = getActionCode(action);
   switch (code) {

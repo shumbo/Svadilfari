@@ -51,7 +51,10 @@ export class PatternConstructor {
             // store new extraced
             this.extractedVectors.push(
               // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-              makeVectorFromPoints(this.lastExtractedPoint!, this.previousPoint)
+              makeVectorFromPoints(
+                this.lastExtractedPoint!,
+                this.previousPoint,
+              ),
             );
             this.previousVector = vector;
             this.lastExtractedPoint = this.previousPoint;
@@ -73,7 +76,7 @@ export class PatternConstructor {
     }
     const lastVector = makeVectorFromPoints(
       this.lastExtractedPoint,
-      this.lastPoint
+      this.lastPoint,
     );
     return { data: [...this.extractedVectors, lastVector] };
   }

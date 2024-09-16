@@ -1,12 +1,12 @@
 import React from "react";
-import { ComponentMeta, Story } from "@storybook/react";
+import { Meta, StoryFn } from "@storybook/react";
 import { MockI18n } from "mock";
 
 import { PopupApp, PopupAppProps } from "./PopupApp";
 import { DebugPopupMessenger } from "./PopupMessenger";
 import { DebugPopupTabManager } from "./PopupTabManager";
 
-const meta: ComponentMeta<typeof PopupApp> = {
+const meta: Meta<typeof PopupApp> = {
   title: "Popup/Debugger",
   args: {
     i18n: new MockI18n(),
@@ -20,7 +20,7 @@ const meta: ComponentMeta<typeof PopupApp> = {
 
 export default meta;
 
-const Template: Story<PopupAppProps> = (args) => <PopupApp {...args} />;
+const Template: StoryFn<PopupAppProps> = (args) => <PopupApp {...args} />;
 
 export const Enabled = Template.bind({});
 

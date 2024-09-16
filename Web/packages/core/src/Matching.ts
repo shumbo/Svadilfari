@@ -5,7 +5,7 @@ import { vectorDirectionDifference } from "./utils/vectorDirectionDifference";
 export function getClosestGestureByPattern(
   pattern: Pattern,
   gestures: Set<Gesture>,
-  maxDeviation = 1
+  maxDeviation = 1,
 ): Gesture | null {
   let bestMatchingGesture: Gesture | null = null;
   let lowestMismatchRatio = Infinity;
@@ -16,7 +16,7 @@ export function getClosestGestureByPattern(
 
     const differenceByProportion = patternSimilarityByProportion(
       pattern,
-      gesture.pattern
+      gesture.pattern,
     );
 
     const difference = differenceByDTW + differenceByProportion;
@@ -37,7 +37,7 @@ export function getClosestGestureByPattern(
  **/
 export function patternSimilarityByProportion(
   patternA: Pattern,
-  patternB: Pattern
+  patternB: Pattern,
 ): number {
   const totalAMagnitude = patternMagnitude(patternA);
   const totalBMagnitude = patternMagnitude(patternB);
@@ -70,7 +70,7 @@ export function patternSimilarityByProportion(
       vectorAMagnitudeProportionStart,
       vectorAMagnitudeProportionEnd,
       vectorBMagnitudeProportionStart,
-      vectorBMagnitudeProportionEnd
+      vectorBMagnitudeProportionEnd,
     );
 
     // compare which vector magnitude proportion is larger / passing over the other vector
@@ -99,7 +99,7 @@ export function patternSimilarityByProportion(
     // calculate the difference of both vectors
     // this will result in a value of 0 - 1
     const vectorDifference = Math.abs(
-      vectorDirectionDifference(vectorA, vectorB)
+      vectorDirectionDifference(vectorA, vectorB),
     );
 
     // weight the value by its corresponding magnitude proportion
@@ -118,7 +118,7 @@ export function patternSimilarityByProportion(
  **/
 export function patternSimilarityByDTW(
   patternA: Pattern,
-  patternB: Pattern
+  patternB: Pattern,
 ): number {
   const rows = patternA.data.length;
   const columns = patternB.data.length;
@@ -133,7 +133,7 @@ export function patternSimilarityByDTW(
   for (let i = 0; i < rows; i++) {
     for (let j = 0; j < columns; j++) {
       const cost = Math.abs(
-        vectorDirectionDifference(patternA.data[i], patternB.data[j])
+        vectorDirectionDifference(patternA.data[i], patternB.data[j]),
       );
 
       if (i !== 0 && j !== 0) {
@@ -160,7 +160,7 @@ function overlapProportion(
   minA: number,
   maxA: number,
   minB: number,
-  maxB: number
+  maxB: number,
 ) {
   return Math.max(0, Math.min(maxA, maxB) - Math.max(minA, minB));
 }

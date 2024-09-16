@@ -1,12 +1,12 @@
 import React from "react";
-import { ComponentMeta, Story } from "@storybook/react";
+import { Meta, StoryFn } from "@storybook/react";
 import { MockI18n } from "mock";
 
 import { chakraDecorator } from "../utils/ChakraDecorator";
 
 import { StatusAlert, StatusAlertProps } from "./StatusAlert";
 
-const meta: ComponentMeta<typeof StatusAlert> = {
+const meta: Meta<typeof StatusAlert> = {
   title: "Popup/StatusAlert",
   component: StatusAlert,
   decorators: [chakraDecorator],
@@ -17,7 +17,7 @@ const meta: ComponentMeta<typeof StatusAlert> = {
 
 export default meta;
 
-const Template: Story<StatusAlertProps> = (args) => <StatusAlert {...args} />;
+const Template: StoryFn<StatusAlertProps> = (args) => <StatusAlert {...args} />;
 
 export const Active = Template.bind({});
 Active.args = {

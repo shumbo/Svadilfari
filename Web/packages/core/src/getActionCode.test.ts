@@ -4,7 +4,7 @@ describe("getActionCode", () => {
   test("can get code", () => {
     expect(getActionCode({ reload: true })).toBe("reload");
     expect(getActionCode({ javascriptRun: { code: "alert('hello')" } })).toBe(
-      "javascriptRun"
+      "javascriptRun",
     );
   });
   test("empty action", () => {

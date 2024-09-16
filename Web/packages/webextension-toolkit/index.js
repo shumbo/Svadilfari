@@ -18,19 +18,23 @@ const argv = require("minimist")(process.argv.slice(2));
  * A esbuild wrapper for WebExtension scripts
  * @param {BuildWebExtensionOptions} options
  */
-function buildWebExtension(options) {
-  esbuild.build({
+async function buildWebExtension(options) {
+  const opt = {
     entryPoints: [options.entryPoint],
     bundle: true,
     target: ["safari15"],
     outfile: options.outfile,
     minify: argv["minify"],
     pure: argv["minify"] && ["console.log"],
-    watch: options.watch ?? argv["watch"],
     logLevel: "info",
     plugins: [svgrPlugin({ icon: true }), ...(options.plugins ?? [])],
     globalName: options.globalName,
-  });
+  };
+  if (opt.watch || argv["watch"]) {
+    await ctx.watch(opt);
+  } else {
+    await esbuild.build(opt);
+  }
 }
 
 /**

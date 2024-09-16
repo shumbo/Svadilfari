@@ -8,8 +8,8 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "esbuild": "^0.13.3",
-    "esbuild-plugin-svgr": "^0.0.3",
-    "minimist": "^1.2.5"
+    "esbuild": "^0.20.1",
+    "esbuild-plugin-svgr": "^2.1.0",
+    "minimist": "^1.2.8"
   }
 }

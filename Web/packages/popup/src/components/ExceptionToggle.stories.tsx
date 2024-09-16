@@ -1,11 +1,11 @@
-import { ComponentMeta, Story } from "@storybook/react";
+import { Meta, StoryFn } from "@storybook/react";
 import React from "react";
 
 import { chakraDecorator } from "../utils/ChakraDecorator";
 
 import { ExceptionToggle, ExceptionToggleProps } from "./ExceptionToggle";
 
-const meta: ComponentMeta<typeof ExceptionToggle> = {
+const meta: Meta<typeof ExceptionToggle> = {
   title: "Popup/ExceptionToggle",
   component: ExceptionToggle,
   decorators: [chakraDecorator],
@@ -13,7 +13,7 @@ const meta: ComponentMeta<typeof ExceptionToggle> = {
 
 export default meta;
 
-const Template: Story<ExceptionToggleProps> = (args) => (
+const Template: StoryFn<ExceptionToggleProps> = (args) => (
   <ExceptionToggle {...args} />
 );
 

@@ -4,11 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build:extension": "pnpm -r build --filter 'background' --filter 'content' --filter 'popup' --filter 'native-helper'"
+    "build:extension": "pnpm run --recursive --filter 'background' --filter 'content' --filter 'popup' --filter 'native-helper' build"
   },
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "pnpm": "^6.15.1"
-  }
+  "packageManager": "pnpm@9.10.0+sha256.355a8ab8dbb6ad41befbef39bc4fd6b5df85e12761d2724bd01f13e878de4b13"
 }

@@ -138,8 +138,8 @@ export interface ContentMessenger {
       message:
         | GestureChangeMessage
         | GestureReleaseMessage
-        | ApplyExclusionEntryMessage
-    ) => void
+        | ApplyExclusionEntryMessage,
+    ) => void,
   ): () => void;
 }
 
@@ -161,7 +161,7 @@ export interface PopupMessenger {
    * Get the exclusion entry of current page, if any
    */
   getExclusionEntry(
-    req: GetExclusionEntryRequest
+    req: GetExclusionEntryRequest,
   ): Promise<GetExclusionEntryResponse>;
   /**
    * Apply the updated exclusion entry to content
@@ -186,7 +186,7 @@ export interface BackgroundMessenger {
         | GestureReleaseMessage
         | ExecuteActionMessage,
       sender: Browser.Runtime.MessageSender,
-      sendResponse: (...response: any[]) => void // eslint-disable-line
-    ) => void
+      sendResponse: (...response: any[]) => void, // eslint-disable-line
+    ) => void,
   ): () => void;
 }

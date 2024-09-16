@@ -35,13 +35,13 @@ export const ExceptionToggleGroup: FC<ExceptionToggleGroupProps> = ({
       <Heading size="xs" color="gray.500">
         {useMemo(
           () => i18n.getMessage("exception_toggle_group:disable_gestures_on"),
-          [i18n]
+          [i18n],
         )}
       </Heading>
       <ExceptionToggle
         title={useMemo(
           () => i18n.getMessage("exception_toggle_group:this_domain"),
-          [i18n]
+          [i18n],
         )}
         description={domain}
         onChange={(b) => {
@@ -53,7 +53,7 @@ export const ExceptionToggleGroup: FC<ExceptionToggleGroupProps> = ({
         <ExceptionToggle
           title={useMemo(
             () => i18n.getMessage("exception_toggle_group:this_page"),
-            [i18n]
+            [i18n],
           )}
           description={path}
           isDisabled={value.disabledDomain}
