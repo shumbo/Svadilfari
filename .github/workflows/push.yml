@@ -60,6 +60,7 @@ jobs:
         with:
           apiToken: ${{ secrets.CF_API_TOKEN }}
           workingDirectory: Web/packages/check
+          packageManager: pnpm
       - name: Fix permissions of `.wrangler`. See https://github.com/shumbo/Svadilfari/issues/44
         run: sudo chown -R $(id -un):$(id -gn) ${{ github.workspace }}
   Deploy-Go:
@@ -88,5 +89,6 @@ jobs:
         with:
           apiToken: ${{ secrets.CF_API_TOKEN }}
           workingDirectory: Web/packages/go
+          packageManager: pnpm
       - name: Fix permissions of `.wrangler`. See https://github.com/shumbo/Svadilfari/issues/44
         run: sudo chown -R $(id -un):$(id -gn) ${{ github.workspace }}
