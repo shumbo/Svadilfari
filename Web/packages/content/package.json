@@ -16,8 +16,8 @@
   "devDependencies": {
     "@storybook/addon-links": "^10.6.8",
     "@storybook/react-vite": "^10.6.8",
-    "@types/react": "^18.0.15",
-    "@types/react-dom": "^18.0.6",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
     "@vanilla-extract/vite-plugin": "^5.2.6",
     "@vitejs/plugin-react": "^6.3.0",
     "mock": "workspace:*",
@@ -30,13 +30,13 @@
   },
   "dependencies": {
     "@fluentui/svg-icons": "^1.1.176",
-    "@react-spring/web": "^9.5.1",
+    "@react-spring/web": "^10.1.2",
     "@vanilla-extract/css": "^1.7.2",
     "@vanilla-extract/esbuild-plugin": "^2.1.0",
     "core": "workspace:*",
     "modern-css-reset": "^1.4.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
     "react-use": "^17.4.0",
     "ts-assert-unreachable": "^0.0.9"
   }
