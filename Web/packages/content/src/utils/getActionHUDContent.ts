@@ -20,7 +20,7 @@ import { HUDContent } from "../components/HUD/HUD";
 
 export function getActionHUDContent(
   action: Action,
-  i18n: Browser.I18n.Static
+  i18n: Browser.I18n.Static,
 ): HUDContent {
   const key = getActionCode(action);
   const getTitle = (code: string) => {

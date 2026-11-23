@@ -5,7 +5,7 @@ module.exports = {
   addons: ["@storybook/addon-links", "@storybook/addon-essentials"],
   webpackFinal: async (config, { configType }) => {
     const fileLoaderRule = config.module.rules.find((rule) =>
-      rule.test.test(".svg")
+      rule.test.test(".svg"),
     );
     fileLoaderRule.exclude = /\.svg$/;
     config.plugins.push(new VanillaExtractPlugin());

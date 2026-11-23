@@ -16,7 +16,7 @@ export class MockI18n implements Browser.I18n.Static {
     throw new Error("Method not implemented.");
   }
   detectLanguage(
-    _text: string
+    _text: string,
   ): Promise<Browser.I18n.DetectLanguageCallbackResultType> {
     throw new Error("Method not implemented.");
   }
