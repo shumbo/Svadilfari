@@ -13,11 +13,7 @@
     "deploy": "wrangler deploy"
   },
   "dependencies": {
-    "@chakra-ui/react": "^2.8.2",
-    "@emotion/react": "^11",
-    "@emotion/styled": "^11",
     "date-fns": "^3.3.1",
-    "framer-motion": "^11",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-i18nify": "^6.1.2"

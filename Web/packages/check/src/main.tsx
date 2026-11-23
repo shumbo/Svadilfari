@@ -1,11 +1,10 @@
-import { ChakraProvider } from "@chakra-ui/react";
 import React from "react";
 import { createRoot } from "react-dom/client";
 
 import { check, checkBrowser } from "./check";
 import { CheckerApp } from "./CheckerApp";
 import { i18n } from "./i18n";
-import "./index.css";
+import "./styles/ios.css";
 
 const isTouchDevice = "ontouchstart" in window || navigator.maxTouchPoints > 0;
 
@@ -16,15 +15,13 @@ if (container) {
   const root = createRoot(container);
   root.render(
     <React.StrictMode>
-      <ChakraProvider>
-        <CheckerApp
-          check={check}
-          onOpenApp={() => window.open("svadilfari://")}
-          checkBrowser={() => {
-            return checkBrowser(navigator.userAgent, isTouchDevice);
-          }}
-        />
-      </ChakraProvider>
+      <CheckerApp
+        check={check}
+        onOpenApp={() => window.open("svadilfari://")}
+        checkBrowser={() => {
+          return checkBrowser(navigator.userAgent, isTouchDevice);
+        }}
+      />
     </React.StrictMode>,
   );
 }

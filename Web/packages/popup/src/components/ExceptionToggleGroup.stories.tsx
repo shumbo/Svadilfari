@@ -2,8 +2,6 @@ import React from "react";
 import { Meta, StoryFn } from "@storybook/react-vite";
 import { MockI18n } from "mock";
 
-import { chakraDecorator } from "../utils/ChakraDecorator";
-
 import {
   ExceptionToggleGroup,
   ExceptionToggleGroupProps,
@@ -12,7 +10,6 @@ import {
 const meta: Meta<typeof ExceptionToggleGroup> = {
   title: "Popup/ExceptionToggleGroup",
   component: ExceptionToggleGroup,
-  decorators: [chakraDecorator],
   args: {
     i18n: new MockI18n(),
     value: {

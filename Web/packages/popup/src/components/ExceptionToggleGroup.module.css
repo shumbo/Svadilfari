@@ -1,0 +1,35 @@
+.section {
+  margin-top: 24px;
+}
+
+/* iOS grouped-list section header ("footnote", secondary label) */
+.header {
+  margin: 0 0 6px;
+  padding: 0 16px;
+  font-size: 0.8125em;
+  font-weight: normal;
+  text-transform: uppercase;
+  color: var(--ios-secondary-label);
+}
+
+.group {
+  overflow: hidden;
+  border-radius: 10px;
+  background: var(--ios-secondary-grouped-background);
+}
+
+/* The page row depends on the domain row, so it sits indented under it,
+   after an inset separator like UITableView's (aligned with the row text). */
+.nested {
+  position: relative;
+  padding-left: 16px;
+}
+
+.nested::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 16px;
+  right: 0;
+  border-top: 0.5px solid var(--ios-separator);
+}

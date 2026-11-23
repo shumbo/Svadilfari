@@ -1,0 +1,95 @@
+/* A centered, full-height result screen in the style of an iOS empty state. */
+.screen {
+  --tint: var(--ios-blue);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 100%;
+  padding: 32px 24px;
+  text-align: center;
+}
+
+.success {
+  --tint: var(--ios-green);
+}
+
+.warning {
+  --tint: var(--ios-orange);
+}
+
+.error {
+  --tint: var(--ios-red);
+}
+
+.icon {
+  width: 64px;
+  height: 64px;
+  margin-bottom: 8px;
+  color: var(--tint);
+}
+
+.icon svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* iOS "title2", bold */
+.title {
+  margin: 0;
+  font-size: 1.375em;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.description {
+  max-width: 24em;
+  margin: 0;
+  color: var(--ios-secondary-label);
+}
+
+/* iOS "footnote" */
+.footnote {
+  margin: 16px 0 0;
+  font-size: 0.8125em;
+  color: var(--ios-secondary-label);
+}
+
+/* UIButton.Configuration.filled() with large size */
+.filledButton {
+  margin-top: 16px;
+  min-width: 200px;
+  min-height: 50px;
+  padding: 14px 20px;
+  border: none;
+  border-radius: 12px;
+  font: inherit;
+  font-weight: 600;
+  color: #fff;
+  background: var(--tint);
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* UIButton.Configuration.plain(): tinted text */
+.plainButton {
+  padding: 8px;
+  font-weight: 400;
+  color: var(--tint);
+  text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.filledButton:active,
+.plainButton:active {
+  opacity: 0.6;
+}
+
+.filledButton:focus-visible,
+.plainButton:focus-visible {
+  outline: 3px solid color-mix(in srgb, var(--tint) 50%, transparent);
+  outline-offset: 2px;
+}

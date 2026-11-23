@@ -1,0 +1,6 @@
+.switch {
+  flex-shrink: 0;
+  margin: 0;
+  /* Tints the "on" track of the native switch, like UISwitch's onTintColor. */
+  accent-color: var(--ios-green);
+}

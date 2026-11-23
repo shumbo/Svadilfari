@@ -1,0 +1,30 @@
+/* An inset-grouped cell with a tinted SF-Symbol-style icon. */
+.alert {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 11px 16px;
+  border-radius: 10px;
+  background: var(--ios-secondary-grouped-background);
+}
+
+.icon {
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+}
+
+.active .icon {
+  color: var(--ios-green);
+}
+
+.inactive .icon {
+  color: var(--ios-orange);
+}
+
+.message {
+  margin: 0;
+  /* iOS "subheadline" */
+  font-size: 0.9375em;
+  line-height: 1.33;
+}
