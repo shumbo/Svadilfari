@@ -5,9 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "node build.js --watch",
-    "build": "node build.js --minify",
-    "format": "prettier --check .",
-    "format:fix": "prettier --write ."
+    "build": "node build.js --minify"
   },
   "keywords": [],
   "author": "",
@@ -16,7 +14,6 @@
     "core": "workspace:*"
   },
   "devDependencies": {
-    "prettier": "^2.4.1",
     "webextension-toolkit": "workspace:*"
   }
 }

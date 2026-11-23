@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useRef } from "react";
-import { useEvent } from "react-use";
+import { useWindowEvent } from "./useWindowEvent";
 import { getClosestGestureByPattern, PatternConstructor, Gesture } from "core";
 
 /**
@@ -15,7 +15,7 @@ export function useGestureRecognizer(
   sensitivity: number,
   mouse: boolean,
   onChange: (gesture: Gesture | null) => void,
-  onRelease: (gesture: Gesture | null) => void
+  onRelease: (gesture: Gesture | null) => void,
 ): void {
   const patternConstructor = useRef(new PatternConstructor(0.12, 60));
   useEffect(() => {
@@ -26,11 +26,11 @@ export function useGestureRecognizer(
       "apply sensitivity",
       sensitivity,
       differenceThreshold,
-      distanceThreshold
+      distanceThreshold,
     );
     patternConstructor.current = new PatternConstructor(
       differenceThreshold,
-      distanceThreshold
+      distanceThreshold,
     );
   }, [sensitivity]);
 
@@ -38,7 +38,7 @@ export function useGestureRecognizer(
     return getClosestGestureByPattern(
       patternConstructor.current.getPattern(),
       new Set(gestures),
-      0.12
+      0.12,
     );
   }, [gestures]);
 
@@ -56,7 +56,7 @@ export function useGestureRecognizer(
         onChange(getClosestGesture());
       }
     },
-    [onChange, getClosestGesture]
+    [onChange, getClosestGesture],
   );
 
   const mouseMoveHandler = useCallback(
@@ -73,7 +73,7 @@ export function useGestureRecognizer(
         onChange(getClosestGesture());
       }
     },
-    [mouse, onChange, getClosestGesture]
+    [mouse, onChange, getClosestGesture],
   );
 
   const releaseHandler = useCallback(() => {
@@ -87,8 +87,8 @@ export function useGestureRecognizer(
     }
   }, [onRelease, getClosestGesture]);
 
-  useEvent("touchmove", touchMoveHandler, undefined, { capture: true });
-  useEvent("touchend", releaseHandler, undefined, { capture: true });
-  useEvent("mousemove", mouseMoveHandler, undefined, { capture: true });
-  useEvent("mouseup", releaseHandler, undefined, { capture: true });
+  useWindowEvent("touchmove", touchMoveHandler, { capture: true });
+  useWindowEvent("touchend", releaseHandler, { capture: true });
+  useWindowEvent("mousemove", mouseMoveHandler, { capture: true });
+  useWindowEvent("mouseup", releaseHandler, { capture: true });
 }

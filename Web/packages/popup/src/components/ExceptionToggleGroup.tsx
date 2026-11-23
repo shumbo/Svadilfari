@@ -1,8 +1,8 @@
-import { Box, Heading, VStack } from "@chakra-ui/react";
-import React, { useMemo, FC } from "react";
+import React, { useMemo, FC, useId } from "react";
 import { Browser } from "webextension-typedef";
 
 import { ExceptionToggle } from "./ExceptionToggle";
+import styles from "./ExceptionToggleGroup.module.css";
 
 export type ExceptionStatus = {
   /**
@@ -30,39 +30,45 @@ export const ExceptionToggleGroup: FC<ExceptionToggleGroupProps> = ({
   value,
   onChange,
 }) => {
+  const headerId = useId();
+  const header = useMemo(
+    () => i18n.getMessage("exception_toggle_group:disable_gestures_on"),
+    [i18n],
+  );
+  const domainTitle = useMemo(
+    () => i18n.getMessage("exception_toggle_group:this_domain"),
+    [i18n],
+  );
+  const pageTitle = useMemo(
+    () => i18n.getMessage("exception_toggle_group:this_page"),
+    [i18n],
+  );
   return (
-    <VStack align="stretch" padding={4}>
-      <Heading size="xs" color="gray.500">
-        {useMemo(
-          () => i18n.getMessage("exception_toggle_group:disable_gestures_on"),
-          [i18n],
-        )}
-      </Heading>
-      <ExceptionToggle
-        title={useMemo(
-          () => i18n.getMessage("exception_toggle_group:this_domain"),
-          [i18n],
-        )}
-        description={domain}
-        onChange={(b) => {
-          onChange({ disabledDomain: b });
-        }}
-        value={value.disabledDomain}
-      />
-      <Box paddingLeft={2} borderLeftColor="gray.200" borderLeftWidth={4}>
+    <section className={styles.section} aria-labelledby={headerId}>
+      <h2 id={headerId} className={styles.header}>
+        {header}
+      </h2>
+      <div className={styles.group}>
         <ExceptionToggle
-          title={useMemo(
-            () => i18n.getMessage("exception_toggle_group:this_page"),
-            [i18n],
-          )}
-          description={path}
-          isDisabled={value.disabledDomain}
+          title={domainTitle}
+          description={domain}
           onChange={(b) => {
-            onChange({ disabledPage: b });
+            onChange({ disabledDomain: b });
           }}
-          value={value.disabledPage}
+          value={value.disabledDomain}
         />
-      </Box>
-    </VStack>
+        <div className={styles.nested}>
+          <ExceptionToggle
+            title={pageTitle}
+            description={path}
+            isDisabled={value.disabledDomain}
+            onChange={(b) => {
+              onChange({ disabledPage: b });
+            }}
+            value={value.disabledPage}
+          />
+        </div>
+      </div>
+    </section>
   );
 };

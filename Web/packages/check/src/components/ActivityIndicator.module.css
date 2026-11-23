@@ -1,0 +1,42 @@
+.indicator {
+  position: relative;
+  display: inline-block;
+  width: 28px;
+  height: 28px;
+  color: var(--ios-secondary-label);
+}
+
+.spoke {
+  position: absolute;
+  top: 0;
+  left: calc(50% - 1.5px);
+  width: 3px;
+  height: 50%;
+  transform-origin: 50% 100%;
+}
+
+/* The visible bar is the outer half of each spoke. */
+.spoke::before {
+  content: "";
+  display: block;
+  height: 55%;
+  border-radius: 1.5px;
+  background: currentColor;
+  animation: fade 1s linear infinite;
+  animation-delay: inherit;
+}
+
+@keyframes fade {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0.2;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .spoke::before {
+    animation-duration: 3s;
+  }
+}

@@ -1,3 +1,4 @@
+import { describe, test, expect } from "vitest";
 import { MockI18n } from "mock";
 
 import { getActionHUDContent } from "./getActionHUDContent";
@@ -8,7 +9,7 @@ describe("getActionHUDContent", () => {
   test("javascriptRun without description", () => {
     expect(
       getActionHUDContent({ javascriptRun: { code: "alert('hello')" } }, i18n)
-        ?.title
+        ?.title,
     ).toBe("Run JavaScript");
   });
   test("javascriptRun with description", () => {
@@ -17,8 +18,8 @@ describe("getActionHUDContent", () => {
         {
           javascriptRun: { code: "alert('hello')", description: "Say Hello" },
         },
-        i18n
-      )
+        i18n,
+      ),
     ).toMatchObject({ title: "Run JavaScript", message: "Say Hello" });
   });
 });

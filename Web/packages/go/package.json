@@ -2,41 +2,20 @@
   "name": "worker-typescript-template",
   "version": "1.0.0",
   "description": "Cloudflare worker TypeScript template",
-  "main": "dist/worker.js",
   "scripts": {
-    "build": "webpack",
-    "format": "prettier --write  '*.{json,js}' 'src/**/*.{js,ts}' 'test/**/*.{js,ts}'",
-    "lint": "eslint --max-warnings=0 src && prettier --check '*.{json,js}' 'src/**/*.{js,ts}' 'test/**/*.{js,ts}'",
-    "test": "jest --config jestconfig.json --verbose"
+    "dev": "wrangler dev",
+    "build": "wrangler deploy --dry-run --outdir dist",
+    "deploy": "wrangler deploy",
+    "typecheck": "tsc --noEmit"
   },
   "author": "author",
   "license": "MIT OR Apache-2.0",
-  "eslintConfig": {
-    "root": true,
-    "extends": [
-      "typescript",
-      "prettier"
-    ]
-  },
   "devDependencies": {
-    "@cloudflare/workers-types": "^2.2.2",
-    "@types/jest": "^29.5.12",
-    "@types/service-worker-mock": "^2.0.1",
-    "@typescript-eslint/eslint-plugin": "^7.1.0",
-    "@typescript-eslint/parser": "^7.1.0",
-    "eslint": "^8.57.0",
-    "eslint-config-prettier": "^9.1.0",
-    "eslint-config-typescript": "^3.0.0",
-    "jest": "^29.7.0",
-    "prettier": "^3.2.5",
-    "service-worker-mock": "^2.0.5",
-    "ts-jest": "^29.1.2",
-    "ts-loader": "^9.5.1",
-    "typescript": "^5.3.3",
-    "webpack": "^5.90.3",
-    "webpack-cli": "^5.1.4"
+    "@cloudflare/workers-types": "^5.20261121.1",
+    "typescript": "^7.0.2",
+    "wrangler": "^4.166.0"
   },
   "dependencies": {
-    "accept-language": "^3.0.18"
+    "accept-language": "^3.0.20"
   }
 }

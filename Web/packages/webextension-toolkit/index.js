@@ -1,6 +1,6 @@
 const path = require("path");
 const esbuild = require("esbuild");
-const svgrPlugin = require("esbuild-plugin-svgr");
+const { svgrPlugin } = require("./svgr");
 
 const argv = require("minimist")(process.argv.slice(2));
 
@@ -30,8 +30,9 @@ async function buildWebExtension(options) {
     plugins: [svgrPlugin({ icon: true }), ...(options.plugins ?? [])],
     globalName: options.globalName,
   };
-  if (opt.watch || argv["watch"]) {
-    await ctx.watch(opt);
+  if (options.watch || argv["watch"]) {
+    const ctx = await esbuild.context(opt);
+    await ctx.watch();
   } else {
     await esbuild.build(opt);
   }

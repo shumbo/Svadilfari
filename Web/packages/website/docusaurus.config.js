@@ -10,7 +10,11 @@ const config = {
   url: "https://www.svadilfari.app",
   baseUrl: "/",
   onBrokenLinks: "throw",
-  onBrokenMarkdownLinks: "warn",
+  markdown: {
+    hooks: {
+      onBrokenMarkdownLinks: "warn",
+    },
+  },
   favicon: "img/favicon.ico",
   organizationName: "shumbo", // Usually your GitHub org/user name.
   projectName: "Svadilfari", // Usually your repo name.

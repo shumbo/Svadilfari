@@ -1,4 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
+import { describe, test, expect, beforeEach, vi, type Mock } from "vitest";
 import {
   Action,
   AddExclusionEntryRequestMessage,
@@ -15,20 +16,24 @@ import {
 import { Browser } from "webextension-typedef";
 
 import { startBackground } from "./background";
+import type { Channel } from "./channel";
+import type { ExecuteAction } from "./executeAction";
 
 const TAB_ID = 1;
 
 describe("Background", () => {
   let sendMockMessage: (msg: any) => void;
-  let sendResponseMock: jest.Mock;
-  let sendMessageToContent: jest.Mock;
-  let sendMessageToNative: jest.Mock;
-  let executeAction: jest.Mock;
+  let sendResponseMock: Mock<(...response: any[]) => void>;
+  let sendMessageToContent: Mock<Channel["sendMessage"]>;
+  let sendMessageToNative: Mock<Channel["sendNativeMessage"]>;
+  let executeAction: Mock<ExecuteAction>;
   beforeEach(() => {
-    sendResponseMock = jest.fn();
-    sendMessageToContent = jest.fn();
-    sendMessageToNative = jest.fn();
-    executeAction = jest.fn().mockImplementation(() => Promise.resolve());
+    sendResponseMock = vi.fn<(...response: any[]) => void>();
+    sendMessageToContent = vi.fn<Channel["sendMessage"]>();
+    sendMessageToNative = vi.fn<Channel["sendNativeMessage"]>();
+    executeAction = vi
+      .fn<ExecuteAction>()
+      .mockImplementation(() => Promise.resolve());
     class MockBackgroundMessenger implements BackgroundMessenger {
       onMessage(
         handler: (

@@ -1,0 +1,59 @@
+:root {
+  color-scheme: light dark;
+
+  --ios-label: #000;
+  --ios-secondary-label: rgb(60 60 67 / 0.6);
+  --ios-tertiary-label: rgb(60 60 67 / 0.3);
+  --ios-separator: rgb(60 60 67 / 0.29);
+  --ios-grouped-background: #f2f2f7;
+  --ios-secondary-grouped-background: #fff;
+  --ios-green: #34c759;
+  --ios-orange: #ff9500;
+  --ios-red: #ff3b30;
+  --ios-blue: #007aff;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --ios-label: #fff;
+    --ios-secondary-label: rgb(235 235 245 / 0.6);
+    --ios-tertiary-label: rgb(235 235 245 / 0.3);
+    --ios-separator: rgb(84 84 88 / 0.65);
+    --ios-grouped-background: #000;
+    --ios-secondary-grouped-background: #1c1c1e;
+    --ios-green: #30d158;
+    --ios-orange: #ff9f0a;
+    --ios-red: #ff453a;
+    --ios-blue: #0a84ff;
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  /* Dynamic Type body style in Safari; system font elsewhere. */
+  font: -apple-system-body;
+  font-family: -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  margin: 0 auto;
+  color: var(--ios-label);
+  background: var(--ios-grouped-background);
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  background: var(--ios-secondary-grouped-background);
+}

@@ -1,3 +1,4 @@
+import { describe, test, expect } from "vitest";
 import { Point } from "../SharedTypes";
 
 import { makeVectorFromPoints } from "./makeVectorFromPoints";

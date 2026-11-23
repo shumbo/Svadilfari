@@ -1,14 +1,11 @@
-import { Meta, StoryFn } from "@storybook/react";
+import { Meta, StoryFn } from "@storybook/react-vite";
 import React from "react";
-
-import { chakraDecorator } from "../utils/ChakraDecorator";
 
 import { ExceptionToggle, ExceptionToggleProps } from "./ExceptionToggle";
 
 const meta: Meta<typeof ExceptionToggle> = {
   title: "Popup/ExceptionToggle",
   component: ExceptionToggle,
-  decorators: [chakraDecorator],
 };
 
 export default meta;
@@ -26,7 +23,7 @@ Checked.args = {
 
 export const Unchecked = Template.bind({});
 Unchecked.args = {
-  value: true,
+  value: false,
   title: "On this page:",
   description: "/foo/bar",
 };

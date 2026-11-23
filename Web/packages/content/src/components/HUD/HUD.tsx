@@ -78,7 +78,7 @@ export const HUD: FC<HUDProps> = ({
                 {message && <p className={textStyle}>{message}</p>}
               </div>
             </animated.div>
-          )
+          ),
       )}
       {visible && (
         <GlobalStylePortal

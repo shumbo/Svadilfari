@@ -24,7 +24,7 @@ function addRootElement(rootElem: Element) {
   if (document.body.lastElementChild) {
     document.body.insertBefore(
       rootElem,
-      document.body.lastElementChild.nextElementSibling
+      document.body.lastElementChild.nextElementSibling,
     );
   }
 }
@@ -73,7 +73,7 @@ export function usePortal(tagName: TagName, id: string): Element {
         }
       };
     },
-    [id, tagName]
+    [id, tagName],
   );
 
   /**
@@ -93,5 +93,7 @@ export function usePortal(tagName: TagName, id: string): Element {
     return rootElemRef.current;
   }
 
+  // Lazy one-time ref init is an allowed pattern: https://react.dev/reference/react/useRef#avoiding-recreating-the-ref-contents
+  // oxlint-disable-next-line react/refs
   return getRootElem();
 }

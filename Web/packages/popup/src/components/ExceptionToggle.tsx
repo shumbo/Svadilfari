@@ -1,5 +1,7 @@
-import { Flex, Spacer, Switch, Heading, VStack, Text } from "@chakra-ui/react";
-import React, { FC } from "react";
+import React, { FC, useId } from "react";
+
+import { Switch } from "./Switch";
+import styles from "./ExceptionToggle.module.css";
 
 export type ExceptionToggleProps = {
   title: string;
@@ -16,28 +18,28 @@ export const ExceptionToggle: FC<ExceptionToggleProps> = ({
   isDisabled,
   onChange,
 }) => {
+  const id = useId();
   return (
-    <Flex paddingY={1} alignItems="center">
-      <VStack align="flex-start" flexShrink={1} minWidth={0}>
-        <Heading size="sm">{title}</Heading>
-        <Text
-          textOverflow="ellipsis"
-          whiteSpace="nowrap"
-          overflow="hidden"
-          maxWidth="100%"
+    <div className={`${styles.row} ${isDisabled ? styles.disabled : ""}`}>
+      <div className={styles.text}>
+        <span id={`${id}-title`} className={styles.title}>
+          {title}
+        </span>
+        <span
+          id={`${id}-description`}
+          className={styles.description}
+          title={description}
         >
           {description}
-        </Text>
-      </VStack>
-      <Spacer />
+        </span>
+      </div>
       <Switch
-        isDisabled={isDisabled}
-        isChecked={value}
-        onChange={(event) => {
-          onChange(event.target.checked);
-        }}
-        size="lg"
+        checked={value}
+        disabled={isDisabled}
+        onChange={onChange}
+        aria-labelledby={`${id}-title`}
+        aria-describedby={`${id}-description`}
       />
-    </Flex>
+    </div>
   );
 };

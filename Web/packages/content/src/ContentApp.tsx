@@ -1,6 +1,6 @@
 import { ContentMessenger, Gesture } from "core";
 import React, { Fragment, useCallback, useEffect, useMemo, FC } from "react";
-import { useAsync, useAsyncFn } from "react-use";
+import { useAsync, useAsyncFn } from "./hooks/useAsyncFn";
 import { unreachableCase } from "ts-assert-unreachable";
 import { Browser } from "webextension-typedef";
 
@@ -46,7 +46,7 @@ export const ContentApp: FC<ContentAppProps> = ({ messenger, i18n }) => {
         cancel();
       }
     },
-    [cancel, open, i18n]
+    [cancel, open, i18n],
   );
 
   const onChangeHandler = useCallback(
@@ -57,7 +57,7 @@ export const ContentApp: FC<ContentAppProps> = ({ messenger, i18n }) => {
         applyOnChangeToHUD(g);
       }
     },
-    [applyOnChangeToHUD, messenger]
+    [applyOnChangeToHUD, messenger],
   );
 
   const applyOnReleaseToHUD = useCallback(
@@ -71,7 +71,7 @@ export const ContentApp: FC<ContentAppProps> = ({ messenger, i18n }) => {
         cancel();
       }
     },
-    [cancel, messenger, resolve]
+    [cancel, messenger, resolve],
   );
 
   const onReleaseHandler = useCallback(
@@ -82,7 +82,7 @@ export const ContentApp: FC<ContentAppProps> = ({ messenger, i18n }) => {
       }
       applyOnReleaseToHUD(g);
     },
-    [applyOnReleaseToHUD, messenger]
+    [applyOnReleaseToHUD, messenger],
   );
 
   useEffect(() => {
@@ -122,7 +122,7 @@ export const ContentApp: FC<ContentAppProps> = ({ messenger, i18n }) => {
     // onChange
     onChangeHandler,
     // onRelease
-    onReleaseHandler
+    onReleaseHandler,
   );
   return <Fragment>{hud}</Fragment>;
 };

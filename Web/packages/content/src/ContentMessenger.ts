@@ -51,8 +51,8 @@ export class ContentMessengerImpl implements ContentMessenger {
       message:
         | GestureChangeMessage
         | GestureReleaseMessage
-        | { _tag: "APPLY_EXCLUSION_ENTRY" }
-    ) => void
+        | { _tag: "APPLY_EXCLUSION_ENTRY" },
+    ) => void,
   ): () => void {
     browser.runtime.onMessage.addListener(handler);
     return () => {

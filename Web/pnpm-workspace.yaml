@@ -1,2 +1,7 @@
 packages:
   - "packages/**"
+
+allowBuilds:
+  esbuild: true
+  workerd: true
+  core-js: false # postinstall only prints a funding banner

@@ -1,0 +1,5 @@
+.switch {
+  flex-shrink: 0;
+  margin: 0;
+  accent-color: var(--ios-green);
+}

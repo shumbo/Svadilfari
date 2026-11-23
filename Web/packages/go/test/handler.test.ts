@@ -1,59 +1,54 @@
-import { handleRequest } from '../src/handler'
-import makeServiceWorkerEnv from 'service-worker-mock'
+import { describe, test, expect } from "vitest";
+import { handleRequest } from "../src/handler";
 
-declare var global: any
+const BASE = "https://example.com";
 
-describe('handle', () => {
-  beforeEach(() => {
-    Object.assign(global, makeServiceWorkerEnv())
-    jest.resetModules()
-  })
-
-  test('handle GET JA', async () => {
+describe("handle", () => {
+  test("handle GET JA", async () => {
     const result = await handleRequest(
-      new Request('/privacy-policy', {
-        method: 'GET',
-        headers: { 'accept-language': 'ja' },
+      new Request(`${BASE}/privacy-policy`, {
+        method: "GET",
+        headers: { "accept-language": "ja" },
       }),
-    )
-    expect(result.status).toEqual(301)
-    expect(result.headers.get('Location')).toBe(
-      'https://www.svadilfari.app/ja/privacy-policy',
-    )
-  })
-  test('handle GET ja-jp', async () => {
+    );
+    expect(result.status).toEqual(301);
+    expect(result.headers.get("Location")).toBe(
+      "https://www.svadilfari.app/ja/privacy-policy",
+    );
+  });
+  test("handle GET ja-jp", async () => {
     const result = await handleRequest(
-      new Request('/privacy-policy', {
-        method: 'GET',
-        headers: { 'Accept-Language': 'ja-jp' },
+      new Request(`${BASE}/privacy-policy`, {
+        method: "GET",
+        headers: { "Accept-Language": "ja-jp" },
       }),
-    )
-    expect(result.status).toEqual(301)
-    expect(result.headers.get('Location')).toBe(
-      'https://www.svadilfari.app/ja/privacy-policy',
-    )
-  })
-  test('handle GET EN', async () => {
+    );
+    expect(result.status).toEqual(301);
+    expect(result.headers.get("Location")).toBe(
+      "https://www.svadilfari.app/ja/privacy-policy",
+    );
+  });
+  test("handle GET EN", async () => {
     const result = await handleRequest(
-      new Request('/privacy-policy', {
-        method: 'GET',
-        headers: { 'accept-language': 'en' },
+      new Request(`${BASE}/privacy-policy`, {
+        method: "GET",
+        headers: { "accept-language": "en" },
       }),
-    )
-    expect(result.status).toEqual(301)
-    expect(result.headers.get('Location')).toBe(
-      'https://www.svadilfari.app/privacy-policy',
-    )
-  })
-  test('handle GET No Specified Language', async () => {
+    );
+    expect(result.status).toEqual(301);
+    expect(result.headers.get("Location")).toBe(
+      "https://www.svadilfari.app/privacy-policy",
+    );
+  });
+  test("handle GET No Specified Language", async () => {
     const result = await handleRequest(
-      new Request('/privacy-policy', {
-        method: 'GET',
+      new Request(`${BASE}/privacy-policy`, {
+        method: "GET",
       }),
-    )
-    expect(result.status).toEqual(301)
-    expect(result.headers.get('Location')).toBe(
-      'https://www.svadilfari.app/privacy-policy',
-    )
-  })
-})
+    );
+    expect(result.status).toEqual(301);
+    expect(result.headers.get("Location")).toBe(
+      "https://www.svadilfari.app/privacy-policy",
+    );
+  });
+});

@@ -1,18 +1,18 @@
 import React from "react";
-import { ComponentMeta, Story } from "@storybook/react";
+import { Meta, StoryFn } from "@storybook/react-vite";
 
 import { i18nDecorator } from "../utils/I18nDecorator";
 
 import { CheckResult, CheckResultProps } from "./CheckResult";
 
-const meta: ComponentMeta<typeof CheckResult> = {
+const meta: Meta<typeof CheckResult> = {
   title: "checker/CheckResult",
   component: CheckResult,
   decorators: [i18nDecorator],
 };
 export default meta;
 
-const Template: Story<CheckResultProps> = (args) => <CheckResult {...args} />;
+const Template: StoryFn<CheckResultProps> = (args) => <CheckResult {...args} />;
 
 export const Loading = Template.bind({});
 Loading.args = { status: null };

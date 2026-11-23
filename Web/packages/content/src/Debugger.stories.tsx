@@ -1,5 +1,5 @@
 import React from "react";
-import { Meta } from "@storybook/react";
+import { Meta } from "@storybook/react-vite";
 import { MockI18n } from "mock";
 
 import { ContentApp } from "./ContentApp";
@@ -8,10 +8,10 @@ import { DebugContentMessenger } from "./ContentMessenger";
 const meta: Meta = {
   title: "Content/Debugger",
   parameters: {
-    backgrounds: {
-      default: "Big Sur",
-    },
     layout: "centered",
+  },
+  globals: {
+    backgrounds: { value: "bigSur" },
   },
 };
 

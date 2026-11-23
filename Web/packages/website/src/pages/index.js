@@ -184,7 +184,7 @@ export default function Home() {
                   <div class="px-5 px-sm-0">
                     <img
                       class="img-fluid rounded-circle"
-                      src="https://source.unsplash.com/oyXis2kALVg/900x900"
+                      src="/lp/img/web.jpg"
                       alt="web"
                     />
                   </div>

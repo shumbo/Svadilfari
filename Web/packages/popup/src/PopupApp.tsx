@@ -1,6 +1,5 @@
-import { Box } from "@chakra-ui/react";
 import React, { Fragment, useEffect, FC } from "react";
-import { useAsyncFn } from "react-use";
+import { useAsyncFn } from "./useAsyncFn";
 import { Browser } from "webextension-typedef";
 import {
   GetExclusionEntryResponse,
@@ -10,8 +9,8 @@ import {
 
 import { ExceptionToggleGroup } from "./components/ExceptionToggleGroup";
 import { StatusAlert } from "./components/StatusAlert";
-import { PopupGlobalStyle } from "./PopupGlobalStyle";
 import { PopupTabManager } from "./PopupTabManager";
+import styles from "./PopupApp.module.css";
 
 export type PopupAppProps = {
   i18n: Browser.I18n.Static;
@@ -61,7 +60,7 @@ export const PopupApp: FC<PopupAppProps> = ({
   }, [updateTabState]);
 
   return (
-    <Box padding={2}>
+    <main className={styles.app}>
       {tabState.value && (
         <Fragment>
           <StatusAlert
@@ -140,7 +139,6 @@ export const PopupApp: FC<PopupAppProps> = ({
           />
         </Fragment>
       )}
-      <PopupGlobalStyle />
-    </Box>
+    </main>
   );
 };
