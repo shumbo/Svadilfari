@@ -19,12 +19,10 @@ struct TutorialStepList<Content: View>: View {
     }
 }
 
-struct TutorialStepList_Previews: PreviewProvider {
-    static var previews: some View {
-        TutorialStepList {
-            Text("Item 1")
-            Text("Item 2")
-            Text("Item 3")
-        }
+#Preview {
+    TutorialStepList {
+        Text("Item 1")
+        Text("Item 2")
+        Text("Item 3")
     }
 }

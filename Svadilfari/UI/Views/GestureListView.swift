@@ -33,13 +33,16 @@ struct GestureListView: View {
                     })
                 }
             }.onDelete(perform: self.removeGesture)
-        }.navigationBarHidden(false)
-            .navigationBarTitle("GESTURE_LIST_TITLE")
-            .navigationBarItems(trailing: Button(action: {
-                self.newGestureSheetPresented = true
-            }) {
-                Image(systemName: "plus")
-            }).sheet(isPresented: $newGestureSheetPresented) {
+        }.navigationTitle("GESTURE_LIST_TITLE")
+            .toolbar {
+                ToolbarItem(placement: .primaryAction) {
+                    Button(action: {
+                        self.newGestureSheetPresented = true
+                    }) {
+                        Image(systemName: "plus")
+                    }
+                }
+            }.sheet(isPresented: $newGestureSheetPresented) {
                 NewGestureView()
             }
     }
@@ -51,10 +54,9 @@ struct GestureListView: View {
     }
 }
 
-struct GestureListView_Previews: PreviewProvider {
-    static var previews: some View {
-        NavigationView {
-            GestureListView()
-        }
+#Preview {
+    NavigationStack {
+        GestureListView()
     }
+    .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
 }

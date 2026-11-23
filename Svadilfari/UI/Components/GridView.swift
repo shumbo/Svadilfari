@@ -35,8 +35,6 @@ struct GridView: View {
     }
 }
 
-struct GridView_Previews: PreviewProvider {
-    static var previews: some View {
-        GridView(gridSize: 30.0, circleSize: 4.0)
-    }
+#Preview {
+    GridView(gridSize: 30.0, circleSize: 4.0)
 }

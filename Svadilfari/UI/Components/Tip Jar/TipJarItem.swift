@@ -32,27 +32,24 @@ struct TipJarItem: View {
             .padding(.horizontal, 16)
             .padding(.vertical, 4)
             .background(Color(colorScheme == .light ? UIColor.systemGray6 : UIColor.systemGray5))
-                .cornerRadius(.infinity)
+                .clipShape(.capsule)
         }
     }
 }
 
-struct TipJarItem_Previews: PreviewProvider {
-    @State static var loading = false
-    static var previews: some View {
-        Group {
-            TipJarItem(displayName: "Small Tip", displayPrice: "$0.99", loading: false, onPurchase: {
-            })
-            .preferredColorScheme(.light)
-            TipJarItem(displayName: "Small Tip", displayPrice: "$0.99", loading: true, onPurchase: {
-            })
-            .preferredColorScheme(.light)
-            TipJarItem(displayName: "Small Tip", displayPrice: "$0.99", loading: false, onPurchase: {
-            })
-            .preferredColorScheme(.dark)
-            TipJarItem(displayName: "Small Tip", displayPrice: "$0.99", loading: true, onPurchase: {
-            })
-            .preferredColorScheme(.dark)
-        }
+#Preview {
+    Group {
+        TipJarItem(displayName: "Small Tip", displayPrice: "$0.99", loading: false, onPurchase: {
+        })
+        .preferredColorScheme(.light)
+        TipJarItem(displayName: "Small Tip", displayPrice: "$0.99", loading: true, onPurchase: {
+        })
+        .preferredColorScheme(.light)
+        TipJarItem(displayName: "Small Tip", displayPrice: "$0.99", loading: false, onPurchase: {
+        })
+        .preferredColorScheme(.dark)
+        TipJarItem(displayName: "Small Tip", displayPrice: "$0.99", loading: true, onPurchase: {
+        })
+        .preferredColorScheme(.dark)
     }
 }

@@ -14,7 +14,7 @@ struct TippingAppreciation: View {
             Image(systemName: "heart.fill")
                 .resizable()
                 .frame(width: 64, height: 64)
-                .foregroundColor(Color.pink).padding(.bottom, 16)
+                .foregroundStyle(Color.pink).padding(.bottom, 16)
             Text("TIP_JAR_APPRECIATION_TITLE").font(.title).bold().multilineTextAlignment(.center)
             Text("TIP_JAR_APPRECIATION_MESSAGE")
                 .font(.body).multilineTextAlignment(.center)
@@ -31,10 +31,8 @@ struct TippingAppreciation: View {
     }
 }
 
-struct TippingAppreciation_Previews: PreviewProvider {
-    static var previews: some View {
-        TippingAppreciation(onContinue: {
-            print("continue")
-        })
-    }
+#Preview {
+    TippingAppreciation(onContinue: {
+        print("continue")
+    })
 }

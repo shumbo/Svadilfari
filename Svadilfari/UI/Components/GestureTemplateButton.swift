@@ -18,7 +18,7 @@ struct GestureTemplateButton: View {
             self.image
                 .resizable()
                 .frame(width: 44, height: 44, alignment: .center)
-                .foregroundColor(self.color)
+                .foregroundStyle(self.color)
             Text(self.text)
                 .multilineTextAlignment(.center)
             Button(
@@ -34,18 +34,16 @@ struct GestureTemplateButton: View {
     }
 }
 
-struct GestureTemplateButton_Previews: PreviewProvider {
-    static var previews: some View {
-        List {
-            GestureTemplateButton(
-                image: Image(systemName: "list.dash"),
-                text: "Select a gesture from presets and assign an action of your choice.",
-                color: .orange,
-                buttonTitle: "Select Gesture from List",
-                onPress: {
-                    print("hello")
-                }
-            )
-        }
+#Preview {
+    List {
+        GestureTemplateButton(
+            image: Image(systemName: "list.dash"),
+            text: "Select a gesture from presets and assign an action of your choice.",
+            color: .orange,
+            buttonTitle: "Select Gesture from List",
+            onPress: {
+                print("hello")
+            }
+        )
     }
 }

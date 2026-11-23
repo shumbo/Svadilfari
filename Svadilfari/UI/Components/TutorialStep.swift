@@ -15,28 +15,25 @@ struct TutorialStep: View {
     var body: some View {
         HStack {
             image.resizable()
-                .foregroundColor(color)
-                .aspectRatio(contentMode: .fit)
+                .foregroundStyle(color ?? .primary).scaledToFit()
                 .frame(width: 24, height: 24)
-                .cornerRadius(4)
+                .clipShape(.rect(cornerRadius: 4))
             Text(text).lineLimit(nil)
         }
     }
 }
 
-struct TutorialStep_Previews: PreviewProvider {
-    static var previews: some View {
-        VStack {
-            TutorialStep(
-                text: "Open the Settings App",
-                image: Image(systemName: "gearshape"),
-                color: .secondary
-            )
-            TutorialStep(
-                text: "Open the Settings App Open the Settings App Open the Settings App Open the Settings App",
-                image: Image(systemName: "gearshape"),
-                color: .secondary
-            )
-        }
+#Preview {
+    VStack {
+        TutorialStep(
+            text: "Open the Settings App",
+            image: Image(systemName: "gearshape"),
+            color: .secondary
+        )
+        TutorialStep(
+            text: "Open the Settings App Open the Settings App Open the Settings App Open the Settings App",
+            image: Image(systemName: "gearshape"),
+            color: .secondary
+        )
     }
 }

@@ -25,18 +25,16 @@ struct ActionConfigView: View {
     }
 }
 
-struct ActionConfigView_Previews: PreviewProvider {
-    static var previews: some View {
-        ActionConfigView(
-            action: Action(
-                openURL: OpenURLAction(
-                    newTab: true,
-                    title: "Apple",
-                    url: "https://apple.com"
-                )
+#Preview {
+    ActionConfigView(
+        action: Action(
+            openURL: OpenURLAction(
+                newTab: true,
+                title: "Apple",
+                url: "https://apple.com"
             )
-        ) { _ in
-            // noop
-        }
+        )
+    ) { _ in
+        // noop
     }
 }

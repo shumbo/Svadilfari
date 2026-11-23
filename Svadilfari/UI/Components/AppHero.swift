@@ -10,14 +10,12 @@ import SwiftUI
 struct AppHero: View {
     var body: some View {
         VStack(alignment: .center) {
-            Image("Icon").resizable().frame(width: 160, height: 160).cornerRadius(28)
+            Image("Icon").resizable().frame(width: 160, height: 160).clipShape(.rect(cornerRadius: 28))
             Text("Svadilfari").font(.title).fontWeight(.bold)
         }
     }
 }
 
-struct AppHero_Previews: PreviewProvider {
-    static var previews: some View {
-        AppHero()
-    }
+#Preview {
+    AppHero()
 }

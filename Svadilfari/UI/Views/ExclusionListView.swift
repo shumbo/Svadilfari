@@ -34,7 +34,7 @@ struct ExclusionListView: View {
             VStack {
                 Spacer()
                 Text("EXCLUSION_LIST_EMPTY_MESSAGE")
-                    .foregroundColor(.gray)
+                    .foregroundStyle(.gray)
                     .multilineTextAlignment(.center)
                     .padding(.horizontal, 16)
                     .padding(.bottom, 16)
@@ -59,10 +59,9 @@ struct ExclusionListView: View {
     }
 }
 
-struct ExclusionListView_Previews: PreviewProvider {
-    static var previews: some View {
-        NavigationView {
-            ExclusionListView()
-        }
+#Preview {
+    NavigationStack {
+        ExclusionListView()
     }
+    .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
 }

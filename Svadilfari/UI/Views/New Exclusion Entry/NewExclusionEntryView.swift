@@ -35,12 +35,12 @@ struct NewExclusionEntryView: View {
         }.navigationTitle("Add to Exclusion List")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
-                ToolbarItem(placement: .navigationBarLeading) {
+                ToolbarItem(placement: .cancellationAction) {
                     Button("Cancel") {
                         self.onCancel()
                     }
                 }
-                ToolbarItem(placement: .navigationBarTrailing) {
+                ToolbarItem(placement: .topBarTrailing) {
                     Button("Done") {
                         if path.isEmpty {
                             self.onCreate(self.domain, nil)
@@ -56,14 +56,12 @@ struct NewExclusionEntryView: View {
     }
 }
 
-struct NewExclusionEntryView_Previews: PreviewProvider {
-    static var previews: some View {
-        NavigationView {
-            NewExclusionEntryView(onCancel: {
-                print("Cancelled")
-            }, onCreate: { domain, path in
-                print("Create \(domain) \(path ?? "")")
-            })
-        }
+#Preview {
+    NavigationStack {
+        NewExclusionEntryView(onCancel: {
+            print("Cancelled")
+        }, onCreate: { domain, path in
+            print("Create \(domain) \(path ?? "")")
+        })
     }
 }

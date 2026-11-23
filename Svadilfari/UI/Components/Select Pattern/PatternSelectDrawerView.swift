@@ -8,13 +8,10 @@
 import SwiftUI
 import JavaScriptCore
 
-struct PatternSelectDrawerView<Content: View>: View {
-    var onSelect: (Pattern) -> Void
-    let content: () -> Content
+struct PatternSelectDrawerView: View {
+    var onDraw: (Pattern) -> Void
 
     @State private var line: [CGPoint] = []
-    @State private var nextPageVisible = false
-    @State private var pattern: Pattern?
 
     var body: some View {
         Form {
@@ -50,30 +47,19 @@ struct PatternSelectDrawerView<Content: View>: View {
                     guard let pattern = try? Pattern(jsonStr) else {
                         return
                     }
-                    self.pattern = pattern
-                    self.nextPageVisible = true
+                    self.onDraw(pattern)
                 }).frame(minHeight: 300)
             }, header: { Text("DRAW_PATTERN_TITLE") }, footer: { Text("DRAW_PATTERN_FOOTER") }).onAppear {
                 self.line = []
             }
-        }.background(NavigationLink(isActive: $nextPageVisible, destination: {
-            if let pattern = pattern {
-                PatternSelectConfirmView(pattern: pattern, onSelect: self.onSelect, content: self.content)
-            } else {
-                EmptyView()
-            }
-        }, label: { EmptyView() })).navigationTitle("DRAW_PATTERN_TITLE")
+        }.navigationTitle("DRAW_PATTERN_TITLE")
     }
 }
 
-struct PatternSelectDrawerView_Previews: PreviewProvider {
-    static var previews: some View {
-        NavigationView {
-            PatternSelectDrawerView(onSelect: { _ in
-                // noop
-            }) {
-                EmptyView()
-            }
-        }
+#Preview {
+    NavigationStack {
+        PatternSelectDrawerView(onDraw: { _ in
+            // noop
+        })
     }
 }

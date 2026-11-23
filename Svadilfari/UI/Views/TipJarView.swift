@@ -34,7 +34,7 @@ struct TipJarView: View {
             }
         }
             .navigationTitle("TIP_JAR_TITLE")
-            .navigationViewStyle(.stack).sheet(isPresented: $store.tippingAppreciationPresented, content: {
+            .sheet(isPresented: $store.tippingAppreciationPresented, content: {
                 TippingAppreciation(onContinue: {
                     store.tippingAppreciationPresented = false
                 })

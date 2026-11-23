@@ -98,7 +98,7 @@
 		24D2698727752C5B00F570B0 /* CoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 24FAA2B626B93CAC0083FFAB /* CoreData.xcdatamodeld */; };
 		24D26989277534E400F570B0 /* Gesture+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242EBAF5270FD97000FF3A21 /* Gesture+.swift */; };
 		24D2698A277534EB00F570B0 /* Changeable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242EBAF3270FD94600FF3A21 /* Changeable.swift */; };
-		24D759CD26BC80960017498A /* NavigationLinkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D759CC26BC80960017498A /* NavigationLinkView.swift */; };
+		24D759CD26BC80960017498A /* DisclosureButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D759CC26BC80960017498A /* DisclosureButton.swift */; };
 		24DE1323288E1E5000F03C79 /* TipJarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24DE1322288E1E5000F03C79 /* TipJarView.swift */; };
 		24DE1326288E21C200F03C79 /* TipJarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24DE1325288E21C200F03C79 /* TipJarItem.swift */; };
 		24DE1328288E3DFB00F03C79 /* IAPStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24DE1327288E3DFB00F03C79 /* IAPStore.swift */; };
@@ -232,7 +232,7 @@
 		24C11E6626B4366B00E018B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		24D00D2126C2BF0B00F8F1FA /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
 		24D00D2326C3580700F8F1FA /* Svadilfari.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Svadilfari.entitlements; sourceTree = "<group>"; };
-		24D759CC26BC80960017498A /* NavigationLinkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationLinkView.swift; sourceTree = "<group>"; };
+		24D759CC26BC80960017498A /* DisclosureButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisclosureButton.swift; sourceTree = "<group>"; };
 		24DE1321288E1B9000F03C79 /* Products.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = Products.storekit; sourceTree = "<group>"; };
 		24DE1322288E1E5000F03C79 /* TipJarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipJarView.swift; sourceTree = "<group>"; };
 		24DE1325288E21C200F03C79 /* TipJarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipJarItem.swift; sourceTree = "<group>"; };
@@ -412,7 +412,7 @@
 				24B2249F26B5E445009EAB48 /* GestureListItem.swift */,
 				24B224A626B5EDE0009EAB48 /* PatternPreview.swift */,
 				245A016726B9A29200EEE8CD /* GestureTemplateButton.swift */,
-				24D759CC26BC80960017498A /* NavigationLinkView.swift */,
+				24D759CC26BC80960017498A /* DisclosureButton.swift */,
 				24500EEE26C6D95800F7BB7E /* GridView.swift */,
 				24A7DBCC26D7ECB000AC3675 /* TutorialStepList.swift */,
 				24A7DBCE26D7ED7600AC3675 /* TutorialStep.swift */,
@@ -880,7 +880,7 @@
 				24978F3B271BD05900117689 /* SettingsView.swift in Sources */,
 				24B224A026B5E445009EAB48 /* GestureListItem.swift in Sources */,
 				242EBAF6270FD97000FF3A21 /* Gesture+.swift in Sources */,
-				24D759CD26BC80960017498A /* NavigationLinkView.swift in Sources */,
+				24D759CD26BC80960017498A /* DisclosureButton.swift in Sources */,
 				24428E4126B33F5400B21130 /* HomeListItem.swift in Sources */,
 				24A19E2C26B34F9500DA5E20 /* GestureListView.swift in Sources */,
 				24DE1326288E21C200F03C79 /* TipJarItem.swift in Sources */,

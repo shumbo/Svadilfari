@@ -10,51 +10,52 @@ import UIKit
 import Foundation
 
 struct HomeListView: View {
+    private enum Destination: Hashable {
+        case gestures, exclusionList, settings, tipJar
+    }
+
     @State private var isFirstLaunch = InitialDataService.shared.isFirstLaunch ||
         ProcessInfo.processInfo.arguments.contains("SHOW_TUTORIAL")
     @State private var isTutorialPresented = false
-    @State private var isGesturePresented = false
+    @State private var path: [Destination] = []
     var body: some View {
-        NavigationView {
+        NavigationStack(path: $path) {
             List {
                 AppHero().frame(maxWidth: .infinity).listRowBackground(Color.clear)
                 Section {
-                    NavigationLink(destination: EmptyView()) {
+                    DisclosureButton(action: { isTutorialPresented = true }) {
                         HomeListItem(
                             title: "HOME_TUTORIAL_TITLE",
                             description: "HOME_TUTORIAL_DESCRIPTION",
                             image: Image(systemName: "checkmark.circle.fill")
                         )
-                    }.contentShape(Rectangle())
-                        .onTapGesture {
-                            isTutorialPresented = true
-                        }
+                    }
                 }
                 Section {
-                    NavigationLink(isActive: $isGesturePresented, destination: { GestureListView() }, label: {
+                    NavigationLink(value: Destination.gestures) {
                         HomeListItem(
                             title: "HOME_GESTURES_TITLE",
                             description: "HOME_GESRURES_DESCRIPTION",
                             image: Image(systemName: "hand.draw.fill")
                         )
-                    })
-                    NavigationLink(destination: { ExclusionListView() }, label: {
+                    }
+                    NavigationLink(value: Destination.exclusionList) {
                         HomeListItem(
                             title: "HOME_EXCLUSION_LIST_TITLE",
                             description: "HOME_EXCLUSION_LIST_DESCRIPTION",
                             image: Image(systemName: "nosign")
                         )
-                    })
+                    }
                 }
                 Section {
-                    NavigationLink(destination: { SettingsView() }) {
+                    NavigationLink(value: Destination.settings) {
                         HomeListItem(
                             title: "HOME_SETTINGS_TITLE",
                             description: "HOME_SETTINGS_DESCRIPTION",
                             image: Image(systemName: "gearshape.fill")
                         )
                     }
-                    NavigationLink(destination: { TipJarView() }) {
+                    NavigationLink(value: Destination.tipJar) {
                         HomeListItem(
                             title: "HOME_TIP_JAR_TITLE",
                             description: "HOME_TIP_JAR_DESCRIPTION",
@@ -62,10 +63,19 @@ struct HomeListView: View {
                         )
                     }
                 }
-            }.navigationBarHidden(true)
-        }.navigationViewStyle(.stack).sheet(isPresented: $isTutorialPresented, content: {
+            }
+            .toolbar(.hidden, for: .navigationBar)
+            .navigationDestination(for: Destination.self) { destination in
+                switch destination {
+                case .gestures: GestureListView()
+                case .exclusionList: ExclusionListView()
+                case .settings: SettingsView()
+                case .tipJar: TipJarView()
+                }
+            }
+        }.sheet(isPresented: $isTutorialPresented, content: {
             TutorialView(onOpenGestures: {
-                self.isGesturePresented = true
+                path.append(.gestures)
             })
         }).onAppear(perform: {
             if isFirstLaunch {
@@ -76,8 +86,8 @@ struct HomeListView: View {
     }
 }
 
-struct HomeListView_Previews: PreviewProvider {
-    static var previews: some View {
-        HomeListView()
-    }
+#Preview {
+    HomeListView()
+        .environment(IAPStore())
+        .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
 }
