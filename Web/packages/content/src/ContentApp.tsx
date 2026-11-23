@@ -1,6 +1,6 @@
 import { ContentMessenger, Gesture } from "core";
 import React, { Fragment, useCallback, useEffect, useMemo, FC } from "react";
-import { useAsync, useAsyncFn } from "react-use";
+import { useAsync, useAsyncFn } from "./hooks/useAsyncFn";
 import { unreachableCase } from "ts-assert-unreachable";
 import { Browser } from "webextension-typedef";
 

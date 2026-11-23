@@ -16,6 +16,6 @@
     "wrangler": "^4.166.0"
   },
   "dependencies": {
-    "accept-language": "^3.0.18"
+    "accept-language": "^3.0.20"
   }
 }

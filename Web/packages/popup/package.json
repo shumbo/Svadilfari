@@ -16,8 +16,7 @@
   "dependencies": {
     "core": "workspace:*",
     "react": "^19.3.1",
-    "react-dom": "^19.3.1",
-    "react-use": "^17.5.0"
+    "react-dom": "^19.3.1"
   },
   "devDependencies": {
     "@storybook/addon-links": "^10.6.8",

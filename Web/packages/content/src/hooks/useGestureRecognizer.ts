@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useRef } from "react";
-import { useEvent } from "react-use";
+import { useWindowEvent } from "./useWindowEvent";
 import { getClosestGestureByPattern, PatternConstructor, Gesture } from "core";
 
 /**
@@ -87,8 +87,8 @@ export function useGestureRecognizer(
     }
   }, [onRelease, getClosestGesture]);
 
-  useEvent("touchmove", touchMoveHandler, undefined, { capture: true });
-  useEvent("touchend", releaseHandler, undefined, { capture: true });
-  useEvent("mousemove", mouseMoveHandler, undefined, { capture: true });
-  useEvent("mouseup", releaseHandler, undefined, { capture: true });
+  useWindowEvent("touchmove", touchMoveHandler, { capture: true });
+  useWindowEvent("touchend", releaseHandler, { capture: true });
+  useWindowEvent("mousemove", mouseMoveHandler, { capture: true });
+  useWindowEvent("mouseup", releaseHandler, { capture: true });
 }

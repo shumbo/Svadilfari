@@ -1,6 +1,6 @@
 const path = require("path");
 const esbuild = require("esbuild");
-const svgrPlugin = require("esbuild-plugin-svgr");
+const { svgrPlugin } = require("./svgr");
 
 const argv = require("minimist")(process.argv.slice(2));
 

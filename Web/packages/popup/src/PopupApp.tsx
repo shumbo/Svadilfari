@@ -1,5 +1,5 @@
 import React, { Fragment, useEffect, FC } from "react";
-import { useAsyncFn } from "react-use";
+import { useAsyncFn } from "./useAsyncFn";
 import { Browser } from "webextension-typedef";
 import {
   GetExclusionEntryResponse,
