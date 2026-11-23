@@ -32,11 +32,11 @@ class SafariWebExtensionHandler: NSObject, NSExtensionRequestHandling {
 
     // swiftlint:disable:next function_body_length cyclomatic_complexity
     func beginRequest(with context: NSExtensionContext) {
-        // swiftlint:disable all
+        // swiftlint:disable:next force_cast
         let item = context.inputItems[0] as! NSExtensionItem
         let message = item.userInfo?[SFExtensionMessageKey]
-        
-        // swiftlint:disable:next all
+
+        // swiftlint:disable:next force_cast
         os_log(.default, "Received message from browser.runtime.sendNativeMessage: %@", message as! CVarArg)
 
         // helper that returns json
