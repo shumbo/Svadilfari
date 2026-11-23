@@ -1,7 +1,3 @@
-/*
- * iOS system design tokens (UIKit semantic colors), light and dark.
- * https://developer.apple.com/design/human-interface-guidelines/color
- */
 :root {
   color-scheme: light dark;
 

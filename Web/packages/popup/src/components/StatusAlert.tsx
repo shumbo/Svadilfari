@@ -8,7 +8,6 @@ export type StatusAlertProps = {
   status: "ACTIVE" | "INACTIVE" | null;
 };
 
-/** SF Symbol "checkmark.circle.fill" */
 const CheckmarkCircleFill: FC = () => (
   <svg viewBox="0 0 24 24" aria-hidden="true" className={styles.icon}>
     <circle cx="12" cy="12" r="11" fill="currentColor" />
@@ -23,7 +22,6 @@ const CheckmarkCircleFill: FC = () => (
   </svg>
 );
 
-/** SF Symbol "exclamationmark.triangle.fill" */
 const ExclamationTriangleFill: FC = () => (
   <svg viewBox="0 0 24 24" aria-hidden="true" className={styles.icon}>
     <path

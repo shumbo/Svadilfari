@@ -22,7 +22,6 @@
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
-  /* iOS "subheadline" in secondary label color */
   font-size: 0.9375em;
   color: var(--ios-secondary-label);
 }

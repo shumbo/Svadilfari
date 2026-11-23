@@ -11,7 +11,6 @@ export type ExceptionToggleProps = {
   onChange: (newValue: boolean) => void;
 };
 
-/** A list row: title and a truncated subtitle on the left, a switch on the right. */
 export const ExceptionToggle: FC<ExceptionToggleProps> = ({
   title,
   description,

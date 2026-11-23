@@ -1,6 +1,5 @@
 import { useEffect } from "react";
 
-/** Adds a `window` event listener for the lifetime of the component. */
 export function useWindowEvent<K extends keyof WindowEventMap>(
   type: K,
   handler: (event: WindowEventMap[K]) => void,

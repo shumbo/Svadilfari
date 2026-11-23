@@ -1,9 +1,5 @@
 version: 2
 updates:
-  # Keeps action versions current. For workflows onboarded to the Actions
-  # lockfile (.github/workflows/actions.lock), Dependabot also regenerates
-  # the matching lock entries in the same PR. The composite action needs its
-  # own entry so its nested actions get bumped too.
   - package-ecosystem: github-actions
     directories:
       - "/"

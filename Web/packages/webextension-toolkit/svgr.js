@@ -1,11 +1,6 @@
 const { readFile } = require("node:fs/promises");
 const { transform } = require("@svgr/core");
 
-/**
- * esbuild plugin: `import Icon from "./icon.svg"` yields a React component.
- * @param {import("@svgr/core").Config} [config] svgr options, e.g. `{ icon: true }`
- * @returns {import("esbuild").Plugin}
- */
 function svgrPlugin(config = {}) {
   return {
     name: "svgr",

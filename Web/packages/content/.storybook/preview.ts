@@ -14,9 +14,6 @@ const preview: Preview = {
       options: {
         bigSur: {
           name: "Big Sur",
-          // Self-contained stand-in for the macOS Big Sur wallpaper (the old
-          // source.unsplash.com photo URL no longer resolves). A busy, colourful
-          // backdrop is what matters for previewing the translucent HUD.
           value: [
             "radial-gradient(ellipse at 20% 80%, #f9a26c 0%, transparent 55%)",
             "radial-gradient(ellipse at 80% 70%, #e0569b 0%, transparent 50%)",

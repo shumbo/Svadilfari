@@ -1,4 +1,3 @@
-/* An inset-grouped cell with a tinted SF-Symbol-style icon. */
 .alert {
   display: flex;
   align-items: center;
@@ -24,7 +23,6 @@
 
 .message {
   margin: 0;
-  /* iOS "subheadline" */
   font-size: 0.9375em;
   line-height: 1.33;
 }

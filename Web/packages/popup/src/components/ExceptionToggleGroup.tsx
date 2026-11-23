@@ -23,7 +23,6 @@ export type ExceptionToggleGroupProps = {
   onChange: (newValue: Partial<ExceptionStatus>) => void;
 };
 
-/** An iOS inset-grouped section with a header and two toggle rows. */
 export const ExceptionToggleGroup: FC<ExceptionToggleGroupProps> = ({
   i18n,
   domain,

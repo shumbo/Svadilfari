@@ -7,7 +7,6 @@ const config: StorybookConfig = {
   stories: ["../src/**/*.stories.@(js|jsx|ts|tsx)"],
   addons: ["@storybook/addon-links"],
   framework: "@storybook/react-vite",
-  // Match the esbuild build (webextension-toolkit): every *.svg import is a React component.
   viteFinal: (config) => ({
     ...config,
     plugins: [

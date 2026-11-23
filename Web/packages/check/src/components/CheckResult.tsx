@@ -11,7 +11,6 @@ export type CheckResultProps = {
 
 type Tone = "success" | "warning" | "error";
 
-/** SF Symbol "checkmark.circle.fill" */
 const CheckmarkCircleFill: FC = () => (
   <svg viewBox="0 0 24 24" aria-hidden="true">
     <circle cx="12" cy="12" r="11" fill="currentColor" />
@@ -26,7 +25,6 @@ const CheckmarkCircleFill: FC = () => (
   </svg>
 );
 
-/** SF Symbol "exclamationmark.triangle.fill" */
 const ExclamationTriangleFill: FC = () => (
   <svg viewBox="0 0 24 24" aria-hidden="true">
     <path
@@ -43,7 +41,6 @@ const ExclamationTriangleFill: FC = () => (
   </svg>
 );
 
-/** SF Symbol "xmark.circle.fill" */
 const XmarkCircleFill: FC = () => (
   <svg viewBox="0 0 24 24" aria-hidden="true">
     <circle cx="12" cy="12" r="11" fill="currentColor" />

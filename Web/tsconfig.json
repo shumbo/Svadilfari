@@ -1,5 +1,4 @@
 {
-  // Type-checking only: bundling is done by esbuild / Vite, tests by Vitest.
   "compilerOptions": {
     "target": "es2020",
     "lib": ["DOM", "ES2020"],

@@ -1,7 +1,6 @@
 import { describe, test, expect } from "vitest";
 import { handleRequest } from "../src/handler";
 
-// Only the pathname matters to the handler.
 const BASE = "https://example.com";
 
 describe("handle", () => {

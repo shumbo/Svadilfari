@@ -4,7 +4,6 @@ import styles from "./ActivityIndicator.module.css";
 
 const SPOKES = 8;
 
-/** iOS UIActivityIndicatorView-style spinner: fading spokes. */
 export const ActivityIndicator: FC<{ label: string }> = ({ label }) => (
   <span role="progressbar" aria-label={label} className={styles.indicator}>
     {Array.from({ length: SPOKES }, (_, i) => (

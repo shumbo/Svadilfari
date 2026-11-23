@@ -2,7 +2,6 @@
   margin-top: 24px;
 }
 
-/* iOS grouped-list section header ("footnote", secondary label) */
 .header {
   margin: 0 0 6px;
   padding: 0 16px;
@@ -18,8 +17,6 @@
   background: var(--ios-secondary-grouped-background);
 }
 
-/* The page row depends on the domain row, so it sits indented under it,
-   after an inset separator like UITableView's (aligned with the row text). */
 .nested {
   position: relative;
   padding-left: 16px;
