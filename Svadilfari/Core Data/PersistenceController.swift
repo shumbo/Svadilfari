@@ -8,12 +8,13 @@
 import CoreData
 import Combine
 
-class PersistenceController {
+// The container is only replaced by toggleSync, which the app calls on the main actor.
+final class PersistenceController: @unchecked Sendable {
     private var subscriptions: Set<AnyCancellable> = []
 
     static let shared = PersistenceController()
 
-    static var preview: PersistenceController = {
+    static let preview: PersistenceController = {
         let result = PersistenceController(inMemory: true)
         let viewContext = result.container.viewContext
         do {

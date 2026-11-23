@@ -11,7 +11,7 @@ import SwiftUI
 private let SLIDE_MAX_WIDTH: CGFloat = 480.0
 
 struct TutorialView: View {
-    @Environment(\.presentationMode) var presentation
+    @Environment(\.dismiss) private var dismiss
     @State private var page = 1
 
     var onOpenGestures: () -> Void
@@ -22,7 +22,7 @@ struct TutorialView: View {
                 Image("Icon")
                     .resizable()
                     .frame(width: 120, height: 120)
-                    .cornerRadius(21)
+                    .clipShape(.rect(cornerRadius: 21))
                 Text("TUTORIAL_WELCOME_TITLE")
                     .font(.title).bold()
                 Text("TUTORIAL_WELCOME_MESSAGE")
@@ -30,10 +30,10 @@ struct TutorialView: View {
                 Button(action: {
                     page += 1
                 }, label: {
-                    Text("COMMON_CONTINUE").frame(maxWidth: .infinity).frame(height: 32)
+                    Text("COMMON_CONTINUE").frame(maxWidth: .infinity)
                 })
-                    .buttonBorderShape(.roundedRectangle)
                     .buttonStyle(.borderedProminent)
+                    .controlSize(.large)
                     .padding(.top, 16)
             }.padding(.all, 24).frame(maxWidth: SLIDE_MAX_WIDTH).tag(1)
             VStack(alignment: .center, spacing: 32) {
@@ -63,10 +63,10 @@ struct TutorialView: View {
                 Button(action: {
                     page += 1
                 }, label: {
-                    Text("COMMON_CONTINUE").frame(maxWidth: .infinity).frame(height: 32)
+                    Text("COMMON_CONTINUE").frame(maxWidth: .infinity)
                 })
-                    .buttonBorderShape(.roundedRectangle)
                     .buttonStyle(.borderedProminent)
+                    .controlSize(.large)
                     .padding(.top, 16)
             }.padding(.all, 24).frame(maxWidth: SLIDE_MAX_WIDTH).tag(2)
             VStack(alignment: .center, spacing: 32) {
@@ -92,31 +92,31 @@ struct TutorialView: View {
                 }
                 Text("TUTORIAL_ENABLE_EXT_FOOTNOTE")
                     .font(.footnote)
-                    .foregroundColor(.gray)
+                    .foregroundStyle(.gray)
                 Button(action: {
                     page += 1
                 }, label: {
-                    Text("COMMON_CONTINUE").frame(maxWidth: .infinity).frame(height: 32)
+                    Text("COMMON_CONTINUE").frame(maxWidth: .infinity)
                 })
-                    .buttonBorderShape(.roundedRectangle)
                     .buttonStyle(.borderedProminent)
+                    .controlSize(.large)
             }.padding(.all, 24).frame(maxWidth: SLIDE_MAX_WIDTH).tag(3)
             VStack(alignment: .center, spacing: 16) {
                 Image(systemName: "checkmark.circle.fill")
                     .resizable()
                     .frame(width: 64, height: 64)
-                    .foregroundColor(Color.green)
+                    .foregroundStyle(Color.green)
                 Text("TUTORIAL_DONE_TITLE").font(.title).bold()
                 Text("TUTORIAL_DONE_MESSAGE")
                     .font(.body).multilineTextAlignment(.center)
                 Button(action: {
-                    self.presentation.wrappedValue.dismiss()
+                    self.dismiss()
                     self.onOpenGestures()
                 }, label: {
-                    Text("TUTORIAL_DONE_VIEW_GESTURES").frame(maxWidth: .infinity).frame(height: 32)
+                    Text("TUTORIAL_DONE_VIEW_GESTURES").frame(maxWidth: .infinity)
                 })
-                    .buttonBorderShape(.roundedRectangle)
                     .buttonStyle(.borderedProminent)
+                    .controlSize(.large)
                     .padding(.top, 16)
                 Link("TUTORIAL_DONE_OPEN_CHECKER", destination: URL(string: "https://go.svadilfari.app/checker")!)
             }.padding(.all, 24).frame(maxWidth: SLIDE_MAX_WIDTH).tag(4)
@@ -127,10 +127,8 @@ struct TutorialView: View {
     }
 }
 
-struct TutorialView_Previews: PreviewProvider {
-    static var previews: some View {
-        TutorialView(onOpenGestures: {
-            // noop
-        })
-    }
+#Preview {
+    TutorialView(onOpenGestures: {
+        // noop
+    })
 }

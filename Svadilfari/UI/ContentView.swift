@@ -8,16 +8,14 @@
 import SwiftUI
 
 struct ContentView: View {
-    @StateObject var store: IAPStore = IAPStore()
+    @State private var store = IAPStore()
 
     var body: some View {
         HomeListView()
-            .environmentObject(store)
+            .environment(store)
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
+#Preview {
+    ContentView()
 }

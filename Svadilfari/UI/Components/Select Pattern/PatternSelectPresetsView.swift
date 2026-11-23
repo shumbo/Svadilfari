@@ -7,20 +7,13 @@
 
 import SwiftUI
 
-struct PatternSelectPresetsView<Content: View>: View {
-    var onSelect: (Pattern) -> Void
-    let content: () -> Content
+struct PatternSelectPresetsView: View {
+    var onPick: (Pattern) -> Void
 
     var body: some View {
         List {
             ForEach(presets) { preset in
-                NavigationLink(
-                    destination: PatternSelectConfirmView(
-                        pattern: preset.pattern,
-                        onSelect: self.onSelect,
-                        content: self.content
-                    )
-                ) {
+                DisclosureButton(action: { self.onPick(preset.pattern) }) {
                     HStack {
                         GeometryReader { proxy in
                             PatternPreview(frame: proxy.frame(in: .local), pattern: preset.pattern)
@@ -33,15 +26,11 @@ struct PatternSelectPresetsView<Content: View>: View {
     }
 }
 
-struct PatternSelectPresetsView_Previews: PreviewProvider {
-    static var previews: some View {
-        NavigationView {
-            PatternSelectPresetsView(onSelect: { _ in
-                // noop
-            }) {
-                EmptyView()
-            }
-        }
+#Preview {
+    NavigationStack {
+        PatternSelectPresetsView(onPick: { _ in
+            // noop
+        })
     }
 }
 
@@ -57,7 +46,7 @@ private let LEFT = Vector(x: -100.0, y: 0.0)
 private let RIGHT = Vector(x: 100.0, y: 0.0)
 private let DOWN = Vector(x: 0.0, y: 100.0)
 
-private let presets: [Preset] = [
+@MainActor private let presets: [Preset] = [
     Preset(
         name: "PATTERN_PRESET_UP_LEFT",
         pattern: Pattern(data: [UP, LEFT])

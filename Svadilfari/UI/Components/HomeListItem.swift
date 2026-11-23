@@ -20,29 +20,27 @@ struct HomeListItem: View {
             VStack(alignment: .leading, spacing: 4) {
                 Text(self.title)
                     .font(.body)
-                Text(self.description).font(.caption).foregroundColor(.secondary)
+                Text(self.description).font(.caption).foregroundStyle(.secondary)
             }
         } icon: {
-            self.image.foregroundColor(self.imageColor)
+            self.image.foregroundStyle(self.imageColor)
         }
     }
 }
 
-struct HomeListItem_Previews: PreviewProvider {
-    static var previews: some View {
-        List {
-            HomeListItem(
-                title: "Start Tutorial",
-                description: "Learn how to use gestures",
-                image: Image(systemName: "checkmark.circle.fill"),
-                imageColor: .green
-            )
-            HomeListItem(
-                title: "Start Tutorial",
-                description: "Long text Long text Long text Long text Long text Long text Long text Long text ",
-                image: Image(systemName: "checkmark.circle.fill"),
-                imageColor: .pink
-            )
-        }
+#Preview {
+    List {
+        HomeListItem(
+            title: "Start Tutorial",
+            description: "Learn how to use gestures",
+            image: Image(systemName: "checkmark.circle.fill"),
+            imageColor: .green
+        )
+        HomeListItem(
+            title: "Start Tutorial",
+            description: "Long text Long text Long text Long text Long text Long text Long text Long text ",
+            image: Image(systemName: "checkmark.circle.fill"),
+            imageColor: .pink
+        )
     }
 }

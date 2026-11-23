@@ -12,83 +12,75 @@ import SwiftUI
  Users choose if they want to 1) select a pattern from presets or 2) draw a pattern of their choice
  Receive a created pattern from `onSelect` callback
  */
-struct PatternSelectView<Content: View>: View {
-    @Environment(\.dismiss) var dismiss
-
-    let content: () -> Content
-    var onSelect: (Pattern) -> Void
-
-    init(onSelect: @escaping (Pattern) -> Void, @ViewBuilder content: @escaping () -> Content) {
-        self.onSelect = onSelect
-        self.content = content
+struct PatternSelectView: View {
+    private enum Step: Hashable {
+        case presets, draw, confirm
     }
 
-    @State private var showingNewPatternPresets = false
-    @State private var showingNewPatternDraw = false
+    @Environment(\.dismiss) var dismiss
+
+    @Binding var path: NavigationPath
+    var onSelect: (Pattern) -> Void
+
+    @State private var candidate: Pattern?
 
     var body: some View {
-        VStack {
-            NavigationLink(
-                destination: PatternSelectPresetsView(onSelect: self.onSelect, content: self.content),
-                isActive: $showingNewPatternPresets
-            ) {
-                EmptyView()
+        List {
+            Section {
+                GestureTemplateButton(
+                    image: Image(systemName: "list.dash"),
+                    text: "NEW_GESTURE_SELECT_PATTERN",
+                    buttonTitle: "NEW_GESTURE_SELECT_PATTERN_BUTTON",
+                    onPress: {
+                        path.append(Step.presets)
+                    }
+                )
             }
-            NavigationLink(
-                destination: PatternSelectDrawerView(onSelect: self.onSelect, content: self.content),
-                isActive: $showingNewPatternDraw
-            ) {
-                EmptyView()
+            Section {
+                GestureTemplateButton(
+                    image: Image(systemName: "hand.draw"),
+                    text: "NEW_GESTURE_DRAW_PATTERN",
+                    buttonTitle: "NEW_GESTURE_DRAW_PATTERN_BUTTON",
+                    onPress: {
+                        path.append(Step.draw)
+                    }
+                )
             }
-            List {
-                Section {
-                    GestureTemplateButton(
-                        image: Image(systemName: "list.dash"),
-                        text: "NEW_GESTURE_SELECT_PATTERN",
-                        color: .blue,
-                        buttonTitle: "NEW_GESTURE_SELECT_PATTERN_BUTTON",
-                        onPress: {
-                            showingNewPatternPresets = true
-                        }
-                    )
-                }
-                Section {
-                    GestureTemplateButton(
-                        image: Image(systemName: "hand.draw"),
-                        text: "NEW_GESTURE_DRAW_PATTERN",
-                        color: .green,
-                        buttonTitle: "NEW_GESTURE_DRAW_PATTERN_BUTTON",
-                        onPress: {
-                            showingNewPatternDraw = true
-                        }
-                    )
+        }
+        .navigationDestination(for: Step.self) { step in
+            switch step {
+            case .presets:
+                PatternSelectPresetsView(onPick: self.confirm)
+            case .draw:
+                PatternSelectDrawerView(onDraw: self.confirm)
+            case .confirm:
+                if let candidate {
+                    PatternSelectConfirmView(pattern: candidate, onSelect: self.onSelect)
                 }
             }
-        }.toolbar {
-            ToolbarItem(placement: .navigationBarLeading) {
+        }
+        .toolbar {
+            ToolbarItem(placement: .cancellationAction) {
                 Button("COMMON_CANCEL") {
                     self.dismiss()
                 }
             }
         }
         .navigationBarTitleDisplayMode(.inline)
-        // disable interactive dismiss if one of the two is active
-        .interactiveDismissDisabled(self.showingNewPatternPresets || self.showingNewPatternDraw)
+        .interactiveDismissDisabled(!path.isEmpty)
+    }
+
+    private func confirm(_ pattern: Pattern) {
+        candidate = pattern
+        path.append(Step.confirm)
     }
 }
 
-extension PatternSelectView where Content == EmptyView {
-    init(onSelect: @escaping (Pattern) -> Void) {
-        self.init(onSelect: onSelect, content: { EmptyView() })
-    }
-}
-
-struct PatternSelectView_Previews: PreviewProvider {
-    static var previews: some View {
-        PatternSelectView(onSelect: { _ in
+#Preview {
+    @Previewable @State var path = NavigationPath()
+    NavigationStack(path: $path) {
+        PatternSelectView(path: $path, onSelect: { _ in
             print("Pattern Selected")
-        }) {
-            EmptyView()
-        }
+        })
     }
 }

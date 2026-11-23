@@ -9,10 +9,11 @@ import SwiftUI
 import StoreKit
 
 struct TipJarView: View {
-    @EnvironmentObject var store: IAPStore
+    @Environment(IAPStore.self) private var store
     @State var productIdOnPurchase = ""
 
     var body: some View {
+        @Bindable var store = store
         List {
             Section(
                 footer: Text("TIP_JAR_MESSAGE")
@@ -33,7 +34,7 @@ struct TipJarView: View {
             }
         }
             .navigationTitle("TIP_JAR_TITLE")
-            .navigationViewStyle(.stack).sheet(isPresented: $store.tippingAppreciationPresented, content: {
+            .sheet(isPresented: $store.tippingAppreciationPresented, content: {
                 TippingAppreciation(onContinue: {
                     store.tippingAppreciationPresented = false
                 })

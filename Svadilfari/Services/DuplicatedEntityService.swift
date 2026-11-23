@@ -21,7 +21,8 @@ class DuplicatedEntityService {
         NotificationCenter.default
             .publisher(for: NSPersistentCloudKitContainer.eventChangedNotification)
             .sink(receiveValue: { notification in
-                guard let cloudEvent = notification.userInfo?[NSPersistentCloudKitContainer.eventNotificationUserInfoKey] as? NSPersistentCloudKitContainer.Event else {
+                let key = NSPersistentCloudKitContainer.eventNotificationUserInfoKey
+                guard let cloudEvent = notification.userInfo?[key] as? NSPersistentCloudKitContainer.Event else {
                     return
                 }
                 if cloudEvent.endDate == nil || !cloudEvent.succeeded {

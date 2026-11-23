@@ -6,7 +6,7 @@
 //
 
 import Foundation
-import CoreData
+@preconcurrency import CoreData
 import os
 
 struct PersistentHistoryMerger {
@@ -36,8 +36,9 @@ struct PersistentHistoryMerger {
 
         history.merge(into: backgroundContext)
 
+        let viewContext = self.viewContext
         viewContext.perform {
-            history.merge(into: self.viewContext)
+            history.merge(into: viewContext)
         }
 
         guard let lastTimestamp = history.last?.timestamp else { return }

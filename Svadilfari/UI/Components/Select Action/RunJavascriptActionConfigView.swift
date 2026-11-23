@@ -46,7 +46,7 @@ struct RunJavascriptActionConfigView: View {
                         .bold()
                         .frame(maxWidth: .infinity)
                 }
-            ).buttonBorderShape(.roundedRectangle)
+            )
                 .controlSize(.large)
                 .buttonStyle(.borderedProminent)
                 .listRowInsets(EdgeInsets())
@@ -55,10 +55,8 @@ struct RunJavascriptActionConfigView: View {
     }
 }
 
-struct RunJavascriptActionConfigView_Previews: PreviewProvider {
-    static var previews: some View {
-        RunJavascriptActionConfigView(javascriptRun: nil, onSelect: { action in
-            print("selected: \(action.title)")
-        })
-    }
+#Preview {
+    RunJavascriptActionConfigView(javascriptRun: nil, onSelect: { action in
+        print("selected: \(action.title)")
+    })
 }

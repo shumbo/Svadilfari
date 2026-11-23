@@ -9,8 +9,9 @@ import Foundation
 import UIKit
 import CoreData
 
-class InitialDataService {
-    static var shared = InitialDataService(
+@MainActor
+final class InitialDataService {
+    static let shared = InitialDataService(
         userDefaults: UserDefaults.shared,
         moc: PersistenceController.shared.container.viewContext
     )
@@ -63,7 +64,7 @@ class InitialDataService {
     }
 
     /// Set of hash of initial gestures. Used to determine duplicated initial gestures.
-    static let initialGestureHashes: Set<Int> = {
+    nonisolated static let initialGestureHashes: Set<Int> = {
         var s = Set<Int>()
         for (action, pattern) in initialGestureData {
             let g = Gesture(action: action, enabled: true, id: UUID().uuidString, pattern: pattern)

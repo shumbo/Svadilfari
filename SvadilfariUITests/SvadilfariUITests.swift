@@ -10,20 +10,10 @@ import XCTest
 class SvadilfariUITests: XCTestCase {
 
     override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-
-        // In UI tests it is usually best to stop immediately when a failure occurs.
         continueAfterFailure = false
-
-        // In UI tests it’s important to set the initial state
-        // - such as interface orientation - required for your tests before they run.
-        // The setUp method is a good place to do this.
     }
 
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
+    @MainActor
     private func getLocale(app: XCUIApplication) -> String {
         guard let localeArgIdx = app.launchArguments.firstIndex(of: "-AppleLocale") else {
             return "?"
@@ -40,6 +30,7 @@ class SvadilfariUITests: XCTestCase {
         return String(locale)
     }
 
+    @MainActor
     func testExample() throws {
         // UI tests must launch the application that they test.
         let app = XCUIApplication()
@@ -91,18 +82,4 @@ class SvadilfariUITests: XCTestCase {
         snapshot("5-Actions")
     }
 
-}
-
-var currentLanguage: (langCode: String, localeCode: String)? {
-    let currentLocale = Locale(identifier: Locale.preferredLanguages.first!)
-    guard let langCode = currentLocale.languageCode else {
-        return nil
-    }
-    var localeCode = langCode
-    if let scriptCode = currentLocale.scriptCode {
-        localeCode = "\(langCode)-\(scriptCode)"
-    } else if let regionCode = currentLocale.regionCode {
-        localeCode = "\(langCode)-\(regionCode)"
-    }
-    return (langCode, localeCode)
 }

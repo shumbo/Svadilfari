@@ -13,80 +13,45 @@ struct ActionSelectView: View {
     var body: some View {
         List {
             Section(LocalizedStringKey("SELECT_ACTION_TABS")) {
-                NavigationLinkView {
+                DisclosureButton(action: { self.onSelect(Action(tabOpen: true)) }) {
                     ActionListItem(title: "SELECT_ACTION_TABS_NEW_TAB")
-                }.onTapGesture {
-                    self.onSelect(Action(tabOpen: true))
                 }
-                NavigationLinkView {
+                DisclosureButton(action: { self.onSelect(Action(tabClose: true)) }) {
                     ActionListItem(title: "SELECT_ACTION_TABS_CLOSE_TAB")
                 }
-                .onTapGesture {
-                    self.onSelect(Action(tabClose: true))
-                }
-                NavigationLinkView {
+                DisclosureButton(action: { self.onSelect(Action(tabCloseAll: true)) }) {
                     ActionListItem(title: "SELECT_ACTION_TABS_CLOSE_ALL_TABS")
                 }
-                .onTapGesture {
-                    self.onSelect(Action(tabCloseAll: true))
-                }
-                NavigationLinkView {
+                DisclosureButton(action: { self.onSelect(Action(tabDuplicate: true)) }) {
                     ActionListItem(title: "SELECT_ACTION_TABS_DUPLICATE_TAB")
                 }
-                .onTapGesture {
-                    self.onSelect(Action(tabDuplicate: true))
-                }
-                NavigationLinkView {
+                DisclosureButton(action: { self.onSelect(Action(tabNext: true)) }) {
                     ActionListItem(title: "SELECT_ACTION_TABS_NEXT_TAB")
                 }
-                .onTapGesture {
-                    self.onSelect(Action(tabNext: true))
-                }
-                NavigationLinkView {
+                DisclosureButton(action: { self.onSelect(Action(tabPrevious: true)) }) {
                     ActionListItem(title: "SELECT_ACTION_TABS_PREVIOUS_TAB")
-                }
-                .onTapGesture {
-                    self.onSelect(Action(tabPrevious: true))
                 }
             }
             Section(LocalizedStringKey("SELECT_ACTION_PAGE")) {
-                NavigationLinkView {
+                DisclosureButton(action: { self.onSelect(Action(reload: true)) }) {
                     ActionListItem(title: "SELECT_ACTION_PAGE_RELOAD")
                 }
-                .onTapGesture {
-                    self.onSelect(Action(reload: true))
-                }
-                NavigationLinkView {
+                DisclosureButton(action: { self.onSelect(Action(urlCopy: true)) }) {
                     ActionListItem(title: "SELECT_ACTION_PAGE_COPY_URL")
                 }
-                .onTapGesture {
-                    self.onSelect(Action(urlCopy: true))
-                }
-                NavigationLinkView {
+                DisclosureButton(action: { self.onSelect(Action(scrollTop: true)) }) {
                     ActionListItem(title: "SELECT_ACTION_PAGE_SCROLL_TO_TOP")
                 }
-                .onTapGesture {
-                    self.onSelect(Action(scrollTop: true))
-                }
-                NavigationLinkView {
+                DisclosureButton(action: { self.onSelect(Action(scrollBottom: true)) }) {
                     ActionListItem(title: "SELECT_ACTION_PAGE_SCROLL_TO_BOTTOM")
-                }
-                .onTapGesture {
-                    self.onSelect(Action(scrollBottom: true))
                 }
             }
             Section(LocalizedStringKey("SELECT_ACTION_TRANSITION")) {
-                NavigationLinkView {
+                DisclosureButton(action: { self.onSelect(Action(goBackward: true)) }) {
                     ActionListItem(title: "SELECT_ACTION_TRANSITION_GO_BACKWARD")
                 }
-                .onTapGesture {
-                    self.onSelect(Action(goBackward: true))
-                }
-                NavigationLinkView {
+                DisclosureButton(action: { self.onSelect(Action(goForward: true)) }) {
                     ActionListItem(title: "SELECT_ACTION_TRANSITION_GO_FORWARD")
-                }
-                .onTapGesture {
-                    self.onSelect(Action(goForward: true))
                 }
                 NavigationLink(destination: {
                     OpenURLActionConfigView(openURL: nil, onSelect: self.onSelect)
@@ -114,10 +79,8 @@ private struct ActionListItem: View {
     }
 }
 
-struct ActionSelectView_Previews: PreviewProvider {
-    static var previews: some View {
-        ActionSelectView(onSelect: { _ in
-            // noop
-        })
-    }
+#Preview {
+    ActionSelectView(onSelect: { _ in
+        // noop
+    })
 }

@@ -14,27 +14,25 @@ struct TippingAppreciation: View {
             Image(systemName: "heart.fill")
                 .resizable()
                 .frame(width: 64, height: 64)
-                .foregroundColor(Color.pink).padding(.bottom, 16)
+                .foregroundStyle(Color.pink).padding(.bottom, 16)
             Text("TIP_JAR_APPRECIATION_TITLE").font(.title).bold().multilineTextAlignment(.center)
             Text("TIP_JAR_APPRECIATION_MESSAGE")
                 .font(.body).multilineTextAlignment(.center)
             Button(action: {
                 self.onContinue()
             }, label: {
-                Text("TIP_JAR_APPRECIATION_CONTINUE").frame(maxWidth: .infinity).frame(height: 32)
+                Text("TIP_JAR_APPRECIATION_CONTINUE").frame(maxWidth: .infinity)
             })
-            .buttonBorderShape(.roundedRectangle)
             .buttonStyle(.borderedProminent)
+            .controlSize(.large)
             .padding(.top, 16)
             Link("TIP_JAR_APPRECIATION_SEND_FEEDBACK", destination: URL(string: "https://go.svadilfari.app/contact")!)
         }.padding(.all, 24).frame(maxWidth: 480)
     }
 }
 
-struct TippingAppreciation_Previews: PreviewProvider {
-    static var previews: some View {
-        TippingAppreciation(onContinue: {
-            print("continue")
-        })
-    }
+#Preview {
+    TippingAppreciation(onContinue: {
+        print("continue")
+    })
 }

@@ -21,7 +21,8 @@ extension AppTarget: CustomStringConvertible {
     }
 }
 
-public final class PersistentHistoryObserver {
+// History is processed one operation at a time on historyQueue.
+public final class PersistentHistoryObserver: @unchecked Sendable {
 
     private var subscriptions: Set<AnyCancellable> = []
 
@@ -45,22 +46,15 @@ public final class PersistentHistoryObserver {
     public func startObserving() {
         NotificationCenter.default
              .publisher(for: .NSPersistentStoreRemoteChange)
-             .sink {
-                 print($0)
-                 self.processPersistentHistory()
+             .sink { [weak self] _ in
+                 self?.historyQueue.addOperation { [weak self] in
+                     self?.processPersistentHistory()
+                 }
              }
              .store(in: &subscriptions)
     }
 
-    /// Process persistent history to merge changes from other coordinators.
-    @objc private func processStoreRemoteChanges(_ notification: Notification) {
-        Logger.coreData.info("Notification Received: \(notification)")
-        historyQueue.addOperation { [weak self] in
-            self?.processPersistentHistory()
-        }
-    }
-
-    @objc private func processPersistentHistory() {
+    private func processPersistentHistory() {
         let context = persistentContainer.newBackgroundContext()
         context.performAndWait {
             do {

@@ -45,7 +45,7 @@ struct OpenURLActionConfigView: View {
                         .bold()
                         .frame(maxWidth: .infinity)
                 }
-            ).buttonBorderShape(.roundedRectangle)
+            )
                 .controlSize(.large)
                 .buttonStyle(.borderedProminent)
                 .listRowInsets(EdgeInsets())
@@ -54,10 +54,8 @@ struct OpenURLActionConfigView: View {
     }
 }
 
-struct OpenURLActionConfigView_Previews: PreviewProvider {
-    static var previews: some View {
-        OpenURLActionConfigView(openURL: nil, onSelect: { action in
-            print("selected: \(action.title)")
-        })
-    }
+#Preview {
+    OpenURLActionConfigView(openURL: nil, onSelect: { action in
+        print("selected: \(action.title)")
+    })
 }

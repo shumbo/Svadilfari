@@ -11,7 +11,6 @@ import CoreGraphics
 class LineSmoother {
     typealias BezierSegmentControlPoints = (CGPoint, CGPoint)
 
-    // swiftlint:disable:next function_body_length
     static func getControlPoints(data: [CGPoint]) -> [BezierSegmentControlPoints] {
         let segments = data.count - 1
         if segments == 1 {

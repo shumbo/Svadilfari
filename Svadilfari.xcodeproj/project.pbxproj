@@ -50,7 +50,6 @@
 		245A016126B9A07700EEE8CD /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245A016026B9A07700EEE8CD /* UserDefaults.swift */; };
 		245A016626B9A24600EEE8CD /* NewGestureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245A016526B9A24600EEE8CD /* NewGestureView.swift */; };
 		245A016826B9A29200EEE8CD /* GestureTemplateButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245A016726B9A29200EEE8CD /* GestureTemplateButton.swift */; };
-		2485834C26BCC2DE00A8836E /* SheetState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2485834B26BCC2DE00A8836E /* SheetState.swift */; };
 		248623D126F5DD0300A30E1B /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 248623CF26F5DD0300A30E1B /* SnapshotHelper.swift */; };
 		248623D426F5EAC500A30E1B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2445C0B126F2628C003C1EF6 /* Localizable.strings */; };
 		249407592897D51C006D80D4 /* Products.storekit in Resources */ = {isa = PBXBuildFile; fileRef = 24DE1321288E1B9000F03C79 /* Products.storekit */; };
@@ -99,7 +98,7 @@
 		24D2698727752C5B00F570B0 /* CoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 24FAA2B626B93CAC0083FFAB /* CoreData.xcdatamodeld */; };
 		24D26989277534E400F570B0 /* Gesture+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242EBAF5270FD97000FF3A21 /* Gesture+.swift */; };
 		24D2698A277534EB00F570B0 /* Changeable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242EBAF3270FD94600FF3A21 /* Changeable.swift */; };
-		24D759CD26BC80960017498A /* NavigationLinkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D759CC26BC80960017498A /* NavigationLinkView.swift */; };
+		24D759CD26BC80960017498A /* DisclosureButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D759CC26BC80960017498A /* DisclosureButton.swift */; };
 		24DE1323288E1E5000F03C79 /* TipJarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24DE1322288E1E5000F03C79 /* TipJarView.swift */; };
 		24DE1326288E21C200F03C79 /* TipJarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24DE1325288E21C200F03C79 /* TipJarItem.swift */; };
 		24DE1328288E3DFB00F03C79 /* IAPStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24DE1327288E3DFB00F03C79 /* IAPStore.swift */; };
@@ -107,7 +106,6 @@
 		24E29CFE26B5F576003AF136 /* Pattern+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24E29CFD26B5F576003AF136 /* Pattern+.swift */; };
 		24E29D0026B5F8A3003AF136 /* UIBezierPath+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24E29CFF26B5F8A3003AF136 /* UIBezierPath+.swift */; };
 		24EC0159270A5ABC0023AAE9 /* OpenURLActionConfigView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24EC0158270A5ABC0023AAE9 /* OpenURLActionConfigView.swift */; };
-		24F15F27271B319700156A6C /* Binding+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F15F26271B319700156A6C /* Binding+.swift */; };
 		24F15F2C271B38E200156A6C /* PatternSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F15F2B271B38E200156A6C /* PatternSelectView.swift */; };
 		24F15F2E271B3E2C00156A6C /* PatternSelectPresetsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F15F2D271B3E2C00156A6C /* PatternSelectPresetsView.swift */; };
 		24F15F30271B3EE300156A6C /* PatternSelectConfirmView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F15F2F271B3EE300156A6C /* PatternSelectConfirmView.swift */; };
@@ -197,7 +195,6 @@
 		245A016026B9A07700EEE8CD /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
 		245A016526B9A24600EEE8CD /* NewGestureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewGestureView.swift; sourceTree = "<group>"; };
 		245A016726B9A29200EEE8CD /* GestureTemplateButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GestureTemplateButton.swift; sourceTree = "<group>"; };
-		2485834B26BCC2DE00A8836E /* SheetState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetState.swift; sourceTree = "<group>"; };
 		248623CF26F5DD0300A30E1B /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SnapshotHelper.swift; path = SvadilfariUITests/SnapshotHelper.swift; sourceTree = SOURCE_ROOT; };
 		249477BB26CCF6D800E6FCC5 /* ExclusionListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExclusionListView.swift; sourceTree = "<group>"; };
 		249477BD26CEB38700E6FCC5 /* PersistentHistoryTracking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistentHistoryTracking.swift; sourceTree = "<group>"; };
@@ -235,7 +232,7 @@
 		24C11E6626B4366B00E018B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		24D00D2126C2BF0B00F8F1FA /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
 		24D00D2326C3580700F8F1FA /* Svadilfari.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Svadilfari.entitlements; sourceTree = "<group>"; };
-		24D759CC26BC80960017498A /* NavigationLinkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationLinkView.swift; sourceTree = "<group>"; };
+		24D759CC26BC80960017498A /* DisclosureButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisclosureButton.swift; sourceTree = "<group>"; };
 		24DE1321288E1B9000F03C79 /* Products.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = Products.storekit; sourceTree = "<group>"; };
 		24DE1322288E1E5000F03C79 /* TipJarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipJarView.swift; sourceTree = "<group>"; };
 		24DE1325288E21C200F03C79 /* TipJarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipJarItem.swift; sourceTree = "<group>"; };
@@ -244,7 +241,6 @@
 		24E29CFD26B5F576003AF136 /* Pattern+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Pattern+.swift"; sourceTree = "<group>"; };
 		24E29CFF26B5F8A3003AF136 /* UIBezierPath+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIBezierPath+.swift"; sourceTree = "<group>"; };
 		24EC0158270A5ABC0023AAE9 /* OpenURLActionConfigView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenURLActionConfigView.swift; sourceTree = "<group>"; };
-		24F15F26271B319700156A6C /* Binding+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Binding+.swift"; sourceTree = "<group>"; };
 		24F15F2B271B38E200156A6C /* PatternSelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatternSelectView.swift; sourceTree = "<group>"; };
 		24F15F2D271B3E2C00156A6C /* PatternSelectPresetsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatternSelectPresetsView.swift; sourceTree = "<group>"; };
 		24F15F2F271B3EE300156A6C /* PatternSelectConfirmView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatternSelectConfirmView.swift; sourceTree = "<group>"; };
@@ -416,7 +412,7 @@
 				24B2249F26B5E445009EAB48 /* GestureListItem.swift */,
 				24B224A626B5EDE0009EAB48 /* PatternPreview.swift */,
 				245A016726B9A29200EEE8CD /* GestureTemplateButton.swift */,
-				24D759CC26BC80960017498A /* NavigationLinkView.swift */,
+				24D759CC26BC80960017498A /* DisclosureButton.swift */,
 				24500EEE26C6D95800F7BB7E /* GridView.swift */,
 				24A7DBCC26D7ECB000AC3675 /* TutorialStepList.swift */,
 				24A7DBCE26D7ED7600AC3675 /* TutorialStep.swift */,
@@ -508,7 +504,6 @@
 			isa = PBXGroup;
 			children = (
 				24B224A426B5EB9A009EAB48 /* LineSmoother.swift */,
-				2485834B26BCC2DE00A8836E /* SheetState.swift */,
 			);
 			path = Misc;
 			sourceTree = "<group>";
@@ -527,7 +522,6 @@
 				24A7DBD226D7F16C00AC3675 /* Bundle+icon.swift */,
 				242EBAF3270FD94600FF3A21 /* Changeable.swift */,
 				242EBAF5270FD97000FF3A21 /* Gesture+.swift */,
-				24F15F26271B319700156A6C /* Binding+.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -787,7 +781,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 1;
 			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif test -d \"/opt/homebrew/bin/\"; then\n  PATH=\"/opt/homebrew/bin/:${PATH}\"\nfi\nexport PATH\nif which swiftlint >/dev/null; then\n  swiftlint --fix\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif test -d \"/opt/homebrew/bin/\"; then\n  PATH=\"/opt/homebrew/bin/:${PATH}\"\nfi\nexport PATH\nif which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
 		24BCD07926C5060F0008EE94 /* Build Web Extension */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -823,7 +817,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif test -d \"/opt/homebrew/bin/\"; then\n  PATH=\"/opt/homebrew/bin/:${PATH}\"\nfi\nexport PATH\nif which swiftlint >/dev/null; then\n  swiftlint --fix\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif test -d \"/opt/homebrew/bin/\"; then\n  PATH=\"/opt/homebrew/bin/:${PATH}\"\nfi\nexport PATH\nif which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -864,14 +858,12 @@
 				249477C326CEB75200E6FCC5 /* PersistentHistoryMerger.swift in Sources */,
 				241F7C5627751E400015713E /* DuplicatedEntityService.swift in Sources */,
 				24B224AA26B5EEFC009EAB48 /* Vector+.swift in Sources */,
-				2485834C26BCC2DE00A8836E /* SheetState.swift in Sources */,
 				241D8FC226BC7E1600CBB381 /* RunJavascriptActionConfigView.swift in Sources */,
 				24F15F30271B3EE300156A6C /* PatternSelectConfirmView.swift in Sources */,
 				245A016826B9A29200EEE8CD /* GestureTemplateButton.swift in Sources */,
 				245A016626B9A24600EEE8CD /* NewGestureView.swift in Sources */,
 				24978F35271BA3DF00117689 /* ActionConfigView.swift in Sources */,
 				24FAA2BD26B943330083FFAB /* Error.swift in Sources */,
-				24F15F27271B319700156A6C /* Binding+.swift in Sources */,
 				24428E4426B3436A00B21130 /* HomeListView.swift in Sources */,
 				241ABC1028A2906D003F3859 /* TippingAppreciation.swift in Sources */,
 				24A7DBCF26D7ED7600AC3675 /* TutorialStep.swift in Sources */,
@@ -888,7 +880,7 @@
 				24978F3B271BD05900117689 /* SettingsView.swift in Sources */,
 				24B224A026B5E445009EAB48 /* GestureListItem.swift in Sources */,
 				242EBAF6270FD97000FF3A21 /* Gesture+.swift in Sources */,
-				24D759CD26BC80960017498A /* NavigationLinkView.swift in Sources */,
+				24D759CD26BC80960017498A /* DisclosureButton.swift in Sources */,
 				24428E4126B33F5400B21130 /* HomeListItem.swift in Sources */,
 				24A19E2C26B34F9500DA5E20 /* GestureListView.swift in Sources */,
 				24DE1326288E21C200F03C79 /* TipJarItem.swift in Sources */,
@@ -1036,7 +1028,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -1092,7 +1084,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -1121,7 +1113,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1134,7 +1126,7 @@
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 6.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -1158,7 +1150,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1171,7 +1163,7 @@
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 6.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -1194,7 +1186,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "dev.shun-k.SvadilfariTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 6.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Svadilfari.app/Svadilfari";
 			};
@@ -1218,7 +1210,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "dev.shun-k.SvadilfariTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 6.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Svadilfari.app/Svadilfari";
 			};
@@ -1241,7 +1233,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "dev.shun-k.SvadilfariUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 6.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = Svadilfari;
 			};
@@ -1264,7 +1256,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "dev.shun-k.SvadilfariUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 6.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = Svadilfari;
 			};
@@ -1275,24 +1267,24 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = SvadilfariExtension/SvadilfariExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = TKVMG44U5W;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SvadilfariExtension/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Svadilfari;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.2.0;
+				MARKETING_VERSION = 1.2.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "app.svadilfari.svadilfari.safari-extension";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 6.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -1302,24 +1294,24 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = SvadilfariExtension/SvadilfariExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = TKVMG44U5W;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SvadilfariExtension/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Svadilfari;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.2.0;
+				MARKETING_VERSION = 1.2.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "app.svadilfari.svadilfari.safari-extension";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 6.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

@@ -8,9 +8,9 @@
 import SwiftUI
 
 struct SettingsView: View {
-    @State private var sync: Bool = true
-    @State private var sensitivity: Double = 0.0
-    @State private var mouse: Bool = false
+    @AppStorage(UserDefaults.Keys.icloudSyncEnabled, store: .shared) private var sync = false
+    @AppStorage(UserDefaults.Keys.gestureRecognitionSensitivity, store: .shared) private var sensitivity = 0.0
+    @AppStorage(UserDefaults.Keys.gestureRecognitionMouse, store: .shared) private var mouse = false
 
     var body: some View {
         List {
@@ -18,21 +18,17 @@ struct SettingsView: View {
                 header: Text("SETTINGS_SYNC_HEADER"),
                 footer: Text("SETTINGS_SYNC_FOOTER").fixedSize(horizontal: false, vertical: true)
             ) {
-                Toggle("SETTINGS_SYNC_TOGGLE_LABEL", isOn: self.$sync.onChange { nv in
-                    UserDefaults.shared.icloudSyncEnabled = nv
-                    PersistenceController.shared.toggleSync(sync: nv)
-                }).onAppear {
-                    self.sync = UserDefaults.shared.icloudSyncEnabled
-                }
+                Toggle("SETTINGS_SYNC_TOGGLE_LABEL", isOn: $sync)
+                    .onChange(of: sync) { _, sync in
+                        PersistenceController.shared.toggleSync(sync: sync)
+                    }
             }
             Section(
                 header: Text("SETTINGS_GESTURE_SENSITIVITY_HEADER"),
                 footer: Text("SETTINGS_GESTURE_SENSITIVITY_FOOTER")
             ) {
                 Slider(
-                    value: $sensitivity.onChange { nv in
-                        UserDefaults.shared.set(nv, forKey: UserDefaults.Keys.gestureRecognitionSensitivity)
-                    },
+                    value: $sensitivity,
                     in: -3...3,
                     step: 1,
                     minimumValueLabel: Text("SETTINGS_GESTURE_SENSITIVITY_LOW"),
@@ -40,21 +36,13 @@ struct SettingsView: View {
                     label: {
                         Text("SETTINGS_GESTURE_SENSITIVITY_HEADER")
                     }
-                ).onAppear {
-                    self.sensitivity = UserDefaults.shared.double(
-                        forKey: UserDefaults.Keys.gestureRecognitionSensitivity
-                    )
-                }
+                )
             }
             Section(
                 header: Text("SETTINGS_GESTURE_MOUSE_HEADER"),
                 footer: Text("SETTINGS_GESTURE_MOUSE_FOOTER").fixedSize(horizontal: false, vertical: true)
             ) {
-                Toggle("SETTINGS_GESTURE_MOUSE_TOGGLE_LABEL", isOn: self.$mouse.onChange { nv in
-                    UserDefaults.shared.set(nv, forKey: UserDefaults.Keys.gestureRecognitionMouse)
-                }).onAppear {
-                    self.mouse = UserDefaults.shared.bool(forKey: UserDefaults.Keys.gestureRecognitionMouse)
-                }
+                Toggle("SETTINGS_GESTURE_MOUSE_TOGGLE_LABEL", isOn: $mouse)
             }
             Section(header: Text("SETTINGS_LINKS_HEADER")) {
                 Link("SETTINGS_LINKS_ABOUT_APP", destination: URL(string: "https://go.svadilfari.app/about")!)
@@ -65,10 +53,8 @@ struct SettingsView: View {
     }
 }
 
-struct SettingsView_Previews: PreviewProvider {
-    static var previews: some View {
-        NavigationView {
-            SettingsView()
-        }
+#Preview {
+    NavigationStack {
+        SettingsView()
     }
 }

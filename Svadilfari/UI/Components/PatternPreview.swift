@@ -123,13 +123,11 @@ struct PatternPreview: View {
     }
 }
 
-struct PatternPreview_Previews: PreviewProvider {
-    static var previews: some View {
-        PatternPreview(
-            frame: CGRect(x: 0, y: 0, width: 100, height: 100),
-            pattern: Pattern(
-                data: [Vector(x: 100.0, y: 0.0), Vector(x: 0.0, y: 100.0)]
-            )
+#Preview {
+    PatternPreview(
+        frame: CGRect(x: 0, y: 0, width: 100, height: 100),
+        pattern: Pattern(
+            data: [Vector(x: 100.0, y: 0.0), Vector(x: 0.0, y: 100.0)]
         )
-    }
+    )
 }

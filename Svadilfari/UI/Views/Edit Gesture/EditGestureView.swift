@@ -5,6 +5,7 @@
 //  Created by Shun Kashiwa on 2021/10/07.
 //
 
+import CoreData
 import SwiftUI
 
 struct EditGestureView: View {
@@ -35,17 +36,17 @@ struct EditGestureView: View {
         if let gesture = self.gestureEntity.gesture {
             Form {
                 Section {
-                    Toggle("GESTURE_EDIT_ENABLED", isOn: $enabled.onChange {
-                        self.updateGestureEntity(
-                            g: self.gestureEntity,
-                            updatedGesture: gesture.change(
-                                path: \.enabled,
-                                to: $0
+                    Toggle("GESTURE_EDIT_ENABLED", isOn: $enabled)
+                        .onAppear {
+                            self.enabled = gesture.enabled
+                        }
+                        .onChange(of: enabled) { _, enabled in
+                            guard enabled != gesture.enabled else { return }
+                            self.updateGestureEntity(
+                                g: self.gestureEntity,
+                                updatedGesture: gesture.change(path: \.enabled, to: enabled)
                             )
-                        )
-                    }).onAppear {
-                        self.enabled = gesture.enabled
-                    }
+                        }
                 }
                 Section(header: Text("GESTURE_EDIT_PATTERN")) {
                     HStack {
@@ -63,33 +64,28 @@ struct EditGestureView: View {
                     Button("GESTURE_EDIT_NEW_PATTERN_SELECT") {
                         self.patternSelectorVisible = true
                     }.sheet(isPresented: $patternSelectorVisible, onDismiss: { patternSelectorVisible = false }) {
-                        NavigationView {
-                            PatternSelectView(onSelect: {pattern in
-                                // edit local copy
-                                self.pattern = pattern
-                                self.updateGestureEntity(
-                                    g: self.gestureEntity,
-                                    updatedGesture: gesture.change(
-                                        path: \.pattern, to: pattern
-                                    )
+                        PatternSelectSheet(onSelect: { pattern in
+                            // edit local copy
+                            self.pattern = pattern
+                            self.updateGestureEntity(
+                                g: self.gestureEntity,
+                                updatedGesture: gesture.change(
+                                    path: \.pattern, to: pattern
                                 )
-                                self.patternSelectorVisible = false
-                            })
-                            .navigationTitle("GESTURE_EDIT_NEW_PATTERN_NAV_TITLE")
-                        }
+                            )
+                            self.patternSelectorVisible = false
+                        })
                     }
                 }
                 Section(header: Text("GESTURE_EDIT_ACTION")) {
                     if gesture.action.hasAdditionalConfig {
-                        NavigationLinkView {
+                        DisclosureButton(action: { self.actionConfigVisible = true }) {
                             Text(gesture.action.title)
-                        }.onTapGesture {
-                            self.actionConfigVisible = true
                         }.sheet(
                             isPresented: $actionConfigVisible,
                             onDismiss: { actionConfigVisible = false }
                         ) {
-                            NavigationView {
+                            NavigationStack {
                                 ActionConfigView(action: gesture.action) { newAction in
                                     self.updateGestureEntity(
                                         g: self.gestureEntity,
@@ -99,7 +95,7 @@ struct EditGestureView: View {
                                     )
                                     self.actionConfigVisible = false
                                 }.toolbar {
-                                    ToolbarItem(placement: .navigationBarLeading) {
+                                    ToolbarItem(placement: .cancellationAction) {
                                         Button("COMMON_CANCEL") {
                                             self.actionConfigVisible = false
                                         }
@@ -116,7 +112,7 @@ struct EditGestureView: View {
                         isPresented: $actionSelectorVisible,
                         onDismiss: { self.actionSelectorVisible = false }
                     ) {
-                        NavigationView {
+                        NavigationStack {
                             ActionSelectView(onSelect: { newAction in
                                 self.updateGestureEntity(
                                     g: self.gestureEntity,
@@ -127,7 +123,7 @@ struct EditGestureView: View {
                                 self.actionSelectorVisible = false
                             }).navigationTitle("GESTURE_EDIT_NEW_ACTION_NAV_TITLE")
                                 .toolbar {
-                                    ToolbarItem(placement: .navigationBarLeading) {
+                                    ToolbarItem(placement: .cancellationAction) {
                                         Button("COMMON_CANCEL") {
                                             self.actionSelectorVisible = false
                                         }
@@ -140,7 +136,7 @@ struct EditGestureView: View {
                 Section {
                     Button("GESTURE_EDIT_DELETE") {
                         self.confirmationVisible = true
-                    }.foregroundColor(.red).confirmationDialog(
+                    }.foregroundStyle(.red).confirmationDialog(
                         "GESTURE_EDIT_DELETE_CONFIRM_TITLE",
                         isPresented: $confirmationVisible
                     ) {
@@ -156,9 +152,19 @@ struct EditGestureView: View {
     }
 
     func updateGestureEntity(g: GestureEntity, updatedGesture: Gesture) {
-        self.viewContext.performAndWait {
-            g.gesture = updatedGesture
-            try? self.viewContext.save()
+        g.gesture = updatedGesture
+        try? viewContext.save()
+    }
+}
+
+private struct PatternSelectSheet: View {
+    @State private var path = NavigationPath()
+    let onSelect: (Pattern) -> Void
+
+    var body: some View {
+        NavigationStack(path: $path) {
+            PatternSelectView(path: $path, onSelect: onSelect)
+                .navigationTitle("GESTURE_EDIT_NEW_PATTERN_NAV_TITLE")
         }
     }
 }
