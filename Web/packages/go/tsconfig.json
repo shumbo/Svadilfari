@@ -1,13 +1,14 @@
 {
   "compilerOptions": {
     "outDir": "./dist",
-    "module": "commonjs",
+    "rootDir": "./src",
+    "module": "esnext",
     "target": "esnext",
     "lib": ["esnext", "webworker"],
     "alwaysStrict": true,
     "strict": true,
     "preserveConstEnums": true,
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
     "sourceMap": true,
     "esModuleInterop": true,
     "types": [

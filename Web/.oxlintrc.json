@@ -1,0 +1,57 @@
+{
+  "$schema": "./node_modules/oxlint/configuration_schema.json",
+  "plugins": ["typescript", "react", "import", "unicorn", "oxc"],
+  "categories": {
+    "correctness": "error"
+  },
+  "rules": {
+    "react/rules-of-hooks": "error",
+    "react/exhaustive-deps": "warn",
+    "react/jsx-key": "error",
+    "typescript/no-explicit-any": "warn",
+    "typescript/no-non-null-assertion": "warn",
+    "no-unused-vars": [
+      "warn",
+      {
+        "varsIgnorePattern": "^_",
+        "argsIgnorePattern": "^_"
+      }
+    ],
+    "unicorn/no-empty-file": "off"
+  },
+  "env": {
+    "browser": true,
+    "es2022": true
+  },
+  "overrides": [
+    {
+      "files": ["**/*.test.ts", "**/*.test.tsx"],
+      "plugins": ["jest"],
+      "env": {
+        "jest": true
+      }
+    },
+    {
+      "files": [
+        "**/build.js",
+        "**/build.mjs",
+        "**/*.config.js",
+        "**/.storybook/*.js",
+        "packages/webextension-toolkit/*.js"
+      ],
+      "env": {
+        "node": true
+      }
+    }
+  ],
+  "ignorePatterns": [
+    "**/SharedTypes.ts",
+    "**/dist/**",
+    "**/build/**",
+    "**/.docusaurus/**",
+    "packages/check/worker/**",
+    "packages/go/worker/**",
+    "packages/webextension-typedef/**",
+    "packages/website/static/**"
+  ]
+}

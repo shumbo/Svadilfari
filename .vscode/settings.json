@@ -1,8 +1,7 @@
 {
-  "eslint.workingDirectories": [
-    {
-      "pattern": "./Web/packages/*/"
-    }
-  ],
+  "oxc.enable": true,
+  "[javascript][javascriptreact][typescript][typescriptreact][json][css]": {
+    "editor.defaultFormatter": "oxc.oxc-vscode"
+  },
   "cSpell.words": ["Svadilfari"]
 }

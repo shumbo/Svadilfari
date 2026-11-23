@@ -1,0 +1,16 @@
+{
+  "$schema": "./node_modules/oxfmt/configuration_schema.json",
+  "printWidth": 80,
+  "experimentalSortPackageJson": false,
+  "ignorePatterns": [
+    "**/SharedTypes.ts",
+    "packages/website/**/*.md",
+    "packages/website/**/*.mdx",
+    "packages/website/build",
+    "packages/website/.docusaurus",
+    "packages/check/worker",
+    "packages/go/worker",
+    "pnpm-lock.yaml",
+    "packages/webextension-typedef/**"
+  ]
+}
