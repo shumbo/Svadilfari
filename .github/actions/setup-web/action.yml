@@ -1,0 +1,17 @@
+name: Set up web workspace
+description: Install pnpm (version from Web/package.json), Node.js, and dependencies.
+runs:
+  using: composite
+  steps:
+    - uses: pnpm/action-setup@v6
+      with:
+        package_json_file: Web/package.json
+    - uses: actions/setup-node@v7
+      with:
+        node-version-file: Web/.node-version
+        cache: pnpm
+        cache-dependency-path: Web/pnpm-lock.yaml
+    - name: Install dependencies
+      shell: bash
+      working-directory: Web
+      run: pnpm install --frozen-lockfile

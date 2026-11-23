@@ -1,5 +1,7 @@
 name: Check
 on: [push]
+permissions:
+  contents: read
 jobs:
   Web-Test:
     runs-on: ubuntu-latest
@@ -7,27 +9,8 @@ jobs:
       run:
         working-directory: Web
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: "22"
-      - name: Enable corepack
-        run: |
-          corepack enable &&
-          corepack install
-      - name: Get pnpm store directory
-        shell: bash
-        run: |
-          echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
-      - uses: actions/cache@v4
-        name: Setup pnpm cache
-        with:
-          path: ${{ env.STORE_PATH }}
-          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
-          restore-keys: |
-            ${{ runner.os }}-pnpm-store-
-      - name: Install
-        run: pnpm install
+      - uses: actions/checkout@v7
+      - uses: ./.github/actions/setup-web
       - name: Format
         run: pnpm format:check
       - name: Lint
@@ -36,24 +19,15 @@ jobs:
         run: pnpm -r typecheck
       - name: Test
         run: pnpm test
+      - name: Build
+        run: pnpm -r build
   Deploy-Check:
     runs-on: ubuntu-latest
     needs: [Web-Test]
     if: github.ref == 'refs/heads/main'
-    defaults:
-      run:
-        working-directory: Web
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: "22"
-      - name: Enable corepack
-        run: |
-          corepack enable &&
-          corepack install
-      - name: pnpm Build
-        run: pnpm install
+      - uses: actions/checkout@v7
+      - uses: ./.github/actions/setup-web
       - name: Build Checker
         run: pnpm build
         working-directory: Web/packages/check
@@ -69,20 +43,9 @@ jobs:
     runs-on: ubuntu-latest
     needs: [Web-Test]
     if: github.ref == 'refs/heads/main'
-    defaults:
-      run:
-        working-directory: Web
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: "22"
-      - name: Enable corepack
-        run: |
-          corepack enable &&
-          corepack install
-      - name: pnpm Build
-        run: pnpm install
+      - uses: actions/checkout@v7
+      - uses: ./.github/actions/setup-web
       - name: Publish
         uses: cloudflare/wrangler-action@v4
         with:
