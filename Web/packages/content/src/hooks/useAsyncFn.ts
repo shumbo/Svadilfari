@@ -34,7 +34,7 @@ export function useAsyncFn<T>(
 
   const callback = useCallback(async () => {
     const callId = ++lastCallId.current;
-    setState((prev) => ({ ...prev, loading: true }));
+    setState((prev) => (prev.loading ? prev : { ...prev, loading: true }));
     const isLatest = () => mounted.current && callId === lastCallId.current;
     try {
       const value = await fn();

@@ -1,0 +1,13 @@
+version: 2
+updates:
+  # Actions are pinned to commit SHAs; this keeps the pins (and their
+  # version comments) current. The composite action needs its own entry.
+  - package-ecosystem: github-actions
+    directories:
+      - "/"
+      - "/.github/actions/*"
+    schedule:
+      interval: monthly
+    groups:
+      github-actions:
+        patterns: ["*"]

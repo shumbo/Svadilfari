@@ -48,8 +48,6 @@
     "**/dist/**",
     "**/build/**",
     "**/.docusaurus/**",
-    "packages/check/worker/**",
-    "packages/go/worker/**",
     "packages/webextension-typedef/**",
     "packages/website/static/**"
   ]

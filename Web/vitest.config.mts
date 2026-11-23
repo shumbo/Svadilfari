@@ -1,8 +1,14 @@
+import { existsSync, readdirSync } from "node:fs";
 import { defineConfig } from "vitest/config";
 
-// Each package is an inline project so Vitest does not load package-level
-// Vite configs (e.g. `check` still pins Vite 5 for Storybook 7).
-const packages = ["background", "check", "content", "core", "go"];
+// Every workspace package is its own inline project, so a test added to any
+// package is picked up without editing this file. Inline projects (rather
+// than per-package configs) also keep Vitest from loading package-level Vite
+// configs and their plugins (e.g. `check/vite.config.ts`), which tests don't
+// need.
+const packages = readdirSync("packages").filter((name) =>
+  existsSync(`packages/${name}/package.json`),
+);
 
 export default defineConfig({
   test: {
