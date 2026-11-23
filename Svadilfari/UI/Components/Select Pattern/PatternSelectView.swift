@@ -30,7 +30,6 @@ struct PatternSelectView: View {
                 GestureTemplateButton(
                     image: Image(systemName: "list.dash"),
                     text: "NEW_GESTURE_SELECT_PATTERN",
-                    color: .blue,
                     buttonTitle: "NEW_GESTURE_SELECT_PATTERN_BUTTON",
                     onPress: {
                         path.append(Step.presets)
@@ -41,7 +40,6 @@ struct PatternSelectView: View {
                 GestureTemplateButton(
                     image: Image(systemName: "hand.draw"),
                     text: "NEW_GESTURE_DRAW_PATTERN",
-                    color: .green,
                     buttonTitle: "NEW_GESTURE_DRAW_PATTERN_BUTTON",
                     onPress: {
                         path.append(Step.draw)

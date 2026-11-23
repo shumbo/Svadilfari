@@ -33,7 +33,7 @@ struct PatternSelectConfirmView: View {
                 label: {
                     Text("PREVIEW_PATTERN_USE").bold().frame(maxWidth: .infinity)
                 }
-            ).buttonBorderShape(.roundedRectangle)
+            )
                 .controlSize(.large)
                 .buttonStyle(.borderedProminent)
                 .listRowInsets(EdgeInsets())

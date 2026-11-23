@@ -30,10 +30,10 @@ struct TutorialView: View {
                 Button(action: {
                     page += 1
                 }, label: {
-                    Text("COMMON_CONTINUE").frame(maxWidth: .infinity).frame(height: 32)
+                    Text("COMMON_CONTINUE").frame(maxWidth: .infinity)
                 })
-                    .buttonBorderShape(.roundedRectangle)
                     .buttonStyle(.borderedProminent)
+                    .controlSize(.large)
                     .padding(.top, 16)
             }.padding(.all, 24).frame(maxWidth: SLIDE_MAX_WIDTH).tag(1)
             VStack(alignment: .center, spacing: 32) {
@@ -63,10 +63,10 @@ struct TutorialView: View {
                 Button(action: {
                     page += 1
                 }, label: {
-                    Text("COMMON_CONTINUE").frame(maxWidth: .infinity).frame(height: 32)
+                    Text("COMMON_CONTINUE").frame(maxWidth: .infinity)
                 })
-                    .buttonBorderShape(.roundedRectangle)
                     .buttonStyle(.borderedProminent)
+                    .controlSize(.large)
                     .padding(.top, 16)
             }.padding(.all, 24).frame(maxWidth: SLIDE_MAX_WIDTH).tag(2)
             VStack(alignment: .center, spacing: 32) {
@@ -96,10 +96,10 @@ struct TutorialView: View {
                 Button(action: {
                     page += 1
                 }, label: {
-                    Text("COMMON_CONTINUE").frame(maxWidth: .infinity).frame(height: 32)
+                    Text("COMMON_CONTINUE").frame(maxWidth: .infinity)
                 })
-                    .buttonBorderShape(.roundedRectangle)
                     .buttonStyle(.borderedProminent)
+                    .controlSize(.large)
             }.padding(.all, 24).frame(maxWidth: SLIDE_MAX_WIDTH).tag(3)
             VStack(alignment: .center, spacing: 16) {
                 Image(systemName: "checkmark.circle.fill")
@@ -113,10 +113,10 @@ struct TutorialView: View {
                     self.dismiss()
                     self.onOpenGestures()
                 }, label: {
-                    Text("TUTORIAL_DONE_VIEW_GESTURES").frame(maxWidth: .infinity).frame(height: 32)
+                    Text("TUTORIAL_DONE_VIEW_GESTURES").frame(maxWidth: .infinity)
                 })
-                    .buttonBorderShape(.roundedRectangle)
                     .buttonStyle(.borderedProminent)
+                    .controlSize(.large)
                     .padding(.top, 16)
                 Link("TUTORIAL_DONE_OPEN_CHECKER", destination: URL(string: "https://go.svadilfari.app/checker")!)
             }.padding(.all, 24).frame(maxWidth: SLIDE_MAX_WIDTH).tag(4)

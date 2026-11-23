@@ -21,10 +21,10 @@ struct TippingAppreciation: View {
             Button(action: {
                 self.onContinue()
             }, label: {
-                Text("TIP_JAR_APPRECIATION_CONTINUE").frame(maxWidth: .infinity).frame(height: 32)
+                Text("TIP_JAR_APPRECIATION_CONTINUE").frame(maxWidth: .infinity)
             })
-            .buttonBorderShape(.roundedRectangle)
             .buttonStyle(.borderedProminent)
+            .controlSize(.large)
             .padding(.top, 16)
             Link("TIP_JAR_APPRECIATION_SEND_FEEDBACK", destination: URL(string: "https://go.svadilfari.app/contact")!)
         }.padding(.all, 24).frame(maxWidth: 480)

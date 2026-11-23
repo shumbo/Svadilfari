@@ -46,7 +46,7 @@ struct RunJavascriptActionConfigView: View {
                         .bold()
                         .frame(maxWidth: .infinity)
                 }
-            ).buttonBorderShape(.roundedRectangle)
+            )
                 .controlSize(.large)
                 .buttonStyle(.borderedProminent)
                 .listRowInsets(EdgeInsets())
