@@ -64,6 +64,7 @@ struct HomeListView: View {
                     }
                 }
             }
+            .navigationTitle("Svadilfari")
             .toolbar(.hidden, for: .navigationBar)
             .navigationDestination(for: Destination.self) { destination in
                 switch destination {
