@@ -1,2 +1,8 @@
 packages:
   - "packages/**"
+
+# pnpm 11+ only runs dependency install scripts that are listed here.
+allowBuilds:
+  esbuild: true # downloads the platform-specific binary
+  workerd: true # Cloudflare runtime used by `wrangler dev`
+  core-js: false # postinstall only prints a funding banner

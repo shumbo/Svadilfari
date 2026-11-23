@@ -11,7 +11,7 @@
   "author": "author",
   "license": "MIT OR Apache-2.0",
   "devDependencies": {
-    "@cloudflare/workers-types": "^5.20261122.2",
+    "@cloudflare/workers-types": "^5.20261121.1",
     "typescript": "^7.0.2",
     "wrangler": "^4.166.0"
   },
