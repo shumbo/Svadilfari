@@ -1,5 +1,7 @@
 import { handleRequest } from "./handler";
 
-addEventListener("fetch", (event) => {
-  event.respondWith(handleRequest(event.request));
-});
+export default {
+  fetch(request) {
+    return handleRequest(request);
+  },
+} satisfies ExportedHandler;

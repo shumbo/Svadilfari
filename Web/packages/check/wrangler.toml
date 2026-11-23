@@ -1,7 +1,6 @@
 name = "svadilfari-checker"
-main = "index.js"
 workers_dev = true
-compatibility_date = "2024-09-16"
+compatibility_date = "2026-11-01"
 
-[site]
-bucket = "./dist"
+[assets]
+directory = "./dist"

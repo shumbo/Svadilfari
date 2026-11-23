@@ -8,11 +8,12 @@
     "serve": "vite preview",
     "typecheck": "tsc --noEmit",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "dev:worker": "pnpm build && wrangler dev",
+    "deploy": "wrangler deploy"
   },
   "dependencies": {
     "@chakra-ui/react": "^2.8.2",
-    "@cloudflare/kv-asset-handler": "~0.3.1",
     "@emotion/react": "^11",
     "@emotion/styled": "^11",
     "date-fns": "^3.3.1",
@@ -29,6 +30,7 @@
     "@vitejs/plugin-react": "^6.3.0",
     "storybook": "^10.6.8",
     "typescript": "^7.0.2",
-    "vite": "^8.3.8"
+    "vite": "^8.3.8",
+    "wrangler": "^4.166.0"
   }
 }

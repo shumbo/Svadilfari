@@ -58,7 +58,7 @@ jobs:
         run: pnpm build
         working-directory: Web/packages/check
       - name: Publish
-        uses: cloudflare/wrangler-action@v3
+        uses: cloudflare/wrangler-action@v4
         with:
           apiToken: ${{ secrets.CF_API_TOKEN }}
           workingDirectory: Web/packages/check
@@ -83,11 +83,8 @@ jobs:
           corepack install
       - name: pnpm Build
         run: pnpm install
-      - name: Build
-        run: pnpm build
-        working-directory: Web/packages/go
       - name: Publish
-        uses: cloudflare/wrangler-action@v3
+        uses: cloudflare/wrangler-action@v4
         with:
           apiToken: ${{ secrets.CF_API_TOKEN }}
           workingDirectory: Web/packages/go
