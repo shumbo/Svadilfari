@@ -57,7 +57,7 @@ private let LEFT = Vector(x: -100.0, y: 0.0)
 private let RIGHT = Vector(x: 100.0, y: 0.0)
 private let DOWN = Vector(x: 0.0, y: 100.0)
 
-private let presets: [Preset] = [
+@MainActor private let presets: [Preset] = [
     Preset(
         name: "PATTERN_PRESET_UP_LEFT",
         pattern: Pattern(data: [UP, LEFT])

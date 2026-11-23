@@ -5,6 +5,7 @@
 //  Created by Shun Kashiwa on 2021/08/04.
 //
 
+import CoreData
 import SwiftUI
 
 struct NewGestureView: View {

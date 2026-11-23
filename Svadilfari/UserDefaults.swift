@@ -8,8 +8,8 @@
 import Foundation
 
 extension UserDefaults {
-    /// shared instance that can be accessed from all targets
-    static var shared: UserDefaults = {
+    // UserDefaults is documented as thread-safe.
+    nonisolated(unsafe) static let shared: UserDefaults = {
         let instance = UserDefaults(suiteName: APP_GROUP_ID)!
         UserDefaults.setInitialData(defaults: instance)
         return instance
@@ -20,11 +20,13 @@ extension UserDefaults {
         defaults.register(defaults: userDefaultsDefaults)
     }
 
-    static private let userDefaultsDefaults = [
-        Keys.previouslyLaunched: false,
-        Keys.gestureRecognitionSensitivity: 0.0,
-        Keys.icloudSyncEnabled: false
-    ] as [String: Any]
+    static private var userDefaultsDefaults: [String: Any] {
+        [
+            Keys.previouslyLaunched: false,
+            Keys.gestureRecognitionSensitivity: 0.0,
+            Keys.icloudSyncEnabled: false
+        ]
+    }
 
     public enum Keys {
         static let previouslyLaunched = "previouslyLaunched"

@@ -9,7 +9,7 @@ import SwiftUI
 import CoreData
 
 struct GestureListView: View {
-    @StateObject private var newGestureState = SheetState()
+    @State private var newGestureSheetPresented = false
 
     @Environment(\.managedObjectContext) private var viewContext
     @FetchRequest(
@@ -36,13 +36,10 @@ struct GestureListView: View {
         }.navigationBarHidden(false)
             .navigationBarTitle("GESTURE_LIST_TITLE")
             .navigationBarItems(trailing: Button(action: {
-                self.newGestureState.presented = true
+                self.newGestureSheetPresented = true
             }) {
                 Image(systemName: "plus")
-            }).sheet(isPresented: Binding(
-                get: { self.newGestureState.presented },
-                set: { self.newGestureState.presented = $0 }
-            )) {
+            }).sheet(isPresented: $newGestureSheetPresented) {
                 NewGestureView()
             }
     }

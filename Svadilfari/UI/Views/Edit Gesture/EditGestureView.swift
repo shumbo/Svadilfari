@@ -5,6 +5,7 @@
 //  Created by Shun Kashiwa on 2021/10/07.
 //
 
+import CoreData
 import SwiftUI
 
 struct EditGestureView: View {
@@ -35,17 +36,17 @@ struct EditGestureView: View {
         if let gesture = self.gestureEntity.gesture {
             Form {
                 Section {
-                    Toggle("GESTURE_EDIT_ENABLED", isOn: $enabled.onChange {
-                        self.updateGestureEntity(
-                            g: self.gestureEntity,
-                            updatedGesture: gesture.change(
-                                path: \.enabled,
-                                to: $0
+                    Toggle("GESTURE_EDIT_ENABLED", isOn: $enabled)
+                        .onAppear {
+                            self.enabled = gesture.enabled
+                        }
+                        .onChange(of: enabled) { _, enabled in
+                            guard enabled != gesture.enabled else { return }
+                            self.updateGestureEntity(
+                                g: self.gestureEntity,
+                                updatedGesture: gesture.change(path: \.enabled, to: enabled)
                             )
-                        )
-                    }).onAppear {
-                        self.enabled = gesture.enabled
-                    }
+                        }
                 }
                 Section(header: Text("GESTURE_EDIT_PATTERN")) {
                     HStack {
@@ -156,10 +157,8 @@ struct EditGestureView: View {
     }
 
     func updateGestureEntity(g: GestureEntity, updatedGesture: Gesture) {
-        self.viewContext.performAndWait {
-            g.gesture = updatedGesture
-            try? self.viewContext.save()
-        }
+        g.gesture = updatedGesture
+        try? viewContext.save()
     }
 }
 

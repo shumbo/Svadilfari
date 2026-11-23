@@ -9,10 +9,11 @@ import SwiftUI
 import StoreKit
 
 struct TipJarView: View {
-    @EnvironmentObject var store: IAPStore
+    @Environment(IAPStore.self) private var store
     @State var productIdOnPurchase = ""
 
     var body: some View {
+        @Bindable var store = store
         List {
             Section(
                 footer: Text("TIP_JAR_MESSAGE")
