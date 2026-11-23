@@ -26,10 +26,7 @@
   "overrides": [
     {
       "files": ["**/*.test.ts", "**/*.test.tsx"],
-      "plugins": ["jest"],
-      "env": {
-        "jest": true
-      }
+      "plugins": ["vitest"]
     },
     {
       "files": [
@@ -37,7 +34,9 @@
         "**/build.mjs",
         "**/*.config.js",
         "**/.storybook/*.js",
-        "packages/webextension-toolkit/*.js"
+        "packages/webextension-toolkit/*.js",
+        "**/.storybook/*.ts",
+        "vitest.config.mts"
       ],
       "env": {
         "node": true

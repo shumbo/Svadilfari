@@ -1,3 +1,4 @@
+import { describe, test, expect } from "vitest";
 import { findNext, findPrevious } from "./find";
 
 const arr = [0, 1, 2, 3, 4, 5];

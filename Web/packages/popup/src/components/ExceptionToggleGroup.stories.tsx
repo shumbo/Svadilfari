@@ -1,5 +1,5 @@
 import React from "react";
-import { Meta, StoryFn } from "@storybook/react";
+import { Meta, StoryFn } from "@storybook/react-vite";
 import { MockI18n } from "mock";
 
 import { chakraDecorator } from "../utils/ChakraDecorator";

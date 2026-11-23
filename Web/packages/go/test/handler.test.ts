@@ -1,17 +1,13 @@
+import { describe, test, expect } from "vitest";
 import { handleRequest } from "../src/handler";
-import makeServiceWorkerEnv from "service-worker-mock";
 
-declare var global: any;
+// Only the pathname matters to the handler.
+const BASE = "https://example.com";
 
 describe("handle", () => {
-  beforeEach(() => {
-    Object.assign(global, makeServiceWorkerEnv());
-    jest.resetModules();
-  });
-
   test("handle GET JA", async () => {
     const result = await handleRequest(
-      new Request("/privacy-policy", {
+      new Request(`${BASE}/privacy-policy`, {
         method: "GET",
         headers: { "accept-language": "ja" },
       }),
@@ -23,7 +19,7 @@ describe("handle", () => {
   });
   test("handle GET ja-jp", async () => {
     const result = await handleRequest(
-      new Request("/privacy-policy", {
+      new Request(`${BASE}/privacy-policy`, {
         method: "GET",
         headers: { "Accept-Language": "ja-jp" },
       }),
@@ -35,7 +31,7 @@ describe("handle", () => {
   });
   test("handle GET EN", async () => {
     const result = await handleRequest(
-      new Request("/privacy-policy", {
+      new Request(`${BASE}/privacy-policy`, {
         method: "GET",
         headers: { "accept-language": "en" },
       }),
@@ -47,7 +43,7 @@ describe("handle", () => {
   });
   test("handle GET No Specified Language", async () => {
     const result = await handleRequest(
-      new Request("/privacy-policy", {
+      new Request(`${BASE}/privacy-policy`, {
         method: "GET",
       }),
     );

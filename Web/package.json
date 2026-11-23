@@ -8,13 +8,17 @@
     "lint": "oxlint",
     "lint:fix": "oxlint --fix",
     "format": "oxfmt",
-    "format:check": "oxfmt --check"
+    "format:check": "oxfmt --check",
+    "test": "vitest run",
+    "test:watch": "vitest"
   },
   "author": "",
   "license": "ISC",
   "packageManager": "pnpm@9.10.0+sha256.355a8ab8dbb6ad41befbef39bc4fd6b5df85e12761d2724bd01f13e878de4b13",
   "devDependencies": {
     "oxfmt": "^0.79.0",
-    "oxlint": "^1.94.0"
+    "oxlint": "^1.94.0",
+    "vite": "^8.3.8",
+    "vitest": "^5.1.1"
   }
 }

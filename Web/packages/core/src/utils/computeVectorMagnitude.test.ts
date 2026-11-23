@@ -1,3 +1,4 @@
+import { describe, test, expect } from "vitest";
 import { computeVectorMagnitude } from "./computeVectorMagnitude";
 
 describe("computeVectorMagnitude", () => {

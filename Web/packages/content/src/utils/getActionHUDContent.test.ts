@@ -1,3 +1,4 @@
+import { describe, test, expect } from "vitest";
 import { MockI18n } from "mock";
 
 import { getActionHUDContent } from "./getActionHUDContent";
